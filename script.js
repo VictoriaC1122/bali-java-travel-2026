@@ -19,7 +19,10 @@ const HOTEL_MAPS = {
   seminyak: "https://www.google.com/maps/search/?api=1&query=Courtyard+by+Marriott+Bali+Seminyak+Resort",
   malang: "https://www.google.com/maps/search/?api=1&query=The+Shalimar+Boutique+Hotel+Malang",
   yogyakarta: "https://www.google.com/maps/search/?api=1&query=Aveta+Hotel+Malioboro+Yogyakarta",
-  volcanoTour: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"
+  volcanoTour: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
+  luminor: "https://www.google.com/maps/search/?api=1&query=Luminor+Hotel+Banyuwangi",
+  doho: "https://www.google.com/maps/search/?api=1&query=Doho+Homestay+Papuma",
+  kecombrang: "https://www.google.com/maps/search/?api=1&query=Joglo+Kecombrang+Bromo"
 };
 
 const MAP_ROUTE_URL =
@@ -242,8 +245,7 @@ const content = {
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "峇里島水明漾萬怡度假村",
         stars: "五星級",
-        image:
-          "https://cache.marriott.com/content/dam/marriott-renditions/DPSCY/dpscy-exterior-9584-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*",
+        image: "./assets/stays/seminyak-resort.jpg",
         note: "用帶著海風的度假節奏，把這趟旅程開成一個柔軟而明亮的序章。",
         details: [
           "步行可接近 Seminyak Beach",
@@ -258,14 +260,20 @@ const content = {
         hotel: "Tour provided",
         localName: "火山段住宿（由旅遊團安排）",
         stars: "團體安排",
-        note: "這一段不追求奢華，而是把體力、移動與凌晨出發的節奏安穩地接住。",
+        image: "./assets/stays/luminor-bwi.jpeg",
+        note: "這一段不追求奢華，而是把體力、移動與凌晨出發的節奏安穩地接住。以下為 JVTO 公開行程頁常見住宿安排示意。",
         details: [
-          "住宿與接送由 tour 統一安排",
-          "重點是離 Ijen、Sewu、Bromo 動線順",
-          "建議把保暖層、頭燈與小包先分開整理"
+          "第 1 晚：Luminor Hotel（Ijen Crater）",
+          "第 2 晚：Doho Homestay（Papuma Beach）",
+          "第 3 晚：Joglo Kecombrang Bromo（Mount Bromo）"
         ],
         url: HOTEL_MAPS.volcanoTour,
-        linkLabel: "Tour 頁面"
+        linkLabel: "Tour 頁面",
+        extraLinks: [
+          ["Luminor", HOTEL_MAPS.luminor],
+          ["Doho", HOTEL_MAPS.doho],
+          ["Kecombrang", HOTEL_MAPS.kecombrang]
+        ]
       },
       {
         dates: "6/18",
@@ -273,7 +281,7 @@ const content = {
         hotel: "The Shalimar Boutique Hotel",
         localName: "沙利馬精品飯店",
         stars: "五星級",
-        image: "https://theshalimarhotel.co.id/wp-content/uploads/2024/11/The-Shalimar-Hotel-Front.png",
+        image: "./assets/stays/shalimar-front.jpg",
         note: "像把一夜休息放進殖民老宅裡，讓火山段之後的身體與情緒都慢慢回來。",
         details: [
           "1930 年代殖民建築改造",
@@ -288,7 +296,7 @@ const content = {
         hotel: "Aveta Hotel Malioboro",
         localName: "阿維塔馬利歐波羅飯店",
         stars: "四星級",
-        image: "https://avetahotelmalioboro.com/images/aveta-suite1.jpg",
+        image: "./assets/stays/aveta-suite1.jpg",
         note: "把城市的便利與旅程尾聲需要的從容放在一起，適合文化日也適合回程前一晚。",
         details: [
           "緊貼 Malioboro 主街，地點非常順",
@@ -554,8 +562,7 @@ const content = {
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "Courtyard Bali Seminyak Resort",
         stars: "5-star",
-        image:
-          "https://cache.marriott.com/content/dam/marriott-renditions/DPSCY/dpscy-exterior-9584-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*",
+        image: "./assets/stays/seminyak-resort.jpg",
         note: "A bright, sea-breezed opening that lets the whole trip begin softly instead of abruptly.",
         details: [
           "Walkable to Seminyak Beach",
@@ -570,14 +577,20 @@ const content = {
         hotel: "Tour provided",
         localName: "Volcano stay arranged by tour",
         stars: "Tour arranged",
-        note: "This segment is less about luxury and more about holding the sleep-deprived volcano rhythm together.",
+        image: "./assets/stays/luminor-bwi.jpeg",
+        note: "This segment is less about luxury and more about holding the sleep-deprived volcano rhythm together. The stays below are the sample accommodation plan shown on JVTO's public tour page.",
         details: [
-          "Lodging and transfers handled by the tour",
-          "Chosen mainly for route efficiency",
-          "Best to separate warm layers and night-hike essentials early"
+          "Night 1: Luminor Hotel near Ijen",
+          "Night 2: Doho Homestay near Papuma",
+          "Night 3: Joglo Kecombrang Bromo"
         ],
         url: HOTEL_MAPS.volcanoTour,
-        linkLabel: "Tour page"
+        linkLabel: "Tour page",
+        extraLinks: [
+          ["Luminor", HOTEL_MAPS.luminor],
+          ["Doho", HOTEL_MAPS.doho],
+          ["Kecombrang", HOTEL_MAPS.kecombrang]
+        ]
       },
       {
         dates: "Jun 18",
@@ -585,7 +598,7 @@ const content = {
         hotel: "The Shalimar Boutique Hotel",
         localName: "The Shalimar Boutique Hotel",
         stars: "5-star",
-        image: "https://theshalimarhotel.co.id/wp-content/uploads/2024/11/The-Shalimar-Hotel-Front.png",
+        image: "./assets/stays/shalimar-front.jpg",
         note: "A colonial-era boutique pause after the rugged days, made more for exhaling than for rushing.",
         details: [
           "1930s colonial architecture",
@@ -600,7 +613,7 @@ const content = {
         hotel: "Aveta Hotel Malioboro",
         localName: "Aveta Hotel Malioboro",
         stars: "4-star",
-        image: "https://avetahotelmalioboro.com/images/aveta-suite1.jpg",
+        image: "./assets/stays/aveta-suite1.jpg",
         note: "A city stay that keeps the ending easy: temples by day, Malioboro by evening, airport flow the morning after.",
         details: [
           "Right on Malioboro Street",
@@ -866,8 +879,7 @@ const content = {
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "Courtyard Bali Seminyak Resort",
         stars: "Bintang 5",
-        image:
-          "https://cache.marriott.com/content/dam/marriott-renditions/DPSCY/dpscy-exterior-9584-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*",
+        image: "./assets/stays/seminyak-resort.jpg",
         note: "Pembuka yang lembut, terang, dan dekat laut, cocok untuk membuat tubuh santai dulu.",
         details: [
           "Bisa jalan ke Seminyak Beach",
@@ -882,14 +894,20 @@ const content = {
         hotel: "Tour provided",
         localName: "Akomodasi segmen gunung api",
         stars: "Diatur oleh tur",
-        note: "Bagian ini bukan soal mewah, tetapi soal tidur secukupnya dan bergerak efisien saat ritme sangat pagi.",
+        image: "./assets/stays/luminor-bwi.jpeg",
+        note: "Bagian ini bukan soal mewah, tetapi soal tidur secukupnya dan bergerak efisien saat ritme sangat pagi. Berikut adalah contoh akomodasi yang ditampilkan pada halaman publik JVTO.",
         details: [
-          "Penginapan dan transfer diatur oleh tour",
-          "Dipilih terutama karena alur rutenya",
-          "Paling aman kalau jaket dan perlengkapan hiking dipisah sejak awal"
+          "Malam 1: Luminor Hotel dekat Ijen",
+          "Malam 2: Doho Homestay dekat Papuma",
+          "Malam 3: Joglo Kecombrang Bromo"
         ],
         url: HOTEL_MAPS.volcanoTour,
-        linkLabel: "Halaman tour"
+        linkLabel: "Halaman tour",
+        extraLinks: [
+          ["Luminor", HOTEL_MAPS.luminor],
+          ["Doho", HOTEL_MAPS.doho],
+          ["Kecombrang", HOTEL_MAPS.kecombrang]
+        ]
       },
       {
         dates: "18 Jun",
@@ -897,7 +915,7 @@ const content = {
         hotel: "The Shalimar Boutique Hotel",
         localName: "The Shalimar Boutique Hotel",
         stars: "Bintang 5",
-        image: "https://theshalimarhotel.co.id/wp-content/uploads/2024/11/The-Shalimar-Hotel-Front.png",
+        image: "./assets/stays/shalimar-front.jpg",
         note: "Tempat singgah yang terasa lebih anggun setelah hari-hari yang kasar dan penuh debu.",
         details: [
           "Bangunan kolonial era 1930-an",
@@ -912,7 +930,7 @@ const content = {
         hotel: "Aveta Hotel Malioboro",
         localName: "Aveta Hotel Malioboro",
         stars: "Bintang 4",
-        image: "https://avetahotelmalioboro.com/images/aveta-suite1.jpg",
+        image: "./assets/stays/aveta-suite1.jpg",
         note: "Tempat menginap yang membuat penutup perjalanan tetap ringan: dekat candi, dekat jalan utama, dan dekat ritme pulang.",
         details: [
           "Menempel di Malioboro Street",
@@ -1125,7 +1143,7 @@ function renderFlightNotes(items) {
 function renderStayRows(items, linkLabel) {
   return items
     .map(
-      ({ dates, area, hotel, localName, stars, image, note, details, url, linkLabel: customLabel }) => `
+      ({ dates, area, hotel, localName, stars, image, note, details, url, linkLabel: customLabel, extraLinks = [] }) => `
         <article class="stay-card-rich">
           ${
             image
@@ -1151,6 +1169,12 @@ function renderStayRows(items, linkLabel) {
           </div>
           <div class="stay-card-actions">
             <a class="stay-map-link" href="${url}" target="_blank" rel="noreferrer">${customLabel || linkLabel}</a>
+            ${extraLinks
+              .map(
+                ([label, href]) =>
+                  `<a class="stay-map-link stay-map-link-secondary" href="${href}" target="_blank" rel="noreferrer">${label}</a>`
+              )
+              .join("")}
           </div>
         </article>
       `

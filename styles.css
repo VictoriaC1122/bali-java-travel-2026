@@ -751,6 +751,8 @@ h4 {
 .stay-card-actions {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .stay-side {
@@ -778,6 +780,11 @@ h4 {
 .stay-map-link:hover {
   background: rgba(196, 111, 66, 0.08);
   transform: translateY(-1px);
+}
+
+.stay-map-link-secondary {
+  background: rgba(255, 247, 239, 0.92);
+  color: var(--text-mid);
 }
 
 .itinerary-highlights {
