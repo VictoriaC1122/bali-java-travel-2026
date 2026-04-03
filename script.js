@@ -32,6 +32,16 @@ const BUDGET = {
   ]
 };
 
+const HOTEL_MAPS = {
+  seminyak: "https://www.google.com/maps/search/?api=1&query=Courtyard+by+Marriott+Bali+Seminyak+Resort",
+  malang: "https://www.google.com/maps/search/?api=1&query=The+Shalimar+Boutique+Hotel+Malang",
+  yogyakarta: "https://www.google.com/maps/search/?api=1&query=Aveta+Hotel+Malioboro+Yogyakarta",
+  volcanoTour: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"
+};
+
+const MAP_ROUTE_URL =
+  "https://www.google.com/maps/dir/Seminyak+Beach+Bali/Courtyard+by+Marriott+Bali+Seminyak+Resort/Ijen+Crater/Tumpak+Sewu+Waterfall/Mount+Bromo/The+Shalimar+Boutique+Hotel+Malang/Aveta+Hotel+Malioboro+Yogyakarta/Yogyakarta+International+Airport";
+
 const content = {
   "zh-Hant": {
     heroKicker: "Indonesia travel handbook",
@@ -41,14 +51,29 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "總覽",
     navFlights: "航班",
+    navStay: "住宿",
     navLinks: "連結",
     navItinerary: "行程",
+    navMap: "地圖",
     navBudget: "預算",
     navVisa: "簽證",
     overviewLabel: "Journey Overview",
     overviewTitle: "一趟完整、舒服、而且很會安排情緒節奏的印尼經典路線",
     overviewLead:
       "前段用峇里島放鬆，中段用火山與瀑布拉高記憶點，最後在日惹用文化與城市質感收尾，是非常適合做成旅遊手冊的一條線。",
+    coverLabel: "Handbook Design",
+    coverTitle: "一眼看懂這趟旅行為什麼值得",
+    coverLead:
+      "不是只有景點很多，而是節奏很漂亮。峇里島先讓旅程變柔軟，東爪哇火山段把記憶點拉滿，最後用日惹的神廟與城市感收得很完整。",
+    coverPoints: [
+      ["前段放鬆", "Seminyak 先把旅程打開，沙灘、按摩、晚餐氣氛都很適合做序章。"],
+      ["中段冒險", "Ijen、Sewu、Bromo 是整本手冊最有戲的核心，景觀與情緒起伏都很強。"],
+      ["結尾收束", "日惹把文化、神廟、城市質感接回來，結尾會非常完整。"]
+    ],
+    volcanoCaption: "Bromo 晨光",
+    volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
+    beachCaption: "Seminyak 海灘",
+    beachCredit: "Photo by sophie peng / Unsplash",
     routeLabel: "Flight & Route",
     routeTitle: "航班與移動路線",
     routeLead: "把航段、行李與整體動線獨立整理，出發前和回程前都比較好快速核對。",
@@ -70,6 +95,9 @@ const content = {
     ],
     stayLabel: "Stay Plan",
     stayTitle: "住宿安排",
+    stayLead: "每一段住宿都對應不同節奏：度假、冒險後休息、文化城市收尾。每個飯店都附上 Google Maps 連結。",
+    stayMapLabel: "Google Maps",
+    stayTourLabel: "Tour 頁面",
     linksLabel: "Official Links",
     linksTitle: "官方連結整理",
     linksLead: "把飯店、火山 tour、機場鐵路與入境網站集中在同一頁，出發前會很好找。",
@@ -104,6 +132,10 @@ const content = {
     budgetTableAmount: "金額",
     budgetStatusPaid: "已支付",
     budgetStatusOpen: "未支付",
+    mapLabel: "Travel Map",
+    mapTitle: "地圖總覽",
+    mapLead: "把主要住宿、火山、神廟與機場路線集中到同一頁，手機上也能直接切換看大圖地圖。",
+    mapRouteLink: "開啟完整路線",
     visaLabel: "Visa & Entry",
     visaTitle: "簽證與入境提醒",
     visaPanelTitle: "印尼旅遊簽證",
@@ -133,10 +165,10 @@ const content = {
       duration: "飛行時間"
     },
     stays: [
-      ["6/13 - 6/15", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "用舒服的度假感把旅程開場。"],
-      ["6/15 - 6/17", "Java volcano region", "Tour provided", "火山段的住宿與接送由 tour 安排。"],
-      ["6/18", "Malang", "The Shalimar Boutique Hotel", "火山段後安排一晚比較精緻的休息點。"],
-      ["6/19 - 6/21", "Yogyakarta", "Aveta Hotel Malioboro", "方便串神廟與回程交通。"]
+      ["6/13 - 6/15", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "用舒服的度假感把旅程開場。", HOTEL_MAPS.seminyak],
+      ["6/15 - 6/17", "Java volcano region", "Tour provided", "火山段的住宿與接送由 tour 安排。", HOTEL_MAPS.volcanoTour, "Tour 頁面"],
+      ["6/18", "Malang", "The Shalimar Boutique Hotel", "火山段後安排一晚比較精緻的休息點。", HOTEL_MAPS.malang],
+      ["6/19 - 6/21", "Yogyakarta", "Aveta Hotel Malioboro", "方便串神廟與回程交通。", HOTEL_MAPS.yogyakarta]
     ],
     transportNotes: [
       ["火山順序", "Ijen → Sewu → Bromo，並確認最後 drop 在 Malang。"],
@@ -147,6 +179,16 @@ const content = {
       ["鞋子", "火山與瀑布段請穿有抓地力的運動鞋或登山鞋。"],
       ["保暖", "Ijen 與 Bromo 凌晨真的會冷，外套要帶。"],
       ["行李", "目前整理為去程 23kg ×2、回程 23kg ×1。"]
+    ],
+    mapLocations: [
+      ["Seminyak Beach", "Seminyak Beach Bali", "Bali 段最適合開場的海灘與散步地點。"],
+      ["Seminyak 飯店", "Courtyard by Marriott Bali Seminyak Resort", "抵達後的主要住宿點。"],
+      ["Ijen Crater", "Ijen Crater East Java", "藍火與火山湖的代表地點。"],
+      ["Tumpak Sewu", "Tumpak Sewu Waterfall", "整段最壯觀的瀑布景點之一。"],
+      ["Mount Bromo", "Mount Bromo", "火山日出與觀景台核心地點。"],
+      ["Malang 飯店", "The Shalimar Boutique Hotel Malang", "火山段後較舒服的休息夜。"],
+      ["Yogyakarta 飯店", "Aveta Hotel Malioboro Yogyakarta", "神廟日與回程前的基地。"],
+      ["YIA 機場", "Yogyakarta International Airport", "回程當天的最終移動點。"]
     ],
     itinerary: [
       ["Day 1", "抵達峇里島", "搭乘 CI771 由台北直飛 DPS，抵達後以 check-in、晚餐與休息為主。", ["抵達 + 入住", "輕鬆晚餐", "調時差"], [["節奏", "第一天不建議排太滿，讓身體先適應濕熱氣候與移動疲勞。"], ["建議安排", "入住後可在 Seminyak 周邊簡單散步、吃飯，早點休息。"], ["今天適合", "把飯店、附近超商與回房後的隔天用品先整理好。"]]],
@@ -189,13 +231,28 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Overview",
     navFlights: "Flights",
+    navStay: "Stays",
     navLinks: "Links",
     navItinerary: "Itinerary",
+    navMap: "Map",
     navBudget: "Budget",
     navVisa: "Visa",
     overviewLabel: "Journey Overview",
     overviewTitle: "A very complete Indonesia classic route with rest, drama, and culture in the right order",
     overviewLead: "The trip starts with Bali softness, rises into East Java volcano intensity, then ends in Yogyakarta with temples and city comfort.",
+    coverLabel: "Handbook Design",
+    coverTitle: "Why this trip reads beautifully at a glance",
+    coverLead:
+      "It is not just a list of places. Bali softens the opening, East Java creates the drama, and Yogyakarta gives the journey a graceful cultural finish.",
+    coverPoints: [
+      ["Soft opening", "Seminyak sets the mood first with beach light, slower mornings, and room to settle in."],
+      ["Adventure core", "Ijen, Sewu, and Bromo create the strongest visual memory and emotional lift of the whole route."],
+      ["Elegant ending", "Yogyakarta brings the trip back to culture, architecture, and a more polished city rhythm."]
+    ],
+    volcanoCaption: "Bromo dawn",
+    volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
+    beachCaption: "Seminyak beach",
+    beachCredit: "Photo by sophie peng / Unsplash",
     routeLabel: "Flight & Route",
     routeTitle: "Flights and route",
     routeLead: "This page keeps the flight legs, baggage allowance, and travel flow together so they are easier to re-check before departure.",
@@ -217,6 +274,9 @@ const content = {
     ],
     stayLabel: "Stay Plan",
     stayTitle: "Where you stay",
+    stayLead: "Each stay matches a different mood: resort ease, recovery after the volcano leg, then a city finish. Every hotel includes a Google Maps link.",
+    stayMapLabel: "Google Maps",
+    stayTourLabel: "Tour page",
     linksLabel: "Official Links",
     linksTitle: "Useful official links",
     linksLead: "This page keeps the hotel, volcano tour, airport rail, and entry websites together in one place.",
@@ -251,6 +311,10 @@ const content = {
     budgetTableAmount: "Amount",
     budgetStatusPaid: "Paid",
     budgetStatusOpen: "Open",
+    mapLabel: "Travel Map",
+    mapTitle: "Map overview",
+    mapLead: "Hotels, volcano stops, and the airport flow are collected here so you can switch to a large Google map view quickly on mobile too.",
+    mapRouteLink: "Open full route",
     visaLabel: "Visa & Entry",
     visaTitle: "Visa and entry notes",
     visaPanelTitle: "Indonesia tourist visa",
@@ -280,10 +344,10 @@ const content = {
       duration: "Duration"
     },
     stays: [
-      ["Jun 13 - Jun 15", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "A relaxed resort opening."],
-      ["Jun 15 - Jun 17", "Java volcano region", "Tour provided", "The volcano leg is handled by the tour."],
-      ["Jun 18", "Malang", "The Shalimar Boutique Hotel", "A polished recovery night after the rugged segment."],
-      ["Jun 19 - Jun 21", "Yogyakarta", "Aveta Hotel Malioboro", "Good for temples and airport flow."]
+      ["Jun 13 - Jun 15", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "A relaxed resort opening.", HOTEL_MAPS.seminyak],
+      ["Jun 15 - Jun 17", "Java volcano region", "Tour provided", "The volcano leg is handled by the tour.", HOTEL_MAPS.volcanoTour, "Tour page"],
+      ["Jun 18", "Malang", "The Shalimar Boutique Hotel", "A polished recovery night after the rugged segment.", HOTEL_MAPS.malang],
+      ["Jun 19 - Jun 21", "Yogyakarta", "Aveta Hotel Malioboro", "Good for temples and airport flow.", HOTEL_MAPS.yogyakarta]
     ],
     transportNotes: [
       ["Volcano order", "Keep the order Ijen → Sewu → Bromo, and confirm drop-off in Malang."],
@@ -294,6 +358,16 @@ const content = {
       ["Shoes", "Wear shoes with good grip for the volcano and waterfall days."],
       ["Warm layer", "Ijen and Bromo can feel cold before sunrise."],
       ["Baggage", "Current note: 23kg ×2 outbound, 23kg ×1 inbound."]
+    ],
+    mapLocations: [
+      ["Seminyak Beach", "Seminyak Beach Bali", "The beach zone that opens the Bali part of the trip."],
+      ["Seminyak hotel", "Courtyard by Marriott Bali Seminyak Resort", "Main base for the first two nights."],
+      ["Ijen Crater", "Ijen Crater East Java", "The signature blue-fire crater stop."],
+      ["Tumpak Sewu", "Tumpak Sewu Waterfall", "One of the most dramatic waterfall stops of the route."],
+      ["Mount Bromo", "Mount Bromo", "The iconic sunrise volcano viewpoint."],
+      ["Malang hotel", "The Shalimar Boutique Hotel Malang", "A softer recovery stay after the rugged stretch."],
+      ["Yogyakarta hotel", "Aveta Hotel Malioboro Yogyakarta", "City base for temples and departure flow."],
+      ["YIA airport", "Yogyakarta International Airport", "Final transfer point on the way home."]
     ],
     itinerary: [
       ["Day 1", "Arrive in Bali", "Fly CI771 from Taipei to DPS, then keep the first day easy with check-in, dinner, and rest.", ["Arrival", "Easy dinner", "Rest"], [["Pacing", "Keep the first day intentionally light so the trip opens in a calm way."], ["Suggested plan", "Check in, walk nearby, have dinner, and sleep early."], ["Useful task", "Settle hotel basics, nearby stores, and next-day essentials on the first night."]]],
@@ -336,13 +410,28 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Ringkasan",
     navFlights: "Penerbangan",
+    navStay: "Hotel",
     navLinks: "Tautan",
     navItinerary: "Itinerary",
+    navMap: "Peta",
     navBudget: "Budget",
     navVisa: "Visa",
     overviewLabel: "Journey Overview",
     overviewTitle: "Rute klasik Indonesia yang lengkap, nyaman, dan punya ritme emosi yang rapi",
     overviewLead: "Awalnya santai di Bali, lalu masuk ke dramanya gunung api Jawa Timur, lalu ditutup dengan budaya dan kenyamanan kota di Yogyakarta.",
+    coverLabel: "Handbook Design",
+    coverTitle: "Kenapa perjalanan ini terasa menarik sejak pandangan pertama",
+    coverLead:
+      "Bukan sekadar banyak tempat. Bali membuka perjalanan dengan lembut, Jawa Timur memberi puncak dramanya, lalu Yogyakarta menutup dengan budaya dan ritme kota yang lebih halus.",
+    coverPoints: [
+      ["Pembuka lembut", "Seminyak memberi start yang santai dengan pantai, pijat, dan ritme liburan yang ringan."],
+      ["Inti petualangan", "Ijen, Sewu, dan Bromo jadi bagian paling dramatis dan paling mudah diingat."],
+      ["Penutup rapi", "Yogyakarta membawa perjalanan kembali ke budaya, arsitektur, dan kenyamanan kota."]
+    ],
+    volcanoCaption: "Fajar Bromo",
+    volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
+    beachCaption: "Pantai Seminyak",
+    beachCredit: "Photo by sophie peng / Unsplash",
     routeLabel: "Flight & Route",
     routeTitle: "Penerbangan dan rute",
     routeLead: "Halaman ini merangkum segmen penerbangan, bagasi, dan alur perjalanan agar lebih mudah dicek ulang sebelum berangkat.",
@@ -364,6 +453,9 @@ const content = {
     ],
     stayLabel: "Stay Plan",
     stayTitle: "Rencana menginap",
+    stayLead: "Setiap tempat menginap punya fungsi ritmenya sendiri: santai, recovery setelah gunung api, lalu penutup kota. Setiap hotel diberi link Google Maps.",
+    stayMapLabel: "Google Maps",
+    stayTourLabel: "Halaman tour",
     linksLabel: "Official Links",
     linksTitle: "Tautan resmi",
     linksLead: "Halaman ini mengumpulkan hotel, tour gunung api, kereta bandara, dan situs masuk Indonesia dalam satu tempat.",
@@ -398,6 +490,10 @@ const content = {
     budgetTableAmount: "Nominal",
     budgetStatusPaid: "Sudah",
     budgetStatusOpen: "Belum",
+    mapLabel: "Travel Map",
+    mapTitle: "Ringkasan peta",
+    mapLead: "Hotel, titik gunung api, dan alur ke bandara dikumpulkan di sini supaya mudah dibuka sebagai peta besar, termasuk di HP.",
+    mapRouteLink: "Buka rute lengkap",
     visaLabel: "Visa & Entry",
     visaTitle: "Catatan visa dan masuk",
     visaPanelTitle: "Visa wisata Indonesia",
@@ -427,10 +523,10 @@ const content = {
       duration: "Durasi"
     },
     stays: [
-      ["13 Jun - 15 Jun", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "Pembukaan yang santai dengan resort nyaman."],
-      ["15 Jun - 17 Jun", "Area gunung api Jawa", "Tour provided", "Segmen gunung api diatur oleh tour."],
-      ["18 Jun", "Malang", "The Shalimar Boutique Hotel", "Malam istirahat yang lebih rapi setelah bagian petualangan."],
-      ["19 Jun - 21 Jun", "Yogyakarta", "Aveta Hotel Malioboro", "Praktis untuk candi dan alur pulang."]
+      ["13 Jun - 15 Jun", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "Pembukaan yang santai dengan resort nyaman.", HOTEL_MAPS.seminyak],
+      ["15 Jun - 17 Jun", "Area gunung api Jawa", "Tour provided", "Segmen gunung api diatur oleh tour.", HOTEL_MAPS.volcanoTour, "Halaman tour"],
+      ["18 Jun", "Malang", "The Shalimar Boutique Hotel", "Malam istirahat yang lebih rapi setelah bagian petualangan.", HOTEL_MAPS.malang],
+      ["19 Jun - 21 Jun", "Yogyakarta", "Aveta Hotel Malioboro", "Praktis untuk candi dan alur pulang.", HOTEL_MAPS.yogyakarta]
     ],
     transportNotes: [
       ["Urutan gunung api", "Pertahankan urutan Ijen → Sewu → Bromo, lalu pastikan drop-off di Malang."],
@@ -441,6 +537,16 @@ const content = {
       ["Sepatu", "Gunakan sepatu dengan grip bagus untuk hari gunung api dan air terjun."],
       ["Pakaian hangat", "Ijen dan Bromo bisa terasa dingin sebelum sunrise."],
       ["Bagasi", "Catatan sekarang: 23kg ×2 saat pergi, 23kg ×1 saat pulang."]
+    ],
+    mapLocations: [
+      ["Pantai Seminyak", "Seminyak Beach Bali", "Area pantai untuk membuka perjalanan Bali dengan santai."],
+      ["Hotel Seminyak", "Courtyard by Marriott Bali Seminyak Resort", "Basis utama dua malam pertama."],
+      ["Kawah Ijen", "Ijen Crater East Java", "Titik utama blue fire dan danau kawah."],
+      ["Tumpak Sewu", "Tumpak Sewu Waterfall", "Salah satu titik air terjun paling dramatis di rute ini."],
+      ["Gunung Bromo", "Mount Bromo", "Titik sunrise paling ikonik di segmen gunung api."],
+      ["Hotel Malang", "The Shalimar Boutique Hotel Malang", "Malam recovery yang lebih nyaman setelah petualangan."],
+      ["Hotel Yogyakarta", "Aveta Hotel Malioboro Yogyakarta", "Basis kota untuk candi dan hari pulang."],
+      ["Bandara YIA", "Yogyakarta International Airport", "Titik transfer terakhir sebelum pulang."]
     ],
     itinerary: [
       ["Hari 1", "Tiba di Bali", "Naik CI771 dari Taipei ke DPS, lalu jalani hari pertama dengan check-in, makan malam, dan istirahat.", ["Tiba", "Makan malam", "Istirahat"], [["Ritme", "Hari pertama paling enak dibuat ringan supaya tubuh menyesuaikan dulu."], ["Saran", "Check-in, jalan sebentar di sekitar hotel, makan malam, lalu istirahat lebih awal."], ["Yang berguna", "Rapikan kebutuhan hotel, minimarket sekitar, dan barang penting untuk besok."]]],
@@ -478,7 +584,8 @@ const content = {
 };
 
 const state = {
-  lang: localStorage.getItem("bali-java-lang") || "zh-Hant"
+  lang: localStorage.getItem("bali-java-lang") || "zh-Hant",
+  mapQuery: "Seminyak Beach Bali"
 };
 
 function formatNumber(value) {
@@ -530,6 +637,14 @@ function renderInfo(labels, flight) {
     .join("");
 }
 
+function mapEmbedUrl(query) {
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+}
+
+function mapSearchUrl(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
 function renderLanguage() {
   const copy = content[state.lang];
 
@@ -548,6 +663,17 @@ function renderLanguage() {
         <article class="overview-stat">
           <div class="overview-stat-label">${label}</div>
           <div class="overview-stat-value">${value}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("cover-points").innerHTML = copy.coverPoints
+    .map(
+      ([title, desc]) => `
+        <article class="cover-point">
+          <div class="cover-point-title">${title}</div>
+          <div class="cover-point-desc">${desc}</div>
         </article>
       `
     )
@@ -580,13 +706,16 @@ function renderLanguage() {
 
   document.getElementById("stay-list").innerHTML = copy.stays
     .map(
-      ([dates, place, hotel, note]) => `
+      ([dates, place, hotel, note, url, linkLabel]) => `
         <div class="stay-item">
-          <div>
+          <div class="stay-copy">
             <div class="stay-title">${hotel}</div>
             <div class="stay-desc">${place} · ${note}</div>
           </div>
-          <div class="stay-meta">${dates}</div>
+          <div class="stay-side">
+            <div class="stay-meta">${dates}</div>
+            <a class="stay-map-link" href="${url}" target="_blank" rel="noreferrer">${linkLabel || copy.stayMapLabel}</a>
+          </div>
         </div>
       `
     )
@@ -616,19 +745,6 @@ function renderLanguage() {
     )
     .join("");
 
-  document.getElementById("transport-notes").innerHTML = copy.transportNotes
-    .map(
-      ([title, desc]) => `
-        <div class="note-item">
-          <div>
-            <div class="bullet-title">${title}</div>
-            <div class="note-desc">${desc}</div>
-          </div>
-        </div>
-      `
-    )
-    .join("");
-
   document.getElementById("packing-notes").innerHTML = copy.packingNotes
     .map(
       ([title, desc]) => `
@@ -641,6 +757,29 @@ function renderLanguage() {
       `
     )
     .join("");
+
+  if (!copy.mapLocations.some(([, query]) => query === state.mapQuery)) {
+    state.mapQuery = copy.mapLocations[0][1];
+  }
+
+  document.getElementById("map-list").innerHTML = copy.mapLocations
+    .map(
+      ([title, query, note]) => `
+        <button class="map-location-button ${state.mapQuery === query ? "active" : ""}" type="button" data-query="${query}">
+          <span class="map-location-title">${title}</span>
+          <span class="map-location-note">${note}</span>
+        </button>
+      `
+    )
+    .join("");
+  document.getElementById("map-frame").src = mapEmbedUrl(state.mapQuery);
+  document.getElementById("full-route-link").href = MAP_ROUTE_URL;
+  document.querySelectorAll(".map-location-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.mapQuery = button.dataset.query;
+      renderLanguage();
+    });
+  });
 
   document.getElementById("itinerary-highlights").innerHTML = copy.itineraryHighlights
     .map(
