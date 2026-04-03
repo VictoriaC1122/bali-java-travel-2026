@@ -1350,10 +1350,10 @@ function renderLanguage() {
       const statusText = item.status === "paid" ? copy.budgetStatusPaid : copy.budgetStatusOpen;
       return `
         <tr>
-          <td><span class="budget-status ${item.status}">${statusText}</span></td>
-          <td><div class="budget-item-title">${title}</div></td>
-          <td><div class="budget-item-desc">${desc}</div></td>
-          <td><div class="budget-amount">${formatBudget(item)}</div></td>
+          <td data-label="${copy.budgetTableStatus}"><span class="budget-status ${item.status}">${statusText}</span></td>
+          <td data-label="${copy.budgetTableItem}"><div class="budget-item-title">${title}</div></td>
+          <td data-label="${copy.budgetTableDetail}"><div class="budget-item-desc">${desc}</div></td>
+          <td data-label="${copy.budgetTableAmount}"><div class="budget-amount">${formatBudget(item)}</div></td>
         </tr>
       `;
     })
