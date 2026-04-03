@@ -38,7 +38,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-family: "Noto Serif TC", "Noto Serif", serif;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -504,6 +504,32 @@ h4 {
 
 .day-content-inner {
   padding: 0 28px 28px;
+}
+
+.day-detail-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.day-detail-item {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 252, 248, 0.9);
+  border: 1px solid rgba(234, 217, 203, 0.8);
+}
+
+.day-detail-title {
+  color: var(--primary-dark);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.day-detail-desc {
+  color: var(--text-mid);
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .highlight-tags {
