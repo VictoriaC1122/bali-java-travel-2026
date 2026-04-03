@@ -156,7 +156,7 @@ const content = {
       ["最後", "QR code、護照、回程機票一起存好"]
     ],
     visaTutorial: [
-      ["步驟一", "打開印尼官方 eVisa 網站，先確認台灣護照是否適用 e-VOA / VOA 方案，再建立申請資料。"],
+      ["步驟一", "截至 2026/04/04，印尼官方 eVisa / e-VOA 說明頁的適用護照名單已列出台灣，可先走 e-VOA / VOA 路線，再建立申請資料。"],
       ["步驟二", "準備護照、離境機票、住宿資訊與信用卡。護照效期至少要有 6 個月。"],
       ["步驟三", "完成付款後，把 eVisa 或 e-VOA 憑證存到手機，也建議另外截圖一份。"],
       ["步驟四", "再到 Love Bali 官方網站繳 Bali 旅遊稅 Rp150,000，完成後同樣保存 QR code。"],
@@ -336,7 +336,7 @@ const content = {
     },
     visaPoints: [
       ["30 天旅遊方案", "印尼官方 eVisa FAQ 常見旅遊方案為停留 30 天，可延長一次 30 天，費用 IDR 500,000。"],
-      ["台灣旅客", "目前查到的資料顯示台灣旅客通常可走 e-VOA / VOA 路線，但出發前仍建議在官方系統再次確認。"],
+      ["台灣旅客", "截至 2026/04/04，印尼官方 eVisa / e-VOA 說明頁的適用護照名單已列出台灣，可申請 e-VOA / VOA。"],
       ["基本文件", "護照效期至少 6 個月，並準備離境機票與足夠旅費。"],
       ["建議作法", "如果不想在現場排隊，建議先申請 e-VOA 並把憑證存到手機裡。"]
     ],
@@ -464,7 +464,7 @@ const content = {
       ["Final check", "Save QR codes, passport, and onward ticket together"]
     ],
     visaTutorial: [
-      ["Step 1", "Open the official Indonesia eVisa site and confirm the correct e-VOA / VOA path for a Taiwan passport before starting."],
+      ["Step 1", "As of 2026-04-04, the official Indonesia eVisa / e-VOA eligibility list explicitly includes Taiwan, so a Taiwan passport can proceed through the e-VOA / VOA path before starting the application."],
       ["Step 2", "Prepare your passport, onward flight, hotel details, and a payment card. Passport validity should still be at least 6 months."],
       ["Step 3", "After payment, save the eVisa or e-VOA proof on your phone and keep a screenshot backup."],
       ["Step 4", "Go to the official Love Bali site and pay the Bali tourist levy of Rp150,000, then save that QR code too."],
@@ -644,7 +644,7 @@ const content = {
     },
     visaPoints: [
       ["30-day tourist option", "Indonesia's official eVisa FAQ shows a common 30-day tourist stay, extendable once, with a fee of IDR 500,000."],
-      ["Taiwan passport holders", "Current travel information suggests Taiwan travelers can usually use e-VOA / VOA, but the official system should still be checked before departure."],
+      ["Taiwan passport holders", "As of 2026-04-04, Taiwan appears on the official Indonesia eVisa / e-VOA eligible passport list, so a Taiwan passport is eligible for e-VOA / VOA."],
       ["Core documents", "Passport valid for at least 6 months, onward ticket, and enough funds."],
       ["Best move", "Apply in advance if you want a smoother arrival process."]
     ],
@@ -772,7 +772,7 @@ const content = {
       ["Cek akhir", "Simpan QR code, paspor, dan tiket pulang jadi satu"]
     ],
     visaTutorial: [
-      ["Langkah 1", "Buka situs resmi eVisa Indonesia dan cek dulu jalur e-VOA / VOA yang sesuai untuk paspor Taiwan sebelum mulai."],
+      ["Langkah 1", "Per 2026-04-04, daftar paspor yang memenuhi syarat pada halaman resmi eVisa / e-VOA Indonesia sudah mencantumkan Taiwan, jadi paspor Taiwan bisa memakai jalur e-VOA / VOA sebelum mulai mengajukan."],
       ["Langkah 2", "Siapkan paspor, tiket keluar, data hotel, dan kartu pembayaran. Masa berlaku paspor harus minimal 6 bulan."],
       ["Langkah 3", "Setelah pembayaran selesai, simpan bukti eVisa atau e-VOA di HP dan backup dengan screenshot."],
       ["Langkah 4", "Masuk ke situs resmi Love Bali lalu bayar levy wisata Bali Rp150.000, lalu simpan QR code-nya juga."],
@@ -952,7 +952,7 @@ const content = {
     },
     visaPoints: [
       ["Opsi wisata 30 hari", "FAQ resmi eVisa Indonesia menunjukkan opsi wisata umum 30 hari, bisa diperpanjang sekali, dengan biaya IDR 500.000."],
-      ["Pemegang paspor Taiwan", "Info yang saya cek menunjukkan pemegang paspor Taiwan umumnya bisa memakai e-VOA / VOA, tapi sistem resmi tetap perlu dicek lagi."],
+      ["Pemegang paspor Taiwan", "Per 2026-04-04, Taiwan tercantum pada daftar paspor yang memenuhi syarat di halaman resmi eVisa / e-VOA Indonesia, sehingga paspor Taiwan bisa memakai e-VOA / VOA."],
       ["Dokumen inti", "Paspor minimal 6 bulan, tiket keluar, dan dana yang cukup."],
       ["Saran", "Ajukan lebih awal kalau ingin proses kedatangan lebih mulus."]
     ],
