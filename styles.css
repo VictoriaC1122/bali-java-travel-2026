@@ -438,11 +438,45 @@ h4 {
   gap: 16px;
 }
 
+.itinerary-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 22px;
+}
+
+.mini-highlight {
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border-light);
+  background: linear-gradient(135deg, rgba(255, 250, 245, 0.96), rgba(247, 240, 232, 0.9));
+}
+
+.mini-highlight-label {
+  color: var(--text-light);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.mini-highlight-value {
+  color: var(--primary-dark);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
 .day-card {
   border-radius: 22px;
   border: 1px solid var(--border-light);
   background: linear-gradient(135deg, rgba(255, 252, 248, 0.96), rgba(246, 239, 230, 0.86));
   overflow: hidden;
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(112, 73, 44, 0.08);
 }
 
 .day-header {
@@ -506,8 +540,31 @@ h4 {
   padding: 0 28px 28px;
 }
 
+.day-content-top {
+  padding: 18px 20px;
+  margin-top: 4px;
+  border-radius: 16px;
+  background: rgba(255, 250, 245, 0.92);
+  border: 1px solid rgba(234, 217, 203, 0.78);
+}
+
+.day-focus-label {
+  color: var(--text-light);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
+}
+
+.day-focus-text {
+  color: var(--text-dark);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
 .day-detail-list {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-top: 18px;
 }
@@ -735,11 +792,13 @@ h4 {
   }
 
   .overview-grid,
+  .itinerary-highlights,
   .resource-grid,
   .flight-grid,
   .visa-grid,
   .budget-panels,
-  .notes-grid {
+  .notes-grid,
+  .day-detail-list {
     grid-template-columns: 1fr;
   }
 

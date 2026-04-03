@@ -64,6 +64,12 @@ const content = {
     itineraryLabel: "Day by Day",
     itineraryTitle: "每日行程",
     itineraryLead: "點開每一天就可以直接看重點，做成比較接近旅遊手冊的閱讀方式。",
+    itineraryHighlights: [
+      ["路線節奏", "先放鬆、再火山、最後文化收尾"],
+      ["最硬的一天", "Sewu 瀑布日通常最吃體力"],
+      ["最穩的回程", "YIA 機場鐵路抓 06:00 左右"]
+    ],
+    dayFocusLabel: "今日重點",
     budgetLabel: "Budget Overview",
     budgetTitle: "預算整理",
     budgetLead: "以下印尼盾換算以 NT$1 ≈ Rp531 粗估，方便旅行規劃，不代表即時換匯價格。",
@@ -118,15 +124,15 @@ const content = {
       ["行李", "目前整理為去程 23kg ×2、回程 23kg ×1。"]
     ],
     itinerary: [
-      ["Day 1", "抵達峇里島", "搭乘 CI771 由台北直飛 DPS，抵達後以 check-in、晚餐與休息為主。", ["抵達 + 入住", "輕鬆晚餐", "調時差"], [["節奏", "第一天不建議排太滿，讓身體先適應濕熱氣候與移動疲勞。"], ["建議安排", "入住後可在 Seminyak 周邊簡單散步、吃飯，早點休息。"]]],
-      ["Day 2", "Bali 放鬆日", "安排 beach club、按摩與自由活動，讓旅程先從舒服開始。", ["Seminyak", "按摩", "自由活動"], [["玩法", "這天最適合把行程壓鬆，重點不是跑點，而是把度假感做滿。"], ["小提醒", "海邊日照強，記得防曬，也可以順便補買後面火山段需要的小物。"]]],
-      ["Day 3", "進入火山段", "開始東爪哇移動，重點順序是 Ijen → Sewu → Bromo。", ["跟團移動", "進入火山區", "確認 Malang drop"], [["關鍵確認", "和 tour 再次確認行程順序與最後 drop-off 是否在 Malang。"], ["體力準備", "從這天開始睡眠會比較破碎，建議提前整理好小背包與保暖層。"]]],
-      ["Day 4", "Ijen Crater", "藍火與火山口是這段的代表亮點，通常需要凌晨出發。", ["藍火", "夜間健行", "火山體驗"], [["看點", "藍火與天亮後的火山湖是 Ijen 最有記憶點的兩個畫面。"], ["裝備", "頭燈、抓地鞋、薄外套與口罩都很重要。"]]],
-      ["Day 5", "Tumpak Sewu", "瀑布地形壯觀但偏體力型，鞋子與換洗衣物很重要。", ["瀑布", "防滑鞋", "體力日"], [["地形", "這天通常有濕滑路段、上下坡與水氣，整體最吃體力。"], ["準備", "建議多帶一套可替換衣物與防水袋，手機也最好先做防護。"]]],
-      ["Day 6", "Mount Bromo Sunrise", "經典火山日出收尾，清晨會冷，也可能有火山灰。", ["日出", "外套", "口罩或 Buff"], [["看點", "Bromo 是整段火山行程最經典的收尾，視野與光線都很有戲。"], ["小提醒", "凌晨風大且冷，保暖與遮塵用品都很值得帶。"]]],
-      ["Day 7", "Malang → Yogyakarta", "搭火車前往日惹，這天可以當作比較放鬆的轉場日。", ["火車移動", "休息", "城市切換"], [["節奏", "火山段結束後，這天很適合補眠、整理照片與重新回到比較舒服的旅行狀態。"], ["交通", "火車時間建議預留緩衝，並注意行李上下車的節奏。"]]],
-      ["Day 8", "Borobudur + Prambanan", "佛教與印度教兩座重量級神廟會讓整趟旅程收得非常完整。", ["婆羅浮屠", "普蘭巴南", "文化核心"], [["文化重點", "Borobudur 與 Prambanan 分別代表不同宗教與建築氣質，很值得完整保留一天。"], ["安排建議", "如果有導覽或包車，這天的體驗感會更好也更省力。"]]],
-      ["Day 9", "回程日", "搭早班機場鐵路前往 YIA，預留至少 2 小時緩衝再銜接班機。", ["機場鐵路", "提早出發", "回台灣"], [["時間安排", "06:00 左右的機場鐵路是偏穩的選擇，能把風險壓低。"], ["收尾提醒", "前一晚先把護照、車票、航班資訊與退稅或付款憑證整理好。"]]]
+      ["Day 1", "抵達峇里島", "搭乘 CI771 由台北直飛 DPS，抵達後以 check-in、晚餐與休息為主。", ["抵達 + 入住", "輕鬆晚餐", "調時差"], [["節奏", "第一天不建議排太滿，讓身體先適應濕熱氣候與移動疲勞。"], ["建議安排", "入住後可在 Seminyak 周邊簡單散步、吃飯，早點休息。"], ["今天適合", "把飯店、附近超商與回房後的隔天用品先整理好。"]]],
+      ["Day 2", "Bali 放鬆日", "安排 beach club、按摩與自由活動，讓旅程先從舒服開始。", ["Seminyak", "按摩", "自由活動"], [["玩法", "這天最適合把行程壓鬆，重點不是跑點，而是把度假感做滿。"], ["小提醒", "海邊日照強，記得防曬，也可以順便補買後面火山段需要的小物。"], ["延伸建議", "如果精神不錯，晚餐可以挑一間氣氛比較好的餐廳，把 Bali 段做得更完整。"]]],
+      ["Day 3", "進入火山段", "開始東爪哇移動，重點順序是 Ijen → Sewu → Bromo。", ["跟團移動", "進入火山區", "確認 Malang drop"], [["關鍵確認", "和 tour 再次確認行程順序與最後 drop-off 是否在 Malang。"], ["體力準備", "從這天開始睡眠會比較破碎，建議提前整理好小背包與保暖層。"], ["隨身物品", "把護照影本、行動電源、水與簡單零食放在最容易拿的位置。"]]],
+      ["Day 4", "Ijen Crater", "藍火與火山口是這段的代表亮點，通常需要凌晨出發。", ["藍火", "夜間健行", "火山體驗"], [["看點", "藍火與天亮後的火山湖是 Ijen 最有記憶點的兩個畫面。"], ["裝備", "頭燈、抓地鞋、薄外套與口罩都很重要。"], ["節奏", "夜出早歸會很累，白天若有空檔可以盡量補眠。"]]],
+      ["Day 5", "Tumpak Sewu", "瀑布地形壯觀但偏體力型，鞋子與換洗衣物很重要。", ["瀑布", "防滑鞋", "體力日"], [["地形", "這天通常有濕滑路段、上下坡與水氣，整體最吃體力。"], ["準備", "建議多帶一套可替換衣物與防水袋，手機也最好先做防護。"], ["拍照提醒", "瀑布水氣重，鏡頭布或小毛巾會很有用。"]]],
+      ["Day 6", "Mount Bromo Sunrise", "經典火山日出收尾，清晨會冷，也可能有火山灰。", ["日出", "外套", "口罩或 Buff"], [["看點", "Bromo 是整段火山行程最經典的收尾，視野與光線都很有戲。"], ["小提醒", "凌晨風大且冷，保暖與遮塵用品都很值得帶。"], ["回程感受", "這天結束後通常會有一種大段冒險終於完成的放鬆感。"]]],
+      ["Day 7", "Malang → Yogyakarta", "搭火車前往日惹，這天可以當作比較放鬆的轉場日。", ["火車移動", "休息", "城市切換"], [["節奏", "火山段結束後，這天很適合補眠、整理照片與重新回到比較舒服的旅行狀態。"], ["交通", "火車時間建議預留緩衝，並注意行李上下車的節奏。"], ["晚上安排", "如果不累，可以先在 Malioboro 周邊熟悉一下街區與隔天動線。"]]],
+      ["Day 8", "Borobudur + Prambanan", "佛教與印度教兩座重量級神廟會讓整趟旅程收得非常完整。", ["婆羅浮屠", "普蘭巴南", "文化核心"], [["文化重點", "Borobudur 與 Prambanan 分別代表不同宗教與建築氣質，很值得完整保留一天。"], ["安排建議", "如果有導覽或包車，這天的體驗感會更好也更省力。"], ["穿著建議", "神廟區白天偏熱，建議穿透氣衣物並隨身帶水。"]]],
+      ["Day 9", "回程日", "搭早班機場鐵路前往 YIA，預留至少 2 小時緩衝再銜接班機。", ["機場鐵路", "提早出發", "回台灣"], [["時間安排", "06:00 左右的機場鐵路是偏穩的選擇，能把風險壓低。"], ["收尾提醒", "前一晚先把護照、車票、航班資訊與退稅或付款憑證整理好。"], ["最後檢查", "出門前確認房卡、充電器、轉接頭和伴手禮都已收好。"]]]
     ],
     budgetLabels: {
       flight: ["機票", "華航往返"],
@@ -180,6 +186,12 @@ const content = {
     itineraryLabel: "Day by Day",
     itineraryTitle: "Daily itinerary",
     itineraryLead: "Each day opens like a handbook card so it is easier to scan during the trip.",
+    itineraryHighlights: [
+      ["Route rhythm", "Relax first, volcanoes next, temples to finish"],
+      ["Hardest day", "Sewu waterfall is likely the most physical day"],
+      ["Safest return", "The 06:00-ish YIA airport rail remains the safest plan"]
+    ],
+    dayFocusLabel: "Today's focus",
     budgetLabel: "Budget Overview",
     budgetTitle: "Budget breakdown",
     budgetLead: "IDR conversions below use a rough planning rate of NT$1 ≈ Rp531, meant for planning only.",
@@ -234,15 +246,15 @@ const content = {
       ["Baggage", "Current note: 23kg ×2 outbound, 23kg ×1 inbound."]
     ],
     itinerary: [
-      ["Day 1", "Arrive in Bali", "Fly CI771 from Taipei to DPS, then keep the first day easy with check-in, dinner, and rest.", ["Arrival", "Easy dinner", "Rest"], [["Pacing", "Keep the first day intentionally light so the trip opens in a calm way."], ["Suggested plan", "Check in, walk nearby, have dinner, and sleep early."]]],
-      ["Day 2", "Slow Bali day", "Use this day for beach clubs, massage, and free time in Seminyak.", ["Seminyak", "Massage", "Free time"], [["Style", "This day works best as a mood-setting leisure day rather than a packed sightseeing run."], ["Reminder", "Strong sun, beach time, and last-minute shopping make this a good prep day too."]]],
-      ["Day 3", "Enter the volcano segment", "The East Java route begins here, with the key order Ijen → Sewu → Bromo.", ["Tour transfer", "Volcano region", "Malang drop"], [["Key check", "Reconfirm the tour order and whether the final drop-off is in Malang."], ["Prep", "Sleep may get fragmented from here, so keep warm layers and essentials ready."]]],
-      ["Day 4", "Ijen Crater", "Blue fire and crater views make this one of the signature highlights.", ["Blue fire", "Night hike", "Volcano"], [["Highlight", "The blue fire and daylight crater lake are the defining visuals here."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all help."]]],
-      ["Day 5", "Tumpak Sewu", "A dramatic waterfall day with physical terrain and slippery paths.", ["Waterfall", "Grip shoes", "High-energy day"], [["Terrain", "Expect wet steps, descents, and one of the most physical days of the trip."], ["Pack note", "A change of clothes and waterproof protection for phones are worth bringing."]]],
-      ["Day 6", "Mount Bromo Sunrise", "The classic sunrise finale with cold air and possible volcanic dust.", ["Sunrise", "Jacket", "Mask or buff"], [["Highlight", "Bromo is the iconic finale of the volcano sequence."], ["Reminder", "It can be windy, cold, and dusty before sunrise."]]],
-      ["Day 7", "Malang → Yogyakarta", "Take the train to Yogyakarta and use this as a softer transition day.", ["Train", "Rest", "City switch"], [["Pacing", "This is a good recovery day after the high-intensity volcano stretch."], ["Transport", "Leave enough buffer for the train and keep luggage handling easy."]]],
-      ["Day 8", "Borobudur + Prambanan", "A full culture day built around two major temple landmarks.", ["Borobudur", "Prambanan", "Culture"], [["Culture note", "The two temple sites give the trip a much deeper finish beyond nature and adventure."], ["Suggested setup", "A driver or guided tour can make the day smoother and more rewarding."]]],
-      ["Day 9", "Departure day", "Take the early airport rail to YIA and keep at least a 2-hour buffer.", ["Airport rail", "Early start", "Fly home"], [["Timing", "The 06:00-ish airport rail remains the safer low-stress option."], ["Final reminder", "Prepare passport, tickets, and payment proofs the night before."]]]
+      ["Day 1", "Arrive in Bali", "Fly CI771 from Taipei to DPS, then keep the first day easy with check-in, dinner, and rest.", ["Arrival", "Easy dinner", "Rest"], [["Pacing", "Keep the first day intentionally light so the trip opens in a calm way."], ["Suggested plan", "Check in, walk nearby, have dinner, and sleep early."], ["Useful task", "Settle hotel basics, nearby stores, and next-day essentials on the first night."]]],
+      ["Day 2", "Slow Bali day", "Use this day for beach clubs, massage, and free time in Seminyak.", ["Seminyak", "Massage", "Free time"], [["Style", "This day works best as a mood-setting leisure day rather than a packed sightseeing run."], ["Reminder", "Strong sun, beach time, and last-minute shopping make this a good prep day too."], ["Optional upgrade", "A nicer dinner spot can make the Bali segment feel more complete."]]],
+      ["Day 3", "Enter the volcano segment", "The East Java route begins here, with the key order Ijen → Sewu → Bromo.", ["Tour transfer", "Volcano region", "Malang drop"], [["Key check", "Reconfirm the tour order and whether the final drop-off is in Malang."], ["Prep", "Sleep may get fragmented from here, so keep warm layers and essentials ready."], ["Bag setup", "Keep water, snacks, power bank, and key documents easy to reach."]]],
+      ["Day 4", "Ijen Crater", "Blue fire and crater views make this one of the signature highlights.", ["Blue fire", "Night hike", "Volcano"], [["Highlight", "The blue fire and daylight crater lake are the defining visuals here."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all help."], ["Energy note", "The overnight rhythm can be tiring, so any spare daytime rest is worth taking."]]],
+      ["Day 5", "Tumpak Sewu", "A dramatic waterfall day with physical terrain and slippery paths.", ["Waterfall", "Grip shoes", "High-energy day"], [["Terrain", "Expect wet steps, descents, and one of the most physical days of the trip."], ["Pack note", "A change of clothes and waterproof protection for phones are worth bringing."], ["Photo note", "Mist and spray are strong here, so a cloth for lenses helps a lot."]]],
+      ["Day 6", "Mount Bromo Sunrise", "The classic sunrise finale with cold air and possible volcanic dust.", ["Sunrise", "Jacket", "Mask or buff"], [["Highlight", "Bromo is the iconic finale of the volcano sequence."], ["Reminder", "It can be windy, cold, and dusty before sunrise."], ["Mood", "This is usually the point where the adventure section feels fully accomplished."]]],
+      ["Day 7", "Malang → Yogyakarta", "Take the train to Yogyakarta and use this as a softer transition day.", ["Train", "Rest", "City switch"], [["Pacing", "This is a good recovery day after the high-intensity volcano stretch."], ["Transport", "Leave enough buffer for the train and keep luggage handling easy."], ["Evening idea", "If energy allows, walk around Malioboro to get familiar with the area."]]],
+      ["Day 8", "Borobudur + Prambanan", "A full culture day built around two major temple landmarks.", ["Borobudur", "Prambanan", "Culture"], [["Culture note", "The two temple sites give the trip a much deeper finish beyond nature and adventure."], ["Suggested setup", "A driver or guided tour can make the day smoother and more rewarding."], ["Clothing note", "Breathable clothes, water, and sun protection help on this long temple day."]]],
+      ["Day 9", "Departure day", "Take the early airport rail to YIA and keep at least a 2-hour buffer.", ["Airport rail", "Early start", "Fly home"], [["Timing", "The 06:00-ish airport rail remains the safer low-stress option."], ["Final reminder", "Prepare passport, tickets, and payment proofs the night before."], ["Last check", "Before leaving, make sure chargers, adapters, and souvenirs are packed."]]]
     ],
     budgetLabels: {
       flight: ["Flights", "China Airlines round trip"],
@@ -296,6 +308,12 @@ const content = {
     itineraryLabel: "Day by Day",
     itineraryTitle: "Rencana harian",
     itineraryLead: "Setiap hari bisa dibuka seperti kartu panduan perjalanan agar lebih nyaman dibaca saat sedang jalan.",
+    itineraryHighlights: [
+      ["Ritme rute", "Santai dulu, lalu gunung api, lalu penutup budaya"],
+      ["Hari terberat", "Hari Sewu biasanya paling menguras tenaga"],
+      ["Pulang paling aman", "Kereta YIA sekitar 06.00 tetap opsi paling aman"]
+    ],
+    dayFocusLabel: "Fokus hari ini",
     budgetLabel: "Budget Overview",
     budgetTitle: "Ringkasan budget",
     budgetLead: "Konversi IDR di bawah memakai kurs perkiraan NT$1 ≈ Rp531, untuk planning saja.",
@@ -350,15 +368,15 @@ const content = {
       ["Bagasi", "Catatan sekarang: 23kg ×2 saat pergi, 23kg ×1 saat pulang."]
     ],
     itinerary: [
-      ["Hari 1", "Tiba di Bali", "Naik CI771 dari Taipei ke DPS, lalu jalani hari pertama dengan check-in, makan malam, dan istirahat.", ["Tiba", "Makan malam", "Istirahat"], [["Ritme", "Hari pertama paling enak dibuat ringan supaya tubuh menyesuaikan dulu."], ["Saran", "Check-in, jalan sebentar di sekitar hotel, makan malam, lalu istirahat lebih awal."]]],
-      ["Hari 2", "Hari santai di Bali", "Gunakan hari ini untuk beach club, pijat, dan waktu bebas di Seminyak.", ["Seminyak", "Pijat", "Waktu bebas"], [["Gaya hari", "Hari ini paling bagus dipakai untuk suasana santai, bukan lari ke terlalu banyak spot."], ["Pengingat", "Cocok juga untuk beli kebutuhan kecil sebelum masuk segmen gunung api."]]],
-      ["Hari 3", "Masuk segmen gunung api", "Rute Jawa Timur dimulai di sini dengan urutan Ijen → Sewu → Bromo.", ["Transfer tour", "Area gunung api", "Drop Malang"], [["Cek penting", "Pastikan lagi urutan tour dan drop-off terakhir di Malang."], ["Persiapan", "Dari sini ritme tidur bisa berantakan, jadi perlengkapan penting sebaiknya sudah rapi."]]],
-      ["Hari 4", "Kawah Ijen", "Blue fire dan pemandangan kawah jadi salah satu sorotan utama.", ["Blue fire", "Hiking malam", "Gunung api"], [["Sorotan", "Blue fire dan danau kawah saat terang adalah dua visual paling kuat di sini."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat membantu."]]],
-      ["Hari 5", "Tumpak Sewu", "Hari air terjun yang dramatis dengan jalur fisik dan cukup licin.", ["Air terjun", "Sepatu grip", "Hari aktif"], [["Medan", "Hari ini biasanya paling berat secara fisik dengan jalur turun, basah, dan licin."], ["Catatan", "Baju ganti dan pelindung untuk HP sangat layak dibawa."]]],
-      ["Hari 6", "Sunrise Bromo", "Penutup klasik dengan udara dingin dan kemungkinan debu vulkanik.", ["Sunrise", "Jaket", "Masker atau buff"], [["Sorotan", "Bromo adalah penutup paling ikonik untuk segmen gunung api."], ["Pengingat", "Sebelum matahari terbit bisa berangin, dingin, dan berdebu."]]],
-      ["Hari 7", "Malang → Yogyakarta", "Naik kereta ke Yogyakarta dan jadikan ini hari transisi yang lebih lembut.", ["Kereta", "Istirahat", "Ganti kota"], [["Ritme", "Hari ini pas untuk recovery setelah rangkaian petualangan yang berat."], ["Transportasi", "Sisakan buffer waktu dan buat urusan bagasi tetap ringan."]]],
-      ["Hari 8", "Borobudur + Prambanan", "Hari budaya penuh dengan dua landmark candi besar.", ["Borobudur", "Prambanan", "Budaya"], [["Catatan budaya", "Dua candi ini memberi penutup yang jauh lebih dalam daripada sekadar petualangan alam."], ["Saran", "Driver atau tur lokal bisa membuat hari ini jauh lebih nyaman."]]],
-      ["Hari 9", "Hari pulang", "Naik kereta bandara pagi ke YIA dan sisakan buffer minimal 2 jam.", ["Kereta bandara", "Berangkat pagi", "Pulang"], [["Waktu", "Kereta sekitar jam 06.00 tetap pilihan yang paling aman."], ["Pengingat akhir", "Siapkan paspor, tiket, dan bukti pembayaran sejak malam sebelumnya."]]]
+      ["Hari 1", "Tiba di Bali", "Naik CI771 dari Taipei ke DPS, lalu jalani hari pertama dengan check-in, makan malam, dan istirahat.", ["Tiba", "Makan malam", "Istirahat"], [["Ritme", "Hari pertama paling enak dibuat ringan supaya tubuh menyesuaikan dulu."], ["Saran", "Check-in, jalan sebentar di sekitar hotel, makan malam, lalu istirahat lebih awal."], ["Yang berguna", "Rapikan kebutuhan hotel, minimarket sekitar, dan barang penting untuk besok."]]],
+      ["Hari 2", "Hari santai di Bali", "Gunakan hari ini untuk beach club, pijat, dan waktu bebas di Seminyak.", ["Seminyak", "Pijat", "Waktu bebas"], [["Gaya hari", "Hari ini paling bagus dipakai untuk suasana santai, bukan lari ke terlalu banyak spot."], ["Pengingat", "Cocok juga untuk beli kebutuhan kecil sebelum masuk segmen gunung api."], ["Tambahan seru", "Kalau tenaga masih bagus, makan malam yang lebih spesial bisa bikin segmen Bali terasa lebih lengkap."]]],
+      ["Hari 3", "Masuk segmen gunung api", "Rute Jawa Timur dimulai di sini dengan urutan Ijen → Sewu → Bromo.", ["Transfer tour", "Area gunung api", "Drop Malang"], [["Cek penting", "Pastikan lagi urutan tour dan drop-off terakhir di Malang."], ["Persiapan", "Dari sini ritme tidur bisa berantakan, jadi perlengkapan penting sebaiknya sudah rapi."], ["Tas kecil", "Air minum, snack, power bank, dan dokumen sebaiknya mudah diambil."]]],
+      ["Hari 4", "Kawah Ijen", "Blue fire dan pemandangan kawah jadi salah satu sorotan utama.", ["Blue fire", "Hiking malam", "Gunung api"], [["Sorotan", "Blue fire dan danau kawah saat terang adalah dua visual paling kuat di sini."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat membantu."], ["Energi", "Karena ritmenya malam sampai pagi, waktu istirahat siang sangat berharga."]]],
+      ["Hari 5", "Tumpak Sewu", "Hari air terjun yang dramatis dengan jalur fisik dan cukup licin.", ["Air terjun", "Sepatu grip", "Hari aktif"], [["Medan", "Hari ini biasanya paling berat secara fisik dengan jalur turun, basah, dan licin."], ["Catatan", "Baju ganti dan pelindung untuk HP sangat layak dibawa."], ["Foto", "Kabut air cukup tebal, jadi lap lensa atau handuk kecil akan sangat membantu."]]],
+      ["Hari 6", "Sunrise Bromo", "Penutup klasik dengan udara dingin dan kemungkinan debu vulkanik.", ["Sunrise", "Jaket", "Masker atau buff"], [["Sorotan", "Bromo adalah penutup paling ikonik untuk segmen gunung api."], ["Pengingat", "Sebelum matahari terbit bisa berangin, dingin, dan berdebu."], ["Suasana", "Biasanya di titik ini rasa puas perjalanan petualangan mulai terasa penuh."]]],
+      ["Hari 7", "Malang → Yogyakarta", "Naik kereta ke Yogyakarta dan jadikan ini hari transisi yang lebih lembut.", ["Kereta", "Istirahat", "Ganti kota"], [["Ritme", "Hari ini pas untuk recovery setelah rangkaian petualangan yang berat."], ["Transportasi", "Sisakan buffer waktu dan buat urusan bagasi tetap ringan."], ["Ide malam", "Kalau masih ada tenaga, jalan santai di Malioboro bisa membantu kenal area lebih dulu."]]],
+      ["Hari 8", "Borobudur + Prambanan", "Hari budaya penuh dengan dua landmark candi besar.", ["Borobudur", "Prambanan", "Budaya"], [["Catatan budaya", "Dua candi ini memberi penutup yang jauh lebih dalam daripada sekadar petualangan alam."], ["Saran", "Driver atau tur lokal bisa membuat hari ini jauh lebih nyaman."], ["Pakaian", "Karena panas dan panjang, pakaian ringan, air minum, dan sun protection penting."]]],
+      ["Hari 9", "Hari pulang", "Naik kereta bandara pagi ke YIA dan sisakan buffer minimal 2 jam.", ["Kereta bandara", "Berangkat pagi", "Pulang"], [["Waktu", "Kereta sekitar jam 06.00 tetap pilihan yang paling aman."], ["Pengingat akhir", "Siapkan paspor, tiket, dan bukti pembayaran sejak malam sebelumnya."], ["Cek terakhir", "Sebelum keluar hotel, cek charger, adaptor, dan oleh-oleh sekali lagi."]]]
     ],
     budgetLabels: {
       flight: ["Tiket pesawat", "China Airlines pulang pergi"],
@@ -515,6 +533,17 @@ function renderLanguage() {
     )
     .join("");
 
+  document.getElementById("itinerary-highlights").innerHTML = copy.itineraryHighlights
+    .map(
+      ([label, value]) => `
+        <article class="mini-highlight">
+          <div class="mini-highlight-label">${label}</div>
+          <div class="mini-highlight-value">${value}</div>
+        </article>
+      `
+    )
+    .join("");
+
   document.getElementById("itinerary-list").innerHTML = copy.itinerary
     .map(
       ([day, title, desc, tags, details]) => `
@@ -529,7 +558,10 @@ function renderLanguage() {
           </button>
           <div class="day-content">
             <div class="day-content-inner">
-              <div class="day-summary">${desc}</div>
+              <div class="day-content-top">
+                <div class="day-focus-label">${copy.dayFocusLabel}</div>
+                <div class="day-focus-text">${desc}</div>
+              </div>
               <div class="day-detail-list">
                 ${details
                   .map(
