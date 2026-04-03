@@ -599,6 +599,10 @@ h4 {
   margin-top: 28px;
 }
 
+.stay-links {
+  margin-top: 22px;
+}
+
 .official-links a {
   display: inline-flex;
   align-items: center;
