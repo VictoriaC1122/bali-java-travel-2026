@@ -479,11 +479,6 @@ h4 {
   white-space: nowrap;
 }
 
-.day-list {
-  display: grid;
-  gap: 16px;
-}
-
 .itinerary-highlights {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -513,30 +508,22 @@ h4 {
   font-weight: 700;
 }
 
+.itinerary-timeline {
+  display: grid;
+  gap: 22px;
+}
+
 .day-card {
   border-radius: 22px;
   border: 1px solid var(--border-light);
   background: linear-gradient(135deg, rgba(255, 252, 248, 0.96), rgba(246, 239, 230, 0.86));
-  overflow: hidden;
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
-}
-
-.day-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(112, 73, 44, 0.08);
+  padding: 24px 26px;
 }
 
 .day-header {
-  width: 100%;
-  border: none;
-  background: transparent;
-  padding: 26px 28px;
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  align-items: center;
-  cursor: pointer;
-  text-align: left;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .day-index {
@@ -563,31 +550,6 @@ h4 {
   font-size: 15px;
 }
 
-.toggle-icon {
-  font-size: 26px;
-  color: var(--primary-mid);
-  transition: transform 0.3s ease;
-}
-
-.day-card.expanded .toggle-icon {
-  transform: rotate(180deg);
-}
-
-.day-content {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.35s ease;
-}
-
-.day-card.expanded .day-content {
-  opacity: 1;
-}
-
-.day-content-inner {
-  padding: 0 28px 28px;
-}
-
 .day-content-top {
   padding: 18px 20px;
   margin-top: 4px;
@@ -611,17 +573,40 @@ h4 {
 }
 
 .day-detail-list {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
   margin-top: 18px;
+  padding-left: 18px;
+}
+
+.day-detail-list::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(196, 111, 66, 0.55), rgba(223, 154, 99, 0.15));
 }
 
 .day-detail-item {
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: rgba(255, 252, 248, 0.9);
-  border: 1px solid rgba(234, 217, 203, 0.8);
+  position: relative;
+  padding: 0 0 0 20px;
+  background: transparent;
+  border: 0;
+}
+
+.day-detail-item::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--primary-mid);
+  box-shadow: 0 0 0 4px rgba(196, 111, 66, 0.12);
 }
 
 .day-detail-title {
@@ -655,46 +640,112 @@ h4 {
   font-weight: 600;
 }
 
-.budget-total-card {
-  margin-top: 28px;
-  padding: 40px;
-  text-align: center;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(196, 111, 66, 0.14) 0%, rgba(223, 154, 99, 0.1) 100%);
-  border: 2px solid rgba(196, 111, 66, 0.18);
+.budget-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 18px;
 }
 
-.budget-total-label,
-.per-person-label {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+.budget-summary-card {
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border-light);
+  background: linear-gradient(135deg, rgba(255, 250, 245, 0.96), rgba(247, 240, 232, 0.9));
+}
+
+.budget-summary-label {
   color: var(--text-light);
-  margin-bottom: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.budget-summary-value {
+  color: var(--primary-dark);
+  font-size: 22px;
+  line-height: 1.45;
   font-weight: 700;
 }
 
-.budget-total-amount,
-.per-person-amount {
-  font-size: 42px;
-  color: var(--primary-dark);
-  line-height: 1.35;
+.budget-table-wrap {
+  margin-top: 10px;
+  overflow-x: auto;
+  border: 1px solid rgba(234, 217, 203, 0.85);
+  border-radius: 20px;
+  background: rgba(255, 252, 248, 0.88);
 }
 
-.budget-total-note,
-.per-person-note {
-  margin-top: 10px;
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.budget-table th,
+.budget-table td {
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(234, 217, 203, 0.75);
+  vertical-align: top;
+}
+
+.budget-table th {
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  background: rgba(255, 247, 241, 0.95);
+}
+
+.budget-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.budget-status {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.budget-status.paid {
+  color: var(--forest);
+  background: rgba(93, 123, 103, 0.12);
+}
+
+.budget-status.open {
+  color: var(--primary-dark);
+  background: rgba(196, 111, 66, 0.12);
+}
+
+.budget-item-title {
+  color: var(--primary-dark);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.budget-item-desc {
+  color: var(--text-mid);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.budget-amount {
+  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.budget-footnote {
+  margin-top: 14px;
   color: var(--text-light);
   font-size: 13px;
-}
-
-.per-person-card {
-  margin-top: 24px;
-  padding: 34px;
-  border-radius: 20px;
-  border: 2px solid rgba(93, 123, 103, 0.18);
-  background: linear-gradient(135deg, rgba(93, 123, 103, 0.09) 0%, rgba(93, 123, 103, 0.04) 100%);
-  text-align: center;
 }
 
 .resource-list {
@@ -865,6 +916,7 @@ h4 {
 
   .overview-grid,
   .itinerary-highlights,
+  .budget-summary-strip,
   .flight-grid,
   .visa-grid,
   .budget-panels,
@@ -885,7 +937,6 @@ h4 {
   }
 
   .stay-item,
-  .budget-list-item,
   .note-item,
   .bullet-item,
   .day-header {
@@ -893,13 +944,8 @@ h4 {
     align-items: flex-start;
   }
 
-  .day-header {
-    padding: 22px 18px;
-    gap: 12px;
-  }
-
-  .day-content-inner {
-    padding: 0 18px 20px;
+  .day-card {
+    padding: 20px 18px;
   }
 
   .day-content-top {
@@ -916,25 +962,18 @@ h4 {
   }
 
   .flight-card,
-  .visa-panel,
-  .budget-panel {
+  .visa-panel {
     padding: 22px 18px;
   }
 
   .stay-meta,
-  .budget-list-amount-main {
+  .budget-amount {
     text-align: left;
     white-space: normal;
   }
 
-  .budget-total-amount,
-  .per-person-amount {
-    font-size: 30px;
-  }
-
-  .budget-total-card,
-  .per-person-card {
-    padding: 26px 18px;
+  .budget-summary-value {
+    font-size: 18px;
   }
 }
 
@@ -975,9 +1014,10 @@ h4 {
   .route-line-value,
   .resource-card-title,
   .stay-title,
-  .budget-list-title,
   .bullet-title,
-  .day-title {
+  .day-title,
+  .budget-item-title,
+  .budget-summary-value {
     font-size: 18px;
   }
 

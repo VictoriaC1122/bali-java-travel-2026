@@ -136,7 +136,7 @@
           </p>
 
           <div class="itinerary-highlights" id="itinerary-highlights"></div>
-          <div class="day-list" id="itinerary-list"></div>
+          <div class="itinerary-timeline" id="itinerary-list"></div>
         </section>
       </section>
 
@@ -148,29 +148,21 @@
             以下印尼盾換算以 NT$1 ≈ Rp531 粗估，方便旅行規劃，不代表即時換匯價格。
           </p>
 
-          <div class="budget-panels">
-            <article class="budget-panel">
-              <div class="budget-panel-title" data-i18n="paidTitle">已支付</div>
-              <div id="paid-list"></div>
-            </article>
-
-            <article class="budget-panel">
-              <div class="budget-panel-title" data-i18n="openTitle">尚未支付</div>
-              <div id="open-list"></div>
-            </article>
+          <div class="budget-summary-strip" id="budget-summary-strip"></div>
+          <div class="budget-table-wrap">
+            <table class="budget-table">
+              <thead>
+                <tr>
+                  <th data-i18n="budgetTableStatus">狀態</th>
+                  <th data-i18n="budgetTableItem">項目</th>
+                  <th data-i18n="budgetTableDetail">說明</th>
+                  <th data-i18n="budgetTableAmount">金額</th>
+                </tr>
+              </thead>
+              <tbody id="budget-table-body"></tbody>
+            </table>
           </div>
-
-          <div class="budget-total-card">
-            <div class="budget-total-label" data-i18n="totalBudgetLabel">總預算</div>
-            <div class="budget-total-amount" id="budget-total"></div>
-            <div class="budget-total-note" data-i18n="budgetRateNote">匯率參考：NT$1 ≈ Rp531</div>
-          </div>
-
-          <div class="per-person-card">
-            <div class="per-person-label" data-i18n="dailyAverageLabel">日均預算</div>
-            <div class="per-person-amount" id="daily-average"></div>
-            <div class="per-person-note" data-i18n="budgetStyleNote">高品質自由行，非奢華，但體驗非常完整</div>
-          </div>
+          <div class="budget-footnote" data-i18n="budgetRateNote">匯率參考：NT$1 ≈ Rp531</div>
         </section>
       </section>
 

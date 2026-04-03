@@ -82,7 +82,7 @@ const content = {
     packingTitle: "穿著與安全",
     itineraryLabel: "Day by Day",
     itineraryTitle: "每日行程",
-    itineraryLead: "點開每一天就可以直接看重點，做成比較接近旅遊手冊的閱讀方式。",
+    itineraryLead: "用時間線整理每一天的重點，讀起來會更像真正可以帶著走的旅遊手冊。",
     itineraryHighlights: [
       ["路線節奏", "先放鬆、再火山、最後文化收尾"],
       ["最硬的一天", "Sewu 瀑布日通常最吃體力"],
@@ -98,6 +98,12 @@ const content = {
     budgetRateNote: "匯率參考：NT$1 ≈ Rp531",
     dailyAverageLabel: "日均預算",
     budgetStyleNote: "高品質自由行，非奢華，但體驗非常完整",
+    budgetTableStatus: "狀態",
+    budgetTableItem: "項目",
+    budgetTableDetail: "說明",
+    budgetTableAmount: "金額",
+    budgetStatusPaid: "已支付",
+    budgetStatusOpen: "未支付",
     visaLabel: "Visa & Entry",
     visaTitle: "簽證與入境提醒",
     visaPanelTitle: "印尼旅遊簽證",
@@ -223,7 +229,7 @@ const content = {
     packingTitle: "Packing and safety",
     itineraryLabel: "Day by Day",
     itineraryTitle: "Daily itinerary",
-    itineraryLead: "Each day opens like a handbook card so it is easier to scan during the trip.",
+    itineraryLead: "Each day is arranged as a simple vertical timeline so it reads more like a practical handbook.",
     itineraryHighlights: [
       ["Route rhythm", "Relax first, volcanoes next, temples to finish"],
       ["Hardest day", "Sewu waterfall is likely the most physical day"],
@@ -239,6 +245,12 @@ const content = {
     budgetRateNote: "Planning rate: NT$1 ≈ Rp531",
     dailyAverageLabel: "Daily average",
     budgetStyleNote: "High-quality DIY trip, not luxury, but very complete",
+    budgetTableStatus: "Status",
+    budgetTableItem: "Item",
+    budgetTableDetail: "Detail",
+    budgetTableAmount: "Amount",
+    budgetStatusPaid: "Paid",
+    budgetStatusOpen: "Open",
     visaLabel: "Visa & Entry",
     visaTitle: "Visa and entry notes",
     visaPanelTitle: "Indonesia tourist visa",
@@ -364,7 +376,7 @@ const content = {
     packingTitle: "Pakaian dan keamanan",
     itineraryLabel: "Day by Day",
     itineraryTitle: "Rencana harian",
-    itineraryLead: "Setiap hari bisa dibuka seperti kartu panduan perjalanan agar lebih nyaman dibaca saat sedang jalan.",
+    itineraryLead: "Setiap hari kini disusun sebagai timeline vertikal agar terasa lebih rapi dan praktis dibaca.",
     itineraryHighlights: [
       ["Ritme rute", "Santai dulu, lalu gunung api, lalu penutup budaya"],
       ["Hari terberat", "Hari Sewu biasanya paling menguras tenaga"],
@@ -380,6 +392,12 @@ const content = {
     budgetRateNote: "Kurs perkiraan: NT$1 ≈ Rp531",
     dailyAverageLabel: "Rata-rata harian",
     budgetStyleNote: "Trip mandiri berkualitas, bukan mewah, tapi sangat lengkap",
+    budgetTableStatus: "Status",
+    budgetTableItem: "Item",
+    budgetTableDetail: "Detail",
+    budgetTableAmount: "Nominal",
+    budgetStatusPaid: "Sudah",
+    budgetStatusOpen: "Belum",
     visaLabel: "Visa & Entry",
     visaTitle: "Catatan visa dan masuk",
     visaPanelTitle: "Visa wisata Indonesia",
@@ -639,70 +657,33 @@ function renderLanguage() {
     .map(
       ([day, title, desc, tags, details]) => `
         <article class="day-card">
-          <button class="day-header" type="button">
-            <div>
-              <div class="day-index">${day}</div>
-              <div class="day-title">${title}</div>
-              <div class="day-summary">${desc}</div>
-            </div>
-            <div class="toggle-icon">⌄</div>
-          </button>
-          <div class="day-content">
-            <div class="day-content-inner">
-              <div class="day-content-top">
-                <div class="day-focus-label">${copy.dayFocusLabel}</div>
-                <div class="day-focus-text">${desc}</div>
-              </div>
-              <div class="day-detail-list">
-                ${details
-                  .map(
-                    ([detailTitle, detailDesc]) => `
-                      <div class="day-detail-item">
-                        <div class="day-detail-title">${detailTitle}</div>
-                        <div class="day-detail-desc">${detailDesc}</div>
-                      </div>
-                    `
-                  )
-                  .join("")}
-              </div>
-              <div class="highlight-tags">
-                ${tags.map((tag) => `<span>${tag}</span>`).join("")}
-              </div>
-            </div>
+          <div class="day-header">
+            <div class="day-index">${day}</div>
+            <div class="day-title">${title}</div>
+            <div class="day-summary">${desc}</div>
+          </div>
+          <div class="day-content-top">
+            <div class="day-focus-label">${copy.dayFocusLabel}</div>
+            <div class="day-focus-text">${desc}</div>
+          </div>
+          <div class="day-detail-list">
+            ${details
+              .map(
+                ([detailTitle, detailDesc]) => `
+                  <div class="day-detail-item">
+                    <div class="day-detail-title">${detailTitle}</div>
+                    <div class="day-detail-desc">${detailDesc}</div>
+                  </div>
+                `
+              )
+              .join("")}
+          </div>
+          <div class="highlight-tags">
+            ${tags.map((tag) => `<span>${tag}</span>`).join("")}
           </div>
         </article>
       `
     )
-    .join("");
-
-  document.getElementById("paid-list").innerHTML = BUDGET.paid
-    .map((item) => {
-      const [title, desc] = copy.budgetLabels[item.key];
-      return `
-        <div class="budget-list-item">
-          <div>
-            <div class="budget-list-title">${title}</div>
-            <div class="budget-list-desc">${desc}</div>
-          </div>
-          <div class="budget-list-amount-main">${formatBudget(item)}</div>
-        </div>
-      `;
-    })
-    .join("");
-
-  document.getElementById("open-list").innerHTML = BUDGET.open
-    .map((item) => {
-      const [title, desc] = copy.budgetLabels[item.key];
-      return `
-        <div class="budget-list-item">
-          <div>
-            <div class="budget-list-title">${title}</div>
-            <div class="budget-list-desc">${desc}</div>
-          </div>
-          <div class="budget-list-amount-main">${formatBudget(item)}</div>
-        </div>
-      `;
-    })
     .join("");
 
   const paid = sumRange(BUDGET.paid);
@@ -711,11 +692,38 @@ function renderLanguage() {
   const totalMax = paid.max + open.max;
   const avgMin = Math.round(totalMin / TRIP_DAYS);
   const avgMax = Math.round(totalMax / TRIP_DAYS);
-
-  document.getElementById("budget-total").textContent =
-    `${twd(totalMin)} - ${formatNumber(totalMax)} / ${idr(totalMin * EXCHANGE_RATE)} - ${formatNumber(totalMax * EXCHANGE_RATE)}`;
-  document.getElementById("daily-average").textContent =
-    `${twd(avgMin)} - ${formatNumber(avgMax)} / ${idr(avgMin * EXCHANGE_RATE)} - ${formatNumber(avgMax * EXCHANGE_RATE)}`;
+  document.getElementById("budget-summary-strip").innerHTML = `
+    <article class="budget-summary-card">
+      <div class="budget-summary-label">${copy.paidTitle}</div>
+      <div class="budget-summary-value">${twd(paid.min)} / ${idr(paid.min * EXCHANGE_RATE)}</div>
+    </article>
+    <article class="budget-summary-card">
+      <div class="budget-summary-label">${copy.totalBudgetLabel}</div>
+      <div class="budget-summary-value">${twd(totalMin)} - ${formatNumber(totalMax)}</div>
+    </article>
+    <article class="budget-summary-card">
+      <div class="budget-summary-label">${copy.dailyAverageLabel}</div>
+      <div class="budget-summary-value">${twd(avgMin)} - ${formatNumber(avgMax)}</div>
+    </article>
+  `;
+  const budgetRows = [
+    ...BUDGET.paid.map((item) => ({ ...item, status: "paid" })),
+    ...BUDGET.open.map((item) => ({ ...item, status: "open" }))
+  ];
+  document.getElementById("budget-table-body").innerHTML = budgetRows
+    .map((item) => {
+      const [title, desc] = copy.budgetLabels[item.key];
+      const statusText = item.status === "paid" ? copy.budgetStatusPaid : copy.budgetStatusOpen;
+      return `
+        <tr>
+          <td><span class="budget-status ${item.status}">${statusText}</span></td>
+          <td><div class="budget-item-title">${title}</div></td>
+          <td><div class="budget-item-desc">${desc}</div></td>
+          <td><div class="budget-amount">${formatBudget(item)}</div></td>
+        </tr>
+      `;
+    })
+    .join("");
 
   document.getElementById("visa-points").innerHTML = copy.visaPoints
     .map(
@@ -743,27 +751,6 @@ function renderLanguage() {
     )
     .join("");
 
-  bindDayCards();
-}
-
-function bindDayCards() {
-  document.querySelectorAll(".day-header").forEach((button) => {
-    button.onclick = () => {
-      const card = button.closest(".day-card");
-      const content = card.querySelector(".day-content");
-      const isExpanded = card.classList.contains("expanded");
-
-      document.querySelectorAll(".day-card").forEach((item) => {
-        item.classList.remove("expanded");
-        item.querySelector(".day-content").style.maxHeight = "0px";
-      });
-
-      if (!isExpanded) {
-        card.classList.add("expanded");
-        content.style.maxHeight = `${content.scrollHeight}px`;
-      }
-    };
-  });
 }
 
 function bindLanguageButtons() {
