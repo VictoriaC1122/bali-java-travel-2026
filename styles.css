@@ -785,23 +785,32 @@ h4 {
 
 @media (max-width: 768px) {
   .language-selector {
-    top: 16px;
-    right: 14px;
+    position: sticky;
+    top: 10px;
+    right: auto;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 0;
+    padding-inline: 10px;
   }
 
   .lang-buttons {
     gap: 4px;
     padding: 6px;
+    width: 100%;
+    justify-content: center;
+    border-radius: 14px;
   }
 
   .lang-btn {
-    padding: 8px 12px;
+    min-height: 40px;
+    padding: 8px 14px;
     font-size: 12px;
   }
 
   .hero {
     min-height: 460px;
-    padding: 90px 20px 90px;
+    padding: 72px 20px 78px;
   }
 
   .hero h1 {
@@ -813,23 +822,36 @@ h4 {
   }
 
   .main-nav {
-    top: 14px;
-    gap: 8px;
-    margin-top: -24px;
-    padding: 10px;
+    top: 8px;
+    gap: 6px;
+    width: calc(100% - 16px);
+    max-width: none;
+    margin-top: -18px;
+    padding: 8px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-item {
-    padding: 10px 14px;
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 10px 16px;
     font-size: 13px;
+    white-space: nowrap;
   }
 
   .container {
     width: min(calc(100% - 18px), 1180px);
+    margin-bottom: 40px;
   }
 
   .section-card {
-    padding: 26px 18px;
+    padding: 24px 16px;
     border-radius: 22px;
   }
 
@@ -856,6 +878,12 @@ h4 {
     align-items: flex-start;
   }
 
+  .resource-card a,
+  .official-links a {
+    min-height: 42px;
+    width: 100%;
+  }
+
   .stay-item,
   .budget-list-item,
   .note-item,
@@ -863,6 +891,34 @@ h4 {
   .day-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .day-header {
+    padding: 22px 18px;
+    gap: 12px;
+  }
+
+  .day-content-inner {
+    padding: 0 18px 20px;
+  }
+
+  .day-content-top {
+    padding: 16px;
+  }
+
+  .day-detail-item {
+    padding: 12px 14px;
+  }
+
+  .highlight-tags span {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .flight-card,
+  .visa-panel,
+  .budget-panel {
+    padding: 22px 18px;
   }
 
   .stay-meta,
@@ -874,5 +930,72 @@ h4 {
   .budget-total-amount,
   .per-person-amount {
     font-size: 30px;
+  }
+
+  .budget-total-card,
+  .per-person-card {
+    padding: 26px 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 420px;
+    padding: 64px 16px 70px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .hero-dates,
+  .destinations {
+    font-size: 14px;
+  }
+
+  .section-card h2 {
+    font-size: 26px;
+  }
+
+  .section-card h3 {
+    font-size: 22px;
+  }
+
+  .overview-stat {
+    padding: 18px 16px;
+  }
+
+  .overview-stat-value,
+  .mini-highlight-value,
+  .route-line-value,
+  .resource-card-title,
+  .stay-title,
+  .budget-list-title,
+  .bullet-title,
+  .day-title {
+    font-size: 18px;
+  }
+
+  .flight-note-title {
+    font-size: 17px;
+  }
+
+  .info-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .info-line-value {
+    text-align: left;
+  }
+
+  .itinerary-highlights {
+    margin-top: 22px;
   }
 }
