@@ -138,10 +138,23 @@ const content = {
     mapRouteLink: "開啟完整路線",
     visaLabel: "Visa & Entry",
     visaTitle: "簽證與入境提醒",
+    visaLead: "先申請 eVisa，再補 Bali 旅遊稅，最後把 QR code 與付款憑證留在手機裡，現場會輕鬆很多。",
     visaPanelTitle: "印尼旅遊簽證",
     arrivalPanelTitle: "峇里島入境附加事項",
     visaLinkOne: "印尼官方 eVisa",
     visaLinkTwo: "Love Bali 官方網站",
+    visaHighlights: [
+      ["第一步", "先做 eVisa / e-VOA"],
+      ["第二步", "再付 Bali 旅遊稅 Rp150,000"],
+      ["最後", "QR code、護照、回程機票一起存好"]
+    ],
+    visaTutorial: [
+      ["Step 1", "打開印尼官方 eVisa 網站，先確認台灣護照是否適用 e-VOA / VOA 方案，再建立申請資料。"],
+      ["Step 2", "準備護照、離境機票、住宿資訊與信用卡。護照效期至少要有 6 個月。"],
+      ["Step 3", "完成付款後，把 eVisa 或 e-VOA 憑證存到手機，也建議另外截圖一份。"],
+      ["Step 4", "再到 Love Bali 官方網站繳 Bali 旅遊稅 Rp150,000，完成後同樣保存 QR code。"],
+      ["Step 5", "出發前一天把護照、簽證憑證、Love Bali QR code、回程機票放在同一個手機資料夾。"]
+    ],
     resourceLinks: [
       ["Seminyak 飯店", "Courtyard by Marriott Bali Seminyak Resort 官方網站", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Malang 飯店", "The Shalimar Boutique Hotel 官方網站", "https://theshalimarhotel.co.id/"],
@@ -317,10 +330,23 @@ const content = {
     mapRouteLink: "Open full route",
     visaLabel: "Visa & Entry",
     visaTitle: "Visa and entry notes",
+    visaLead: "Apply for the eVisa first, then pay the Bali tourist levy, and keep every QR code and receipt saved on your phone.",
     visaPanelTitle: "Indonesia tourist visa",
     arrivalPanelTitle: "Bali arrival extras",
     visaLinkOne: "Official Indonesia eVisa",
     visaLinkTwo: "Official Love Bali site",
+    visaHighlights: [
+      ["Step one", "Handle eVisa / e-VOA first"],
+      ["Step two", "Pay the Bali levy of Rp150,000"],
+      ["Final check", "Save QR codes, passport, and onward ticket together"]
+    ],
+    visaTutorial: [
+      ["Step 1", "Open the official Indonesia eVisa site and confirm the correct e-VOA / VOA path for a Taiwan passport before starting."],
+      ["Step 2", "Prepare your passport, onward flight, hotel details, and a payment card. Passport validity should still be at least 6 months."],
+      ["Step 3", "After payment, save the eVisa or e-VOA proof on your phone and keep a screenshot backup."],
+      ["Step 4", "Go to the official Love Bali site and pay the Bali tourist levy of Rp150,000, then save that QR code too."],
+      ["Step 5", "The night before departure, keep passport, visa proof, Love Bali QR code, and return flight details in one easy-to-open folder."]
+    ],
     resourceLinks: [
       ["Seminyak hotel", "Official site for Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Malang hotel", "Official site for The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
@@ -496,10 +522,23 @@ const content = {
     mapRouteLink: "Buka rute lengkap",
     visaLabel: "Visa & Entry",
     visaTitle: "Catatan visa dan masuk",
+    visaLead: "Urus eVisa lebih dulu, lalu bayar levy wisata Bali, dan simpan semua QR code serta bukti pembayaran di HP.",
     visaPanelTitle: "Visa wisata Indonesia",
     arrivalPanelTitle: "Tambahan saat tiba di Bali",
     visaLinkOne: "eVisa resmi Indonesia",
     visaLinkTwo: "Situs resmi Love Bali",
+    visaHighlights: [
+      ["Langkah 1", "Urus eVisa / e-VOA dulu"],
+      ["Langkah 2", "Bayar levy Bali Rp150.000"],
+      ["Cek akhir", "Simpan QR code, paspor, dan tiket pulang jadi satu"]
+    ],
+    visaTutorial: [
+      ["Step 1", "Buka situs resmi eVisa Indonesia dan cek dulu jalur e-VOA / VOA yang sesuai untuk paspor Taiwan sebelum mulai."],
+      ["Step 2", "Siapkan paspor, tiket keluar, data hotel, dan kartu pembayaran. Masa berlaku paspor harus minimal 6 bulan."],
+      ["Step 3", "Setelah pembayaran selesai, simpan bukti eVisa atau e-VOA di HP dan backup dengan screenshot."],
+      ["Step 4", "Masuk ke situs resmi Love Bali lalu bayar levy wisata Bali Rp150.000, lalu simpan QR code-nya juga."],
+      ["Step 5", "Malam sebelum berangkat, taruh paspor, bukti visa, QR code Love Bali, dan detail tiket pulang di satu folder yang mudah dibuka."]
+    ],
     resourceLinks: [
       ["Hotel Seminyak", "Situs resmi Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Hotel Malang", "Situs resmi The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
@@ -862,6 +901,30 @@ function renderLanguage() {
         </tr>
       `;
     })
+    .join("");
+
+  document.getElementById("visa-highlights").innerHTML = copy.visaHighlights
+    .map(
+      ([label, value]) => `
+        <article class="mini-highlight">
+          <div class="mini-highlight-label">${label}</div>
+          <div class="mini-highlight-value">${value}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  document.getElementById("visa-tutorial").innerHTML = copy.visaTutorial
+    .map(
+      ([title, desc]) => `
+        <article class="flight-note-card">
+          <div>
+            <div class="flight-note-title">${title}</div>
+            <div class="flight-note-desc">${desc}</div>
+          </div>
+        </article>
+      `
+    )
     .join("");
 
   document.getElementById("visa-points").innerHTML = copy.visaPoints
