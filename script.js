@@ -202,10 +202,63 @@ const content = {
       duration: "飛行時間"
     },
     stays: [
-      ["6/13 - 6/15", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "用舒服的度假感把旅程開場。", HOTEL_MAPS.seminyak],
-      ["6/15 - 6/17", "Java volcano region", "Tour provided", "火山段的住宿與接送由 tour 安排。", HOTEL_MAPS.volcanoTour, "Tour 頁面"],
-      ["6/18", "Malang", "The Shalimar Boutique Hotel", "火山段後安排一晚比較精緻的休息點。", HOTEL_MAPS.malang],
-      ["6/19 - 6/21", "Yogyakarta", "Aveta Hotel Malioboro", "方便串神廟與回程交通。", HOTEL_MAPS.yogyakarta]
+      {
+        dates: "6/13 - 6/15",
+        area: "Seminyak, Bali",
+        hotel: "Courtyard by Marriott Bali Seminyak Resort",
+        localName: "峇里島水明漾萬怡度假村",
+        stars: "5-star",
+        note: "用帶著海風的度假節奏，把這趟旅程開成一個柔軟而明亮的序章。",
+        details: [
+          "步行可接近 Seminyak Beach",
+          "三層泳池、Spa、餐廳完整",
+          "住兩晚很適合把時差與心情一起調順"
+        ],
+        url: HOTEL_MAPS.seminyak
+      },
+      {
+        dates: "6/15 - 6/17",
+        area: "Java volcano region",
+        hotel: "Tour provided",
+        localName: "火山段住宿（由旅遊團安排）",
+        stars: "Tour arranged",
+        note: "這一段不追求奢華，而是把體力、移動與凌晨出發的節奏安穩地接住。",
+        details: [
+          "住宿與接送由 tour 統一安排",
+          "重點是離 Ijen、Sewu、Bromo 動線順",
+          "建議把保暖層、頭燈與小包先分開整理"
+        ],
+        url: HOTEL_MAPS.volcanoTour,
+        linkLabel: "Tour 頁面"
+      },
+      {
+        dates: "6/18",
+        area: "Malang",
+        hotel: "The Shalimar Boutique Hotel",
+        localName: "沙利馬精品飯店",
+        stars: "5-star",
+        note: "像把一夜休息放進殖民老宅裡，讓火山段之後的身體與情緒都慢慢回來。",
+        details: [
+          "1930 年代殖民建築改造",
+          "花園、泳池與老派精品感很完整",
+          "很適合當冒險段落後的修復夜"
+        ],
+        url: HOTEL_MAPS.malang
+      },
+      {
+        dates: "6/19 - 6/21",
+        area: "Yogyakarta",
+        hotel: "Aveta Hotel Malioboro",
+        localName: "阿維塔馬利歐波羅飯店",
+        stars: "4-star",
+        note: "把城市的便利與旅程尾聲需要的從容放在一起，適合文化日也適合回程前一晚。",
+        details: [
+          "緊貼 Malioboro 主街，地點非常順",
+          "Sky pool、Sky Lounge 與現代房型",
+          "去神廟、逛街、回機場都很省力"
+        ],
+        url: HOTEL_MAPS.yogyakarta
+      }
     ],
     transportNotes: [
       ["火山順序", "Ijen → Sewu → Bromo，並確認最後 drop 在 Malang。"],
@@ -406,10 +459,63 @@ const content = {
       duration: "Duration"
     },
     stays: [
-      ["Jun 13 - Jun 15", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "A relaxed resort opening.", HOTEL_MAPS.seminyak],
-      ["Jun 15 - Jun 17", "Java volcano region", "Tour provided", "The volcano leg is handled by the tour.", HOTEL_MAPS.volcanoTour, "Tour page"],
-      ["Jun 18", "Malang", "The Shalimar Boutique Hotel", "A polished recovery night after the rugged segment.", HOTEL_MAPS.malang],
-      ["Jun 19 - Jun 21", "Yogyakarta", "Aveta Hotel Malioboro", "Good for temples and airport flow.", HOTEL_MAPS.yogyakarta]
+      {
+        dates: "Jun 13 - Jun 15",
+        area: "Seminyak, Bali",
+        hotel: "Courtyard by Marriott Bali Seminyak Resort",
+        localName: "Courtyard Bali Seminyak Resort",
+        stars: "5-star",
+        note: "A bright, sea-breezed opening that lets the whole trip begin softly instead of abruptly.",
+        details: [
+          "Walkable to Seminyak Beach",
+          "Three-tier pool, spa, and strong resort facilities",
+          "A very good two-night opening for rest and reset"
+        ],
+        url: HOTEL_MAPS.seminyak
+      },
+      {
+        dates: "Jun 15 - Jun 17",
+        area: "Java volcano region",
+        hotel: "Tour provided",
+        localName: "Volcano stay arranged by tour",
+        stars: "Tour arranged",
+        note: "This segment is less about luxury and more about holding the sleep-deprived volcano rhythm together.",
+        details: [
+          "Lodging and transfers handled by the tour",
+          "Chosen mainly for route efficiency",
+          "Best to separate warm layers and night-hike essentials early"
+        ],
+        url: HOTEL_MAPS.volcanoTour,
+        linkLabel: "Tour page"
+      },
+      {
+        dates: "Jun 18",
+        area: "Malang",
+        hotel: "The Shalimar Boutique Hotel",
+        localName: "The Shalimar Boutique Hotel",
+        stars: "5-star",
+        note: "A colonial-era boutique pause after the rugged days, made more for exhaling than for rushing.",
+        details: [
+          "1930s colonial architecture",
+          "Garden, pool, and heritage-boutique atmosphere",
+          "Ideal as the recovery night after the volcano stretch"
+        ],
+        url: HOTEL_MAPS.malang
+      },
+      {
+        dates: "Jun 19 - Jun 21",
+        area: "Yogyakarta",
+        hotel: "Aveta Hotel Malioboro",
+        localName: "Aveta Hotel Malioboro",
+        stars: "4-star",
+        note: "A city stay that keeps the ending easy: temples by day, Malioboro by evening, airport flow the morning after.",
+        details: [
+          "Right on Malioboro Street",
+          "Sky pool, rooftop dining, modern rooms",
+          "Makes temple day and departure logistics much easier"
+        ],
+        url: HOTEL_MAPS.yogyakarta
+      }
     ],
     transportNotes: [
       ["Volcano order", "Keep the order Ijen → Sewu → Bromo, and confirm drop-off in Malang."],
@@ -610,10 +716,63 @@ const content = {
       duration: "Durasi"
     },
     stays: [
-      ["13 Jun - 15 Jun", "Seminyak, Bali", "Courtyard by Marriott Bali Seminyak Resort", "Pembukaan yang santai dengan resort nyaman.", HOTEL_MAPS.seminyak],
-      ["15 Jun - 17 Jun", "Area gunung api Jawa", "Tour provided", "Segmen gunung api diatur oleh tour.", HOTEL_MAPS.volcanoTour, "Halaman tour"],
-      ["18 Jun", "Malang", "The Shalimar Boutique Hotel", "Malam istirahat yang lebih rapi setelah bagian petualangan.", HOTEL_MAPS.malang],
-      ["19 Jun - 21 Jun", "Yogyakarta", "Aveta Hotel Malioboro", "Praktis untuk candi dan alur pulang.", HOTEL_MAPS.yogyakarta]
+      {
+        dates: "13 Jun - 15 Jun",
+        area: "Seminyak, Bali",
+        hotel: "Courtyard by Marriott Bali Seminyak Resort",
+        localName: "Courtyard Bali Seminyak Resort",
+        stars: "5-star",
+        note: "Pembuka yang lembut, terang, dan dekat laut, cocok untuk membuat tubuh santai dulu.",
+        details: [
+          "Bisa jalan ke Seminyak Beach",
+          "Kolam bertingkat, spa, dan fasilitas resort lengkap",
+          "Pas untuk dua malam pembuka sebelum ritme jadi lebih berat"
+        ],
+        url: HOTEL_MAPS.seminyak
+      },
+      {
+        dates: "15 Jun - 17 Jun",
+        area: "Area gunung api Jawa",
+        hotel: "Tour provided",
+        localName: "Akomodasi segmen gunung api",
+        stars: "Tour arranged",
+        note: "Bagian ini bukan soal mewah, tetapi soal tidur secukupnya dan bergerak efisien saat ritme sangat pagi.",
+        details: [
+          "Penginapan dan transfer diatur oleh tour",
+          "Dipilih terutama karena alur rutenya",
+          "Paling aman kalau jaket dan perlengkapan hiking dipisah sejak awal"
+        ],
+        url: HOTEL_MAPS.volcanoTour,
+        linkLabel: "Halaman tour"
+      },
+      {
+        dates: "18 Jun",
+        area: "Malang",
+        hotel: "The Shalimar Boutique Hotel",
+        localName: "The Shalimar Boutique Hotel",
+        stars: "5-star",
+        note: "Tempat singgah yang terasa lebih anggun setelah hari-hari yang kasar dan penuh debu.",
+        details: [
+          "Bangunan kolonial era 1930-an",
+          "Taman, kolam, dan nuansa boutique heritage",
+          "Cocok untuk malam recovery setelah segmen gunung api"
+        ],
+        url: HOTEL_MAPS.malang
+      },
+      {
+        dates: "19 Jun - 21 Jun",
+        area: "Yogyakarta",
+        hotel: "Aveta Hotel Malioboro",
+        localName: "Aveta Hotel Malioboro",
+        stars: "4-star",
+        note: "Tempat menginap yang membuat penutup perjalanan tetap ringan: dekat candi, dekat jalan utama, dan dekat ritme pulang.",
+        details: [
+          "Menempel di Malioboro Street",
+          "Sky pool, rooftop dining, dan kamar modern",
+          "Memudahkan hari candi dan keberangkatan pulang"
+        ],
+        url: HOTEL_MAPS.yogyakarta
+      }
     ],
     transportNotes: [
       ["Urutan gunung api", "Pertahankan urutan Ijen → Sewu → Bromo, lalu pastikan drop-off di Malang."],
@@ -800,17 +959,27 @@ function renderFlightNotes(items) {
 function renderStayRows(items, linkLabel) {
   return items
     .map(
-      ([dates, place, hotel, note, url, customLabel]) => `
-        <div class="stay-item">
-          <div class="stay-copy">
-            <div class="stay-title">${hotel}</div>
-            <div class="stay-desc">${place} · ${note}</div>
+      ({ dates, area, hotel, localName, stars, note, details, url, linkLabel: customLabel }) => `
+        <article class="stay-card-rich">
+          <div class="stay-card-top">
+            <div class="stay-card-head">
+              <div class="stay-card-kicker">${area}</div>
+              <div class="stay-card-local">${localName}</div>
+              <div class="stay-title">${hotel}</div>
+            </div>
+            <div class="stay-card-meta">
+              <div class="stay-meta">${dates}</div>
+              <div class="stay-stars">${stars}</div>
+            </div>
           </div>
-          <div class="stay-side">
-            <div class="stay-meta">${dates}</div>
+          <div class="stay-card-note">${note}</div>
+          <div class="stay-detail-chips">
+            ${details.map((detail) => `<span>${detail}</span>`).join("")}
+          </div>
+          <div class="stay-card-actions">
             <a class="stay-map-link" href="${url}" target="_blank" rel="noreferrer">${customLabel || linkLabel}</a>
           </div>
-        </div>
+        </article>
       `
     )
     .join("");

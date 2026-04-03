@@ -551,9 +551,10 @@ h4 {
 }
 
 .stay-list-rich {
-  gap: 0;
-  margin-top: 20px;
-  border-top: 1px solid rgba(234, 217, 203, 0.75);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+  border-top: 0;
 }
 
 .stay-item,
@@ -600,6 +601,93 @@ h4 {
 
 .stay-copy {
   min-width: 0;
+}
+
+.stay-card-rich {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(234, 217, 203, 0.82);
+  background:
+    radial-gradient(circle at top left, rgba(248, 222, 191, 0.18), transparent 42%),
+    linear-gradient(135deg, rgba(255, 251, 246, 0.98), rgba(247, 240, 231, 0.92));
+  box-shadow: 0 18px 42px rgba(112, 73, 44, 0.08);
+}
+
+.stay-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stay-card-head {
+  min-width: 0;
+}
+
+.stay-card-kicker {
+  color: var(--text-light);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  margin-bottom: 6px;
+}
+
+.stay-card-local {
+  color: var(--primary-dark);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.stay-card-meta {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.stay-stars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(196, 111, 66, 0.1);
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.stay-card-note {
+  color: var(--text-mid);
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+.stay-detail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stay-detail-chips span {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 13px;
+  border-radius: 999px;
+  background: rgba(255, 252, 248, 0.96);
+  border: 1px solid rgba(234, 217, 203, 0.82);
+  color: var(--text-mid);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stay-card-actions {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .stay-side {
@@ -1107,7 +1195,8 @@ h4 {
   }
 
   .cover-story-grid,
-  .map-layout {
+  .map-layout,
+  .stay-list-rich {
     grid-template-columns: 1fr;
   }
 
@@ -1251,6 +1340,24 @@ h4 {
   .day-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .stay-card-rich {
+    padding: 20px 18px;
+    gap: 16px;
+  }
+
+  .stay-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stay-card-local {
+    font-size: 20px;
+  }
+
+  .stay-card-meta {
+    justify-items: start;
   }
 
   .cover-copy {
