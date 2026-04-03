@@ -3,18 +3,51 @@ const TRIP_DAYS = 9;
 
 const FLIGHTS = {
   depart: {
-    airline: "China Airlines",
-    flight: "CI771",
-    route: "TPE → DPS",
-    time: "09:10 → 14:35",
-    duration: "5h 25m"
+    summary: "台北直飛峇里島，整段由華航主飛，結構單純，適合把抵達日留給休息。",
+    segments: [
+      {
+        route: "TPE → DPS",
+        flight: "CI771",
+        marketingCarrier: "China Airlines",
+        operatingCarrier: "China Airlines",
+        time: "09:10 → 14:35",
+        duration: "5h 25m",
+        baggage: "23kg ×2"
+      }
+    ],
+    notes: [
+      "這一段是最乾淨的直飛結構，不用轉機。",
+      "抵達時間在下午，適合直接進飯店與晚餐節奏。",
+      "若前一晚先完成線上報到與文件整理，出發日會輕鬆很多。"
+    ]
   },
   return: {
-    airline: "China Airlines",
-    flight: "CI9761 / CI762",
-    route: "YIA → CGK → TPE",
-    time: "09:45 → 21:05",
-    duration: "Multi-city"
+    summary: "回程是兩段式：先從日惹飛雅加達，再接華航長程回台北，節奏比去程更需要留緩衝。",
+    segments: [
+      {
+        route: "YIA → CGK",
+        flight: "CI9761",
+        marketingCarrier: "China Airlines ticketed segment",
+        operatingCarrier: "依票面與現場報到櫃台為準",
+        time: "09:45 → same-day connection",
+        duration: "Domestic connection leg",
+        baggage: "回程總託運額度 23kg ×1"
+      },
+      {
+        route: "CGK → TPE",
+        flight: "CI762",
+        marketingCarrier: "China Airlines",
+        operatingCarrier: "China Airlines",
+        time: "same-day connection → 21:05 arrival",
+        duration: "International return leg",
+        baggage: "23kg ×1"
+      }
+    ],
+    notes: [
+      "CI9761 是華航票號的聯營 / 接續段，實際承運公司請依電子機票與機場顯示為準。",
+      "真正的國際長程段是雅加達出發的 CI762，由華航承接回台北。",
+      "因為是國內段接國際段，回程當天一定要把 YIA 機場鐵路和轉機緩衝抓穩。"
+    ]
   }
 };
 
@@ -96,14 +129,14 @@ const content = {
     tripFlowLabel: "Trip Flow",
     tripFlowValue: "台北 → 峇里島 → Ijen → Sewu → Bromo → Malang → 日惹",
     flightHighlights: [
-      ["去程", "TPE 直飛 DPS，CI771"],
-      ["回程", "YIA → CGK → TPE"],
-      ["行李", "去程 23kg ×2，回程 23kg ×1"]
+      ["去程結構", "CI771 直飛 DPS，華航主飛"],
+      ["回程結構", "CI9761 聯營段 + CI762 華航回台"],
+      ["行李重點", "去程 23kg ×2，回程 23kg ×1"]
     ],
     flightNotes: [
-      ["出發提醒", "國際線建議至少提前 2 小時到機場，護照與機票資訊前一晚先整理好。"],
-      ["回程結構", "回程是 YIA 先飛雅加達，再銜接華航回台北，中間轉機節奏要留意。"],
-      ["行李差異", "去回程免費託運額度不同，回程只有 1 件 23kg，要特別注意採買量。"]
+      ["出發提醒", "國際線建議至少提前 2 小時到機場，護照與電子機票資訊前一晚先整理好。"],
+      ["轉機責任", "回程真正的國際段是 CI762；YIA → CGK 則是華航票號下的前段接駁，實際承運請依票面與現場為準。"],
+      ["不要放上訂位代碼", "網站上只保留班機、路線與承運結構，不放訂位代碼或其他敏感資訊。"]
     ],
     stayLabel: "Stay Plan",
     stayTitle: "住宿安排",
@@ -194,12 +227,14 @@ const content = {
       ["一句話", "有體驗、有放鬆、有文化"],
       ["旅行區域", "Bali + East Java + Yogyakarta"]
     ],
-    flightLabels: {
-      airline: "航空",
+    flightSegmentLabels: {
+      route: "航段",
       flight: "航班",
-      route: "路線",
+      marketingCarrier: "票號 / 開票航空",
+      operatingCarrier: "實際承運",
       time: "時間",
-      duration: "飛行時間"
+      duration: "段落說明",
+      baggage: "行李"
     },
     stays: [
       {
@@ -353,14 +388,14 @@ const content = {
     tripFlowLabel: "Trip Flow",
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
     flightHighlights: [
-      ["Outbound", "TPE direct to DPS on CI771"],
-      ["Return", "YIA → CGK → TPE"],
+      ["Outbound shape", "CI771 direct to DPS on China Airlines"],
+      ["Return shape", "CI9761 feeder segment + CI762 long-haul return"],
       ["Baggage", "23kg ×2 outbound, 23kg ×1 inbound"]
     ],
     flightNotes: [
       ["Departure reminder", "For the international leg, arriving at the airport at least 2 hours early remains the safer plan."],
-      ["Return structure", "The return route first flies from YIA to Jakarta, then connects to the China Airlines sector back to Taipei."],
-      ["Baggage difference", "The baggage allowance changes on the way back, so shopping volume is worth watching."]
+      ["Transfer responsibility", "The true long-haul international sector is CI762; the YIA → CGK portion is a China Airlines ticketed feeder segment and the operating carrier should be confirmed on the live ticket and airport display."],
+      ["Privacy choice", "The site keeps the flight structure and carrier notes, but deliberately does not display the booking code."]
     ],
     stayLabel: "Stay Plan",
     stayTitle: "Where you stay",
@@ -451,12 +486,14 @@ const content = {
       ["Summary", "Experience, rest, culture"],
       ["Region", "Bali + East Java + Yogyakarta"]
     ],
-    flightLabels: {
-      airline: "Airline",
+    flightSegmentLabels: {
+      route: "Sector",
       flight: "Flight",
-      route: "Route",
+      marketingCarrier: "Ticketed carrier",
+      operatingCarrier: "Operating carrier",
       time: "Time",
-      duration: "Duration"
+      duration: "Leg note",
+      baggage: "Baggage"
     },
     stays: [
       {
@@ -610,14 +647,14 @@ const content = {
     tripFlowLabel: "Trip Flow",
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
     flightHighlights: [
-      ["Pergi", "TPE langsung ke DPS dengan CI771"],
-      ["Pulang", "YIA → CGK → TPE"],
+      ["Struktur pergi", "CI771 langsung ke DPS dengan China Airlines"],
+      ["Struktur pulang", "Segmen feeder CI9761 + CI762 kembali ke Taipei"],
       ["Bagasi", "23kg ×2 saat pergi, 23kg ×1 saat pulang"]
     ],
     flightNotes: [
       ["Pengingat berangkat", "Untuk penerbangan internasional, datang minimal 2 jam lebih awal tetap lebih aman."],
-      ["Struktur pulang", "Rute pulang dimulai dari YIA ke Jakarta dulu, lalu lanjut sektor China Airlines ke Taipei."],
-      ["Perbedaan bagasi", "Jatah bagasi saat pulang lebih sedikit, jadi volume belanja perlu dijaga."]
+      ["Tanggung jawab transit", "Segmen internasional utama adalah CI762; bagian YIA → CGK adalah segmen feeder dengan kode tiket China Airlines, sedangkan maskapai operasional sebaiknya dicek lagi di tiket final dan layar bandara."],
+      ["Privasi", "Halaman ini hanya menampilkan struktur penerbangan dan maskapai, tanpa menaruh kode booking."]
     ],
     stayLabel: "Stay Plan",
     stayTitle: "Rencana menginap",
@@ -708,12 +745,14 @@ const content = {
       ["Ringkas", "Pengalaman, santai, budaya"],
       ["Area", "Bali + Jawa Timur + Yogyakarta"]
     ],
-    flightLabels: {
-      airline: "Maskapai",
+    flightSegmentLabels: {
+      route: "Segmen",
       flight: "Penerbangan",
-      route: "Rute",
+      marketingCarrier: "Maskapai pada tiket",
+      operatingCarrier: "Maskapai operasional",
       time: "Waktu",
-      duration: "Durasi"
+      duration: "Catatan segmen",
+      baggage: "Bagasi"
     },
     stays: [
       {
@@ -896,17 +935,35 @@ function sumRange(items) {
   );
 }
 
-function renderInfo(labels, flight) {
-  return Object.entries(flight)
-    .map(
-      ([key, value]) => `
-        <div class="info-line">
-          <div class="info-line-label">${labels[key]}</div>
-          <div class="info-line-value">${value}</div>
-        </div>
-      `
-    )
-    .join("");
+function renderFlightCard(labels, flight) {
+  return `
+    <div class="flight-summary-copy">${flight.summary}</div>
+    <div class="flight-segment-list">
+      ${flight.segments
+        .map(
+          (segment) => `
+            <article class="flight-segment-card">
+              ${Object.entries(segment)
+                .map(
+                  ([key, value]) => `
+                    <div class="info-line">
+                      <div class="info-line-label">${labels[key]}</div>
+                      <div class="info-line-value">${value}</div>
+                    </div>
+                  `
+                )
+                .join("")}
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+    <div class="flight-subnotes">
+      ${flight.notes
+        .map((note) => `<div class="flight-subnote">${note}</div>`)
+        .join("")}
+    </div>
+  `;
 }
 
 function mapEmbedUrl(query) {
@@ -1080,8 +1137,8 @@ function renderLanguage() {
     )
     .join("");
 
-  dom.departFlight.innerHTML = renderInfo(copy.flightLabels, FLIGHTS.depart);
-  dom.returnFlight.innerHTML = renderInfo(copy.flightLabels, FLIGHTS.return);
+  dom.departFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, FLIGHTS.depart);
+  dom.returnFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, FLIGHTS.return);
   dom.flightHighlights.innerHTML = renderMiniHighlights(copy.flightHighlights);
   dom.flightNotes.innerHTML = renderFlightNotes(copy.flightNotes);
 
