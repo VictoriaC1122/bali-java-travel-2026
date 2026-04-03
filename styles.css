@@ -967,6 +967,46 @@ h4 {
   box-shadow: 0 10px 24px rgba(165, 83, 51, 0.2);
 }
 
+.map-day-routes-wrap {
+  margin-top: 22px;
+}
+
+.map-day-routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.map-day-route-link {
+  display: grid;
+  gap: 3px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(234, 217, 203, 0.82);
+  background: linear-gradient(135deg, rgba(255, 251, 246, 0.98), rgba(247, 240, 231, 0.92));
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: all 0.24s ease;
+}
+
+.map-day-route-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(196, 111, 66, 0.28);
+  box-shadow: 0 10px 28px rgba(165, 83, 51, 0.1);
+}
+
+.map-day-route-title {
+  color: var(--primary-dark);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.map-day-route-note {
+  color: var(--text-mid);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .map-layout {
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
@@ -1069,6 +1109,10 @@ h4 {
   .cover-story-grid,
   .map-layout {
     grid-template-columns: 1fr;
+  }
+
+  .map-day-routes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .photo-feature {
@@ -1194,6 +1238,11 @@ h4 {
   .official-links a {
     min-height: 42px;
     width: 100%;
+  }
+
+  .map-day-routes {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .stay-item,

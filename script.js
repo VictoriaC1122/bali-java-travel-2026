@@ -42,6 +42,18 @@ const HOTEL_MAPS = {
 const MAP_ROUTE_URL =
   "https://www.google.com/maps/dir/Seminyak+Beach+Bali/Courtyard+by+Marriott+Bali+Seminyak+Resort/Ijen+Crater/Tumpak+Sewu+Waterfall/Mount+Bromo/The+Shalimar+Boutique+Hotel+Malang/Aveta+Hotel+Malioboro+Yogyakarta/Yogyakarta+International+Airport";
 
+const DAY_ROUTE_URLS = {
+  day1: "https://www.google.com/maps/dir/Ngurah+Rai+International+Airport/Courtyard+by+Marriott+Bali+Seminyak+Resort/Seminyak+Beach+Bali",
+  day2: "https://www.google.com/maps/dir/Courtyard+by+Marriott+Bali+Seminyak+Resort/Seminyak+Beach+Bali/Seminyak+Village/Courtyard+by+Marriott+Bali+Seminyak+Resort",
+  day3: "https://www.google.com/maps/dir/Courtyard+by+Marriott+Bali+Seminyak+Resort/Gilimanuk+Port/Ijen+Crater",
+  day4: "https://www.google.com/maps/dir/Ijen+Crater/Paltuding+Ijen/Banyuwangi",
+  day5: "https://www.google.com/maps/dir/Banyuwangi/Tumpak+Sewu+Waterfall/Lumajang",
+  day6: "https://www.google.com/maps/dir/Lumajang/Mount+Bromo/The+Shalimar+Boutique+Hotel+Malang",
+  day7: "https://www.google.com/maps/dir/The+Shalimar+Boutique+Hotel+Malang/Malang+Station/Aveta+Hotel+Malioboro+Yogyakarta",
+  day8: "https://www.google.com/maps/dir/Aveta+Hotel+Malioboro+Yogyakarta/Borobudur+Temple/Prambanan+Temple/Aveta+Hotel+Malioboro+Yogyakarta",
+  day9: "https://www.google.com/maps/dir/Aveta+Hotel+Malioboro+Yogyakarta/Yogyakarta+International+Airport"
+};
+
 const content = {
   "zh-Hant": {
     heroKicker: "Indonesia travel handbook",
@@ -136,6 +148,18 @@ const content = {
     mapTitle: "地圖總覽",
     mapLead: "把主要住宿、火山、神廟與機場路線集中到同一頁，手機上也能直接切換看大圖地圖。",
     mapRouteLink: "開啟完整路線",
+    mapDayLabel: "每日路線",
+    mapDayRoutes: [
+      ["Day 1", "抵達與入住", DAY_ROUTE_URLS.day1],
+      ["Day 2", "Seminyak 放鬆日", DAY_ROUTE_URLS.day2],
+      ["Day 3", "Bali 進火山段", DAY_ROUTE_URLS.day3],
+      ["Day 4", "Ijen 路線", DAY_ROUTE_URLS.day4],
+      ["Day 5", "Sewu 瀑布路線", DAY_ROUTE_URLS.day5],
+      ["Day 6", "Bromo 日出路線", DAY_ROUTE_URLS.day6],
+      ["Day 7", "Malang 到日惹", DAY_ROUTE_URLS.day7],
+      ["Day 8", "雙神廟文化日", DAY_ROUTE_URLS.day8],
+      ["Day 9", "飯店到機場", DAY_ROUTE_URLS.day9]
+    ],
     visaLabel: "Visa & Entry",
     visaTitle: "簽證與入境提醒",
     visaLead: "先申請 eVisa，再補 Bali 旅遊稅，最後把 QR code 與付款憑證留在手機裡，現場會輕鬆很多。",
@@ -328,6 +352,18 @@ const content = {
     mapTitle: "Map overview",
     mapLead: "Hotels, volcano stops, and the airport flow are collected here so you can switch to a large Google map view quickly on mobile too.",
     mapRouteLink: "Open full route",
+    mapDayLabel: "Daily Routes",
+    mapDayRoutes: [
+      ["Day 1", "Arrival and check-in", DAY_ROUTE_URLS.day1],
+      ["Day 2", "Seminyak slow day", DAY_ROUTE_URLS.day2],
+      ["Day 3", "Bali to volcano leg", DAY_ROUTE_URLS.day3],
+      ["Day 4", "Ijen route", DAY_ROUTE_URLS.day4],
+      ["Day 5", "Sewu waterfall route", DAY_ROUTE_URLS.day5],
+      ["Day 6", "Bromo sunrise route", DAY_ROUTE_URLS.day6],
+      ["Day 7", "Malang to Yogyakarta", DAY_ROUTE_URLS.day7],
+      ["Day 8", "Temple day route", DAY_ROUTE_URLS.day8],
+      ["Day 9", "Hotel to airport", DAY_ROUTE_URLS.day9]
+    ],
     visaLabel: "Visa & Entry",
     visaTitle: "Visa and entry notes",
     visaLead: "Apply for the eVisa first, then pay the Bali tourist levy, and keep every QR code and receipt saved on your phone.",
@@ -520,6 +556,18 @@ const content = {
     mapTitle: "Ringkasan peta",
     mapLead: "Hotel, titik gunung api, dan alur ke bandara dikumpulkan di sini supaya mudah dibuka sebagai peta besar, termasuk di HP.",
     mapRouteLink: "Buka rute lengkap",
+    mapDayLabel: "Rute Harian",
+    mapDayRoutes: [
+      ["Day 1", "Tiba dan check-in", DAY_ROUTE_URLS.day1],
+      ["Day 2", "Hari santai Seminyak", DAY_ROUTE_URLS.day2],
+      ["Day 3", "Bali ke segmen gunung api", DAY_ROUTE_URLS.day3],
+      ["Day 4", "Rute Ijen", DAY_ROUTE_URLS.day4],
+      ["Day 5", "Rute air terjun Sewu", DAY_ROUTE_URLS.day5],
+      ["Day 6", "Rute sunrise Bromo", DAY_ROUTE_URLS.day6],
+      ["Day 7", "Malang ke Yogyakarta", DAY_ROUTE_URLS.day7],
+      ["Day 8", "Rute hari candi", DAY_ROUTE_URLS.day8],
+      ["Day 9", "Hotel ke bandara", DAY_ROUTE_URLS.day9]
+    ],
     visaLabel: "Visa & Entry",
     visaTitle: "Catatan visa dan masuk",
     visaLead: "Urus eVisa lebih dulu, lalu bayar levy wisata Bali, dan simpan semua QR code serta bukti pembayaran di HP.",
@@ -641,6 +689,7 @@ const dom = {
   mapList: document.getElementById("map-list"),
   mapFrame: document.getElementById("map-frame"),
   fullRouteLink: document.getElementById("full-route-link"),
+  mapDayRoutes: document.getElementById("map-day-routes"),
   itineraryHighlights: document.getElementById("itinerary-highlights"),
   itineraryList: document.getElementById("itinerary-list"),
   budgetSummaryStrip: document.getElementById("budget-summary-strip"),
@@ -780,6 +829,19 @@ function renderMapLocations(items, activeQuery) {
     .join("");
 }
 
+function renderMapDayRoutes(items) {
+  return items
+    .map(
+      ([title, note, url]) => `
+        <a class="map-day-route-link" href="${url}" target="_blank" rel="noreferrer">
+          <span class="map-day-route-title">${title}</span>
+          <span class="map-day-route-note">${note}</span>
+        </a>
+      `
+    )
+    .join("");
+}
+
 function renderTimeline(days, focusLabel) {
   return days
     .map(
@@ -880,6 +942,7 @@ function renderLanguage() {
   dom.mapList.innerHTML = renderMapLocations(copy.mapLocations, state.mapQuery);
   dom.mapFrame.src = mapEmbedUrl(state.mapQuery);
   dom.fullRouteLink.href = MAP_ROUTE_URL;
+  dom.mapDayRoutes.innerHTML = renderMapDayRoutes(copy.mapDayRoutes);
   document.querySelectorAll(".map-location-button").forEach((button) => {
     button.addEventListener("click", () => {
       state.mapQuery = button.dataset.query;
