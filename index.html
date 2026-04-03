@@ -8,10 +8,11 @@
       name="description"
       content="A trilingual Bali and Java travel handbook for June 2026, covering flights, stays, volcano adventures, temples, budget, and visa essentials."
     />
+    <meta name="theme-color" content="#140d0d" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -20,17 +21,17 @@
     <div class="page-shell">
       <header class="site-header">
         <div class="brand-lockup">
-          <p class="eyebrow" data-i18n="siteTag">Journey handbook</p>
+          <p class="eyebrow" data-i18n="siteTag">Travel handbook</p>
           <a class="brand" href="#top" data-i18n="siteTitle">Bali × Java 2026</a>
         </div>
 
         <nav class="top-nav" aria-label="Primary">
-          <a href="#overview" data-i18n="navOverview">Overview</a>
-          <a href="#route" data-i18n="navRoute">Route</a>
-          <a href="#stay" data-i18n="navStay">Stay</a>
-          <a href="#budget" data-i18n="navBudget">Budget</a>
-          <a href="#visa" data-i18n="navVisa">Visa</a>
-          <a href="#notes" data-i18n="navNotes">Notes</a>
+          <a href="#overview" data-section-link data-i18n="navOverview">Overview</a>
+          <a href="#highlights" data-section-link data-i18n="navHighlights">Highlights</a>
+          <a href="#route" data-section-link data-i18n="navRoute">Route</a>
+          <a href="#stay" data-section-link data-i18n="navStay">Stay</a>
+          <a href="#budget" data-section-link data-i18n="navBudget">Budget</a>
+          <a href="#visa" data-section-link data-i18n="navVisa">Visa</a>
         </nav>
 
         <div class="lang-switcher" role="tablist" aria-label="Language switcher">
@@ -41,36 +42,62 @@
       </header>
 
       <main id="top">
-        <section class="hero" id="overview">
+        <section class="hero section-surface reveal" id="overview" data-section>
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="heroKicker">Island breeze, lava dawn, temple light</p>
-            <h1 data-i18n="heroTitle">Indonesia escape with Bali calm and Java adventure.</h1>
+            <p class="eyebrow" data-i18n="heroKicker">Sea breeze, volcano glow, temple light</p>
+            <h1 data-i18n="heroTitle">An Indonesia journey that blends rest, adventure, and culture beautifully.</h1>
             <p class="hero-text" data-i18n="heroSummary">
-              A refined 9-day route with beach downtime, volcano highlights, boutique stays, and a culture-rich finish in Yogyakarta.
+              Nine days, eight nights, starting with Bali ease, moving through East Java volcano drama, and ending in Yogyakarta with cultural depth and practical comfort.
             </p>
 
             <div class="hero-chips">
               <span data-i18n="heroChipOne">9 days / 8 nights</span>
               <span data-i18n="heroChipTwo">Bali + East Java + Yogyakarta</span>
-              <span data-i18n="heroChipThree">Travel handbook edition</span>
+              <span data-i18n="heroChipThree">Mobile-first handbook</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#itinerary" data-i18n="heroPrimaryAction">View itinerary</a>
+              <a class="button button-secondary" href="#visa" data-i18n="heroSecondaryAction">Check entry notes</a>
             </div>
           </div>
 
-          <div class="hero-panel">
-            <div class="stat-grid" id="hero-stats"></div>
-            <div class="route-ribbon">
-              <p class="route-label" data-i18n="routeRibbonLabel">Trip flow</p>
-              <p class="route-line" data-i18n="routeRibbonValue">Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta</p>
-            </div>
+          <div class="hero-side">
+            <article class="luxe-panel route-orbit">
+              <div class="section-minihead">
+                <span data-i18n="routeRibbonLabel">Trip flow</span>
+                <strong data-i18n="routeRibbonValue">Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta</strong>
+              </div>
+              <div class="orbit-grid" id="hero-stats"></div>
+            </article>
+
+            <article class="luxe-panel quick-note">
+              <span class="eyebrow" data-i18n="heroPanelTag">Travel mode</span>
+              <h2 data-i18n="heroPanelTitle">High-quality DIY, not luxury</h2>
+              <p data-i18n="heroPanelBody">
+                Built for dramatic nature, elegant downtime, and strong city finishes without wasting budget.
+              </p>
+            </article>
           </div>
         </section>
 
-        <section class="section section-route" id="route">
+        <section class="showcase reveal" id="highlights" data-section>
+          <article class="showcase-card showcase-card-main">
+            <p class="eyebrow" data-i18n="showcaseKicker">Signature mood</p>
+            <h2 data-i18n="showcaseTitle">Bali softness first, then lava mornings and temple stone.</h2>
+            <p data-i18n="showcaseIntro">
+              The route is strongest when it feels like a sequence of atmospheres: resort calm, volcanic intensity, and heritage stillness.
+            </p>
+          </article>
+          <div class="showcase-stack" id="showcase-cards"></div>
+        </section>
+
+        <section class="section section-surface reveal" id="route" data-section>
           <div class="section-heading">
             <p class="eyebrow" data-i18n="routeKicker">Movement</p>
             <h2 data-i18n="routeTitle">Flight and route snapshot</h2>
             <p data-i18n="routeIntro">
-              Smooth arrival into Bali, then a scenic overland volcano stretch before ending with temples and city comfort in Yogyakarta.
+              The trip opens softly in Bali, turns cinematic in the volcano zone, and closes with temples, trains, and city comfort in Yogyakarta.
             </p>
           </div>
 
@@ -95,32 +122,40 @@
           <div class="journey-band" id="journey-band"></div>
         </section>
 
-        <section class="section" id="stay">
+        <section class="section section-surface reveal" id="stay" data-section>
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="stayKicker">Hotels and rest</p>
-            <h2 data-i18n="stayTitle">Where each leg is anchored</h2>
-            <p data-i18n="stayIntro">Resort comfort first, volcano transit in the middle, then heritage-style city stays to finish the trip strong.</p>
+            <p class="eyebrow" data-i18n="stayKicker">Stay rhythm</p>
+            <h2 data-i18n="stayTitle">Where each segment is based</h2>
+            <p data-i18n="stayIntro">A resort-style start, tour-arranged volcano nights in the middle, and polished city stays to finish the route with ease.</p>
           </div>
 
           <div class="card-list" id="stay-list"></div>
         </section>
 
-        <section class="section itinerary-section" id="itinerary">
+        <section class="section itinerary-shell reveal" id="itinerary" data-section>
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="itineraryKicker">Daily rhythm</p>
+            <p class="eyebrow" data-i18n="itineraryKicker">Daily flow</p>
             <h2 data-i18n="itineraryTitle">Day-by-day itinerary</h2>
-            <p data-i18n="itineraryIntro">Built to balance recovery, dramatic nature, intercity movement, and major cultural highlights without feeling rushed.</p>
+            <p data-i18n="itineraryIntro">The pacing balances recovery, nature spectacle, transit, and major culture stops without making the trip feel overloaded.</p>
           </div>
 
           <div class="itinerary-grid" id="itinerary-grid"></div>
         </section>
 
-        <section class="section budget-section" id="budget">
+        <section class="section section-surface reveal" id="budget" data-section>
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="budgetKicker">Money overview</p>
-            <h2 data-i18n="budgetTitle">Budget map at a glance</h2>
-            <p data-i18n="budgetIntro">The plan already covers the biggest costs, leaving a clear picture for final payments and daily spend.</p>
+            <p class="eyebrow" data-i18n="budgetKicker">Money map</p>
+            <h2 data-i18n="budgetTitle">Budget at a glance</h2>
+            <p data-i18n="budgetIntro">Most big-ticket items are already secured, so the remaining spend is clear and manageable. IDR conversions below use a rough planning rate of NT$1 ≈ Rp531.</p>
           </div>
+
+          <article class="exchange-banner">
+            <div>
+              <span class="eyebrow" data-i18n="exchangeTag">Planning rate</span>
+              <strong id="exchange-rate"></strong>
+            </div>
+            <p data-i18n="exchangeBody">Use this as a planning shortcut only, and re-check the live rate before exchanging or transferring money.</p>
+          </article>
 
           <div class="panel-grid budget-grid">
             <article class="card">
@@ -134,7 +169,7 @@
 
             <article class="card">
               <div class="card-head">
-                <span class="card-tag alt" data-i18n="budgetOpenTag">To be paid</span>
+                <span class="card-tag alt" data-i18n="budgetOpenTag">Still open</span>
                 <h3 data-i18n="budgetOpenTitle">Remaining items</h3>
               </div>
               <div id="open-list"></div>
@@ -147,18 +182,18 @@
           </article>
         </section>
 
-        <section class="section visa-section" id="visa">
+        <section class="section section-surface reveal" id="visa" data-section>
           <div class="section-heading">
             <p class="eyebrow" data-i18n="visaKicker">Entry essentials</p>
             <h2 data-i18n="visaTitle">Visa and arrival checklist</h2>
-            <p data-i18n="visaIntro">Updated around your June 2026 trip planning, with the official Indonesia immigration portal linked for final confirmation before departure.</p>
+            <p data-i18n="visaIntro">This section adds the key Indonesia entry details relevant to a June 2026 leisure trip, plus official links for a final pre-departure check.</p>
           </div>
 
           <div class="panel-grid two-up">
             <article class="card visa-card">
               <div class="card-head">
                 <span class="card-tag" data-i18n="visaCardTag">For Taiwan passport holders</span>
-                <h3 data-i18n="visaCardTitle">Indonesia tourist entry</h3>
+                <h3 data-i18n="visaCardTitle">Indonesia tourist visa</h3>
               </div>
               <div id="visa-points"></div>
             </article>
@@ -171,33 +206,47 @@
               <div id="arrival-points"></div>
             </article>
           </div>
+
+          <div class="resource-links">
+            <a class="button button-secondary" href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer" data-i18n="visaPrimaryLink">Official Indonesia eVisa</a>
+            <a class="button button-secondary" href="https://lovebali.baliprov.go.id/" target="_blank" rel="noreferrer" data-i18n="visaSecondaryLink">Official Love Bali levy site</a>
+          </div>
         </section>
 
-        <section class="section notes-section" id="notes">
-          <div class="section-heading">
-            <p class="eyebrow" data-i18n="notesKicker">Field notes</p>
-            <h2 data-i18n="notesTitle">Travel reminders worth pinning</h2>
-            <p data-i18n="notesIntro">These are the details most likely to save time, stress, or sleepy mistakes on travel days.</p>
-          </div>
-
-          <div class="panel-grid two-up">
-            <article class="card">
-              <h3 data-i18n="transportTitle">Transport and timing</h3>
-              <div id="transport-notes"></div>
-            </article>
-            <article class="card">
-              <h3 data-i18n="packingTitle">Packing and safety</h3>
-              <div id="packing-notes"></div>
-            </article>
-          </div>
+        <section class="section notes-grid reveal" id="notes" data-section>
+          <article class="section-surface card note-card">
+            <div class="section-heading compact">
+              <p class="eyebrow" data-i18n="notesKicker">Field notes</p>
+              <h2 data-i18n="notesTitle">Reminders worth pinning</h2>
+              <p data-i18n="notesIntro">These details are the ones most likely to save time, stress, or sleepy mistakes during the trip.</p>
+            </div>
+          </article>
+          <article class="card note-card">
+            <h3 data-i18n="transportTitle">Transport and timing</h3>
+            <div id="transport-notes"></div>
+          </article>
+          <article class="card note-card">
+            <h3 data-i18n="packingTitle">Packing and safety</h3>
+            <div id="packing-notes"></div>
+          </article>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p data-i18n="footerLine">Designed as a pocket-friendly travel handbook for Bali, volcano dawns, and Java culture days.</p>
-        <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer" data-i18n="footerLink">Open official Indonesia eVisa site</a>
+        <div>
+          <p data-i18n="footerLine">Designed as a pocket-friendly handbook inspired by Bali coasts, volcano dawns, and Java culture days.</p>
+          <span class="footer-credit" data-i18n="footerCredit">Live budget conversions use a planning approximation, not a payment quote.</span>
+        </div>
+        <a href="https://github.com/VictoriaC1122/bali-java-travel-2026" target="_blank" rel="noreferrer" data-i18n="footerRepo">View GitHub repo</a>
       </footer>
     </div>
+
+    <nav class="mobile-dock" aria-label="Mobile quick navigation">
+      <a href="#overview" data-i18n="dockOverview">Overview</a>
+      <a href="#itinerary" data-i18n="dockItinerary">Days</a>
+      <a href="#budget" data-i18n="dockBudget">Budget</a>
+      <a href="#visa" data-i18n="dockVisa">Visa</a>
+    </nav>
 
     <script src="./script.js"></script>
   </body>
