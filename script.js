@@ -627,6 +627,31 @@ const state = {
   mapQuery: "Seminyak Beach Bali"
 };
 
+const dom = {
+  overviewStats: document.getElementById("overview-stats"),
+  coverPoints: document.getElementById("cover-points"),
+  departFlight: document.getElementById("depart-flight"),
+  returnFlight: document.getElementById("return-flight"),
+  flightHighlights: document.getElementById("flight-highlights"),
+  flightNotes: document.getElementById("flight-notes"),
+  stayList: document.getElementById("stay-list"),
+  resourceLinks: document.getElementById("resource-links"),
+  linksHighlights: document.getElementById("links-highlights"),
+  packingNotes: document.getElementById("packing-notes"),
+  mapList: document.getElementById("map-list"),
+  mapFrame: document.getElementById("map-frame"),
+  fullRouteLink: document.getElementById("full-route-link"),
+  itineraryHighlights: document.getElementById("itinerary-highlights"),
+  itineraryList: document.getElementById("itinerary-list"),
+  budgetSummaryStrip: document.getElementById("budget-summary-strip"),
+  budgetTableBody: document.getElementById("budget-table-body"),
+  visaHighlights: document.getElementById("visa-highlights"),
+  visaTutorial: document.getElementById("visa-tutorial"),
+  visaPoints: document.getElementById("visa-points"),
+  arrivalPoints: document.getElementById("arrival-points"),
+  pageProgress: document.getElementById("pageProgress")
+};
+
 function formatNumber(value) {
   return new Intl.NumberFormat().format(value);
 }
@@ -680,47 +705,8 @@ function mapEmbedUrl(query) {
   return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 }
 
-function mapSearchUrl(query) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-}
-
-function renderLanguage() {
-  const copy = content[state.lang];
-
-  document.documentElement.lang = state.lang;
-  document.querySelectorAll("[data-i18n]").forEach((node) => {
-    node.textContent = copy[node.dataset.i18n];
-  });
-
-  document.querySelectorAll(".lang-btn").forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === state.lang);
-  });
-
-  document.getElementById("overview-stats").innerHTML = copy.overviewStats
-    .map(
-      ([label, value]) => `
-        <article class="overview-stat">
-          <div class="overview-stat-label">${label}</div>
-          <div class="overview-stat-value">${value}</div>
-        </article>
-      `
-    )
-    .join("");
-
-  document.getElementById("cover-points").innerHTML = copy.coverPoints
-    .map(
-      ([title, desc]) => `
-        <article class="cover-point">
-          <div class="cover-point-title">${title}</div>
-          <div class="cover-point-desc">${desc}</div>
-        </article>
-      `
-    )
-    .join("");
-
-  document.getElementById("depart-flight").innerHTML = renderInfo(copy.flightLabels, FLIGHTS.depart);
-  document.getElementById("return-flight").innerHTML = renderInfo(copy.flightLabels, FLIGHTS.return);
-  document.getElementById("flight-highlights").innerHTML = copy.flightHighlights
+function renderMiniHighlights(items) {
+  return items
     .map(
       ([label, value]) => `
         <article class="mini-highlight">
@@ -730,7 +716,25 @@ function renderLanguage() {
       `
     )
     .join("");
-  document.getElementById("flight-notes").innerHTML = copy.flightNotes
+}
+
+function renderBulletRows(items, detailClass = "bullet-desc") {
+  return items
+    .map(
+      ([title, desc]) => `
+        <div class="bullet-item">
+          <div>
+            <div class="bullet-title">${title}</div>
+            <div class="${detailClass}">${desc}</div>
+          </div>
+        </div>
+      `
+    )
+    .join("");
+}
+
+function renderFlightNotes(items) {
+  return items
     .map(
       ([title, desc]) => `
         <article class="flight-note-card">
@@ -742,10 +746,12 @@ function renderLanguage() {
       `
     )
     .join("");
+}
 
-  document.getElementById("stay-list").innerHTML = copy.stays
+function renderStayRows(items, linkLabel) {
+  return items
     .map(
-      ([dates, place, hotel, note, url, linkLabel]) => `
+      ([dates, place, hotel, note, url, customLabel]) => `
         <div class="stay-item">
           <div class="stay-copy">
             <div class="stay-title">${hotel}</div>
@@ -753,85 +759,29 @@ function renderLanguage() {
           </div>
           <div class="stay-side">
             <div class="stay-meta">${dates}</div>
-            <a class="stay-map-link" href="${url}" target="_blank" rel="noreferrer">${linkLabel || copy.stayMapLabel}</a>
+            <a class="stay-map-link" href="${url}" target="_blank" rel="noreferrer">${customLabel || linkLabel}</a>
           </div>
         </div>
       `
     )
     .join("");
+}
 
-  document.getElementById("resource-links").innerHTML = copy.resourceLinks
-    .map(
-      ([title, desc, url]) => `
-        <article class="resource-card">
-          <div>
-            <div class="resource-card-title">${title}</div>
-            <div class="resource-card-desc">${desc}</div>
-          </div>
-          <a href="${url}" target="_blank" rel="noreferrer">Open</a>
-        </article>
-      `
-    )
-    .join("");
-  document.getElementById("links-highlights").innerHTML = copy.linksHighlights
-    .map(
-      ([label, value]) => `
-        <article class="mini-highlight">
-          <div class="mini-highlight-label">${label}</div>
-          <div class="mini-highlight-value">${value}</div>
-        </article>
-      `
-    )
-    .join("");
-
-  document.getElementById("packing-notes").innerHTML = copy.packingNotes
-    .map(
-      ([title, desc]) => `
-        <div class="note-item">
-          <div>
-            <div class="bullet-title">${title}</div>
-            <div class="note-desc">${desc}</div>
-          </div>
-        </div>
-      `
-    )
-    .join("");
-
-  if (!copy.mapLocations.some(([, query]) => query === state.mapQuery)) {
-    state.mapQuery = copy.mapLocations[0][1];
-  }
-
-  document.getElementById("map-list").innerHTML = copy.mapLocations
+function renderMapLocations(items, activeQuery) {
+  return items
     .map(
       ([title, query, note]) => `
-        <button class="map-location-button ${state.mapQuery === query ? "active" : ""}" type="button" data-query="${query}">
+        <button class="map-location-button ${activeQuery === query ? "active" : ""}" type="button" data-query="${query}">
           <span class="map-location-title">${title}</span>
           <span class="map-location-note">${note}</span>
         </button>
       `
     )
     .join("");
-  document.getElementById("map-frame").src = mapEmbedUrl(state.mapQuery);
-  document.getElementById("full-route-link").href = MAP_ROUTE_URL;
-  document.querySelectorAll(".map-location-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.mapQuery = button.dataset.query;
-      renderLanguage();
-    });
-  });
+}
 
-  document.getElementById("itinerary-highlights").innerHTML = copy.itineraryHighlights
-    .map(
-      ([label, value]) => `
-        <article class="mini-highlight">
-          <div class="mini-highlight-label">${label}</div>
-          <div class="mini-highlight-value">${value}</div>
-        </article>
-      `
-    )
-    .join("");
-
-  document.getElementById("itinerary-list").innerHTML = copy.itinerary
+function renderTimeline(days, focusLabel) {
+  return days
     .map(
       ([day, title, desc, tags, details]) => `
         <article class="day-card">
@@ -841,7 +791,7 @@ function renderLanguage() {
             <div class="day-summary">${desc}</div>
           </div>
           <div class="day-content-top">
-            <div class="day-focus-label">${copy.dayFocusLabel}</div>
+            <div class="day-focus-label">${focusLabel}</div>
             <div class="day-focus-text">${desc}</div>
           </div>
           <div class="day-detail-list">
@@ -863,6 +813,82 @@ function renderLanguage() {
       `
     )
     .join("");
+}
+
+function renderLanguage() {
+  const copy = content[state.lang];
+
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    node.textContent = copy[node.dataset.i18n];
+  });
+
+  document.querySelectorAll(".lang-btn").forEach((button) => {
+    button.classList.toggle("active", button.dataset.lang === state.lang);
+  });
+
+  dom.overviewStats.innerHTML = copy.overviewStats
+    .map(
+      ([label, value]) => `
+        <article class="overview-stat">
+          <div class="overview-stat-label">${label}</div>
+          <div class="overview-stat-value">${value}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  dom.coverPoints.innerHTML = copy.coverPoints
+    .map(
+      ([title, desc]) => `
+        <article class="cover-point">
+          <div class="cover-point-title">${title}</div>
+          <div class="cover-point-desc">${desc}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  dom.departFlight.innerHTML = renderInfo(copy.flightLabels, FLIGHTS.depart);
+  dom.returnFlight.innerHTML = renderInfo(copy.flightLabels, FLIGHTS.return);
+  dom.flightHighlights.innerHTML = renderMiniHighlights(copy.flightHighlights);
+  dom.flightNotes.innerHTML = renderFlightNotes(copy.flightNotes);
+
+  dom.stayList.innerHTML = renderStayRows(copy.stays, copy.stayMapLabel);
+
+  dom.resourceLinks.innerHTML = copy.resourceLinks
+    .map(
+      ([title, desc, url]) => `
+        <article class="resource-card">
+          <div>
+            <div class="resource-card-title">${title}</div>
+            <div class="resource-card-desc">${desc}</div>
+          </div>
+          <a href="${url}" target="_blank" rel="noreferrer">Open</a>
+        </article>
+      `
+    )
+    .join("");
+  dom.linksHighlights.innerHTML = renderMiniHighlights(copy.linksHighlights);
+
+  dom.packingNotes.innerHTML = renderBulletRows(copy.packingNotes, "note-desc");
+
+  if (!copy.mapLocations.some(([, query]) => query === state.mapQuery)) {
+    state.mapQuery = copy.mapLocations[0][1];
+  }
+
+  dom.mapList.innerHTML = renderMapLocations(copy.mapLocations, state.mapQuery);
+  dom.mapFrame.src = mapEmbedUrl(state.mapQuery);
+  dom.fullRouteLink.href = MAP_ROUTE_URL;
+  document.querySelectorAll(".map-location-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.mapQuery = button.dataset.query;
+      renderLanguage();
+    });
+  });
+
+  dom.itineraryHighlights.innerHTML = renderMiniHighlights(copy.itineraryHighlights);
+  dom.itineraryList.innerHTML = renderTimeline(copy.itinerary, copy.dayFocusLabel);
 
   const paid = sumRange(BUDGET.paid);
   const open = sumRange(BUDGET.open);
@@ -870,7 +896,7 @@ function renderLanguage() {
   const totalMax = paid.max + open.max;
   const avgMin = Math.round(totalMin / TRIP_DAYS);
   const avgMax = Math.round(totalMax / TRIP_DAYS);
-  document.getElementById("budget-summary-strip").innerHTML = `
+  dom.budgetSummaryStrip.innerHTML = `
     <article class="budget-summary-card">
       <div class="budget-summary-label">${copy.paidTitle}</div>
       <div class="budget-summary-value">${twd(paid.min)} / ${idr(paid.min * EXCHANGE_RATE)}</div>
@@ -888,7 +914,7 @@ function renderLanguage() {
     ...BUDGET.paid.map((item) => ({ ...item, status: "paid" })),
     ...BUDGET.open.map((item) => ({ ...item, status: "open" }))
   ];
-  document.getElementById("budget-table-body").innerHTML = budgetRows
+  dom.budgetTableBody.innerHTML = budgetRows
     .map((item) => {
       const [title, desc] = copy.budgetLabels[item.key];
       const statusText = item.status === "paid" ? copy.budgetStatusPaid : copy.budgetStatusOpen;
@@ -903,56 +929,10 @@ function renderLanguage() {
     })
     .join("");
 
-  document.getElementById("visa-highlights").innerHTML = copy.visaHighlights
-    .map(
-      ([label, value]) => `
-        <article class="mini-highlight">
-          <div class="mini-highlight-label">${label}</div>
-          <div class="mini-highlight-value">${value}</div>
-        </article>
-      `
-    )
-    .join("");
-
-  document.getElementById("visa-tutorial").innerHTML = copy.visaTutorial
-    .map(
-      ([title, desc]) => `
-        <article class="flight-note-card">
-          <div>
-            <div class="flight-note-title">${title}</div>
-            <div class="flight-note-desc">${desc}</div>
-          </div>
-        </article>
-      `
-    )
-    .join("");
-
-  document.getElementById("visa-points").innerHTML = copy.visaPoints
-    .map(
-      ([title, desc]) => `
-        <div class="bullet-item">
-          <div>
-            <div class="bullet-title">${title}</div>
-            <div class="bullet-desc">${desc}</div>
-          </div>
-        </div>
-      `
-    )
-    .join("");
-
-  document.getElementById("arrival-points").innerHTML = copy.arrivalPoints
-    .map(
-      ([title, desc]) => `
-        <div class="bullet-item">
-          <div>
-            <div class="bullet-title">${title}</div>
-            <div class="bullet-desc">${desc}</div>
-          </div>
-        </div>
-      `
-    )
-    .join("");
-
+  dom.visaHighlights.innerHTML = renderMiniHighlights(copy.visaHighlights);
+  dom.visaTutorial.innerHTML = renderFlightNotes(copy.visaTutorial);
+  dom.visaPoints.innerHTML = renderBulletRows(copy.visaPoints);
+  dom.arrivalPoints.innerHTML = renderBulletRows(copy.arrivalPoints);
 }
 
 function bindLanguageButtons() {
@@ -972,6 +952,7 @@ function bindNav() {
       document.querySelectorAll(".page-section").forEach((section) => section.classList.remove("active"));
       button.classList.add("active");
       document.getElementById(button.dataset.target).classList.add("active");
+      button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -980,7 +961,7 @@ function bindNav() {
 window.addEventListener("scroll", () => {
   const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (window.scrollY / windowHeight) * 100;
-  document.getElementById("pageProgress").style.width = `${scrolled}%`;
+  dom.pageProgress.style.width = `${scrolled}%`;
 });
 
 bindLanguageButtons();
