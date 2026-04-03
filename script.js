@@ -1,56 +1,6 @@
 const EXCHANGE_RATE = 531;
 const TRIP_DAYS = 9;
 
-const FLIGHTS = {
-  depart: {
-    summary: "台北直飛峇里島，整段由華航主飛，結構單純，適合把抵達日留給休息。",
-    segments: [
-      {
-        route: "TPE → DPS",
-        flight: "CI771",
-        marketingCarrier: "China Airlines",
-        operatingCarrier: "China Airlines",
-        time: "09:10 → 14:35",
-        duration: "5h 25m",
-        baggage: "23kg ×2"
-      }
-    ],
-    notes: [
-      "這一段是最乾淨的直飛結構，不用轉機。",
-      "抵達時間在下午，適合直接進飯店與晚餐節奏。",
-      "若前一晚先完成線上報到與文件整理，出發日會輕鬆很多。"
-    ]
-  },
-  return: {
-    summary: "回程是兩段式：先從日惹飛雅加達，再接華航長程回台北，節奏比去程更需要留緩衝。",
-    segments: [
-      {
-        route: "YIA → CGK",
-        flight: "CI9761",
-        marketingCarrier: "China Airlines ticketed segment",
-        operatingCarrier: "依票面與現場報到櫃台為準",
-        time: "09:45 → same-day connection",
-        duration: "Domestic connection leg",
-        baggage: "回程總託運額度 23kg ×1"
-      },
-      {
-        route: "CGK → TPE",
-        flight: "CI762",
-        marketingCarrier: "China Airlines",
-        operatingCarrier: "China Airlines",
-        time: "same-day connection → 21:05 arrival",
-        duration: "International return leg",
-        baggage: "23kg ×1"
-      }
-    ],
-    notes: [
-      "CI9761 是華航票號的聯營 / 接續段，實際承運公司請依電子機票與機場顯示為準。",
-      "真正的國際長程段是雅加達出發的 CI762，由華航承接回台北。",
-      "因為是國內段接國際段，回程當天一定要把 YIA 機場鐵路和轉機緩衝抓穩。"
-    ]
-  }
-};
-
 const BUDGET = {
   paid: [
     { key: "flight", twd: 20494 },
@@ -89,11 +39,11 @@ const DAY_ROUTE_URLS = {
 
 const content = {
   "zh-Hant": {
-    heroKicker: "Indonesia travel handbook",
+    heroKicker: "印尼旅行手冊",
     heroTitle: "Bali × Java",
     heroSubtitle: "海島放鬆、火山晨光、神廟收尾",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
-    heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
+    heroDestinations: "水明漾 • 伊真火山 • Tumpak Sewu • 婆羅摩火山 • 瑪琅 • 日惹",
     navOverview: "總覽",
     navFlights: "航班",
     navStay: "住宿",
@@ -102,11 +52,11 @@ const content = {
     navMap: "地圖",
     navBudget: "預算",
     navVisa: "簽證",
-    overviewLabel: "Journey Overview",
+    overviewLabel: "旅程總覽",
     overviewTitle: "一趟完整、舒服、而且很會安排情緒節奏的印尼經典路線",
     overviewLead:
       "旅程不是把地名一一收集，而是讓海風、火山與神廟依序走進記憶裡，慢慢形成一條有起伏、也有餘韻的路線。",
-    coverLabel: "Handbook Design",
+    coverLabel: "手冊篇章",
     coverTitle: "有些旅行，不是離開，而是把自己重新打開",
     coverLead:
       "這一趟最迷人的地方，不在於排得多滿，而在於它懂得留白。先讓峇里島的海把心情放鬆，再走進東爪哇微冷的凌晨，最後把腳步停在日惹，讓神廟與城市的輪廓替旅程慢慢收尾。",
@@ -119,15 +69,15 @@ const content = {
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
     beachCaption: "Bali 海色",
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
-    routeLabel: "Flight & Route",
+    routeLabel: "航班與路線",
     routeTitle: "航班與移動路線",
     routeLead: "把航段、行李與整體動線獨立整理，出發前和回程前都比較好快速核對。",
     departTag: "去程",
     departTitle: "台北飛峇里島",
     returnTag: "回程",
     returnTitle: "日惹經雅加達回台北",
-    tripFlowLabel: "Trip Flow",
-    tripFlowValue: "台北 → 峇里島 → Ijen → Sewu → Bromo → Malang → 日惹",
+    tripFlowLabel: "整體動線",
+    tripFlowValue: "台北 → 峇里島 → 伊真 → Sewu → 婆羅摩 → 瑪琅 → 日惹",
     flightHighlights: [
       ["去程結構", "CI771 直飛 DPS，華航主飛"],
       ["回程結構", "CI9761 聯營段 + CI762 華航回台"],
@@ -138,12 +88,12 @@ const content = {
       ["轉機責任", "回程真正的國際段是 CI762；YIA → CGK 則是華航票號下的前段接駁，實際承運請依票面與現場為準。"],
       ["不要放上訂位代碼", "網站上只保留班機、路線與承運結構，不放訂位代碼或其他敏感資訊。"]
     ],
-    stayLabel: "Stay Plan",
+    stayLabel: "住宿篇章",
     stayTitle: "住宿安排",
     stayLead: "每一段住宿都對應不同節奏：度假、冒險後休息、文化城市收尾。每個飯店都附上 Google Maps 連結。",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Tour 頁面",
-    linksLabel: "Official Links",
+    linksLabel: "實用連結",
     linksTitle: "官方連結整理",
     linksLead: "把飯店、火山 tour、機場鐵路與入境網站集中在同一頁，出發前會很好找。",
     linksHighlights: [
@@ -153,7 +103,7 @@ const content = {
     ],
     transportTitle: "交通與時間安排",
     packingTitle: "穿著與安全",
-    itineraryLabel: "Day by Day",
+    itineraryLabel: "每日行程",
     itineraryTitle: "每日行程",
     itineraryLead: "用時間線整理每一天的重點，讀起來會更像真正可以帶著走的旅遊手冊。",
     itineraryHighlights: [
@@ -162,7 +112,7 @@ const content = {
       ["最穩的回程", "YIA 機場鐵路抓 06:00 左右"]
     ],
     dayFocusLabel: "今日重點",
-    budgetLabel: "Budget Overview",
+    budgetLabel: "預算整理",
     budgetTitle: "預算整理",
     budgetLead: "以下印尼盾換算以 NT$1 ≈ Rp531 粗估，方便旅行規劃，不代表即時換匯價格。",
     paidTitle: "已支付",
@@ -177,23 +127,23 @@ const content = {
     budgetTableAmount: "金額",
     budgetStatusPaid: "已支付",
     budgetStatusOpen: "未支付",
-    mapLabel: "Travel Map",
+    mapLabel: "旅行地圖",
     mapTitle: "地圖總覽",
     mapLead: "把主要住宿、火山、神廟與機場路線集中到同一頁，手機上也能直接切換看大圖地圖。",
     mapRouteLink: "開啟完整路線",
     mapDayLabel: "每日路線",
     mapDayRoutes: [
-      ["Day 1", "抵達與入住", DAY_ROUTE_URLS.day1],
-      ["Day 2", "Seminyak 放鬆日", DAY_ROUTE_URLS.day2],
-      ["Day 3", "Bali 進火山段", DAY_ROUTE_URLS.day3],
-      ["Day 4", "Ijen 路線", DAY_ROUTE_URLS.day4],
-      ["Day 5", "Sewu 瀑布路線", DAY_ROUTE_URLS.day5],
-      ["Day 6", "Bromo 日出路線", DAY_ROUTE_URLS.day6],
-      ["Day 7", "Malang 到日惹", DAY_ROUTE_URLS.day7],
-      ["Day 8", "雙神廟文化日", DAY_ROUTE_URLS.day8],
-      ["Day 9", "飯店到機場", DAY_ROUTE_URLS.day9]
+      ["第 1 天", "抵達與入住", DAY_ROUTE_URLS.day1],
+      ["第 2 天", "水明漾放鬆日", DAY_ROUTE_URLS.day2],
+      ["第 3 天", "進入火山段", DAY_ROUTE_URLS.day3],
+      ["第 4 天", "伊真火山路線", DAY_ROUTE_URLS.day4],
+      ["第 5 天", "Sewu 瀑布路線", DAY_ROUTE_URLS.day5],
+      ["第 6 天", "婆羅摩日出路線", DAY_ROUTE_URLS.day6],
+      ["第 7 天", "瑪琅到日惹", DAY_ROUTE_URLS.day7],
+      ["第 8 天", "雙神廟文化日", DAY_ROUTE_URLS.day8],
+      ["第 9 天", "飯店到機場", DAY_ROUTE_URLS.day9]
     ],
-    visaLabel: "Visa & Entry",
+    visaLabel: "簽證入境",
     visaTitle: "簽證與入境提醒",
     visaLead: "先申請 eVisa，再補 Bali 旅遊稅，最後把 QR code 與付款憑證留在手機裡，現場會輕鬆很多。",
     visaPanelTitle: "印尼旅遊簽證",
@@ -206,11 +156,11 @@ const content = {
       ["最後", "QR code、護照、回程機票一起存好"]
     ],
     visaTutorial: [
-      ["Step 1", "打開印尼官方 eVisa 網站，先確認台灣護照是否適用 e-VOA / VOA 方案，再建立申請資料。"],
-      ["Step 2", "準備護照、離境機票、住宿資訊與信用卡。護照效期至少要有 6 個月。"],
-      ["Step 3", "完成付款後，把 eVisa 或 e-VOA 憑證存到手機，也建議另外截圖一份。"],
-      ["Step 4", "再到 Love Bali 官方網站繳 Bali 旅遊稅 Rp150,000，完成後同樣保存 QR code。"],
-      ["Step 5", "出發前一天把護照、簽證憑證、Love Bali QR code、回程機票放在同一個手機資料夾。"]
+      ["步驟一", "打開印尼官方 eVisa 網站，先確認台灣護照是否適用 e-VOA / VOA 方案，再建立申請資料。"],
+      ["步驟二", "準備護照、離境機票、住宿資訊與信用卡。護照效期至少要有 6 個月。"],
+      ["步驟三", "完成付款後，把 eVisa 或 e-VOA 憑證存到手機，也建議另外截圖一份。"],
+      ["步驟四", "再到 Love Bali 官方網站繳 Bali 旅遊稅 Rp150,000，完成後同樣保存 QR code。"],
+      ["步驟五", "出發前一天把護照、簽證憑證、Love Bali QR code、回程機票放在同一個手機資料夾。"]
     ],
     resourceLinks: [
       ["Seminyak 飯店", "Courtyard by Marriott Bali Seminyak Resort 官方網站", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
@@ -225,8 +175,57 @@ const content = {
       ["天數", "9天8夜"],
       ["旅程定位", "高品質自由行"],
       ["一句話", "有體驗、有放鬆、有文化"],
-      ["旅行區域", "Bali + East Java + Yogyakarta"]
+      ["旅行區域", "峇里島 + 東爪哇 + 日惹"]
     ],
+    flightData: {
+      depart: {
+        summary: "台北直飛峇里島，整段由中華航空主飛，結構單純，適合把抵達日留給休息。",
+        segments: [
+          {
+            route: "TPE → DPS",
+            flight: "CI771",
+            marketingCarrier: "中華航空",
+            operatingCarrier: "中華航空",
+            time: "09:10 → 14:35",
+            duration: "直飛 5 小時 25 分",
+            baggage: "23kg ×2"
+          }
+        ],
+        notes: [
+          "這一段是最乾淨的直飛結構，不用轉機。",
+          "抵達時間在下午，適合直接進飯店與晚餐節奏。",
+          "若前一晚先完成線上報到與文件整理，出發日會輕鬆很多。"
+        ]
+      },
+      return: {
+        summary: "回程是兩段式：先從日惹飛雅加達，再接中華航空長程回台北，節奏比去程更需要留緩衝。",
+        segments: [
+          {
+            route: "YIA → CGK",
+            flight: "CI9761",
+            marketingCarrier: "中華航空票號接續段",
+            operatingCarrier: "依電子機票與機場顯示為準",
+            time: "09:45 → 當日銜接",
+            duration: "印尼國內接駁段",
+            baggage: "回程總託運額度 23kg ×1"
+          },
+          {
+            route: "CGK → TPE",
+            flight: "CI762",
+            marketingCarrier: "中華航空",
+            operatingCarrier: "中華航空",
+            time: "當日銜接 → 21:05 抵達",
+            duration: "國際回程主段",
+            baggage: "23kg ×1"
+          }
+        ],
+        notes: [
+          "CI9761 是中華航空票號下的接續段，實際承運公司請依電子機票與機場顯示為準。",
+          "真正的國際長程段是雅加達出發的 CI762，由中華航空承接回台北。",
+          "因為是國內段接國際段，回程當天一定要把 YIA 機場鐵路和轉機緩衝抓穩。"
+        ]
+      }
+    },
     flightSegmentLabels: {
       route: "航段",
       flight: "航班",
@@ -239,10 +238,10 @@ const content = {
     stays: [
       {
         dates: "6/13 - 6/15",
-        area: "Seminyak, Bali",
+        area: "峇里島・水明漾",
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "峇里島水明漾萬怡度假村",
-        stars: "5-star",
+        stars: "五星級",
         note: "用帶著海風的度假節奏，把這趟旅程開成一個柔軟而明亮的序章。",
         details: [
           "步行可接近 Seminyak Beach",
@@ -253,10 +252,10 @@ const content = {
       },
       {
         dates: "6/15 - 6/17",
-        area: "Java volcano region",
+        area: "東爪哇火山區",
         hotel: "Tour provided",
         localName: "火山段住宿（由旅遊團安排）",
-        stars: "Tour arranged",
+        stars: "團體安排",
         note: "這一段不追求奢華，而是把體力、移動與凌晨出發的節奏安穩地接住。",
         details: [
           "住宿與接送由 tour 統一安排",
@@ -268,10 +267,10 @@ const content = {
       },
       {
         dates: "6/18",
-        area: "Malang",
+        area: "瑪琅",
         hotel: "The Shalimar Boutique Hotel",
         localName: "沙利馬精品飯店",
-        stars: "5-star",
+        stars: "五星級",
         note: "像把一夜休息放進殖民老宅裡，讓火山段之後的身體與情緒都慢慢回來。",
         details: [
           "1930 年代殖民建築改造",
@@ -282,10 +281,10 @@ const content = {
       },
       {
         dates: "6/19 - 6/21",
-        area: "Yogyakarta",
+        area: "日惹",
         hotel: "Aveta Hotel Malioboro",
         localName: "阿維塔馬利歐波羅飯店",
-        stars: "4-star",
+        stars: "四星級",
         note: "把城市的便利與旅程尾聲需要的從容放在一起，適合文化日也適合回程前一晚。",
         details: [
           "緊貼 Malioboro 主街，地點非常順",
@@ -349,7 +348,7 @@ const content = {
     ]
   },
   en: {
-    heroKicker: "Indonesia travel handbook",
+    heroKicker: "Panduan perjalanan Indonesia",
     heroTitle: "Bali × Java",
     heroSubtitle: "Island ease, volcano dawns, temple endings",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
@@ -358,14 +357,14 @@ const content = {
     navFlights: "Flights",
     navStay: "Stays",
     navLinks: "Links",
-    navItinerary: "Itinerary",
+    navItinerary: "Rencana",
     navMap: "Map",
-    navBudget: "Budget",
+    navBudget: "Biaya",
     navVisa: "Visa",
-    overviewLabel: "Journey Overview",
+    overviewLabel: "Ringkasan perjalanan",
     overviewTitle: "A very complete Indonesia classic route with rest, drama, and culture in the right order",
     overviewLead: "This route is less about collecting places and more about letting sea light, volcanic dawns, and temple silhouettes settle into memory in the right order.",
-    coverLabel: "Handbook Design",
+    coverLabel: "Narasi perjalanan",
     coverTitle: "Some trips do not begin with departure, but with softening",
     coverLead:
       "What makes this route beautiful is not density, but rhythm. Bali opens the heart gently, East Java brings the dramatic edge of dawn and stone, and Yogyakarta lets the journey exhale into culture and evening light.",
@@ -378,14 +377,14 @@ const content = {
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
     beachCaption: "Bali shoreline",
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
-    routeLabel: "Flight & Route",
+    routeLabel: "Penerbangan dan rute",
     routeTitle: "Flights and route",
     routeLead: "This page keeps the flight legs, baggage allowance, and travel flow together so they are easier to re-check before departure.",
     departTag: "Outbound",
     departTitle: "Taipei to Bali",
     returnTag: "Return",
     returnTitle: "Yogyakarta to Taipei via Jakarta",
-    tripFlowLabel: "Trip Flow",
+    tripFlowLabel: "Alur perjalanan",
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
     flightHighlights: [
       ["Outbound shape", "CI771 direct to DPS on China Airlines"],
@@ -397,12 +396,12 @@ const content = {
       ["Transfer responsibility", "The true long-haul international sector is CI762; the YIA → CGK portion is a China Airlines ticketed feeder segment and the operating carrier should be confirmed on the live ticket and airport display."],
       ["Privacy choice", "The site keeps the flight structure and carrier notes, but deliberately does not display the booking code."]
     ],
-    stayLabel: "Stay Plan",
+    stayLabel: "Rencana menginap",
     stayTitle: "Where you stay",
     stayLead: "Each stay matches a different mood: resort ease, recovery after the volcano leg, then a city finish. Every hotel includes a Google Maps link.",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Tour page",
-    linksLabel: "Official Links",
+    linksLabel: "Tautan resmi",
     linksTitle: "Useful official links",
     linksLead: "This page keeps the hotel, volcano tour, airport rail, and entry websites together in one place.",
     linksHighlights: [
@@ -412,7 +411,7 @@ const content = {
     ],
     transportTitle: "Transport and timing",
     packingTitle: "Packing and safety",
-    itineraryLabel: "Day by Day",
+    itineraryLabel: "Rencana harian",
     itineraryTitle: "Daily itinerary",
     itineraryLead: "Each day is arranged as a simple vertical timeline so it reads more like a practical handbook.",
     itineraryHighlights: [
@@ -421,7 +420,7 @@ const content = {
       ["Safest return", "The 06:00-ish YIA airport rail remains the safest plan"]
     ],
     dayFocusLabel: "Today's focus",
-    budgetLabel: "Budget Overview",
+    budgetLabel: "Ringkasan budget",
     budgetTitle: "Budget breakdown",
     budgetLead: "IDR conversions below use a rough planning rate of NT$1 ≈ Rp531, meant for planning only.",
     paidTitle: "Already paid",
@@ -436,7 +435,7 @@ const content = {
     budgetTableAmount: "Amount",
     budgetStatusPaid: "Paid",
     budgetStatusOpen: "Open",
-    mapLabel: "Travel Map",
+    mapLabel: "Peta perjalanan",
     mapTitle: "Map overview",
     mapLead: "Hotels, volcano stops, and the airport flow are collected here so you can switch to a large Google map view quickly on mobile too.",
     mapRouteLink: "Open full route",
@@ -486,6 +485,55 @@ const content = {
       ["Summary", "Experience, rest, culture"],
       ["Region", "Bali + East Java + Yogyakarta"]
     ],
+    flightData: {
+      depart: {
+        summary: "This outbound leg flies directly from Taipei to Bali on China Airlines, with no transfer complexity in between.",
+        segments: [
+          {
+            route: "TPE → DPS",
+            flight: "CI771",
+            marketingCarrier: "China Airlines",
+            operatingCarrier: "China Airlines",
+            time: "09:10 → 14:35",
+            duration: "Direct, 5h 25m",
+            baggage: "23kg ×2"
+          }
+        ],
+        notes: [
+          "This is the cleanest part of the ticket because it is nonstop.",
+          "Landing in the afternoon makes the first day better suited to check-in, dinner, and rest.",
+          "If online check-in and documents are sorted the night before, departure day feels much easier."
+        ]
+      },
+      return: {
+        summary: "The return is a two-part structure: a feeder flight from Yogyakarta to Jakarta, then the main China Airlines international sector back to Taipei.",
+        segments: [
+          {
+            route: "YIA → CGK",
+            flight: "CI9761",
+            marketingCarrier: "China Airlines ticketed segment",
+            operatingCarrier: "Check the final e-ticket and airport display",
+            time: "09:45 → same-day connection",
+            duration: "Domestic feeder leg",
+            baggage: "Total return allowance 23kg ×1"
+          },
+          {
+            route: "CGK → TPE",
+            flight: "CI762",
+            marketingCarrier: "China Airlines",
+            operatingCarrier: "China Airlines",
+            time: "same-day connection → 21:05 arrival",
+            duration: "Main international return leg",
+            baggage: "23kg ×1"
+          }
+        ],
+        notes: [
+          "CI9761 is a China Airlines ticketed feeder sector; the actual operating carrier should be confirmed on the final ticket and at the airport.",
+          "The true long-haul international segment back to Taipei is CI762 out of Jakarta.",
+          "Because this is a domestic-to-international connection day, buffer time at both YIA and Jakarta matters."
+        ]
+      }
+    },
     flightSegmentLabels: {
       route: "Sector",
       flight: "Flight",
@@ -617,14 +665,14 @@ const content = {
     navFlights: "Penerbangan",
     navStay: "Hotel",
     navLinks: "Tautan",
-    navItinerary: "Itinerary",
+    navItinerary: "Rencana",
     navMap: "Peta",
-    navBudget: "Budget",
+    navBudget: "Biaya",
     navVisa: "Visa",
-    overviewLabel: "Journey Overview",
+    overviewLabel: "Ringkasan perjalanan",
     overviewTitle: "Rute klasik Indonesia yang lengkap, nyaman, dan punya ritme emosi yang rapi",
     overviewLead: "Perjalanan ini bukan sekadar mengumpulkan tempat, tetapi membiarkan laut, fajar gunung api, dan siluet candi masuk ke ingatan dengan ritme yang indah.",
-    coverLabel: "Handbook Design",
+    coverLabel: "Narasi perjalanan",
     coverTitle: "Ada perjalanan yang tidak dimulai saat berangkat, tetapi saat hati mulai melunak",
     coverLead:
       "Yang membuat rute ini terasa istimewa bukan karena padat, melainkan karena tahu kapan harus tenang dan kapan harus megah. Bali membuka dengan lembut, Jawa Timur memberi dramanya, lalu Yogyakarta menutup dengan budaya dan cahaya sore yang lebih pelan.",
@@ -637,14 +685,14 @@ const content = {
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
     beachCaption: "Laut Bali",
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
-    routeLabel: "Flight & Route",
+    routeLabel: "Penerbangan dan rute",
     routeTitle: "Penerbangan dan rute",
     routeLead: "Halaman ini merangkum segmen penerbangan, bagasi, dan alur perjalanan agar lebih mudah dicek ulang sebelum berangkat.",
     departTag: "Pergi",
     departTitle: "Taipei ke Bali",
     returnTag: "Pulang",
     returnTitle: "Yogyakarta ke Taipei via Jakarta",
-    tripFlowLabel: "Trip Flow",
+    tripFlowLabel: "Alur perjalanan",
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
     flightHighlights: [
       ["Struktur pergi", "CI771 langsung ke DPS dengan China Airlines"],
@@ -656,12 +704,12 @@ const content = {
       ["Tanggung jawab transit", "Segmen internasional utama adalah CI762; bagian YIA → CGK adalah segmen feeder dengan kode tiket China Airlines, sedangkan maskapai operasional sebaiknya dicek lagi di tiket final dan layar bandara."],
       ["Privasi", "Halaman ini hanya menampilkan struktur penerbangan dan maskapai, tanpa menaruh kode booking."]
     ],
-    stayLabel: "Stay Plan",
+    stayLabel: "Rencana menginap",
     stayTitle: "Rencana menginap",
     stayLead: "Setiap tempat menginap punya fungsi ritmenya sendiri: santai, recovery setelah gunung api, lalu penutup kota. Setiap hotel diberi link Google Maps.",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Halaman tour",
-    linksLabel: "Official Links",
+    linksLabel: "Tautan resmi",
     linksTitle: "Tautan resmi",
     linksLead: "Halaman ini mengumpulkan hotel, tour gunung api, kereta bandara, dan situs masuk Indonesia dalam satu tempat.",
     linksHighlights: [
@@ -671,7 +719,7 @@ const content = {
     ],
     transportTitle: "Transportasi dan waktu",
     packingTitle: "Pakaian dan keamanan",
-    itineraryLabel: "Day by Day",
+    itineraryLabel: "Rencana harian",
     itineraryTitle: "Rencana harian",
     itineraryLead: "Setiap hari kini disusun sebagai timeline vertikal agar terasa lebih rapi dan praktis dibaca.",
     itineraryHighlights: [
@@ -680,12 +728,12 @@ const content = {
       ["Pulang paling aman", "Kereta YIA sekitar 06.00 tetap opsi paling aman"]
     ],
     dayFocusLabel: "Fokus hari ini",
-    budgetLabel: "Budget Overview",
+    budgetLabel: "Ringkasan budget",
     budgetTitle: "Ringkasan budget",
     budgetLead: "Konversi IDR di bawah memakai kurs perkiraan NT$1 ≈ Rp531, untuk planning saja.",
     paidTitle: "Sudah dibayar",
     openTitle: "Belum dibayar",
-    totalBudgetLabel: "Total budget",
+    totalBudgetLabel: "Total biaya",
     budgetRateNote: "Kurs perkiraan: NT$1 ≈ Rp531",
     dailyAverageLabel: "Rata-rata harian",
     budgetStyleNote: "Trip mandiri berkualitas, bukan mewah, tapi sangat lengkap",
@@ -695,23 +743,23 @@ const content = {
     budgetTableAmount: "Nominal",
     budgetStatusPaid: "Sudah",
     budgetStatusOpen: "Belum",
-    mapLabel: "Travel Map",
+    mapLabel: "Peta perjalanan",
     mapTitle: "Ringkasan peta",
     mapLead: "Hotel, titik gunung api, dan alur ke bandara dikumpulkan di sini supaya mudah dibuka sebagai peta besar, termasuk di HP.",
     mapRouteLink: "Buka rute lengkap",
     mapDayLabel: "Rute Harian",
     mapDayRoutes: [
-      ["Day 1", "Tiba dan check-in", DAY_ROUTE_URLS.day1],
-      ["Day 2", "Hari santai Seminyak", DAY_ROUTE_URLS.day2],
-      ["Day 3", "Bali ke segmen gunung api", DAY_ROUTE_URLS.day3],
-      ["Day 4", "Rute Ijen", DAY_ROUTE_URLS.day4],
-      ["Day 5", "Rute air terjun Sewu", DAY_ROUTE_URLS.day5],
-      ["Day 6", "Rute sunrise Bromo", DAY_ROUTE_URLS.day6],
-      ["Day 7", "Malang ke Yogyakarta", DAY_ROUTE_URLS.day7],
-      ["Day 8", "Rute hari candi", DAY_ROUTE_URLS.day8],
-      ["Day 9", "Hotel ke bandara", DAY_ROUTE_URLS.day9]
+      ["Hari 1", "Tiba dan check-in", DAY_ROUTE_URLS.day1],
+      ["Hari 2", "Hari santai Seminyak", DAY_ROUTE_URLS.day2],
+      ["Hari 3", "Bali ke segmen gunung api", DAY_ROUTE_URLS.day3],
+      ["Hari 4", "Rute Ijen", DAY_ROUTE_URLS.day4],
+      ["Hari 5", "Rute air terjun Sewu", DAY_ROUTE_URLS.day5],
+      ["Hari 6", "Rute sunrise Bromo", DAY_ROUTE_URLS.day6],
+      ["Hari 7", "Malang ke Yogyakarta", DAY_ROUTE_URLS.day7],
+      ["Hari 8", "Rute hari candi", DAY_ROUTE_URLS.day8],
+      ["Hari 9", "Hotel ke bandara", DAY_ROUTE_URLS.day9]
     ],
-    visaLabel: "Visa & Entry",
+    visaLabel: "Visa dan masuk",
     visaTitle: "Catatan visa dan masuk",
     visaLead: "Urus eVisa lebih dulu, lalu bayar levy wisata Bali, dan simpan semua QR code serta bukti pembayaran di HP.",
     visaPanelTitle: "Visa wisata Indonesia",
@@ -724,11 +772,11 @@ const content = {
       ["Cek akhir", "Simpan QR code, paspor, dan tiket pulang jadi satu"]
     ],
     visaTutorial: [
-      ["Step 1", "Buka situs resmi eVisa Indonesia dan cek dulu jalur e-VOA / VOA yang sesuai untuk paspor Taiwan sebelum mulai."],
-      ["Step 2", "Siapkan paspor, tiket keluar, data hotel, dan kartu pembayaran. Masa berlaku paspor harus minimal 6 bulan."],
-      ["Step 3", "Setelah pembayaran selesai, simpan bukti eVisa atau e-VOA di HP dan backup dengan screenshot."],
-      ["Step 4", "Masuk ke situs resmi Love Bali lalu bayar levy wisata Bali Rp150.000, lalu simpan QR code-nya juga."],
-      ["Step 5", "Malam sebelum berangkat, taruh paspor, bukti visa, QR code Love Bali, dan detail tiket pulang di satu folder yang mudah dibuka."]
+      ["Langkah 1", "Buka situs resmi eVisa Indonesia dan cek dulu jalur e-VOA / VOA yang sesuai untuk paspor Taiwan sebelum mulai."],
+      ["Langkah 2", "Siapkan paspor, tiket keluar, data hotel, dan kartu pembayaran. Masa berlaku paspor harus minimal 6 bulan."],
+      ["Langkah 3", "Setelah pembayaran selesai, simpan bukti eVisa atau e-VOA di HP dan backup dengan screenshot."],
+      ["Langkah 4", "Masuk ke situs resmi Love Bali lalu bayar levy wisata Bali Rp150.000, lalu simpan QR code-nya juga."],
+      ["Langkah 5", "Malam sebelum berangkat, taruh paspor, bukti visa, QR code Love Bali, dan detail tiket pulang di satu folder yang mudah dibuka."]
     ],
     resourceLinks: [
       ["Hotel Seminyak", "Situs resmi Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
@@ -745,6 +793,55 @@ const content = {
       ["Ringkas", "Pengalaman, santai, budaya"],
       ["Area", "Bali + Jawa Timur + Yogyakarta"]
     ],
+    flightData: {
+      depart: {
+        summary: "Taipei terbang langsung ke Bali, seluruh segmen utama dioperasikan oleh China Airlines dan ritmenya cukup sederhana.",
+        segments: [
+          {
+            route: "TPE → DPS",
+            flight: "CI771",
+            marketingCarrier: "China Airlines",
+            operatingCarrier: "China Airlines",
+            time: "09:10 → 14:35",
+            duration: "Langsung 5 jam 25 menit",
+            baggage: "23kg ×2"
+          }
+        ],
+        notes: [
+          "Segmen pergi ini paling sederhana karena tanpa transit.",
+          "Tiba di siang menuju sore, jadi cocok langsung check-in dan istirahat.",
+          "Kalau dokumen dan check-in online sudah dirapikan malam sebelumnya, hari berangkat terasa jauh lebih ringan."
+        ]
+      },
+      return: {
+        summary: "Rute pulang terdiri dari dua bagian: terbang dulu dari Yogyakarta ke Jakarta, lalu lanjut penerbangan internasional China Airlines ke Taipei.",
+        segments: [
+          {
+            route: "YIA → CGK",
+            flight: "CI9761",
+            marketingCarrier: "Segmen berkode tiket China Airlines",
+            operatingCarrier: "Cek lagi di e-ticket dan layar bandara",
+            time: "09:45 → sambungan hari yang sama",
+            duration: "Segmen domestik penghubung",
+            baggage: "Total bagasi pulang 23kg ×1"
+          },
+          {
+            route: "CGK → TPE",
+            flight: "CI762",
+            marketingCarrier: "China Airlines",
+            operatingCarrier: "China Airlines",
+            time: "sambungan hari yang sama → tiba 21:05",
+            duration: "Segmen internasional utama",
+            baggage: "23kg ×1"
+          }
+        ],
+        notes: [
+          "CI9761 adalah segmen penghubung dengan kode tiket China Airlines; maskapai operasionalnya sebaiknya dicek lagi di dokumen akhir dan di bandara.",
+          "Segmen internasional utama yang benar-benar membawa pulang ke Taipei adalah CI762 dari Jakarta.",
+          "Karena ada sambungan domestik ke internasional, buffer waktu di YIA dan Jakarta perlu dijaga baik-baik."
+        ]
+      }
+    },
     flightSegmentLabels: {
       route: "Segmen",
       flight: "Penerbangan",
@@ -760,7 +857,7 @@ const content = {
         area: "Seminyak, Bali",
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "Courtyard Bali Seminyak Resort",
-        stars: "5-star",
+        stars: "Bintang 5",
         note: "Pembuka yang lembut, terang, dan dekat laut, cocok untuk membuat tubuh santai dulu.",
         details: [
           "Bisa jalan ke Seminyak Beach",
@@ -774,7 +871,7 @@ const content = {
         area: "Area gunung api Jawa",
         hotel: "Tour provided",
         localName: "Akomodasi segmen gunung api",
-        stars: "Tour arranged",
+        stars: "Diatur oleh tur",
         note: "Bagian ini bukan soal mewah, tetapi soal tidur secukupnya dan bergerak efisien saat ritme sangat pagi.",
         details: [
           "Penginapan dan transfer diatur oleh tour",
@@ -789,7 +886,7 @@ const content = {
         area: "Malang",
         hotel: "The Shalimar Boutique Hotel",
         localName: "The Shalimar Boutique Hotel",
-        stars: "5-star",
+        stars: "Bintang 5",
         note: "Tempat singgah yang terasa lebih anggun setelah hari-hari yang kasar dan penuh debu.",
         details: [
           "Bangunan kolonial era 1930-an",
@@ -803,7 +900,7 @@ const content = {
         area: "Yogyakarta",
         hotel: "Aveta Hotel Malioboro",
         localName: "Aveta Hotel Malioboro",
-        stars: "4-star",
+        stars: "Bintang 4",
         note: "Tempat menginap yang membuat penutup perjalanan tetap ringan: dekat candi, dekat jalan utama, dan dekat ritme pulang.",
         details: [
           "Menempel di Malioboro Street",
@@ -1105,6 +1202,7 @@ function renderTimeline(days, focusLabel) {
 
 function renderLanguage() {
   const copy = content[state.lang];
+  const flights = copy.flightData;
 
   document.documentElement.lang = state.lang;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
@@ -1137,8 +1235,8 @@ function renderLanguage() {
     )
     .join("");
 
-  dom.departFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, FLIGHTS.depart);
-  dom.returnFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, FLIGHTS.return);
+  dom.departFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, flights.depart);
+  dom.returnFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, flights.return);
   dom.flightHighlights.innerHTML = renderMiniHighlights(copy.flightHighlights);
   dom.flightNotes.innerHTML = renderFlightNotes(copy.flightNotes);
 
