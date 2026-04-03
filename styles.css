@@ -592,23 +592,40 @@ h4 {
   text-align: center;
 }
 
-.official-links {
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.resource-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 22px;
+  border-radius: 18px;
+  border: 1px solid var(--border-light);
+  background: linear-gradient(135deg, rgba(255, 252, 248, 0.96), rgba(246, 239, 230, 0.86));
 }
 
-.stay-links {
-  margin-top: 22px;
+.resource-card-title {
+  font-size: 19px;
+  color: var(--primary-dark);
 }
 
+.resource-card-desc {
+  color: var(--text-mid);
+  font-size: 15px;
+}
+
+.resource-card a,
 .official-links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 20px;
+  width: fit-content;
+  min-height: 44px;
+  padding: 0 18px;
   border-radius: 999px;
   color: var(--primary-dark);
   border: 1px solid rgba(196, 111, 66, 0.18);
@@ -618,9 +635,17 @@ h4 {
   transition: all 0.28s ease;
 }
 
+.resource-card a:hover,
 .official-links a:hover {
   background: rgba(196, 111, 66, 0.08);
   transform: translateY(-1px);
+}
+
+.official-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
 }
 
 @keyframes fadeInDown {
@@ -710,6 +735,7 @@ h4 {
   }
 
   .overview-grid,
+  .resource-grid,
   .flight-grid,
   .visa-grid,
   .budget-panels,

@@ -57,7 +57,8 @@ const content = {
     tripFlowValue: "台北 → 峇里島 → Ijen → Sewu → Bromo → Malang → 日惹",
     stayLabel: "Stay Plan",
     stayTitle: "住宿安排",
-    volcanoTourLink: "火山 tour 官方頁面",
+    linksLabel: "Official Links",
+    linksTitle: "官方連結整理",
     transportTitle: "交通與時間安排",
     packingTitle: "穿著與安全",
     itineraryLabel: "Day by Day",
@@ -78,6 +79,15 @@ const content = {
     arrivalPanelTitle: "峇里島入境附加事項",
     visaLinkOne: "印尼官方 eVisa",
     visaLinkTwo: "Love Bali 官方網站",
+    resourceLinks: [
+      ["Seminyak 飯店", "Courtyard by Marriott Bali Seminyak Resort 官方網站", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
+      ["Malang 飯店", "The Shalimar Boutique Hotel 官方網站", "https://theshalimarhotel.co.id/"],
+      ["日惹飯店", "Aveta Hotel Malioboro 官方網站", "https://avetahotelmalioboro.com/"],
+      ["火山 tour", "Java Volcano Tour Operator 官方頁面", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+      ["機場鐵路", "YIA Airport Rail Link 官方訂票頁", "https://reservation.railink.co.id/"],
+      ["印尼 eVisa", "印尼官方簽證申請入口", "https://evisa.imigrasi.go.id/"],
+      ["Love Bali", "峇里島旅遊稅官方網站", "https://lovebali.baliprov.go.id/"]
+    ],
     overviewStats: [
       ["天數", "9天8夜"],
       ["旅程定位", "高品質自由行"],
@@ -163,7 +173,8 @@ const content = {
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
     stayLabel: "Stay Plan",
     stayTitle: "Where you stay",
-    volcanoTourLink: "Official volcano tour page",
+    linksLabel: "Official Links",
+    linksTitle: "Useful official links",
     transportTitle: "Transport and timing",
     packingTitle: "Packing and safety",
     itineraryLabel: "Day by Day",
@@ -184,6 +195,15 @@ const content = {
     arrivalPanelTitle: "Bali arrival extras",
     visaLinkOne: "Official Indonesia eVisa",
     visaLinkTwo: "Official Love Bali site",
+    resourceLinks: [
+      ["Seminyak hotel", "Official site for Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
+      ["Malang hotel", "Official site for The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
+      ["Yogyakarta hotel", "Official site for Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
+      ["Volcano tour", "Official Java Volcano Tour Operator page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+      ["Airport rail", "Official YIA Airport Rail Link booking page", "https://reservation.railink.co.id/"],
+      ["Indonesia eVisa", "Official Indonesia visa application site", "https://evisa.imigrasi.go.id/"],
+      ["Love Bali", "Official Bali tourist levy site", "https://lovebali.baliprov.go.id/"]
+    ],
     overviewStats: [
       ["Length", "9 days / 8 nights"],
       ["Trip type", "High-quality DIY"],
@@ -269,7 +289,8 @@ const content = {
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
     stayLabel: "Stay Plan",
     stayTitle: "Rencana menginap",
-    volcanoTourLink: "Halaman resmi tour gunung api",
+    linksLabel: "Official Links",
+    linksTitle: "Tautan resmi",
     transportTitle: "Transportasi dan waktu",
     packingTitle: "Pakaian dan keamanan",
     itineraryLabel: "Day by Day",
@@ -290,6 +311,15 @@ const content = {
     arrivalPanelTitle: "Tambahan saat tiba di Bali",
     visaLinkOne: "eVisa resmi Indonesia",
     visaLinkTwo: "Situs resmi Love Bali",
+    resourceLinks: [
+      ["Hotel Seminyak", "Situs resmi Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
+      ["Hotel Malang", "Situs resmi The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
+      ["Hotel Yogyakarta", "Situs resmi Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
+      ["Tour gunung api", "Halaman resmi Java Volcano Tour Operator", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+      ["Kereta bandara", "Halaman resmi pemesanan YIA Airport Rail Link", "https://reservation.railink.co.id/"],
+      ["eVisa Indonesia", "Situs resmi pengajuan visa Indonesia", "https://evisa.imigrasi.go.id/"],
+      ["Love Bali", "Situs resmi levy wisata Bali", "https://lovebali.baliprov.go.id/"]
+    ],
     overviewStats: [
       ["Durasi", "9 hari / 8 malam"],
       ["Jenis trip", "Mandiri berkualitas"],
@@ -443,6 +473,18 @@ function renderLanguage() {
           </div>
           <div class="stay-meta">${dates}</div>
         </div>
+      `
+    )
+    .join("");
+
+  document.getElementById("resource-links").innerHTML = copy.resourceLinks
+    .map(
+      ([title, desc, url]) => `
+        <article class="resource-card">
+          <div class="resource-card-title">${title}</div>
+          <div class="resource-card-desc">${desc}</div>
+          <a href="${url}" target="_blank" rel="noreferrer">Open</a>
+        </article>
       `
     )
     .join("");
