@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bali & Java Travel Handbook 2026</title>
+    <meta
+      name="description"
+      content="A trilingual Bali and Java travel handbook for June 2026, covering flights, stays, volcano adventures, temples, budget, and visa essentials."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <p class="eyebrow" data-i18n="siteTag">Journey handbook</p>
+          <a class="brand" href="#top" data-i18n="siteTitle">Bali × Java 2026</a>
+        </div>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="#overview" data-i18n="navOverview">Overview</a>
+          <a href="#route" data-i18n="navRoute">Route</a>
+          <a href="#stay" data-i18n="navStay">Stay</a>
+          <a href="#budget" data-i18n="navBudget">Budget</a>
+          <a href="#visa" data-i18n="navVisa">Visa</a>
+          <a href="#notes" data-i18n="navNotes">Notes</a>
+        </nav>
+
+        <div class="lang-switcher" role="tablist" aria-label="Language switcher">
+          <button class="lang-btn is-active" data-lang="zh-Hant" type="button">繁中</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+          <button class="lang-btn" data-lang="id" type="button">ID</button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroKicker">Island breeze, lava dawn, temple light</p>
+            <h1 data-i18n="heroTitle">Indonesia escape with Bali calm and Java adventure.</h1>
+            <p class="hero-text" data-i18n="heroSummary">
+              A refined 9-day route with beach downtime, volcano highlights, boutique stays, and a culture-rich finish in Yogyakarta.
+            </p>
+
+            <div class="hero-chips">
+              <span data-i18n="heroChipOne">9 days / 8 nights</span>
+              <span data-i18n="heroChipTwo">Bali + East Java + Yogyakarta</span>
+              <span data-i18n="heroChipThree">Travel handbook edition</span>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="stat-grid" id="hero-stats"></div>
+            <div class="route-ribbon">
+              <p class="route-label" data-i18n="routeRibbonLabel">Trip flow</p>
+              <p class="route-line" data-i18n="routeRibbonValue">Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-route" id="route">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="routeKicker">Movement</p>
+            <h2 data-i18n="routeTitle">Flight and route snapshot</h2>
+            <p data-i18n="routeIntro">
+              Smooth arrival into Bali, then a scenic overland volcano stretch before ending with temples and city comfort in Yogyakarta.
+            </p>
+          </div>
+
+          <div class="panel-grid two-up">
+            <article class="card card-flight">
+              <div class="card-head">
+                <span class="card-tag" data-i18n="departTag">Outbound</span>
+                <h3 data-i18n="departTitle">Taipei to Bali</h3>
+              </div>
+              <div id="depart-flight"></div>
+            </article>
+
+            <article class="card card-flight">
+              <div class="card-head">
+                <span class="card-tag alt" data-i18n="returnTag">Return</span>
+                <h3 data-i18n="returnTitle">Yogyakarta to Taipei via Jakarta</h3>
+              </div>
+              <div id="return-flight"></div>
+            </article>
+          </div>
+
+          <div class="journey-band" id="journey-band"></div>
+        </section>
+
+        <section class="section" id="stay">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="stayKicker">Hotels and rest</p>
+            <h2 data-i18n="stayTitle">Where each leg is anchored</h2>
+            <p data-i18n="stayIntro">Resort comfort first, volcano transit in the middle, then heritage-style city stays to finish the trip strong.</p>
+          </div>
+
+          <div class="card-list" id="stay-list"></div>
+        </section>
+
+        <section class="section itinerary-section" id="itinerary">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="itineraryKicker">Daily rhythm</p>
+            <h2 data-i18n="itineraryTitle">Day-by-day itinerary</h2>
+            <p data-i18n="itineraryIntro">Built to balance recovery, dramatic nature, intercity movement, and major cultural highlights without feeling rushed.</p>
+          </div>
+
+          <div class="itinerary-grid" id="itinerary-grid"></div>
+        </section>
+
+        <section class="section budget-section" id="budget">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="budgetKicker">Money overview</p>
+            <h2 data-i18n="budgetTitle">Budget map at a glance</h2>
+            <p data-i18n="budgetIntro">The plan already covers the biggest costs, leaving a clear picture for final payments and daily spend.</p>
+          </div>
+
+          <div class="panel-grid budget-grid">
+            <article class="card">
+              <div class="card-head">
+                <span class="card-tag" data-i18n="budgetPaidTag">Already paid</span>
+                <h3 data-i18n="budgetPaidTitle">Locked-in costs</h3>
+              </div>
+              <div id="paid-list"></div>
+              <div class="budget-total" id="paid-total"></div>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <span class="card-tag alt" data-i18n="budgetOpenTag">To be paid</span>
+                <h3 data-i18n="budgetOpenTitle">Remaining items</h3>
+              </div>
+              <div id="open-list"></div>
+              <div class="budget-total" id="open-total"></div>
+            </article>
+          </div>
+
+          <article class="card budget-summary">
+            <div class="summary-grid" id="budget-summary"></div>
+          </article>
+        </section>
+
+        <section class="section visa-section" id="visa">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="visaKicker">Entry essentials</p>
+            <h2 data-i18n="visaTitle">Visa and arrival checklist</h2>
+            <p data-i18n="visaIntro">Updated around your June 2026 trip planning, with the official Indonesia immigration portal linked for final confirmation before departure.</p>
+          </div>
+
+          <div class="panel-grid two-up">
+            <article class="card visa-card">
+              <div class="card-head">
+                <span class="card-tag" data-i18n="visaCardTag">For Taiwan passport holders</span>
+                <h3 data-i18n="visaCardTitle">Indonesia tourist entry</h3>
+              </div>
+              <div id="visa-points"></div>
+            </article>
+
+            <article class="card visa-card">
+              <div class="card-head">
+                <span class="card-tag alt" data-i18n="arrivalCardTag">Also remember</span>
+                <h3 data-i18n="arrivalCardTitle">Bali arrival extras</h3>
+              </div>
+              <div id="arrival-points"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section notes-section" id="notes">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="notesKicker">Field notes</p>
+            <h2 data-i18n="notesTitle">Travel reminders worth pinning</h2>
+            <p data-i18n="notesIntro">These are the details most likely to save time, stress, or sleepy mistakes on travel days.</p>
+          </div>
+
+          <div class="panel-grid two-up">
+            <article class="card">
+              <h3 data-i18n="transportTitle">Transport and timing</h3>
+              <div id="transport-notes"></div>
+            </article>
+            <article class="card">
+              <h3 data-i18n="packingTitle">Packing and safety</h3>
+              <div id="packing-notes"></div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p data-i18n="footerLine">Designed as a pocket-friendly travel handbook for Bali, volcano dawns, and Java culture days.</p>
+        <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer" data-i18n="footerLink">Open official Indonesia eVisa site</a>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
