@@ -242,6 +242,8 @@ const content = {
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "峇里島水明漾萬怡度假村",
         stars: "五星級",
+        image:
+          "https://cache.marriott.com/content/dam/marriott-renditions/DPSCY/dpscy-exterior-9584-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*",
         note: "用帶著海風的度假節奏，把這趟旅程開成一個柔軟而明亮的序章。",
         details: [
           "步行可接近 Seminyak Beach",
@@ -271,6 +273,7 @@ const content = {
         hotel: "The Shalimar Boutique Hotel",
         localName: "沙利馬精品飯店",
         stars: "五星級",
+        image: "https://theshalimarhotel.co.id/wp-content/uploads/2024/11/The-Shalimar-Hotel-Front.png",
         note: "像把一夜休息放進殖民老宅裡，讓火山段之後的身體與情緒都慢慢回來。",
         details: [
           "1930 年代殖民建築改造",
@@ -285,6 +288,7 @@ const content = {
         hotel: "Aveta Hotel Malioboro",
         localName: "阿維塔馬利歐波羅飯店",
         stars: "四星級",
+        image: "https://avetahotelmalioboro.com/images/aveta-suite1.jpg",
         note: "把城市的便利與旅程尾聲需要的從容放在一起，適合文化日也適合回程前一晚。",
         details: [
           "緊貼 Malioboro 主街，地點非常順",
@@ -550,6 +554,8 @@ const content = {
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "Courtyard Bali Seminyak Resort",
         stars: "5-star",
+        image:
+          "https://cache.marriott.com/content/dam/marriott-renditions/DPSCY/dpscy-exterior-9584-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*",
         note: "A bright, sea-breezed opening that lets the whole trip begin softly instead of abruptly.",
         details: [
           "Walkable to Seminyak Beach",
@@ -579,6 +585,7 @@ const content = {
         hotel: "The Shalimar Boutique Hotel",
         localName: "The Shalimar Boutique Hotel",
         stars: "5-star",
+        image: "https://theshalimarhotel.co.id/wp-content/uploads/2024/11/The-Shalimar-Hotel-Front.png",
         note: "A colonial-era boutique pause after the rugged days, made more for exhaling than for rushing.",
         details: [
           "1930s colonial architecture",
@@ -593,6 +600,7 @@ const content = {
         hotel: "Aveta Hotel Malioboro",
         localName: "Aveta Hotel Malioboro",
         stars: "4-star",
+        image: "https://avetahotelmalioboro.com/images/aveta-suite1.jpg",
         note: "A city stay that keeps the ending easy: temples by day, Malioboro by evening, airport flow the morning after.",
         details: [
           "Right on Malioboro Street",
@@ -858,6 +866,8 @@ const content = {
         hotel: "Courtyard by Marriott Bali Seminyak Resort",
         localName: "Courtyard Bali Seminyak Resort",
         stars: "Bintang 5",
+        image:
+          "https://cache.marriott.com/content/dam/marriott-renditions/DPSCY/dpscy-exterior-9584-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*",
         note: "Pembuka yang lembut, terang, dan dekat laut, cocok untuk membuat tubuh santai dulu.",
         details: [
           "Bisa jalan ke Seminyak Beach",
@@ -887,6 +897,7 @@ const content = {
         hotel: "The Shalimar Boutique Hotel",
         localName: "The Shalimar Boutique Hotel",
         stars: "Bintang 5",
+        image: "https://theshalimarhotel.co.id/wp-content/uploads/2024/11/The-Shalimar-Hotel-Front.png",
         note: "Tempat singgah yang terasa lebih anggun setelah hari-hari yang kasar dan penuh debu.",
         details: [
           "Bangunan kolonial era 1930-an",
@@ -901,6 +912,7 @@ const content = {
         hotel: "Aveta Hotel Malioboro",
         localName: "Aveta Hotel Malioboro",
         stars: "Bintang 4",
+        image: "https://avetahotelmalioboro.com/images/aveta-suite1.jpg",
         note: "Tempat menginap yang membuat penutup perjalanan tetap ringan: dekat candi, dekat jalan utama, dan dekat ritme pulang.",
         details: [
           "Menempel di Malioboro Street",
@@ -1113,8 +1125,15 @@ function renderFlightNotes(items) {
 function renderStayRows(items, linkLabel) {
   return items
     .map(
-      ({ dates, area, hotel, localName, stars, note, details, url, linkLabel: customLabel }) => `
+      ({ dates, area, hotel, localName, stars, image, note, details, url, linkLabel: customLabel }) => `
         <article class="stay-card-rich">
+          ${
+            image
+              ? `<div class="stay-card-image-wrap">
+                  <img class="stay-card-image" src="${image}" alt="${hotel}" loading="lazy" />
+                </div>`
+              : ""
+          }
           <div class="stay-card-top">
             <div class="stay-card-head">
               <div class="stay-card-kicker">${area}</div>
