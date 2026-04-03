@@ -40,6 +40,7 @@ const content = {
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "總覽",
+    navFlights: "航班",
     navItinerary: "行程",
     navBudget: "預算",
     navVisa: "簽證",
@@ -49,12 +50,23 @@ const content = {
       "前段用峇里島放鬆，中段用火山與瀑布拉高記憶點，最後在日惹用文化與城市質感收尾，是非常適合做成旅遊手冊的一條線。",
     routeLabel: "Flight & Route",
     routeTitle: "航班與移動路線",
+    routeLead: "把航段、行李與整體動線獨立整理，出發前和回程前都比較好快速核對。",
     departTag: "去程",
     departTitle: "台北飛峇里島",
     returnTag: "回程",
     returnTitle: "日惹經雅加達回台北",
     tripFlowLabel: "Trip Flow",
     tripFlowValue: "台北 → 峇里島 → Ijen → Sewu → Bromo → Malang → 日惹",
+    flightHighlights: [
+      ["去程", "TPE 直飛 DPS，CI771"],
+      ["回程", "YIA → CGK → TPE"],
+      ["行李", "去程 23kg ×2，回程 23kg ×1"]
+    ],
+    flightNotes: [
+      ["出發提醒", "國際線建議至少提前 2 小時到機場，護照與機票資訊前一晚先整理好。"],
+      ["回程結構", "回程是 YIA 先飛雅加達，再銜接華航回台北，中間轉機節奏要留意。"],
+      ["行李差異", "去回程免費託運額度不同，回程只有 1 件 23kg，要特別注意採買量。"]
+    ],
     stayLabel: "Stay Plan",
     stayTitle: "住宿安排",
     linksLabel: "Official Links",
@@ -163,6 +175,7 @@ const content = {
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Overview",
+    navFlights: "Flights",
     navItinerary: "Itinerary",
     navBudget: "Budget",
     navVisa: "Visa",
@@ -171,12 +184,23 @@ const content = {
     overviewLead: "The trip starts with Bali softness, rises into East Java volcano intensity, then ends in Yogyakarta with temples and city comfort.",
     routeLabel: "Flight & Route",
     routeTitle: "Flights and route",
+    routeLead: "This page keeps the flight legs, baggage allowance, and travel flow together so they are easier to re-check before departure.",
     departTag: "Outbound",
     departTitle: "Taipei to Bali",
     returnTag: "Return",
     returnTitle: "Yogyakarta to Taipei via Jakarta",
     tripFlowLabel: "Trip Flow",
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
+    flightHighlights: [
+      ["Outbound", "TPE direct to DPS on CI771"],
+      ["Return", "YIA → CGK → TPE"],
+      ["Baggage", "23kg ×2 outbound, 23kg ×1 inbound"]
+    ],
+    flightNotes: [
+      ["Departure reminder", "For the international leg, arriving at the airport at least 2 hours early remains the safer plan."],
+      ["Return structure", "The return route first flies from YIA to Jakarta, then connects to the China Airlines sector back to Taipei."],
+      ["Baggage difference", "The baggage allowance changes on the way back, so shopping volume is worth watching."]
+    ],
     stayLabel: "Stay Plan",
     stayTitle: "Where you stay",
     linksLabel: "Official Links",
@@ -285,6 +309,7 @@ const content = {
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Ringkasan",
+    navFlights: "Penerbangan",
     navItinerary: "Itinerary",
     navBudget: "Budget",
     navVisa: "Visa",
@@ -293,12 +318,23 @@ const content = {
     overviewLead: "Awalnya santai di Bali, lalu masuk ke dramanya gunung api Jawa Timur, lalu ditutup dengan budaya dan kenyamanan kota di Yogyakarta.",
     routeLabel: "Flight & Route",
     routeTitle: "Penerbangan dan rute",
+    routeLead: "Halaman ini merangkum segmen penerbangan, bagasi, dan alur perjalanan agar lebih mudah dicek ulang sebelum berangkat.",
     departTag: "Pergi",
     departTitle: "Taipei ke Bali",
     returnTag: "Pulang",
     returnTitle: "Yogyakarta ke Taipei via Jakarta",
     tripFlowLabel: "Trip Flow",
     tripFlowValue: "Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta",
+    flightHighlights: [
+      ["Pergi", "TPE langsung ke DPS dengan CI771"],
+      ["Pulang", "YIA → CGK → TPE"],
+      ["Bagasi", "23kg ×2 saat pergi, 23kg ×1 saat pulang"]
+    ],
+    flightNotes: [
+      ["Pengingat berangkat", "Untuk penerbangan internasional, datang minimal 2 jam lebih awal tetap lebih aman."],
+      ["Struktur pulang", "Rute pulang dimulai dari YIA ke Jakarta dulu, lalu lanjut sektor China Airlines ke Taipei."],
+      ["Perbedaan bagasi", "Jatah bagasi saat pulang lebih sedikit, jadi volume belanja perlu dijaga."]
+    ],
     stayLabel: "Stay Plan",
     stayTitle: "Rencana menginap",
     linksLabel: "Official Links",
@@ -480,6 +516,26 @@ function renderLanguage() {
 
   document.getElementById("depart-flight").innerHTML = renderInfo(copy.flightLabels, FLIGHTS.depart);
   document.getElementById("return-flight").innerHTML = renderInfo(copy.flightLabels, FLIGHTS.return);
+  document.getElementById("flight-highlights").innerHTML = copy.flightHighlights
+    .map(
+      ([label, value]) => `
+        <article class="mini-highlight">
+          <div class="mini-highlight-label">${label}</div>
+          <div class="mini-highlight-value">${value}</div>
+        </article>
+      `
+    )
+    .join("");
+  document.getElementById("flight-notes").innerHTML = copy.flightNotes
+    .map(
+      ([title, desc]) => `
+        <article class="flight-note-card">
+          <div class="flight-note-title">${title}</div>
+          <div class="flight-note-desc">${desc}</div>
+        </article>
+      `
+    )
+    .join("");
 
   document.getElementById("stay-list").innerHTML = copy.stays
     .map(

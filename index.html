@@ -43,6 +43,7 @@
 
     <nav class="main-nav">
       <button class="nav-item active" type="button" data-target="overview" data-i18n="navOverview">總覽</button>
+      <button class="nav-item" type="button" data-target="flights" data-i18n="navFlights">航班</button>
       <button class="nav-item" type="button" data-target="itinerary" data-i18n="navItinerary">行程</button>
       <button class="nav-item" type="button" data-target="budget" data-i18n="navBudget">預算</button>
       <button class="nav-item" type="button" data-target="visa" data-i18n="navVisa">簽證</button>
@@ -58,30 +59,6 @@
           </p>
 
           <div class="overview-grid" id="overview-stats"></div>
-        </section>
-
-        <section class="section-card">
-          <div class="section-label" data-i18n="routeLabel">Flight & Route</div>
-          <h3 data-i18n="routeTitle">航班與移動路線</h3>
-
-          <div class="flight-grid">
-            <article class="flight-card">
-              <div class="flight-tag" data-i18n="departTag">去程</div>
-              <h4 data-i18n="departTitle">台北飛峇里島</h4>
-              <div id="depart-flight"></div>
-            </article>
-
-            <article class="flight-card">
-              <div class="flight-tag return" data-i18n="returnTag">回程</div>
-              <h4 data-i18n="returnTitle">日惹經雅加達回台北</h4>
-              <div id="return-flight"></div>
-            </article>
-          </div>
-
-          <div class="route-line-card">
-            <div class="route-line-label" data-i18n="tripFlowLabel">Trip Flow</div>
-            <div class="route-line-value" data-i18n="tripFlowValue">Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta</div>
-          </div>
         </section>
 
         <section class="section-card">
@@ -107,6 +84,39 @@
               <div id="packing-notes"></div>
             </article>
           </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="flights">
+        <section class="section-card">
+          <div class="section-label" data-i18n="routeLabel">Flight & Route</div>
+          <h2 data-i18n="routeTitle">航班與移動路線</h2>
+          <p class="lead" data-i18n="routeLead">
+            把航段、行李與整體動線獨立整理，出發前和回程前都比較好快速核對。
+          </p>
+
+          <div class="itinerary-highlights" id="flight-highlights"></div>
+
+          <div class="flight-grid">
+            <article class="flight-card">
+              <div class="flight-tag" data-i18n="departTag">去程</div>
+              <h4 data-i18n="departTitle">台北飛峇里島</h4>
+              <div id="depart-flight"></div>
+            </article>
+
+            <article class="flight-card">
+              <div class="flight-tag return" data-i18n="returnTag">回程</div>
+              <h4 data-i18n="returnTitle">日惹經雅加達回台北</h4>
+              <div id="return-flight"></div>
+            </article>
+          </div>
+
+          <div class="route-line-card">
+            <div class="route-line-label" data-i18n="tripFlowLabel">Trip Flow</div>
+            <div class="route-line-value" data-i18n="tripFlowValue">Taipei → Bali → Ijen → Sewu → Bromo → Malang → Yogyakarta</div>
+          </div>
+
+          <div class="flight-notes-grid" id="flight-notes"></div>
         </section>
       </section>
 

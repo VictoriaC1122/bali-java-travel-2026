@@ -315,6 +315,31 @@ h4 {
   gap: 18px;
 }
 
+.flight-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.flight-note-card {
+  padding: 22px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border-light);
+  background: linear-gradient(135deg, rgba(255, 251, 247, 0.96), rgba(246, 239, 230, 0.82));
+}
+
+.flight-note-title {
+  font-size: 18px;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.flight-note-desc {
+  font-size: 15px;
+  color: var(--text-mid);
+}
+
 .flight-card,
 .visa-panel,
 .budget-panel {
@@ -795,6 +820,7 @@ h4 {
   .itinerary-highlights,
   .resource-grid,
   .flight-grid,
+  .flight-notes-grid,
   .visa-grid,
   .budget-panels,
   .notes-grid,
