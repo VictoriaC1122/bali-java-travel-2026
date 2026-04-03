@@ -20,7 +20,7 @@ const FLIGHTS = {
 
 const BUDGET = {
   paid: [
-    { key: "flight", twd: 15000 },
+    { key: "flight", twd: 20494 },
     { key: "hotel", twd: 9202 },
     { key: "volcanoDeposit", twd: 3935 }
   ],
