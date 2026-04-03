@@ -41,6 +41,7 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "總覽",
     navFlights: "航班",
+    navLinks: "連結",
     navItinerary: "行程",
     navBudget: "預算",
     navVisa: "簽證",
@@ -71,6 +72,12 @@ const content = {
     stayTitle: "住宿安排",
     linksLabel: "Official Links",
     linksTitle: "官方連結整理",
+    linksLead: "把飯店、火山 tour、機場鐵路與入境網站集中在同一頁，出發前會很好找。",
+    linksHighlights: [
+      ["住宿", "3 間飯店官方網站"],
+      ["交通", "火山 tour 與機場鐵路"],
+      ["入境", "eVisa 與 Love Bali"]
+    ],
     transportTitle: "交通與時間安排",
     packingTitle: "穿著與安全",
     itineraryLabel: "Day by Day",
@@ -176,6 +183,7 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Overview",
     navFlights: "Flights",
+    navLinks: "Links",
     navItinerary: "Itinerary",
     navBudget: "Budget",
     navVisa: "Visa",
@@ -205,6 +213,12 @@ const content = {
     stayTitle: "Where you stay",
     linksLabel: "Official Links",
     linksTitle: "Useful official links",
+    linksLead: "This page keeps the hotel, volcano tour, airport rail, and entry websites together in one place.",
+    linksHighlights: [
+      ["Stays", "Official sites for all 3 hotels"],
+      ["Transport", "Volcano tour and airport rail"],
+      ["Entry", "eVisa and Love Bali"]
+    ],
     transportTitle: "Transport and timing",
     packingTitle: "Packing and safety",
     itineraryLabel: "Day by Day",
@@ -310,6 +324,7 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Ringkasan",
     navFlights: "Penerbangan",
+    navLinks: "Tautan",
     navItinerary: "Itinerary",
     navBudget: "Budget",
     navVisa: "Visa",
@@ -339,6 +354,12 @@ const content = {
     stayTitle: "Rencana menginap",
     linksLabel: "Official Links",
     linksTitle: "Tautan resmi",
+    linksLead: "Halaman ini mengumpulkan hotel, tour gunung api, kereta bandara, dan situs masuk Indonesia dalam satu tempat.",
+    linksHighlights: [
+      ["Hotel", "Situs resmi untuk 3 hotel"],
+      ["Transportasi", "Tour gunung api dan kereta bandara"],
+      ["Masuk", "eVisa dan Love Bali"]
+    ],
     transportTitle: "Transportasi dan waktu",
     packingTitle: "Pakaian dan keamanan",
     itineraryLabel: "Day by Day",
@@ -558,6 +579,16 @@ function renderLanguage() {
           <div class="resource-card-title">${title}</div>
           <div class="resource-card-desc">${desc}</div>
           <a href="${url}" target="_blank" rel="noreferrer">Open</a>
+        </article>
+      `
+    )
+    .join("");
+  document.getElementById("links-highlights").innerHTML = copy.linksHighlights
+    .map(
+      ([label, value]) => `
+        <article class="mini-highlight">
+          <div class="mini-highlight-label">${label}</div>
+          <div class="mini-highlight-value">${value}</div>
         </article>
       `
     )

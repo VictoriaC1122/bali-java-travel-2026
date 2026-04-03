@@ -44,6 +44,7 @@
     <nav class="main-nav">
       <button class="nav-item active" type="button" data-target="overview" data-i18n="navOverview">總覽</button>
       <button class="nav-item" type="button" data-target="flights" data-i18n="navFlights">航班</button>
+      <button class="nav-item" type="button" data-target="links" data-i18n="navLinks">連結</button>
       <button class="nav-item" type="button" data-target="itinerary" data-i18n="navItinerary">行程</button>
       <button class="nav-item" type="button" data-target="budget" data-i18n="navBudget">預算</button>
       <button class="nav-item" type="button" data-target="visa" data-i18n="navVisa">簽證</button>
@@ -67,12 +68,6 @@
           <div class="stay-list" id="stay-list"></div>
         </section>
 
-        <section class="section-card">
-          <div class="section-label" data-i18n="linksLabel">Official Links</div>
-          <h3 data-i18n="linksTitle">官方連結整理</h3>
-          <div class="resource-grid" id="resource-links"></div>
-        </section>
-
         <section class="section-card notes-card">
           <div class="notes-grid">
             <article>
@@ -84,6 +79,18 @@
               <div id="packing-notes"></div>
             </article>
           </div>
+        </section>
+      </section>
+
+      <section class="page-section" id="links">
+        <section class="section-card">
+          <div class="section-label" data-i18n="linksLabel">Official Links</div>
+          <h2 data-i18n="linksTitle">官方連結整理</h2>
+          <p class="lead" data-i18n="linksLead">
+            把飯店、火山 tour、機場鐵路與入境網站集中在同一頁，出發前會很好找。
+          </p>
+          <div class="itinerary-highlights" id="links-highlights"></div>
+          <div class="resource-grid" id="resource-links"></div>
         </section>
       </section>
 
