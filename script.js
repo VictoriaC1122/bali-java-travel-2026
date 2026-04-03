@@ -551,8 +551,10 @@ function renderLanguage() {
     .map(
       ([title, desc]) => `
         <article class="flight-note-card">
-          <div class="flight-note-title">${title}</div>
-          <div class="flight-note-desc">${desc}</div>
+          <div>
+            <div class="flight-note-title">${title}</div>
+            <div class="flight-note-desc">${desc}</div>
+          </div>
         </article>
       `
     )
@@ -576,8 +578,10 @@ function renderLanguage() {
     .map(
       ([title, desc, url]) => `
         <article class="resource-card">
-          <div class="resource-card-title">${title}</div>
-          <div class="resource-card-desc">${desc}</div>
+          <div>
+            <div class="resource-card-title">${title}</div>
+            <div class="resource-card-desc">${desc}</div>
+          </div>
           <a href="${url}" target="_blank" rel="noreferrer">Open</a>
         </article>
       `
