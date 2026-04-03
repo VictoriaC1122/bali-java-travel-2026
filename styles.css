@@ -43,6 +43,22 @@ h4 {
   letter-spacing: 0.5px;
 }
 
+.section-card h2,
+.section-card h3,
+.section-card h4,
+.overview-stat-value,
+.flight-note-title,
+.route-line-value,
+.mini-highlight-value,
+.day-title,
+.budget-total-amount,
+.per-person-amount,
+.resource-card-title {
+  font-family: "Noto Serif TC", "Noto Serif", serif;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
 .page-progress {
   position: fixed;
   top: 0;
@@ -261,18 +277,21 @@ h4 {
   line-height: 1.32;
   margin-bottom: 14px;
   color: var(--text-dark);
+  font-weight: 700;
 }
 
 .section-card h3 {
   font-size: 28px;
   margin-bottom: 18px;
   color: var(--text-dark);
+  font-weight: 700;
 }
 
 .section-card h4 {
   font-size: 22px;
   margin-bottom: 18px;
   color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .lead {
@@ -304,6 +323,7 @@ h4 {
   font-size: 22px;
   line-height: 1.45;
   color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .flight-grid,
@@ -333,6 +353,7 @@ h4 {
   font-size: 18px;
   color: var(--primary-dark);
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .flight-note-desc {
@@ -409,6 +430,7 @@ h4 {
   font-size: 20px;
   color: var(--primary-dark);
   line-height: 1.6;
+  font-weight: 700;
 }
 
 .stay-list {
@@ -489,6 +511,7 @@ h4 {
   color: var(--primary-dark);
   font-size: 21px;
   line-height: 1.45;
+  font-weight: 700;
 }
 
 .day-card {
@@ -533,6 +556,7 @@ h4 {
   font-size: 26px;
   color: var(--text-dark);
   line-height: 1.4;
+  font-weight: 700;
 }
 
 .day-summary {
@@ -693,6 +717,7 @@ h4 {
 .resource-card-title {
   font-size: 19px;
   color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .resource-card-desc {
