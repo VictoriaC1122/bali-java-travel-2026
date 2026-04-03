@@ -78,10 +78,10 @@ const content = {
     visaLinkOne: "印尼官方 eVisa",
     visaLinkTwo: "Love Bali 官方網站",
     overviewStats: [
-      ["旅人", "Yung Wen Cheng"],
       ["天數", "9天8夜"],
       ["旅程定位", "高品質自由行"],
-      ["一句話", "有體驗、有放鬆、有文化"]
+      ["一句話", "有體驗、有放鬆、有文化"],
+      ["旅行區域", "Bali + East Java + Yogyakarta"]
     ],
     flightLabels: {
       airline: "航空",
@@ -183,10 +183,10 @@ const content = {
     visaLinkOne: "Official Indonesia eVisa",
     visaLinkTwo: "Official Love Bali site",
     overviewStats: [
-      ["Traveler", "Yung Wen Cheng"],
       ["Length", "9 days / 8 nights"],
       ["Trip type", "High-quality DIY"],
-      ["Summary", "Experience, rest, culture"]
+      ["Summary", "Experience, rest, culture"],
+      ["Region", "Bali + East Java + Yogyakarta"]
     ],
     flightLabels: {
       airline: "Airline",
@@ -288,10 +288,10 @@ const content = {
     visaLinkOne: "eVisa resmi Indonesia",
     visaLinkTwo: "Situs resmi Love Bali",
     overviewStats: [
-      ["Traveler", "Yung Wen Cheng"],
       ["Durasi", "9 hari / 8 malam"],
       ["Jenis trip", "Mandiri berkualitas"],
-      ["Ringkas", "Pengalaman, santai, budaya"]
+      ["Ringkas", "Pengalaman, santai, budaya"],
+      ["Area", "Bali + Jawa Timur + Yogyakarta"]
     ],
     flightLabels: {
       airline: "Maskapai",
