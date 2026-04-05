@@ -1327,51 +1327,53 @@ h4 {
 
 @media (max-width: 768px) {
   body {
-    padding-bottom: 124px;
+    padding-bottom: calc(116px + env(safe-area-inset-bottom));
   }
 
   .language-selector {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
+    left: auto;
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding-inline: 0;
-    pointer-events: none;
+    justify-content: flex-end;
+    width: auto;
+    pointer-events: auto;
   }
 
   .lang-buttons {
     gap: 4px;
-    padding: 6px;
-    width: min(100%, 260px);
+    padding: 5px;
+    width: auto;
     justify-content: center;
-    border-radius: 14px;
-    background: rgba(255, 251, 246, 0.82);
-    box-shadow: 0 10px 30px rgba(106, 73, 49, 0.14);
-    pointer-events: auto;
+    border-radius: 999px;
+    background: rgba(255, 251, 246, 0.9);
+    box-shadow: 0 12px 28px rgba(106, 73, 49, 0.14);
+    backdrop-filter: blur(12px);
   }
 
   .lang-btn {
-    min-height: 40px;
-    flex: 1 1 0;
-    padding: 8px 10px;
+    min-height: 36px;
+    min-width: 52px;
+    flex: 0 0 auto;
+    padding: 8px 12px;
     font-size: 12px;
   }
 
   .hero {
-    min-height: 460px;
-    padding: 92px 18px 78px;
+    min-height: 420px;
+    padding: 88px 16px 54px;
+    align-items: flex-end;
   }
 
   .hero-content {
     max-width: 100%;
-    padding: 22px 18px 24px;
-    border-radius: 26px;
-    background: linear-gradient(180deg, rgba(77, 49, 31, 0.18), rgba(77, 49, 31, 0.28));
-    box-shadow: 0 18px 42px rgba(40, 23, 13, 0.16);
-    backdrop-filter: blur(8px);
+    padding: 22px 18px 22px;
+    border-radius: 24px;
+    text-align: left;
+    background: linear-gradient(180deg, rgba(77, 49, 31, 0.14), rgba(77, 49, 31, 0.3));
+    box-shadow: 0 18px 42px rgba(40, 23, 13, 0.18);
+    backdrop-filter: blur(10px);
   }
 
   .hero-kicker {
@@ -1388,29 +1390,30 @@ h4 {
 
   .hero-subtitle {
     font-size: 16px;
-    margin-bottom: 14px;
-    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
   }
 
   .main-nav {
     position: fixed;
-    left: 10px;
-    right: 10px;
-    bottom: calc(10px + env(safe-area-inset-bottom));
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
     top: auto;
-    gap: 8px;
+    gap: 6px;
     width: auto;
     max-width: none;
     margin: 0;
-    padding: 10px 12px;
+    padding: 8px;
     overflow-x: auto;
     justify-content: flex-start;
     scrollbar-width: none;
-    border-radius: 22px;
-    background: rgba(255, 250, 245, 0.94);
-    box-shadow: 0 20px 48px rgba(93, 60, 35, 0.2);
+    border-radius: 24px;
+    background: rgba(255, 250, 245, 0.96);
+    box-shadow: 0 22px 50px rgba(93, 60, 35, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.72);
     scroll-snap-type: x proximity;
+    backdrop-filter: blur(14px);
   }
 
   .main-nav::-webkit-scrollbar {
@@ -1420,21 +1423,21 @@ h4 {
   .nav-item {
     flex: 0 0 auto;
     min-height: 44px;
-    padding: 10px 15px;
-    font-size: 13px;
+    padding: 10px 14px;
+    font-size: 12px;
     white-space: nowrap;
     scroll-snap-align: start;
   }
 
   .container {
-    width: min(calc(100% - 16px), 1180px);
-    margin-bottom: 128px;
+    width: min(calc(100% - 14px), 1180px);
+    margin-bottom: calc(128px + env(safe-area-inset-bottom));
   }
 
   .section-card {
-    padding: 24px 15px;
+    padding: 24px 16px;
     border-radius: 22px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .section-card h2 {
@@ -1477,6 +1480,17 @@ h4 {
     margin-top: 18px;
   }
 
+  .cover-copy,
+  .overview-stat,
+  .mini-highlight,
+  .route-line-card,
+  .flight-card,
+  .visa-panel,
+  .budget-summary-card,
+  .day-card {
+    box-shadow: 0 14px 30px rgba(112, 73, 44, 0.08);
+  }
+
   .resource-card {
     grid-template-columns: 1fr;
     align-items: flex-start;
@@ -1491,8 +1505,19 @@ h4 {
   }
 
   .map-day-routes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(180px, 78%);
+    grid-template-columns: none;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .map-day-routes::-webkit-scrollbar {
+    display: none;
   }
 
   .stay-item,
@@ -1505,34 +1530,37 @@ h4 {
 
   .stay-card-rich {
     padding: 16px;
-    gap: 14px;
+    gap: 13px;
     border-radius: 20px;
   }
 
   .stay-card-image-wrap,
   .stay-card-image {
-    min-height: 188px;
+    min-height: 210px;
   }
 
   .stay-card-top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
   }
 
   .stay-card-local {
-    font-size: 19px;
-    line-height: 1.35;
+    font-size: 20px;
+    line-height: 1.4;
   }
 
   .stay-card-meta {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, max-content));
     justify-items: start;
-    gap: 8px;
+    align-items: center;
+    gap: 8px 10px;
   }
 
   .stay-card-note {
     font-size: 15px;
-    line-height: 1.86;
+    line-height: 1.82;
   }
 
   .stay-detail-chips {
@@ -1551,11 +1579,11 @@ h4 {
   }
 
   .cover-copy {
-    padding: 20px 17px;
+    padding: 22px 18px;
   }
 
   .photo-feature {
-    min-height: 280px;
+    min-height: 300px;
   }
 
   .train-layout {
@@ -1564,7 +1592,7 @@ h4 {
 
   .train-visual-card,
   .train-image {
-    min-height: 280px;
+    min-height: 300px;
   }
 
   .photo-caption {
@@ -1634,21 +1662,47 @@ h4 {
   .map-layout {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
 
   .map-frame-wrap {
     order: 1;
-    min-height: 420px;
+    min-height: 360px;
   }
 
   .map-list {
     order: 2;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, 84%);
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .map-list::-webkit-scrollbar {
+    display: none;
   }
 
   .map-frame-wrap,
   #map-frame {
-    min-height: 420px;
+    min-height: 360px;
+  }
+
+  .map-location-button,
+  .map-day-route-link {
+    scroll-snap-align: start;
+  }
+
+  .map-location-button {
+    min-height: 116px;
+    padding: 15px 16px;
+  }
+
+  .map-actions {
+    margin-top: 18px;
   }
 
   .budget-summary-value {
@@ -1719,26 +1773,26 @@ h4 {
 
 @media (max-width: 520px) {
   body {
-    padding-bottom: 110px;
+    padding-bottom: calc(104px + env(safe-area-inset-bottom));
   }
 
   .hero {
-    min-height: 430px;
-    padding: 88px 14px 66px;
+    min-height: 390px;
+    padding: 84px 12px 46px;
   }
 
   .hero-content {
-    padding: 20px 15px 22px;
-    border-radius: 24px;
+    padding: 18px 14px 20px;
+    border-radius: 22px;
   }
 
   .hero h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .hero-subtitle {
-    font-size: 15px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    letter-spacing: 0.8px;
   }
 
   .hero-dates,
@@ -1803,17 +1857,17 @@ h4 {
 
   .nav-item {
     min-height: 40px;
-    padding: 9px 13px;
+    padding: 9px 12px;
     font-size: 12px;
   }
 
   .section-card {
-    padding: 22px 14px;
+    padding: 20px 14px;
   }
 
   .train-visual-card,
   .train-image {
-    min-height: 240px;
+    min-height: 230px;
     border-radius: 20px;
   }
 
@@ -1828,11 +1882,21 @@ h4 {
   }
 
   .map-day-routes {
-    grid-template-columns: 1fr;
+    grid-auto-columns: 84%;
   }
 
   .stay-card-actions {
     grid-template-columns: 1fr;
+  }
+
+  .stay-card-image-wrap,
+  .stay-card-image,
+  .photo-feature {
+    min-height: 220px;
+  }
+
+  .map-list {
+    grid-auto-columns: 88%;
   }
 
   .budget-table tr {
@@ -1842,6 +1906,6 @@ h4 {
 
   .map-frame-wrap,
   #map-frame {
-    min-height: 320px;
+    min-height: 300px;
   }
 }
