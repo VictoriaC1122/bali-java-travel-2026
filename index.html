@@ -44,6 +44,8 @@
     <nav class="main-nav">
       <button class="nav-item active" type="button" data-target="overview" data-i18n="navOverview">總覽</button>
       <button class="nav-item" type="button" data-target="flights" data-i18n="navFlights">航班</button>
+      <button class="nav-item" type="button" data-target="train" data-i18n="navTrain">火車</button>
+      <button class="nav-item" type="button" data-target="tours" data-i18n="navTours">包套團</button>
       <button class="nav-item" type="button" data-target="stay" data-i18n="navStay">住宿</button>
       <button class="nav-item" type="button" data-target="links" data-i18n="navLinks">連結</button>
       <button class="nav-item" type="button" data-target="itinerary" data-i18n="navItinerary">行程</button>
@@ -161,6 +163,59 @@
 
           <div class="itinerary-highlights" id="itinerary-highlights"></div>
           <div class="itinerary-timeline" id="itinerary-list"></div>
+        </section>
+      </section>
+
+      <section class="page-section" id="train">
+        <section class="section-card">
+          <div class="section-label" data-i18n="trainLabel">Train Chapter</div>
+          <h2 data-i18n="trainTitle">火車移動</h2>
+          <p class="lead" data-i18n="trainLead">
+            把 Day 7 的移動獨立成一頁，整理成比較像鐵道手冊的閱讀方式：列車定位、最高等級個人間、購票方式與參考連結都放在一起。
+          </p>
+
+          <div class="itinerary-highlights" id="train-highlights"></div>
+
+          <div class="train-layout">
+            <article class="train-visual-card">
+              <img class="train-image" src="./assets/trains/argo-semeru-cover.jpg" alt="KA Argo Semeru" loading="lazy" />
+              <div class="photo-caption train-caption">
+                <span data-i18n="trainCoverCaption">Argo Semeru 列車外觀</span>
+                <a href="https://journey.tw/ka-argo-semeru/" target="_blank" rel="noreferrer" data-i18n="trainCoverCredit">Photo via Journey.tw</a>
+              </div>
+            </article>
+            <article class="flight-card" id="train-overview"></article>
+          </div>
+
+          <div class="train-layout train-layout-secondary">
+            <article class="train-visual-card">
+              <img class="train-image" src="./assets/trains/argo-semeru-suite.jpg" alt="KAI Compartment Suites" loading="lazy" />
+              <div class="photo-caption train-caption">
+                <span data-i18n="trainSuiteCaption">Compartment Suites 個人間</span>
+                <a href="https://journey.tw/ka-argo-semeru/" target="_blank" rel="noreferrer" data-i18n="trainSuiteCredit">Photo via Journey.tw</a>
+              </div>
+            </article>
+            <article class="visa-panel">
+              <h3 data-i18n="trainBuyTitle">如何買票</h3>
+              <p class="lead train-buy-lead" data-i18n="trainBuyLead">
+                如果你想把 Day 7 做得更舒服，這一段可以直接瞄準最高等級艙位。以下整理以 Journey.tw 文章內容為主。
+              </p>
+              <div class="flight-notes-list train-buy-list" id="train-purchase"></div>
+            </article>
+          </div>
+
+          <div class="official-links" id="train-links"></div>
+        </section>
+      </section>
+
+      <section class="page-section" id="tours">
+        <section class="section-card">
+          <div class="section-label" data-i18n="toursLabel">Curated Tours</div>
+          <h2 data-i18n="toursTitle">包套旅遊團</h2>
+          <p class="lead" data-i18n="toursLead">
+            把這趟旅程裡會用到的包套團獨立整理：已訂的火山團，以及計畫要訂的神廟一日團，讓你之後查連結和確認內容更快。
+          </p>
+          <div class="stay-list stay-list-rich" id="tour-list"></div>
         </section>
       </section>
 

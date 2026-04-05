@@ -8,7 +8,7 @@ const BUDGET = {
     { key: "volcanoDeposit", twd: 3935 }
   ],
   open: [
-    { key: "volcanoBalance", twd: 6065 },
+    { key: "volcanoBalance", twd: 7684, idr: 4080000 },
     { key: "templeTour", twd: 2000 },
     { key: "train", twd: 1000 },
     { key: "dailySpend", twdRange: [6000, 10000] }
@@ -49,6 +49,8 @@ const content = {
     heroDestinations: "水明漾 • 伊真火山 • Tumpak Sewu • 婆羅摩火山 • 瑪琅 • 日惹",
     navOverview: "總覽",
     navFlights: "航班",
+    navTrain: "火車",
+    navTours: "包套團",
     navStay: "住宿",
     navLinks: "連結",
     navItinerary: "行程",
@@ -90,6 +92,84 @@ const content = {
       ["出發提醒", "國際線建議至少提前 2 小時到機場，護照與電子機票資訊前一晚先整理好。"],
       ["轉機責任", "回程真正的國際段是 CI762；YIA → CGK 則是華航票號下的前段接駁，實際承運請依票面與現場為準。"],
       ["不要放上訂位代碼", "網站上只保留班機、路線與承運結構，不放訂位代碼或其他敏感資訊。"]
+    ],
+    trainLabel: "鐵道篇章",
+    trainTitle: "火車移動",
+    trainLead:
+      "Day 7 的重點不是趕路，而是把火山段的疲累換成一段更舒服的移動。這裡整理的是 Argo Semeru 的最高等級艙位與實際購票方向。",
+    trainHighlights: [
+      ["列車定位", "Day 7 最適合拿來做恢復與轉場"],
+      ["最高等級", "Compartment Suites 為 16 個獨立個人間"],
+      ["價格區間", "約 Rp2,050,000 - Rp2,250,000"]
+    ],
+    trainCoverCaption: "Argo Semeru 列車外觀",
+    trainCoverCredit: "Photo via Journey.tw",
+    trainSuiteCaption: "Compartment Suites 個人間",
+    trainSuiteCredit: "Photo via Journey.tw",
+    trainSummary:
+      "如果這段想搭得漂亮一點，Argo Semeru 的最高等級艙位是很值得留意的選擇。Journey.tw 文章整理指出，Compartment Suites 是 16 間獨立包廂、1-1 配置，座椅可旋轉也可幾乎完全攤平，整體更像可以安靜休息的個人間。",
+    trainFacts: [
+      ["建議路線", "Malang / Surabaya 端銜接 → Yogyakarta"],
+      ["最高等級", "Compartment Suites"],
+      ["空間結構", "16 個獨立包廂、1 人 1 間"],
+      ["座椅特色", "可旋轉、可躺平、私密性較高"],
+      ["參考票價", "約 Rp2,050,000 - Rp2,250,000"]
+    ],
+    trainNotes: [
+      "這一段最適合放在火山冒險結束後，讓身體真正坐下來休息。",
+      "如果你想把 Day 7 做成高級恢復日，直接選最高等級艙位會最有感。",
+      "文章中提到的票價與艙等可能調整，接近出發日仍建議再查一次。"
+    ],
+    trainBuyTitle: "如何買票",
+    trainBuyLead: "以下整理以 Journey.tw 文章內容為主，目標是把買票這件事變得很直接。",
+    trainBuySteps: [
+      ["步驟一", "先確認 Day 7 想搭的路段與出發站，通常會以東爪哇端銜接到日惹方向為主。"],
+      ["步驟二", "找 Argo Semeru，艙等直接看最高等級 Compartment Suites。它不是一般大座位，而是個人包廂型艙位。"],
+      ["步驟三", "Journey.tw 文中提到可透過 tiket.com 預訂，也可在車站透過自助取票機處理。"],
+      ["步驟四", "若行程想更穩，建議提早訂，因為最高等級艙位只有 16 間。"]
+    ],
+    trainLinks: [
+      ["Journey.tw 鐵道文章", "https://journey.tw/ka-argo-semeru/"],
+      ["tiket.com 火車訂票", "https://www.tiket.com/kereta-api"]
+    ],
+    toursLabel: "包套章節",
+    toursTitle: "包套旅遊團",
+    toursLead: "把已訂與準備要訂的包套團獨立整理，之後核對內容、價格與連結都更直覺。",
+    tourLinkLabel: "查看頁面",
+    toursList: [
+      {
+        dates: "4D3N",
+        area: "已訂火山團",
+        hotel: "Ijen • Papuma • Tumpak Sewu • Bromo",
+        localName: "Java Volcano Tour Operator",
+        stars: "火山冒險",
+        image: "./assets/tours/jvto-volcano-tour.jpg",
+        note: "這是整趟旅程最硬也最有記憶點的段落，重點不是奢華，而是把藍火、瀑布與日出火山順順地串起來。",
+        details: [
+          "從 Bali 出發的 4 日團",
+          "公開頁面常見住宿：Luminor / Doho / Joglo Kecombrang",
+          "行程順序是 Ijen → Papuma / Sewu → Bromo"
+        ],
+        url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
+        linkLabel: "JVTO 行程頁"
+      },
+      {
+        dates: "私人一日遊",
+        area: "計畫預訂",
+        hotel: "Dagi Hill + Borobudur + Prambanan",
+        localName: "Klook 日惹神廟私人包車團",
+        stars: "文化日",
+        image: "./assets/tours/klook-borobudur-prambanan.webp",
+        note: "這團很適合放在 Day 8，直接把佛教與印度教兩座重量級神廟收進同一天，節奏完整又省心。",
+        details: [
+          "Dagi Hill 貴賓日出 / 早晨體驗",
+          "Borobudur + Prambanan 兩大神廟",
+          "私人包車型行程，適合文化核心日"
+        ],
+        url: "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/",
+        linkLabel: "Klook 頁面",
+        extraLinks: [["Klook 印尼頁", "https://www.klook.com/id/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"]]
+      }
     ],
     stayLabel: "住宿篇章",
     stayTitle: "住宿安排",
@@ -170,6 +250,8 @@ const content = {
       ["Malang 飯店", "The Shalimar Boutique Hotel 官方網站", "https://theshalimarhotel.co.id/"],
       ["日惹飯店", "Aveta Hotel Malioboro 官方網站", "https://avetahotelmalioboro.com/"],
       ["火山 tour", "Java Volcano Tour Operator 官方頁面", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+      ["神廟包車團", "Klook Dagi Hill + Borobudur + Prambanan 私人一日遊", "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"],
+      ["Argo Semeru 介紹", "Journey.tw 的火車艙位文章", "https://journey.tw/ka-argo-semeru/"],
       ["機場鐵路", "YIA Airport Rail Link 官方訂票頁", "https://reservation.railink.co.id/"],
       ["印尼 eVisa", "印尼官方簽證申請入口", "https://evisa.imigrasi.go.id/"],
       ["Love Bali", "峇里島旅遊稅官方網站", "https://lovebali.baliprov.go.id/"]
@@ -334,14 +416,14 @@ const content = {
       ["Day 5", "Tumpak Sewu", "瀑布地形壯觀但偏體力型，鞋子與換洗衣物很重要。", ["瀑布", "防滑鞋", "體力日"], [["地形", "這天通常有濕滑路段、上下坡與水氣，整體最吃體力。"], ["準備", "建議多帶一套可替換衣物與防水袋，手機也最好先做防護。"], ["拍照提醒", "瀑布水氣重，鏡頭布或小毛巾會很有用。"]]],
       ["Day 6", "Mount Bromo Sunrise", "經典火山日出收尾，清晨會冷，也可能有火山灰。", ["日出", "外套", "口罩或 Buff"], [["看點", "Bromo 是整段火山行程最經典的收尾，視野與光線都很有戲。"], ["小提醒", "凌晨風大且冷，保暖與遮塵用品都很值得帶。"], ["回程感受", "這天結束後通常會有一種大段冒險終於完成的放鬆感。"]]],
       ["Day 7", "Malang → Yogyakarta", "搭火車前往日惹，這天可以當作比較放鬆的轉場日。", ["火車移動", "休息", "城市切換"], [["節奏", "火山段結束後，這天很適合補眠、整理照片與重新回到比較舒服的旅行狀態。"], ["交通", "火車時間建議預留緩衝，並注意行李上下車的節奏。"], ["晚上安排", "如果不累，可以先在 Malioboro 周邊熟悉一下街區與隔天動線。"]]],
-      ["Day 8", "Borobudur + Prambanan", "佛教與印度教兩座重量級神廟會讓整趟旅程收得非常完整。", ["婆羅浮屠", "普蘭巴南", "文化核心"], [["文化重點", "Borobudur 與 Prambanan 分別代表不同宗教與建築氣質，很值得完整保留一天。"], ["安排建議", "如果有導覽或包車，這天的體驗感會更好也更省力。"], ["穿著建議", "神廟區白天偏熱，建議穿透氣衣物並隨身帶水。"]]],
+      ["Day 8", "Borobudur + Prambanan", "預計使用 Klook 的 Dagi Hill＋Borobudur＋Prambanan 私人一日遊，把文化核心日一次收完整。", ["婆羅浮屠", "普蘭巴南", "Klook 私人包車"], [["文化重點", "Borobudur 與 Prambanan 分別代表不同宗教與建築氣質，很值得完整保留一天。"], ["包車安排", "這天預計改用 Klook 私人一日團，會比自己拆交通更省力也更完整。"], ["穿著建議", "神廟區白天偏熱，建議穿透氣衣物並隨身帶水。"]]],
       ["Day 9", "回程日", "搭早班機場鐵路前往 YIA，預留至少 2 小時緩衝再銜接班機。", ["機場鐵路", "提早出發", "回台灣"], [["時間安排", "06:00 左右的機場鐵路是偏穩的選擇，能把風險壓低。"], ["收尾提醒", "前一晚先把護照、車票、航班資訊與退稅或付款憑證整理好。"], ["最後檢查", "出門前確認房卡、充電器、轉接頭和伴手禮都已收好。"]]]
     ],
     budgetLabels: {
       flight: ["機票", "華航往返"],
       hotel: ["住宿", "Seminyak、Malang、Yogyakarta"],
       volcanoDeposit: ["火山訂金", "Ijen / Sewu / Bromo tour"],
-      volcanoBalance: ["火山尾款", "尚未支付部分"],
+      volcanoBalance: ["火山尾款", "剩餘 80%，兩人總價 Rp8,160,000，已拆成每人"],
       templeTour: ["神廟團", "Borobudur + Prambanan"],
       train: ["火車", "Malang → Yogyakarta"],
       dailySpend: ["生活費", "餐飲、按摩、零用"]
@@ -367,6 +449,8 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Overview",
     navFlights: "Flights",
+    navTrain: "Train",
+    navTours: "Tours",
     navStay: "Stays",
     navLinks: "Links",
     navItinerary: "Rencana",
@@ -407,6 +491,84 @@ const content = {
       ["Departure reminder", "For the international leg, arriving at the airport at least 2 hours early remains the safer plan."],
       ["Transfer responsibility", "The true long-haul international sector is CI762; the YIA → CGK portion is a China Airlines ticketed feeder segment and the operating carrier should be confirmed on the live ticket and airport display."],
       ["Privacy choice", "The site keeps the flight structure and carrier notes, but deliberately does not display the booking code."]
+    ],
+    trainLabel: "Rail chapter",
+    trainTitle: "Train transfer",
+    trainLead:
+      "Day 7 is the right place to let the trip breathe again. This page focuses on Argo Semeru, its top-class private suites, and the most practical buying flow.",
+    trainHighlights: [
+      ["Trip role", "A soft reset day after the volcano stretch"],
+      ["Top class", "Compartment Suites with 16 private cabins"],
+      ["Fare range", "About Rp2,050,000 - Rp2,250,000"]
+    ],
+    trainCoverCaption: "Argo Semeru exterior",
+    trainCoverCredit: "Photo via Journey.tw",
+    trainSuiteCaption: "Compartment Suites private cabin",
+    trainSuiteCredit: "Photo via Journey.tw",
+    trainSummary:
+      "If you want Day 7 to feel premium instead of merely functional, Argo Semeru's highest class is the one worth aiming for. Journey.tw notes that Compartment Suites has a 1-1 layout with 16 private cabins, and the seat can rotate and recline nearly flat, so it feels much closer to a private room than a standard train seat.",
+    trainFacts: [
+      ["Suggested use", "East Java transfer day toward Yogyakarta"],
+      ["Highest class", "Compartment Suites"],
+      ["Layout", "16 private cabins, one traveler per room"],
+      ["Seat feature", "Rotates and reclines nearly flat"],
+      ["Reference fare", "About Rp2,050,000 - Rp2,250,000"]
+    ],
+    trainNotes: [
+      "This works especially well as the recovery leg after the rougher volcano days.",
+      "If the goal is a high-comfort transfer, the highest class is the meaningful upgrade here.",
+      "Fare and availability may change, so do one final check close to departure."
+    ],
+    trainBuyTitle: "How to buy it",
+    trainBuyLead: "These notes are based mainly on the Journey.tw article and trimmed into a practical checklist.",
+    trainBuySteps: [
+      ["Step 1", "Confirm your Day 7 station pairing first, then look for the transfer segment that best fits your East-Java-to-Yogyakarta flow."],
+      ["Step 2", "Choose Argo Semeru and go straight for Compartment Suites if you want the highest-class private-cabin experience."],
+      ["Step 3", "Journey.tw mentions tiket.com as a booking route, and station self-service ticket pickup as part of the process."],
+      ["Step 4", "Book earlier if possible, because there are only 16 private cabins in this class."]
+    ],
+    trainLinks: [
+      ["Journey.tw rail article", "https://journey.tw/ka-argo-semeru/"],
+      ["tiket.com rail booking", "https://www.tiket.com/kereta-api"]
+    ],
+    toursLabel: "Tour chapter",
+    toursTitle: "Curated tours",
+    toursLead: "This page keeps the booked and planned package tours together so the links and structure stay easy to re-check later.",
+    tourLinkLabel: "Open page",
+    toursList: [
+      {
+        dates: "4D3N",
+        area: "Booked volcano tour",
+        hotel: "Ijen • Papuma • Tumpak Sewu • Bromo",
+        localName: "Java Volcano Tour Operator",
+        stars: "Adventure core",
+        image: "./assets/tours/jvto-volcano-tour.jpg",
+        note: "This is the roughest and most unforgettable stretch of the trip, built around blue fire, waterfall terrain, and a sunrise volcano finish.",
+        details: [
+          "4-day route starting from Bali",
+          "Public page shows sample stays: Luminor / Doho / Joglo Kecombrang",
+          "Core order is Ijen → Papuma / Sewu → Bromo"
+        ],
+        url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
+        linkLabel: "JVTO tour page"
+      },
+      {
+        dates: "Private day tour",
+        area: "Planned booking",
+        hotel: "Dagi Hill + Borobudur + Prambanan",
+        localName: "Klook Yogyakarta private temple tour",
+        stars: "Culture day",
+        image: "./assets/tours/klook-borobudur-prambanan.webp",
+        note: "This fits Day 8 beautifully by turning the temple day into one private-car package rather than a fragmented DIY transfer day.",
+        details: [
+          "Dagi Hill sunrise / morning access",
+          "Borobudur and Prambanan in one route",
+          "Private day-tour structure, good for the culture core"
+        ],
+        url: "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/",
+        linkLabel: "Klook page",
+        extraLinks: [["Klook ID page", "https://www.klook.com/id/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"]]
+      }
     ],
     stayLabel: "Rencana menginap",
     stayTitle: "Where you stay",
@@ -487,6 +649,8 @@ const content = {
       ["Malang hotel", "Official site for The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
       ["Yogyakarta hotel", "Official site for Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
       ["Volcano tour", "Official Java Volcano Tour Operator page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+      ["Temple day tour", "Klook Dagi Hill + Borobudur + Prambanan private day tour", "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"],
+      ["Argo Semeru guide", "Journey.tw review of the train and suite class", "https://journey.tw/ka-argo-semeru/"],
       ["Airport rail", "Official YIA Airport Rail Link booking page", "https://reservation.railink.co.id/"],
       ["Indonesia eVisa", "Official Indonesia visa application site", "https://evisa.imigrasi.go.id/"],
       ["Love Bali", "Official Bali tourist levy site", "https://lovebali.baliprov.go.id/"]
@@ -651,14 +815,14 @@ const content = {
       ["Day 5", "Tumpak Sewu", "A dramatic waterfall day with physical terrain and slippery paths.", ["Waterfall", "Grip shoes", "High-energy day"], [["Terrain", "Expect wet steps, descents, and one of the most physical days of the trip."], ["Pack note", "A change of clothes and waterproof protection for phones are worth bringing."], ["Photo note", "Mist and spray are strong here, so a cloth for lenses helps a lot."]]],
       ["Day 6", "Mount Bromo Sunrise", "The classic sunrise finale with cold air and possible volcanic dust.", ["Sunrise", "Jacket", "Mask or buff"], [["Highlight", "Bromo is the iconic finale of the volcano sequence."], ["Reminder", "It can be windy, cold, and dusty before sunrise."], ["Mood", "This is usually the point where the adventure section feels fully accomplished."]]],
       ["Day 7", "Malang → Yogyakarta", "Take the train to Yogyakarta and use this as a softer transition day.", ["Train", "Rest", "City switch"], [["Pacing", "This is a good recovery day after the high-intensity volcano stretch."], ["Transport", "Leave enough buffer for the train and keep luggage handling easy."], ["Evening idea", "If energy allows, walk around Malioboro to get familiar with the area."]]],
-      ["Day 8", "Borobudur + Prambanan", "A full culture day built around two major temple landmarks.", ["Borobudur", "Prambanan", "Culture"], [["Culture note", "The two temple sites give the trip a much deeper finish beyond nature and adventure."], ["Suggested setup", "A driver or guided tour can make the day smoother and more rewarding."], ["Clothing note", "Breathable clothes, water, and sun protection help on this long temple day."]]],
+      ["Day 8", "Borobudur + Prambanan", "Plan this as the Klook Dagi Hill + Borobudur + Prambanan private day tour so the culture day feels complete in one flow.", ["Borobudur", "Prambanan", "Klook private tour"], [["Culture note", "The two temple sites give the trip a much deeper finish beyond nature and adventure."], ["Tour setup", "This day is planned around the Klook private day tour, which is smoother than splitting the transport yourself."], ["Clothing note", "Breathable clothes, water, and sun protection help on this long temple day."]]],
       ["Day 9", "Departure day", "Take the early airport rail to YIA and keep at least a 2-hour buffer.", ["Airport rail", "Early start", "Fly home"], [["Timing", "The 06:00-ish airport rail remains the safer low-stress option."], ["Final reminder", "Prepare passport, tickets, and payment proofs the night before."], ["Last check", "Before leaving, make sure chargers, adapters, and souvenirs are packed."]]]
     ],
     budgetLabels: {
       flight: ["Flights", "China Airlines round trip"],
       hotel: ["Hotels", "Seminyak, Malang, Yogyakarta"],
       volcanoDeposit: ["Volcano deposit", "Ijen / Sewu / Bromo tour"],
-      volcanoBalance: ["Volcano balance", "Remaining tour payment"],
+      volcanoBalance: ["Volcano balance", "Remaining 80%; Rp8,160,000 total for 2 people, shown here per person"],
       templeTour: ["Temple tour", "Borobudur + Prambanan"],
       train: ["Train", "Malang → Yogyakarta"],
       dailySpend: ["Daily spend", "Food, massage, incidentals"]
@@ -684,6 +848,8 @@ const content = {
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
     navOverview: "Ringkasan",
     navFlights: "Penerbangan",
+    navTrain: "Kereta",
+    navTours: "Tur",
     navStay: "Hotel",
     navLinks: "Tautan",
     navItinerary: "Rencana",
@@ -724,6 +890,84 @@ const content = {
       ["Pengingat berangkat", "Untuk penerbangan internasional, datang minimal 2 jam lebih awal tetap lebih aman."],
       ["Tanggung jawab transit", "Segmen internasional utama adalah CI762; bagian YIA → CGK adalah segmen feeder dengan kode tiket China Airlines, sedangkan maskapai operasional sebaiknya dicek lagi di tiket final dan layar bandara."],
       ["Privasi", "Halaman ini hanya menampilkan struktur penerbangan dan maskapai, tanpa menaruh kode booking."]
+    ],
+    trainLabel: "Bab kereta",
+    trainTitle: "Transfer kereta",
+    trainLead:
+      "Hari ke-7 paling enak dipakai untuk memulihkan tenaga. Halaman ini merangkum Argo Semeru, kabin kelas tertingginya, dan alur beli tiket yang paling praktis.",
+    trainHighlights: [
+      ["Peran hari ini", "Hari reset yang lebih lembut setelah segmen gunung api"],
+      ["Kelas tertinggi", "Compartment Suites dengan 16 kabin privat"],
+      ["Kisaran harga", "Sekitar Rp2.050.000 - Rp2.250.000"]
+    ],
+    trainCoverCaption: "Eksterior Argo Semeru",
+    trainCoverCredit: "Foto via Journey.tw",
+    trainSuiteCaption: "Kabin privat Compartment Suites",
+    trainSuiteCredit: "Foto via Journey.tw",
+    trainSummary:
+      "Kalau Hari ke-7 ingin dibuat senyaman mungkin, kelas tertinggi Argo Semeru adalah opsi yang paling menarik. Journey.tw mencatat bahwa Compartment Suites memakai tata letak 1-1 dengan 16 kabin privat, dan kursinya bisa diputar serta direbahkan hampir datar, jadi rasanya jauh lebih dekat ke kamar pribadi daripada kursi kereta biasa.",
+    trainFacts: [
+      ["Pemakaian ideal", "Hari transfer Jawa Timur menuju Yogyakarta"],
+      ["Kelas tertinggi", "Compartment Suites"],
+      ["Tata letak", "16 kabin privat, 1 orang per ruang"],
+      ["Fitur kursi", "Bisa diputar dan direbahkan hampir rata"],
+      ["Harga acuan", "Sekitar Rp2.050.000 - Rp2.250.000"]
+    ],
+    trainNotes: [
+      "Ini sangat cocok dijadikan segmen recovery setelah hari-hari gunung api yang berat.",
+      "Kalau tujuanmu transfer yang nyaman dan terasa premium, kelas tertinggi inilah upgrade yang paling terasa.",
+      "Harga dan ketersediaan bisa berubah, jadi tetap cek lagi mendekati hari berangkat."
+    ],
+    trainBuyTitle: "Cara beli tiket",
+    trainBuyLead: "Ringkasan ini terutama mengikuti artikel Journey.tw, lalu disusun ulang jadi checklist yang lebih praktis.",
+    trainBuySteps: [
+      ["Langkah 1", "Pastikan dulu pasangan stasiun untuk Hari ke-7, lalu cari segmen transfer yang paling cocok dari sisi alur Jawa Timur ke Yogyakarta."],
+      ["Langkah 2", "Pilih Argo Semeru dan langsung incar Compartment Suites kalau ingin pengalaman kabin privat kelas tertinggi."],
+      ["Langkah 3", "Journey.tw menyebut tiket bisa dicari lewat tiket.com, lalu alur ambil tiket mandiri di stasiun juga perlu diperhitungkan."],
+      ["Langkah 4", "Kalau bisa, pesan lebih awal karena kelas ini hanya punya 16 kabin privat."]
+    ],
+    trainLinks: [
+      ["Artikel kereta Journey.tw", "https://journey.tw/ka-argo-semeru/"],
+      ["Pemesanan kereta tiket.com", "https://www.tiket.com/kereta-api"]
+    ],
+    toursLabel: "Bab tur",
+    toursTitle: "Tur paket",
+    toursLead: "Tur yang sudah dipesan dan yang masih direncanakan dikumpulkan di sini supaya link dan struktur perjalanannya lebih mudah dicek lagi nanti.",
+    tourLinkLabel: "Buka halaman",
+    toursList: [
+      {
+        dates: "4H3M",
+        area: "Tur gunung api sudah dipesan",
+        hotel: "Ijen • Papuma • Tumpak Sewu • Bromo",
+        localName: "Java Volcano Tour Operator",
+        stars: "Inti petualangan",
+        image: "./assets/tours/jvto-volcano-tour.jpg",
+        note: "Inilah bagian paling keras sekaligus paling membekas dari perjalanan ini: blue fire, medan air terjun, dan penutup sunrise gunung api.",
+        details: [
+          "Rute 4 hari berangkat dari Bali",
+          "Halaman publik menampilkan contoh hotel: Luminor / Doho / Joglo Kecombrang",
+          "Urutan utama adalah Ijen → Papuma / Sewu → Bromo"
+        ],
+        url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
+        linkLabel: "Halaman JVTO"
+      },
+      {
+        dates: "Tur privat sehari",
+        area: "Rencana booking",
+        hotel: "Dagi Hill + Borobudur + Prambanan",
+        localName: "Tur privat candi Yogyakarta via Klook",
+        stars: "Hari budaya",
+        image: "./assets/tours/klook-borobudur-prambanan.webp",
+        note: "Paket ini sangat pas untuk Hari ke-8 karena membuat hari candi terasa utuh dalam satu alur private car, bukan pecah menjadi banyak perpindahan kecil.",
+        details: [
+          "Akses sunrise / pagi di Dagi Hill",
+          "Borobudur dan Prambanan dalam satu rute",
+          "Format tur privat, cocok untuk inti hari budaya"
+        ],
+        url: "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/",
+        linkLabel: "Halaman Klook",
+        extraLinks: [["Klook ID", "https://www.klook.com/id/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"]]
+      }
     ],
     stayLabel: "Rencana menginap",
     stayTitle: "Rencana menginap",
@@ -804,6 +1048,8 @@ const content = {
       ["Hotel Malang", "Situs resmi The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
       ["Hotel Yogyakarta", "Situs resmi Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
       ["Tour gunung api", "Halaman resmi Java Volcano Tour Operator", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+      ["Tur candi", "Tur privat Klook Dagi Hill + Borobudur + Prambanan", "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"],
+      ["Panduan Argo Semeru", "Ulasan Journey.tw tentang kereta dan suite tertinggi", "https://journey.tw/ka-argo-semeru/"],
       ["Kereta bandara", "Halaman resmi pemesanan YIA Airport Rail Link", "https://reservation.railink.co.id/"],
       ["eVisa Indonesia", "Situs resmi pengajuan visa Indonesia", "https://evisa.imigrasi.go.id/"],
       ["Love Bali", "Situs resmi levy wisata Bali", "https://lovebali.baliprov.go.id/"]
@@ -968,14 +1214,14 @@ const content = {
       ["Hari 5", "Tumpak Sewu", "Hari air terjun yang dramatis dengan jalur fisik dan cukup licin.", ["Air terjun", "Sepatu grip", "Hari aktif"], [["Medan", "Hari ini biasanya paling berat secara fisik dengan jalur turun, basah, dan licin."], ["Catatan", "Baju ganti dan pelindung untuk HP sangat layak dibawa."], ["Foto", "Kabut air cukup tebal, jadi lap lensa atau handuk kecil akan sangat membantu."]]],
       ["Hari 6", "Sunrise Bromo", "Penutup klasik dengan udara dingin dan kemungkinan debu vulkanik.", ["Sunrise", "Jaket", "Masker atau buff"], [["Sorotan", "Bromo adalah penutup paling ikonik untuk segmen gunung api."], ["Pengingat", "Sebelum matahari terbit bisa berangin, dingin, dan berdebu."], ["Suasana", "Biasanya di titik ini rasa puas perjalanan petualangan mulai terasa penuh."]]],
       ["Hari 7", "Malang → Yogyakarta", "Naik kereta ke Yogyakarta dan jadikan ini hari transisi yang lebih lembut.", ["Kereta", "Istirahat", "Ganti kota"], [["Ritme", "Hari ini pas untuk recovery setelah rangkaian petualangan yang berat."], ["Transportasi", "Sisakan buffer waktu dan buat urusan bagasi tetap ringan."], ["Ide malam", "Kalau masih ada tenaga, jalan santai di Malioboro bisa membantu kenal area lebih dulu."]]],
-      ["Hari 8", "Borobudur + Prambanan", "Hari budaya penuh dengan dua landmark candi besar.", ["Borobudur", "Prambanan", "Budaya"], [["Catatan budaya", "Dua candi ini memberi penutup yang jauh lebih dalam daripada sekadar petualangan alam."], ["Saran", "Driver atau tur lokal bisa membuat hari ini jauh lebih nyaman."], ["Pakaian", "Karena panas dan panjang, pakaian ringan, air minum, dan sun protection penting."]]],
+      ["Hari 8", "Borobudur + Prambanan", "Rencananya hari ini memakai tur privat Klook Dagi Hill + Borobudur + Prambanan supaya hari budaya terasa utuh dalam satu alur.", ["Borobudur", "Prambanan", "Tur privat Klook"], [["Catatan budaya", "Dua candi ini memberi penutup yang jauh lebih dalam daripada sekadar petualangan alam."], ["Setup tur", "Hari ini direncanakan memakai tur privat Klook, jadi lebih halus dibanding memecah transportasi sendiri."], ["Pakaian", "Karena panas dan panjang, pakaian ringan, air minum, dan sun protection penting."]]],
       ["Hari 9", "Hari pulang", "Naik kereta bandara pagi ke YIA dan sisakan buffer minimal 2 jam.", ["Kereta bandara", "Berangkat pagi", "Pulang"], [["Waktu", "Kereta sekitar jam 06.00 tetap pilihan yang paling aman."], ["Pengingat akhir", "Siapkan paspor, tiket, dan bukti pembayaran sejak malam sebelumnya."], ["Cek terakhir", "Sebelum keluar hotel, cek charger, adaptor, dan oleh-oleh sekali lagi."]]]
     ],
     budgetLabels: {
       flight: ["Tiket pesawat", "China Airlines pulang pergi"],
       hotel: ["Hotel", "Seminyak, Malang, Yogyakarta"],
       volcanoDeposit: ["Deposit gunung api", "Tour Ijen / Sewu / Bromo"],
-      volcanoBalance: ["Sisa gunung api", "Sisa pembayaran tour"],
+      volcanoBalance: ["Sisa gunung api", "Sisa 80%; total Rp8.160.000 untuk 2 orang, ditampilkan di sini per orang"],
       templeTour: ["Tur candi", "Borobudur + Prambanan"],
       train: ["Kereta", "Malang → Yogyakarta"],
       dailySpend: ["Biaya harian", "Makan, pijat, pengeluaran kecil"]
@@ -1007,6 +1253,11 @@ const dom = {
   returnFlight: document.getElementById("return-flight"),
   flightHighlights: document.getElementById("flight-highlights"),
   flightNotes: document.getElementById("flight-notes"),
+  trainHighlights: document.getElementById("train-highlights"),
+  trainOverview: document.getElementById("train-overview"),
+  trainPurchase: document.getElementById("train-purchase"),
+  trainLinks: document.getElementById("train-links"),
+  tourList: document.getElementById("tour-list"),
   stayList: document.getElementById("stay-list"),
   resourceLinks: document.getElementById("resource-links"),
   linksHighlights: document.getElementById("links-highlights"),
@@ -1041,9 +1292,26 @@ function idr(value) {
 function formatBudget(item) {
   if (item.twdRange) {
     const [min, max] = item.twdRange;
-    return `${twd(min)} - ${formatNumber(max)} / ${idr(min * EXCHANGE_RATE)} - ${formatNumber(max * EXCHANGE_RATE)}`;
+    return `${twd(min)} - ${formatNumber(max)} / ${idr((item.idrRange && item.idrRange[0]) || min * EXCHANGE_RATE)} - ${formatNumber((item.idrRange && item.idrRange[1]) || max * EXCHANGE_RATE)}`;
   }
-  return `${twd(item.twd)} / ${idr(item.twd * EXCHANGE_RATE)}`;
+  return `${twd(item.twd)} / ${idr(item.idr || item.twd * EXCHANGE_RATE)}`;
+}
+
+function renderKeyValueRows(items) {
+  return `
+    <div class="flight-segment-card">
+      ${items
+        .map(
+          ([label, value]) => `
+            <div class="info-line">
+              <div class="info-line-label">${label}</div>
+              <div class="info-line-value">${value}</div>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
 }
 
 function sumRange(items) {
@@ -1282,6 +1550,24 @@ function renderLanguage() {
   dom.returnFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, flights.return);
   dom.flightHighlights.innerHTML = renderMiniHighlights(copy.flightHighlights);
   dom.flightNotes.innerHTML = renderFlightNotes(copy.flightNotes);
+
+  dom.trainHighlights.innerHTML = renderMiniHighlights(copy.trainHighlights);
+  dom.trainOverview.innerHTML = `
+    <div class="flight-summary-copy">${copy.trainSummary}</div>
+    ${renderKeyValueRows(copy.trainFacts)}
+    <div class="flight-subnotes">
+      ${copy.trainNotes.map((note) => `<div class="flight-subnote">${note}</div>`).join("")}
+    </div>
+  `;
+  dom.trainPurchase.innerHTML = renderFlightNotes(copy.trainBuySteps);
+  dom.trainLinks.innerHTML = copy.trainLinks
+    .map(([
+      label,
+      url
+    ]) => `<a href="${url}" target="_blank" rel="noreferrer">${label}</a>`)
+    .join("");
+
+  dom.tourList.innerHTML = renderStayRows(copy.toursList, copy.tourLinkLabel);
 
   dom.stayList.innerHTML = renderStayRows(copy.stays, copy.stayMapLabel);
 

@@ -579,6 +579,45 @@ h4 {
   font-weight: 700;
 }
 
+.train-layout {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.train-visual-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  border-radius: 24px;
+  border: 1px solid rgba(234, 217, 203, 0.82);
+  background: linear-gradient(135deg, rgba(255, 251, 246, 0.98), rgba(247, 240, 231, 0.92));
+  box-shadow: 0 18px 42px rgba(112, 73, 44, 0.08);
+}
+
+.train-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.train-caption {
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+}
+
+.train-buy-lead {
+  margin-bottom: 14px;
+}
+
+.train-buy-list {
+  margin-top: 0;
+}
+
 .stay-list {
   display: grid;
   gap: 16px;
@@ -1266,6 +1305,7 @@ h4 {
   }
 
   .cover-story-grid,
+  .train-layout,
   .map-layout,
   .stay-list-rich {
     grid-template-columns: 1fr;
@@ -1276,6 +1316,11 @@ h4 {
   }
 
   .photo-feature {
+    min-height: 360px;
+  }
+
+  .train-visual-card,
+  .train-image {
     min-height: 360px;
   }
 }
@@ -1510,6 +1555,15 @@ h4 {
   }
 
   .photo-feature {
+    min-height: 280px;
+  }
+
+  .train-layout {
+    gap: 14px;
+  }
+
+  .train-visual-card,
+  .train-image {
     min-height: 280px;
   }
 
@@ -1755,6 +1809,12 @@ h4 {
 
   .section-card {
     padding: 22px 14px;
+  }
+
+  .train-visual-card,
+  .train-image {
+    min-height: 240px;
+    border-radius: 20px;
   }
 
   .overview-stat,
