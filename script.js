@@ -1668,18 +1668,25 @@ function bindNav() {
       document.querySelectorAll(".page-section").forEach((section) => section.classList.remove("active"));
       button.classList.add("active");
       document.getElementById(button.dataset.target).classList.add("active");
-      button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      if (window.innerWidth > 768) {
+        button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 }
 
-window.addEventListener("scroll", () => {
+function updateScrollState() {
   const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (window.scrollY / windowHeight) * 100;
+  const scrolled = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
   dom.pageProgress.style.width = `${scrolled}%`;
-});
+  document.body.classList.toggle("mobile-controls-compact", window.innerWidth <= 768 && window.scrollY > 72);
+}
+
+window.addEventListener("scroll", updateScrollState);
+window.addEventListener("resize", updateScrollState);
 
 bindLanguageButtons();
 bindNav();
 renderLanguage();
+updateScrollState();

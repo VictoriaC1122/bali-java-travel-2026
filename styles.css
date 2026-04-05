@@ -1330,6 +1330,13 @@ h4 {
     padding-bottom: calc(116px + env(safe-area-inset-bottom));
   }
 
+  body.mobile-controls-compact .lang-buttons {
+    transform: scale(0.92);
+    transform-origin: top right;
+    opacity: 0.82;
+    box-shadow: 0 8px 20px rgba(106, 73, 49, 0.12);
+  }
+
   .language-selector {
     position: fixed;
     top: 12px;
@@ -1350,6 +1357,7 @@ h4 {
     background: rgba(255, 251, 246, 0.9);
     box-shadow: 0 12px 28px rgba(106, 73, 49, 0.14);
     backdrop-filter: blur(12px);
+    transition: transform 0.22s ease, opacity 0.22s ease, box-shadow 0.22s ease;
   }
 
   .lang-btn {
@@ -1400,33 +1408,27 @@ h4 {
     right: 12px;
     bottom: calc(12px + env(safe-area-inset-bottom));
     top: auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 6px;
     width: auto;
     max-width: none;
     margin: 0;
     padding: 8px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    scrollbar-width: none;
     border-radius: 24px;
     background: rgba(255, 250, 245, 0.96);
     box-shadow: 0 22px 50px rgba(93, 60, 35, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.72);
-    scroll-snap-type: x proximity;
     backdrop-filter: blur(14px);
   }
 
-  .main-nav::-webkit-scrollbar {
-    display: none;
-  }
-
   .nav-item {
-    flex: 0 0 auto;
     min-height: 44px;
-    padding: 10px 14px;
+    padding: 9px 8px;
     font-size: 12px;
-    white-space: nowrap;
-    scroll-snap-align: start;
+    line-height: 1.18;
+    text-align: center;
+    white-space: normal;
   }
 
   .container {
@@ -1505,19 +1507,8 @@ h4 {
   }
 
   .map-day-routes {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(180px, 78%);
-    grid-template-columns: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-  }
-
-  .map-day-routes::-webkit-scrollbar {
-    display: none;
   }
 
   .stay-item,
@@ -1673,17 +1664,8 @@ h4 {
   .map-list {
     order: 2;
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(200px, 84%);
-    overflow-x: auto;
     gap: 10px;
-    padding-bottom: 6px;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-  }
-
-  .map-list::-webkit-scrollbar {
-    display: none;
+    grid-template-columns: 1fr;
   }
 
   .map-frame-wrap,
@@ -1691,13 +1673,8 @@ h4 {
     min-height: 360px;
   }
 
-  .map-location-button,
-  .map-day-route-link {
-    scroll-snap-align: start;
-  }
-
   .map-location-button {
-    min-height: 116px;
+    min-height: 106px;
     padding: 15px 16px;
   }
 
@@ -1853,12 +1830,13 @@ h4 {
     bottom: calc(8px + env(safe-area-inset-bottom));
     padding: 8px;
     border-radius: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .nav-item {
     min-height: 40px;
-    padding: 9px 12px;
-    font-size: 12px;
+    padding: 9px 6px;
+    font-size: 11px;
   }
 
   .section-card {
@@ -1882,7 +1860,7 @@ h4 {
   }
 
   .map-day-routes {
-    grid-auto-columns: 84%;
+    grid-template-columns: 1fr;
   }
 
   .stay-card-actions {
@@ -1893,10 +1871,6 @@ h4 {
   .stay-card-image,
   .photo-feature {
     min-height: 220px;
-  }
-
-  .map-list {
-    grid-auto-columns: 88%;
   }
 
   .budget-table tr {
