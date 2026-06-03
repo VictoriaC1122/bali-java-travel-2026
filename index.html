@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Bali × Java Travel Handbook 2026</title>
+    <title>2026 Bali × Java Trip Notes</title>
     <meta
       name="description"
-      content="Trilingual Bali and Java travel handbook with flights, hotels, itinerary, budget, and visa notes."
+      content="A clear three-language Bali and Java trip guide with flights, stays, routes, budget notes, and entry reminders."
     />
     <meta name="theme-color" content="#c46f42" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,13 +31,18 @@
     <header class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="hero-kicker" data-i18n="heroKicker">Indonesia travel handbook</p>
+        <p class="hero-kicker" data-i18n="heroKicker">Indonesia trip notes</p>
         <h1 data-i18n="heroTitle">Bali × Java</h1>
-        <div class="hero-subtitle" data-i18n="heroSubtitle">Island ease, volcano dawns, temple endings</div>
+        <div class="hero-subtitle" data-i18n="heroSubtitle">Beach days first, volcano mornings next, temples to finish</div>
         <div class="hero-dates" data-i18n="heroDates">2026 / 06 / 13 - 2026 / 06 / 21</div>
         <div class="destinations" data-i18n="heroDestinations">
           Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta
         </div>
+        <div class="hero-actions">
+          <button class="hero-action hero-action-primary" type="button" data-hero-target="itinerary" data-i18n="heroPrimaryCta">先看每日行程</button>
+          <button class="hero-action hero-action-secondary" type="button" data-hero-target="info" data-i18n="heroSecondaryCta">看行前資訊</button>
+        </div>
+        <div class="hero-facts" id="hero-facts"></div>
       </div>
     </header>
 
@@ -48,6 +53,7 @@
       <button class="nav-item" type="button" data-target="tours" data-i18n="navTours">包套團</button>
       <button class="nav-item" type="button" data-target="stay" data-i18n="navStay">住宿</button>
       <button class="nav-item" type="button" data-target="links" data-i18n="navLinks">連結</button>
+      <button class="nav-item" type="button" data-target="info" data-i18n="navInfo">資訊</button>
       <button class="nav-item" type="button" data-target="itinerary" data-i18n="navItinerary">行程</button>
       <button class="nav-item" type="button" data-target="map" data-i18n="navMap">地圖</button>
       <button class="nav-item" type="button" data-target="budget" data-i18n="navBudget">預算</button>
@@ -117,6 +123,39 @@
           </p>
           <div class="itinerary-highlights" id="links-highlights"></div>
           <div class="resource-list" id="resource-links"></div>
+        </section>
+      </section>
+
+      <section class="page-section" id="info">
+        <section class="section-card">
+          <div class="section-label" data-i18n="infoLabel">Practical Info</div>
+          <h2 data-i18n="infoTitle">印尼實用資訊</h2>
+          <p class="lead" data-i18n="infoLead">
+            把出發前真的會用到的事情整理在一起：入境順序、換匯概念、App、時差、交通習慣和旅途提醒。
+          </p>
+
+          <div class="itinerary-highlights" id="info-highlights"></div>
+          <div class="flight-notes-list" id="info-checklist"></div>
+
+          <div class="visa-grid">
+            <article class="visa-panel">
+              <h3 data-i18n="infoPanelOneTitle">出發前與當地基礎資訊</h3>
+              <div id="info-basics"></div>
+            </article>
+            <article class="visa-panel">
+              <h3 data-i18n="infoPanelTwoTitle">旅途中提醒</h3>
+              <div id="info-tips"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-label" data-i18n="infoCostsLabel">Cost Notes</div>
+          <h3 data-i18n="infoCostsTitle">目前已知花費與代墊紀錄</h3>
+          <p class="lead" data-i18n="infoCostsLead">
+            先把 Google 文件裡已寫下來的費用整理成一頁，後續只要補餐飲、計程車和伴手禮就會很完整。
+          </p>
+          <div id="info-costs"></div>
         </section>
       </section>
 
@@ -294,10 +333,18 @@
           <div class="official-links">
             <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer" data-i18n="visaLinkOne">印尼官方 eVisa</a>
             <a href="https://lovebali.baliprov.go.id/" target="_blank" rel="noreferrer" data-i18n="visaLinkTwo">Love Bali 官方網站</a>
+            <a href="https://allindonesia.imigrasi.go.id/" target="_blank" rel="noreferrer" data-i18n="visaLinkThree">All Indonesia 入境整合系統</a>
           </div>
         </section>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-mark">Bali × Java</div>
+        <p class="site-footer-copy" id="footer-copy">Trip notes for June 2026, organized for quick checks on phone and desktop.</p>
+      </div>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

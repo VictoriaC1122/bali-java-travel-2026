@@ -5,10 +5,10 @@ const BUDGET = {
   paid: [
     { key: "flight", twd: 20494 },
     { key: "hotel", twd: 9202 },
-    { key: "volcanoDeposit", twd: 3935 }
+    { key: "volcanoDeposit", twd: 3994 },
+    { key: "volcanoBalance", twd: 14838, idr: 8433700 }
   ],
   open: [
-    { key: "volcanoBalance", twd: 7684, idr: 4080000 },
     { key: "templeTour", twd: 2000 },
     { key: "train", twd: 1000 },
     { key: "dailySpend", twdRange: [6000, 10000] }
@@ -42,33 +42,37 @@ const DAY_ROUTE_URLS = {
 
 const content = {
   "zh-Hant": {
-    heroKicker: "印尼旅行手冊",
+    heroKicker: "印尼旅程筆記",
     heroTitle: "Bali × Java",
-    heroSubtitle: "海島放鬆、火山晨光、神廟收尾",
+    heroSubtitle: "前段留給海，中段留給火山，最後留給神廟與城市",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "水明漾 • 伊真火山 • Tumpak Sewu • 婆羅摩火山 • 瑪琅 • 日惹",
+    heroPrimaryCta: "先看每日行程",
+    heroSecondaryCta: "看行前資訊",
+    footerCopy: "把 2026 年 6 月這趟印尼旅行整理成一份手機和電腦都好查的旅遊手冊。",
     navOverview: "總覽",
     navFlights: "航班",
     navTrain: "火車",
     navTours: "包套團",
     navStay: "住宿",
     navLinks: "連結",
+    navInfo: "資訊",
     navItinerary: "行程",
     navMap: "地圖",
     navBudget: "預算",
     navVisa: "簽證",
     overviewLabel: "旅程總覽",
-    overviewTitle: "一趟完整、舒服、而且很會安排情緒節奏的印尼經典路線",
+    overviewTitle: "一條節奏很好的印尼路線：先放鬆，再冒險，最後慢慢收尾",
     overviewLead:
-      "旅程不是把地名一一收集，而是讓海風、火山與神廟依序走進記憶裡，慢慢形成一條有起伏、也有餘韻的路線。",
+      "這趟安排不是把景點塞滿，而是把每一段放在對的位置。峇里島負責放鬆，東爪哇負責記憶點，日惹負責把旅程收得完整。",
     coverLabel: "手冊篇章",
-    coverTitle: "有些旅行，不是離開，而是把自己重新打開",
+    coverTitle: "這趟旅行好看的地方，在於安排得剛剛好",
     coverLead:
-      "這一趟最迷人的地方，不在於排得多滿，而在於它懂得留白。先讓峇里島的海把心情放鬆，再走進東爪哇微冷的凌晨，最後把腳步停在日惹，讓神廟與城市的輪廓替旅程慢慢收尾。",
+      "前兩天先把身體和心情都放鬆，接著進入火山與瀑布的凌晨節奏，最後回到日惹，用神廟、街區和比較安靜的步調收尾。整體讀起來順，也真的很適合照這個節奏走。",
     coverPoints: [
-      ["前段放鬆", "在 Seminyak，光線是柔的，海風是慢的，連晚餐與散步都像是在替旅程寫下溫柔的序。"],
-      ["中段冒險", "Ijen、Sewu、Bromo 像三個遞進的章節，從黑夜、霧氣到日出，把記憶一層一層推高。"],
-      ["結尾收束", "到了日惹，節奏重新安靜下來，神廟、街道與黃昏一起把這趟路線收成餘韻。"]
+      ["前段放鬆", "Seminyak 這兩天不需要排太滿，好好住、好好吃、好好休息，後面會更有餘裕。"],
+      ["中段冒險", "Ijen、Sewu、Bromo 各有自己的畫面，順著走下去，強度會慢慢堆上來。"],
+      ["結尾收束", "到日惹後節奏自然慢下來，神廟和市區剛好讓整趟旅程收得穩。"]
     ],
     volcanoCaption: "Bromo 晨光",
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
@@ -76,7 +80,7 @@ const content = {
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
     routeLabel: "航班與路線",
     routeTitle: "航班與移動路線",
-    routeLead: "把航段、行李與整體動線獨立整理，出發前和回程前都比較好快速核對。",
+    routeLead: "把班機、行李和主要移動方式放在一起，出發前或回程前都能很快對一遍。",
     departTag: "去程",
     departTitle: "台北飛峇里島",
     returnTag: "回程",
@@ -89,14 +93,14 @@ const content = {
       ["行李重點", "去程 23kg ×2，回程 23kg ×1"]
     ],
     flightNotes: [
-      ["出發提醒", "國際線建議至少提前 2 小時到機場，護照與電子機票資訊前一晚先整理好。"],
-      ["轉機責任", "回程真正的國際段是 CI762；YIA → CGK 則是華航票號下的前段接駁，實際承運請依票面與現場為準。"],
-      ["不要放上訂位代碼", "網站上只保留班機、路線與承運結構，不放訂位代碼或其他敏感資訊。"]
+      ["出發提醒", "國際線還是建議提早到機場，護照、電子機票和付款憑證前一晚先整理好最省事。"],
+      ["轉機說明", "真正的國際回程段是 CI762；YIA → CGK 是前段接駁，實際承運仍以票面和現場資訊為準。"],
+      ["資訊取捨", "頁面只保留查行程真的會用到的資訊，不放訂位代碼等敏感內容。"]
     ],
     trainLabel: "鐵道篇章",
     trainTitle: "火車移動",
     trainLead:
-      "Day 7 的重點不是趕路，而是把火山段的疲累換成一段更舒服的移動。這裡整理的是 Argo Semeru 的最高等級艙位與實際購票方向。",
+      "Day 7 比較像修復日，不是硬趕路。這裡把 Argo Semeru 的艙等重點和購票方向整理清楚，之後查起來比較快。",
     trainHighlights: [
       ["列車定位", "Day 7 最適合拿來做恢復與轉場"],
       ["最高等級", "Compartment Suites 為 16 個獨立個人間"],
@@ -107,7 +111,7 @@ const content = {
     trainSuiteCaption: "Compartment Suites 個人間",
     trainSuiteCredit: "Photo via Journey.tw",
     trainSummary:
-      "如果這段想搭得漂亮一點，Argo Semeru 的最高等級艙位是很值得留意的選擇。Journey.tw 文章整理指出，Compartment Suites 是 16 間獨立包廂、1-1 配置，座椅可旋轉也可幾乎完全攤平，整體更像可以安靜休息的個人間。",
+      "如果這段想坐得舒服一點，Argo Semeru 的最高等級艙位很值得看。Journey.tw 整理的重點很明確：Compartment Suites 是 16 間獨立包廂、1-1 配置，座椅可旋轉，也能接近平躺，適合把這段當成真正的休息時間。",
     trainFacts: [
       ["建議路線", "Malang / Surabaya 端銜接 → Yogyakarta"],
       ["最高等級", "Compartment Suites"],
@@ -116,12 +120,12 @@ const content = {
       ["參考票價", "約 Rp2,050,000 - Rp2,250,000"]
     ],
     trainNotes: [
-      "這一段最適合放在火山冒險結束後，讓身體真正坐下來休息。",
-      "如果你想把 Day 7 做成高級恢復日，直接選最高等級艙位會最有感。",
-      "文章中提到的票價與艙等可能調整，接近出發日仍建議再查一次。"
+      "火山段結束後接這種比較安靜的移動方式，身體會舒服很多。",
+      "如果 Day 7 想過得輕鬆一點，直接選最高等級艙位會比較有感。",
+      "票價和艙等仍可能調整，接近出發日再查一次最準。"
     ],
     trainBuyTitle: "如何買票",
-    trainBuyLead: "以下整理以 Journey.tw 文章內容為主，目標是把買票這件事變得很直接。",
+    trainBuyLead: "下面只保留實際購票最需要知道的幾件事，查起來會更直接。",
     trainBuySteps: [
       ["步驟一", "先確認 Day 7 想搭的路段與出發站，通常會以東爪哇端銜接到日惹方向為主。"],
       ["步驟二", "找 Argo Semeru，艙等直接看最高等級 Compartment Suites。它不是一般大座位，而是個人包廂型艙位。"],
@@ -134,8 +138,8 @@ const content = {
     ],
     toursLabel: "包套章節",
     toursTitle: "包套旅遊團",
-    toursLead: "把已訂與準備要訂的包套團獨立整理，之後核對內容、價格與連結都更直覺。",
-    tourLinkLabel: "查看頁面",
+    toursLead: "已訂和準備要訂的包套行程都放在這裡，之後要回來核對內容、價格或連結會更省時間。",
+    tourLinkLabel: "查看行程",
     toursList: [
       {
         dates: "4D3N",
@@ -144,51 +148,105 @@ const content = {
         localName: "Java Volcano Tour Operator",
         stars: "火山冒險",
         image: "./assets/tours/jvto-volcano-tour.jpg",
-        note: "這是整趟旅程最硬也最有記憶點的段落，重點不是奢華，而是把藍火、瀑布與日出火山順順地串起來。",
+        note: "這是整趟最累、也最值得的一段。重點不是住得豪華，而是把藍火、瀑布和火山日出順順接起來。",
         details: [
           "從 Bali 出發的 4 日團",
           "公開頁面常見住宿：Luminor / Doho / Joglo Kecombrang",
           "行程順序是 Ijen → Papuma / Sewu → Bromo"
         ],
         url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-        linkLabel: "JVTO 行程頁"
+        linkLabel: "JVTO 行程頁",
+        extraLinks: [["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]]
       },
       {
         dates: "私人一日遊",
         area: "計畫預訂",
-        hotel: "Dagi Hill + Borobudur + Prambanan",
-        localName: "Klook 日惹神廟私人包車團",
+        hotel: "Borobudur（登塔＋導覽）＋ Prambanan",
+        localName: "Klook 婆羅浮屠與普蘭巴南寺廟之旅",
         stars: "文化日",
         image: "./assets/tours/klook-borobudur-prambanan.webp",
-        note: "這團很適合放在 Day 8，直接把佛教與印度教兩座重量級神廟收進同一天，節奏完整又省心。",
+        note: "這團就是目前 Day 8 要用的版本，重點很明確：婆羅浮屠登塔加導覽，再接普蘭巴南寺廟，一天把文化核心收完整。",
         details: [
-          "Dagi Hill 貴賓日出 / 早晨體驗",
-          "Borobudur + Prambanan 兩大神廟",
-          "私人包車型行程，適合文化核心日"
+          "婆羅浮屠登塔＋導覽",
+          "普蘭巴南寺廟行程",
+          "適合直接放在 Day 8 的文化重點日"
         ],
-        url: "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/",
+        url: "https://s.klook.com/c/4yVrZ02036",
         linkLabel: "Klook 頁面",
-        extraLinks: [["Klook 印尼頁", "https://www.klook.com/id/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"]]
+        extraLinks: []
       }
     ],
     stayLabel: "住宿篇章",
     stayTitle: "住宿安排",
-    stayLead: "每一段住宿都對應不同節奏：度假、冒險後休息、文化城市收尾。每個飯店都附上 Google Maps 連結。",
+    stayLead: "每一段住宿都有自己的角色：前面度假，中段補體力，最後讓城市行程和回程都更順。每個飯店都附上 Google Maps 連結。",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Tour 頁面",
     linksLabel: "實用連結",
     linksTitle: "官方連結整理",
-    linksLead: "把飯店、火山 tour、機場鐵路與入境網站集中在同一頁，出發前會很好找。",
+    linksLead: "把會反覆打開的網站集中在同一頁，出發前和旅途中都比較不會手忙腳亂。",
+    resourceLinkCta: "前往查看",
     linksHighlights: [
-      ["住宿", "3 間飯店官方網站"],
-      ["交通", "火山 tour 與機場鐵路"],
-      ["入境", "eVisa 與 Love Bali"]
+      ["共用文件", "雲端資料夾與行前資料集中放在一起"],
+      ["交通", "火山 tour、火車與機場鐵路"],
+      ["入境", "eVisa、Love Bali 與 All Indonesia"]
+    ],
+    infoLabel: "印尼資訊",
+    infoTitle: "印尼實用資訊",
+    infoLead: "把真正會反覆查的資訊整理在這裡，臨時要確認時，不用再翻聊天紀錄或雲端文件。",
+    infoPanelOneTitle: "出發前與當地基礎資訊",
+    infoPanelTwoTitle: "旅途中提醒",
+    infoCostsLabel: "花費備忘",
+    infoCostsTitle: "目前已知花費與代墊紀錄",
+    infoCostsLead: "先把目前已記下來的金額集中放好，之後只要再補餐飲、計程車和購物，就差不多完整了。",
+    infoHighlights: [
+      ["行前順序", "共用文件 → eVisa → Bali 稅 → All Indonesia"],
+      ["付款習慣", "正式店家可優先刷卡，現金不用先換太多"],
+      ["交通 App", "Gojek 很實用，也可以現場順手比價 Grab"],
+      ["時區重點", "峇里島和台灣同時區，雅加達與日惹慢 1 小時"]
+    ],
+    infoChecklist: [
+      ["步驟一", "先把護照、機票、住宿、簽證與 QR code 集中到雲端共用文件，出發前比較不會手忙腳亂。"],
+      ["步驟二", "先申請印尼 eVisa / e-VOA，官方費用為 Rp500,000，通常可停留 30 天、有效 90 天，並可延長一次。"],
+      ["步驟三", "再到 Love Bali 繳峇里島旅遊稅 Rp150,000；不論直飛或轉機進峇里島，都是每次入境都要繳。"],
+      ["步驟四", "抵達前 3 日內填寫 All Indonesia，這個系統會把移民、海關與健康檢疫申報整合在一起。"],
+      ["步驟五", "確認吹風機或高功率電器是否支援 220V / 50Hz，eSIM 也建議在台灣先裝好。"],
+      ["步驟六", "若搭韓籍航空，行動電源需標示 Wh，並放夾鏈袋或做好電極絕緣。"]
+    ],
+    infoBasics: [
+      ["雲端共用文件", "所有護照、機票、住宿與行程資料都可以統一放在 SharePoint 資料夾，手機和電腦都比較好找。"],
+      ["電子簽證", "實測送出申請後，大約 1 分鐘內就會收到核准文件寄到 Email，但還是建議提早處理，不要壓線。"],
+      ["eSIM 與網路", "目前規劃在蝦皮先買 eSIM，落地就能直接上網，省去現場找門市的時間。"],
+      ["匯率速記", "這份規劃先用 1,000 印尼盾約 NT$1.87 粗估；心算可先去掉最後三個 0，再乘以 2，或直接除以 500 到 530。"],
+      ["換匯", "若要在當地換匯，可優先找合法連鎖體系，例如常被提到的 PT Valasindo Valuta（PVG），比路邊小店安心。"],
+      ["現金策略", "參考過往旅行經驗，這趟現金先換少量即可，小吃、攤販或臨時交通再用現金補。"],
+      ["常用 App", "Gojek 可用台灣手機號碼註冊，叫車、外送、GoPay 儲值都很好用；便利商店或司機也能幫忙儲值。"],
+      ["時差", "WIB 比台灣慢 1 小時、WITA 與台灣相同、WIT 比台灣快 1 小時。峇里島在 WITA，雅加達與日惹在 WIB。"],
+      ["小費文化", "印尼普遍沒有一定要給小費的文化，服務特別好再自行表示就可以。"]
+    ],
+    infoTips: [
+      ["Bali Belly", "避免喝生水，也盡量用瓶裝水刷牙、洗水果；冰塊、生食與半熟海鮮都保守一點。"],
+      ["No Online Taxi", "峇里島部分區域仍會限制線上叫車，可改搭 Bluebird 計程車，或步行到可上車區再叫 Gojek / Grab。"],
+      ["交通塞車", "峇里島塞車很常見，25 分鐘車程有可能開到 45 分鐘，45 分鐘也可能拖到 2 小時。"],
+      ["婆羅浮屠", "Borobudur 每週一休館，購票時也要分清楚是否包含登塔；能登塔的票通常比較值得。"],
+      ["火山與瀑布裝備", "火山段記得帶保暖外套、口罩、護目鏡與防沙包包；瀑布段則要準備短褲、朔溪鞋、防水外套和替換衣物。"],
+      ["服飾尺寸", "如果打算買當地服飾，版型常會比台灣小 1 到 2 個尺寸，試穿時可以先往大一號拿。"],
+      ["支付方式", "目前整理可用的有實體信用卡、Line Pay、PX Pay、台灣 Pay 與 Apple Pay，但仍建議備少量現金。"]
+    ],
+    infoCosts: [
+      ["機票", "NT$20,494，華航往返。"],
+      ["住宿", "每人約 NT$9,202，尚未把稅金完全補進去。"],
+      ["簽證與旅遊稅", "簽證 NT$941 + 峇里島旅遊稅 NT$280，共 NT$1,221。"],
+      ["eSIM", "NT$469。"],
+      ["KAI 個人隔間火車", "Rp2,614,500，文件換算約 NT$4,738 / 2 人，也就是每人約 NT$2,369；目前標記為陽代墊。"],
+      ["日惹神廟一日遊", "NT$2,610 / 2 人，約每人 NT$1,305；目前標記為陽代墊。"],
+      ["火山 4 日團", "訂金約 NT$3,994；2026/05/30 已付剩餘 80% 尾款 Rp8,433,700，約 NT$14,838，文件標記為陽代墊待對帳。"],
+      ["仍待補項目", "計程車、吃飯、伴手禮、零食、服飾、換匯與機捷停車場，之後再補就會完整。"]
     ],
     transportTitle: "交通與時間安排",
     packingTitle: "穿著與安全",
     itineraryLabel: "每日行程",
     itineraryTitle: "每日行程",
-    itineraryLead: "用時間線整理每一天的重點，讀起來會更像真正可以帶著走的旅遊手冊。",
+    itineraryLead: "每天只保留真正有用的重點，出門前快速看一遍就能抓到節奏。",
     itineraryHighlights: [
       ["路線節奏", "先放鬆、再火山、最後文化收尾"],
       ["最硬的一天", "Sewu 瀑布日通常最吃體力"],
@@ -197,7 +255,7 @@ const content = {
     dayFocusLabel: "今日重點",
     budgetLabel: "預算整理",
     budgetTitle: "預算整理",
-    budgetLead: "以下印尼盾換算以 NT$1 ≈ Rp531 粗估，方便旅行規劃，不代表即時換匯價格。",
+    budgetLead: "以下以 NT$1 ≈ Rp531 粗估，只作行前抓預算用，不代表即時匯率。",
     paidTitle: "已支付",
     openTitle: "尚未支付",
     totalBudgetLabel: "總預算",
@@ -212,8 +270,8 @@ const content = {
     budgetStatusOpen: "未支付",
     mapLabel: "旅行地圖",
     mapTitle: "地圖總覽",
-    mapLead: "把主要住宿、火山、神廟與機場路線集中到同一頁，手機上也能直接切換看大圖地圖。",
-    mapRouteLink: "開啟完整路線",
+    mapLead: "主要住宿、景點和機場動線都放在這裡，手機上切換查看也很方便。",
+    mapRouteLink: "看完整路線",
     mapDayLabel: "每日路線",
     mapDayRoutes: [
       ["第 1 天", "抵達與入住", DAY_ROUTE_URLS.day1],
@@ -228,33 +286,39 @@ const content = {
     ],
     visaLabel: "簽證入境",
     visaTitle: "簽證與入境提醒",
-    visaLead: "先申請 eVisa，再補 Bali 旅遊稅，最後把 QR code 與付款憑證留在手機裡，現場會輕鬆很多。",
+    visaLead: "入境前要做的事情其實不多，照順序處理好，再把憑證都留在手機裡，到現場會輕鬆很多。",
     visaPanelTitle: "印尼旅遊簽證",
     arrivalPanelTitle: "峇里島入境附加事項",
     visaLinkOne: "印尼官方 eVisa",
     visaLinkTwo: "Love Bali 官方網站",
+    visaLinkThree: "All Indonesia 入境整合系統",
     visaHighlights: [
-      ["第一步", "先做 eVisa / e-VOA"],
+      ["第一步", "先辦 eVisa / e-VOA"],
       ["第二步", "再付 Bali 旅遊稅 Rp150,000"],
-      ["最後", "QR code、護照、回程機票一起存好"]
+      ["第三步", "抵達前 3 日內填 All Indonesia"],
+      ["最後", "把 QR code、護照和回程機票放在一起"]
     ],
     visaTutorial: [
       ["步驟一", "截至 2026/04/04，印尼官方 eVisa / e-VOA 說明頁的適用護照名單已列出台灣，可先走 e-VOA / VOA 路線，再建立申請資料。"],
       ["步驟二", "準備護照、離境機票、住宿資訊與信用卡。護照效期至少要有 6 個月。"],
-      ["步驟三", "完成付款後，把 eVisa 或 e-VOA 憑證存到手機，也建議另外截圖一份。"],
+      ["步驟三", "完成付款後，把 eVisa 或 e-VOA 憑證存到手機，也建議另外截圖一份；實測核准信很快，但還是不要拖到最後一天。"],
       ["步驟四", "再到 Love Bali 官方網站繳 Bali 旅遊稅 Rp150,000，完成後同樣保存 QR code。"],
-      ["步驟五", "出發前一天把護照、簽證憑證、Love Bali QR code、回程機票放在同一個手機資料夾。"]
+      ["步驟五", "抵達前 3 日內再到 All Indonesia 完成移民、海關與健康檢疫整合申報。"],
+      ["步驟六", "出發前一天把護照、簽證憑證、Love Bali QR code、All Indonesia 資料與回程機票放在同一個手機資料夾。"]
     ],
     resourceLinks: [
+      ["雲端共用文件", "SharePoint 行前資料夾", "https://nkustedutw-my.sharepoint.com/my?id=%2Fpersonal%2F2103104122%5Fnkust%5Fedu%5Ftw%2FDocuments%2FShare%2F%E5%8D%B0%E5%B0%BC%E6%96%87%E4%BB%B6&viewid=2a3a1f21%2D456e%2D419a%2D955a%2Dd3c3e1c5e692"],
       ["Seminyak 飯店", "Courtyard by Marriott Bali Seminyak Resort 官方網站", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Malang 飯店", "The Shalimar Boutique Hotel 官方網站", "https://theshalimarhotel.co.id/"],
       ["日惹飯店", "Aveta Hotel Malioboro 官方網站", "https://avetahotelmalioboro.com/"],
       ["火山 tour", "Java Volcano Tour Operator 官方頁面", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-      ["神廟包車團", "Klook Dagi Hill + Borobudur + Prambanan 私人一日遊", "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"],
+      ["火山 tour 訂單", "JVTO 我的訂單頁面", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
+      ["婆羅浮屠行程", "Klook 婆羅浮屠（登塔＋導覽）和普蘭巴南寺廟之旅", "https://s.klook.com/c/4yVrZ02036"],
       ["Argo Semeru 介紹", "Journey.tw 的火車艙位文章", "https://journey.tw/ka-argo-semeru/"],
       ["機場鐵路", "YIA Airport Rail Link 官方訂票頁", "https://reservation.railink.co.id/"],
       ["印尼 eVisa", "印尼官方簽證申請入口", "https://evisa.imigrasi.go.id/"],
-      ["Love Bali", "峇里島旅遊稅官方網站", "https://lovebali.baliprov.go.id/"]
+      ["Love Bali", "峇里島旅遊稅官方網站", "https://lovebali.baliprov.go.id/"],
+      ["All Indonesia", "印尼官方入境整合系統", "https://allindonesia.imigrasi.go.id/"]
     ],
     overviewStats: [
       ["天數", "9天8夜"],
@@ -409,21 +473,21 @@ const content = {
       ["YIA 機場", "Yogyakarta International Airport", "回程當天的最終移動點。"]
     ],
     itinerary: [
-      ["Day 1", "抵達峇里島", "搭乘 CI771 由台北直飛 DPS，抵達後以 check-in、晚餐與休息為主。", ["抵達 + 入住", "輕鬆晚餐", "調時差"], [["節奏", "第一天不建議排太滿，讓身體先適應濕熱氣候與移動疲勞。"], ["建議安排", "入住後可在 Seminyak 周邊簡單散步、吃飯，早點休息。"], ["今天適合", "把飯店、附近超商與回房後的隔天用品先整理好。"]]],
-      ["Day 2", "Bali 放鬆日", "安排 beach club、按摩與自由活動，讓旅程先從舒服開始。", ["Seminyak", "按摩", "自由活動"], [["玩法", "這天最適合把行程壓鬆，重點不是跑點，而是把度假感做滿。"], ["小提醒", "海邊日照強，記得防曬，也可以順便補買後面火山段需要的小物。"], ["延伸建議", "如果精神不錯，晚餐可以挑一間氣氛比較好的餐廳，把 Bali 段做得更完整。"]]],
-      ["Day 3", "進入火山段", "開始東爪哇移動，重點順序是 Ijen → Sewu → Bromo。", ["跟團移動", "進入火山區", "確認 Malang drop"], [["關鍵確認", "和 tour 再次確認行程順序與最後 drop-off 是否在 Malang。"], ["體力準備", "從這天開始睡眠會比較破碎，建議提前整理好小背包與保暖層。"], ["隨身物品", "把護照影本、行動電源、水與簡單零食放在最容易拿的位置。"]]],
-      ["Day 4", "Ijen Crater", "藍火與火山口是這段的代表亮點，通常需要凌晨出發。", ["藍火", "夜間健行", "火山體驗"], [["看點", "藍火與天亮後的火山湖是 Ijen 最有記憶點的兩個畫面。"], ["裝備", "頭燈、抓地鞋、薄外套與口罩都很重要。"], ["節奏", "夜出早歸會很累，白天若有空檔可以盡量補眠。"]]],
-      ["Day 5", "Tumpak Sewu", "瀑布地形壯觀但偏體力型，鞋子與換洗衣物很重要。", ["瀑布", "防滑鞋", "體力日"], [["地形", "這天通常有濕滑路段、上下坡與水氣，整體最吃體力。"], ["準備", "建議多帶一套可替換衣物與防水袋，手機也最好先做防護。"], ["拍照提醒", "瀑布水氣重，鏡頭布或小毛巾會很有用。"]]],
-      ["Day 6", "Mount Bromo Sunrise", "經典火山日出收尾，清晨會冷，也可能有火山灰。", ["日出", "外套", "口罩或 Buff"], [["看點", "Bromo 是整段火山行程最經典的收尾，視野與光線都很有戲。"], ["小提醒", "凌晨風大且冷，保暖與遮塵用品都很值得帶。"], ["回程感受", "這天結束後通常會有一種大段冒險終於完成的放鬆感。"]]],
-      ["Day 7", "Malang → Yogyakarta", "搭火車前往日惹，這天可以當作比較放鬆的轉場日。", ["火車移動", "休息", "城市切換"], [["節奏", "火山段結束後，這天很適合補眠、整理照片與重新回到比較舒服的旅行狀態。"], ["交通", "火車時間建議預留緩衝，並注意行李上下車的節奏。"], ["晚上安排", "如果不累，可以先在 Malioboro 周邊熟悉一下街區與隔天動線。"]]],
-      ["Day 8", "Borobudur + Prambanan", "預計使用 Klook 的 Dagi Hill＋Borobudur＋Prambanan 私人一日遊，把文化核心日一次收完整。", ["婆羅浮屠", "普蘭巴南", "Klook 私人包車"], [["文化重點", "Borobudur 與 Prambanan 分別代表不同宗教與建築氣質，很值得完整保留一天。"], ["包車安排", "這天預計改用 Klook 私人一日團，會比自己拆交通更省力也更完整。"], ["穿著建議", "神廟區白天偏熱，建議穿透氣衣物並隨身帶水。"]]],
-      ["Day 9", "回程日", "搭早班機場鐵路前往 YIA，預留至少 2 小時緩衝再銜接班機。", ["機場鐵路", "提早出發", "回台灣"], [["時間安排", "06:00 左右的機場鐵路是偏穩的選擇，能把風險壓低。"], ["收尾提醒", "前一晚先把護照、車票、航班資訊與退稅或付款憑證整理好。"], ["最後檢查", "出門前確認房卡、充電器、轉接頭和伴手禮都已收好。"]]]
+      ["Day 1", "抵達峇里島", "搭乘 CI771 由台北直飛 DPS，抵達後以 check-in、晚餐與休息為主。", ["抵達 + 入住", "輕鬆晚餐", "調時差"], [["起床時間", "建議最晚 05:30 起床；峇里島與台灣同時區。"], ["出門時間", "依住處到機場距離回推，建議 06:00 前後出門最穩。"], ["集合時間", "今天沒有固定集合；機場報到以班機時間往前抓就好。"], ["最晚睡覺時間", "建議 22:30 前躺平，先把旅程節奏拉順。"], ["節奏", "第一天不建議排太滿，讓身體先適應濕熱氣候與移動疲勞。"], ["建議安排", "入住後可在 Seminyak 周邊簡單散步、吃飯，早點休息。"]]],
+      ["Day 2", "Bali 放鬆日", "安排 beach club、按摩與自由活動，讓旅程先從舒服開始。", ["Seminyak", "按摩", "自由活動"], [["起床時間", "08:30 前後起床即可；想睡晚一點也可以。"], ["出門時間", "如果要去吃早午餐或 beach club，10:00 前後出門最剛好。"], ["集合時間", "今天沒有固定集合，自由安排即可。"], ["最晚睡覺時間", "建議 23:00 前休息，隔天開始進入移動段。"], ["玩法", "這天最適合把行程壓鬆，重點不是跑點，而是把度假感做滿。"], ["小提醒", "海邊日照強，記得防曬，也可以順便補買後面火山段需要的小物。"]]],
+      ["Day 3", "進入火山段", "開始東爪哇移動，重點順序是 Ijen → Sewu → Bromo。", ["跟團移動", "進入火山區", "確認 Malang drop"], [["起床時間", "08:00 起床最剛好；最晚不要超過 08:30。"], ["出門時間", "09:45 前把行李和早餐處理好，準備在飯店外等車。"], ["集合時間", "10:00 和 JVTO 司機會合，建議 09:50 就在飯店大廳待命。"], ["最晚睡覺時間", "建議 19:30 前睡，因為今晚其實只是在等隔天半夜起床。"], ["關鍵確認", "和 tour 再次確認行程順序與最後 drop-off 是否在 Malang。"], ["隨身物品", "把護照影本、行動電源、水與簡單零食放在最容易拿的位置。"]]],
+      ["Day 4", "Ijen Crater", "藍火與火山口是這段的代表亮點，通常需要凌晨出發。", ["藍火", "夜間健行", "火山體驗"], [["起床時間", "當地時間 23:45 起床；台灣時間 00:45。"], ["出門時間", "00:20 前完成退房與上車準備，00:30 準時出發。"], ["集合時間", "00:20 在住宿點門口或大廳集合最保險。"], ["最晚睡覺時間", "建議前一晚 20:30 前就寢，能睡多少算多少。"], ["看點", "藍火與天亮後的火山湖是 Ijen 最有記憶點的兩個畫面。"], ["裝備", "頭燈、抓地鞋、薄外套與口罩都很重要。"]]],
+      ["Day 5", "Tumpak Sewu", "瀑布地形壯觀但偏體力型，鞋子與換洗衣物很重要。", ["瀑布", "防滑鞋", "體力日"], [["起床時間", "當地時間 02:45 起床；台灣時間 03:45。"], ["出門時間", "03:20 前把行李收好，03:30 直接上車。"], ["集合時間", "03:20 在住宿點門口集合最穩。"], ["最晚睡覺時間", "建議前一晚 20:30 前休息，這天體力消耗會很大。"], ["地形", "這天通常有濕滑路段、上下坡與水氣，整體最吃體力。"], ["準備", "建議多帶一套可替換衣物與防水袋，手機也最好先做防護。"]]],
+      ["Day 6", "Mount Bromo Sunrise", "經典火山日出收尾，清晨會冷，也可能有火山灰。", ["日出", "外套", "口罩或 Buff"], [["起床時間", "當地時間 01:15 起床；台灣時間 02:15。"], ["出門時間", "01:50 前穿好保暖層，02:00 準時搭 Jeep 出發。"], ["集合時間", "01:50 在飯店外等 Jeep，避免臨時找人。"], ["最晚睡覺時間", "建議前一晚 19:30 前就寢，這樣至少能補一小段睡眠。"], ["看點", "Bromo 是整段火山行程最經典的收尾，視野與光線都很有戲。"], ["小提醒", "凌晨風大且冷，保暖與遮塵用品都很值得帶。"]]],
+      ["Day 7", "Malang → Yogyakarta", "搭火車前往日惹，這天可以當作比較放鬆的轉場日。", ["火車移動", "休息", "城市切換"], [["起床時間", "當地時間 07:00 起床；台灣時間 08:00。"], ["出門時間", "08:00 從飯店出發去車站最剛好，還有時間進 VIP 貴賓室。"], ["集合時間", "今天沒有另外集合，08:00 直接從飯店搭車去車站。"], ["最晚睡覺時間", "建議 22:30 前休息，隔天神廟日還要早起。"], ["節奏", "火山段結束後，這天很適合補眠、整理照片與重新回到比較舒服的旅行狀態。"], ["交通", "火車時間建議預留緩衝，並注意行李上下車的節奏。"]]],
+      ["Day 8", "Borobudur + Prambanan", "目前改用你提供的 Klook 婆羅浮屠（登塔＋導覽）和普蘭巴南寺廟之旅，直接把 Day 8 的文化行程定成這個版本。", ["婆羅浮屠", "普蘭巴南", "Klook 神廟一日遊"], [["起床時間", "當地時間 05:15 起床；台灣時間 06:15。"], ["出門時間", "06:20 前到大廳等車最穩，接駁通常落在 06:30 到 07:30 之間。"], ["集合時間", "建議 06:20 在飯店大廳集合，避免司機提早到。"], ["最晚睡覺時間", "建議前一晚 22:00 前休息，文化日也會走滿一整天。"], ["文化重點", "這天會以婆羅浮屠登塔導覽加上普蘭巴南寺廟作為主軸，內容比一般單點參觀更完整。"], ["穿著建議", "神廟區白天偏熱，建議穿透氣衣物並隨身帶水。"]]],
+      ["Day 9", "回程日", "搭早班機場鐵路前往 YIA，預留至少 2 小時緩衝再銜接班機。", ["機場鐵路", "提早出發", "回台灣"], [["起床時間", "當地時間 04:40 起床收行李；台灣時間 05:40。"], ["出門時間", "05:25 從飯店出發去機場最穩，抓早不抓晚。"], ["集合時間", "今天沒有固定集合，05:25 準時離開飯店即可。"], ["最晚睡覺時間", "建議前一晚 21:30 前休息，回程日會很早開始。"], ["時間安排", "06:00 左右的機場鐵路是偏穩的選擇，能把風險壓低。"], ["最後檢查", "出門前確認房卡、充電器、轉接頭和伴手禮都已收好。"]]]
     ],
     budgetLabels: {
       flight: ["機票", "華航往返"],
       hotel: ["住宿", "Seminyak、Malang、Yogyakarta"],
-      volcanoDeposit: ["火山訂金", "Ijen / Sewu / Bromo tour"],
-      volcanoBalance: ["火山尾款", "剩餘 80%，兩人總價 Rp8,160,000，已拆成每人"],
+      volcanoDeposit: ["火山訂金", "Ijen / Sewu / Bromo tour 訂金"],
+      volcanoBalance: ["火山尾款", "2026/05/30 已付剩餘 80%，實際刷卡金額 Rp8,433,700，約 NT$14,838"],
       templeTour: ["神廟團", "Borobudur + Prambanan"],
       train: ["火車", "Malang → Yogyakarta"],
       dailySpend: ["生活費", "餐飲、按摩、零用"]
@@ -442,32 +506,36 @@ const content = {
     ]
   },
   en: {
-    heroKicker: "Panduan perjalanan Indonesia",
+    heroKicker: "Indonesia trip notes",
     heroTitle: "Bali × Java",
-    heroSubtitle: "Island ease, volcano dawns, temple endings",
+    heroSubtitle: "Beach first, volcano mornings next, temples at the end",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
+    heroPrimaryCta: "Open the itinerary",
+    heroSecondaryCta: "Check practical info",
+    footerCopy: "A June 2026 Bali and Java trip guide organized for quick checks on both phone and desktop.",
     navOverview: "Overview",
     navFlights: "Flights",
     navTrain: "Train",
     navTours: "Tours",
     navStay: "Stays",
     navLinks: "Links",
+    navInfo: "Info",
     navItinerary: "Rencana",
     navMap: "Map",
     navBudget: "Biaya",
     navVisa: "Visa",
     overviewLabel: "Ringkasan perjalanan",
-    overviewTitle: "A very complete Indonesia classic route with rest, drama, and culture in the right order",
-    overviewLead: "This route is less about collecting places and more about letting sea light, volcanic dawns, and temple silhouettes settle into memory in the right order.",
+    overviewTitle: "A well-paced Indonesia route: easy at first, adventurous in the middle, quiet at the end",
+    overviewLead: "The point of this route is not to cram in more places. It gives each stretch a job: Bali for rest, East Java for the big moments, and Yogyakarta for a calmer finish.",
     coverLabel: "Narasi perjalanan",
-    coverTitle: "Some trips do not begin with departure, but with softening",
+    coverTitle: "What makes this trip work is the pacing",
     coverLead:
-      "What makes this route beautiful is not density, but rhythm. Bali opens the heart gently, East Java brings the dramatic edge of dawn and stone, and Yogyakarta lets the journey exhale into culture and evening light.",
+      "The early Bali days give the trip room to breathe. East Java brings the hardest starts and the strongest views. Yogyakarta closes things out in a steadier way, with temples, city walks, and a slower rhythm.",
     coverPoints: [
-      ["Soft opening", "In Seminyak, the mornings feel unhurried and the sea seems to teach the body how to slow down again."],
-      ["Adventure core", "Ijen, Sewu, and Bromo arrive like three rising chapters, each one sharper, colder, and more unforgettable than the last."],
-      ["Elegant ending", "Yogyakarta gathers the journey back into stone, prayer, streets, and a quieter afterglow."]
+      ["Soft opening", "Seminyak works best when it stays light: good sleep, good meals, and time to settle in before the tougher days."],
+      ["Adventure core", "Ijen, Sewu, and Bromo each bring a different kind of effort and a different payoff."],
+      ["Clean finish", "Yogyakarta naturally slows the pace down again and gives the trip a more grounded ending."]
     ],
     volcanoCaption: "Bromo dawn",
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
@@ -475,7 +543,7 @@ const content = {
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
     routeLabel: "Penerbangan dan rute",
     routeTitle: "Flights and route",
-    routeLead: "This page keeps the flight legs, baggage allowance, and travel flow together so they are easier to re-check before departure.",
+    routeLead: "Flights, baggage, and major transfers are grouped here so they are easy to check before departure and again on the way home.",
     departTag: "Outbound",
     departTitle: "Taipei to Bali",
     returnTag: "Return",
@@ -488,14 +556,14 @@ const content = {
       ["Baggage", "23kg ×2 outbound, 23kg ×1 inbound"]
     ],
     flightNotes: [
-      ["Departure reminder", "For the international leg, arriving at the airport at least 2 hours early remains the safer plan."],
-      ["Transfer responsibility", "The true long-haul international sector is CI762; the YIA → CGK portion is a China Airlines ticketed feeder segment and the operating carrier should be confirmed on the live ticket and airport display."],
-      ["Privacy choice", "The site keeps the flight structure and carrier notes, but deliberately does not display the booking code."]
+      ["Departure note", "For the international leg, arriving early is still the calmer option. Keep passport, e-ticket, and payment records together the night before."],
+      ["Connection note", "The main international return sector is CI762. The YIA → CGK portion is the feeder segment, and the operating carrier should still be confirmed on the final ticket and airport display."],
+      ["What is included here", "This page keeps the practical flight details, but leaves out sensitive information such as the booking code."]
     ],
     trainLabel: "Rail chapter",
     trainTitle: "Train transfer",
     trainLead:
-      "Day 7 is the right place to let the trip breathe again. This page focuses on Argo Semeru, its top-class private suites, and the most practical buying flow.",
+      "Day 7 is more of a recovery day than a rush day. This page keeps the Argo Semeru notes practical: which class matters and how to buy it.",
     trainHighlights: [
       ["Trip role", "A soft reset day after the volcano stretch"],
       ["Top class", "Compartment Suites with 16 private cabins"],
@@ -506,7 +574,7 @@ const content = {
     trainSuiteCaption: "Compartment Suites private cabin",
     trainSuiteCredit: "Photo via Journey.tw",
     trainSummary:
-      "If you want Day 7 to feel premium instead of merely functional, Argo Semeru's highest class is the one worth aiming for. Journey.tw notes that Compartment Suites has a 1-1 layout with 16 private cabins, and the seat can rotate and recline nearly flat, so it feels much closer to a private room than a standard train seat.",
+      "If you want this transfer to feel genuinely comfortable, Argo Semeru's top class is the one to look at. Journey.tw notes that Compartment Suites has 16 private cabins in a 1-1 layout, with seats that rotate and recline close to flat, so the experience feels much closer to a small private room than a standard train seat.",
     trainFacts: [
       ["Suggested use", "East Java transfer day toward Yogyakarta"],
       ["Highest class", "Compartment Suites"],
@@ -515,12 +583,12 @@ const content = {
       ["Reference fare", "About Rp2,050,000 - Rp2,250,000"]
     ],
     trainNotes: [
-      "This works especially well as the recovery leg after the rougher volcano days.",
-      "If the goal is a high-comfort transfer, the highest class is the meaningful upgrade here.",
-      "Fare and availability may change, so do one final check close to departure."
+      "This is a very sensible place to spend a little more after the rougher volcano days.",
+      "If comfort is the point, the highest class is the upgrade that actually changes the experience.",
+      "Fares and availability can still move, so it is worth checking again close to departure."
     ],
     trainBuyTitle: "How to buy it",
-    trainBuyLead: "These notes are based mainly on the Journey.tw article and trimmed into a practical checklist.",
+    trainBuyLead: "These notes are stripped down to the parts that actually matter when you go to book.",
     trainBuySteps: [
       ["Step 1", "Confirm your Day 7 station pairing first, then look for the transfer segment that best fits your East-Java-to-Yogyakarta flow."],
       ["Step 2", "Choose Argo Semeru and go straight for Compartment Suites if you want the highest-class private-cabin experience."],
@@ -533,8 +601,8 @@ const content = {
     ],
     toursLabel: "Tour chapter",
     toursTitle: "Curated tours",
-    toursLead: "This page keeps the booked and planned package tours together so the links and structure stay easy to re-check later.",
-    tourLinkLabel: "Open page",
+    toursLead: "Booked and planned tours live here in one place, which makes later re-checks much easier.",
+    tourLinkLabel: "View details",
     toursList: [
       {
         dates: "4D3N",
@@ -543,51 +611,105 @@ const content = {
         localName: "Java Volcano Tour Operator",
         stars: "Adventure core",
         image: "./assets/tours/jvto-volcano-tour.jpg",
-        note: "This is the roughest and most unforgettable stretch of the trip, built around blue fire, waterfall terrain, and a sunrise volcano finish.",
+        note: "This is the hardest stretch of the trip and probably the most memorable, with blue fire, waterfall terrain, and a sunrise volcano finish.",
         details: [
           "4-day route starting from Bali",
           "Public page shows sample stays: Luminor / Doho / Joglo Kecombrang",
           "Core order is Ijen → Papuma / Sewu → Bromo"
         ],
         url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-        linkLabel: "JVTO tour page"
+        linkLabel: "JVTO tour page",
+        extraLinks: [["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]]
       },
       {
         dates: "Private day tour",
         area: "Planned booking",
-        hotel: "Dagi Hill + Borobudur + Prambanan",
-        localName: "Klook Yogyakarta private temple tour",
+        hotel: "Borobudur climb + guided visit + Prambanan",
+        localName: "Klook Borobudur and Prambanan temple day tour",
         stars: "Culture day",
         image: "./assets/tours/klook-borobudur-prambanan.webp",
-        note: "This fits Day 8 beautifully by turning the temple day into one private-car package rather than a fragmented DIY transfer day.",
+        note: "This is now the Day 8 version in use: Borobudur with climb and guided access, then Prambanan, all kept in one cleaner temple day flow.",
         details: [
-          "Dagi Hill sunrise / morning access",
-          "Borobudur and Prambanan in one route",
-          "Private day-tour structure, good for the culture core"
+          "Borobudur climb with guided visit",
+          "Prambanan temple stop",
+          "A clean fit for the main culture day"
         ],
-        url: "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/",
+        url: "https://s.klook.com/c/4yVrZ02036",
         linkLabel: "Klook page",
-        extraLinks: [["Klook ID page", "https://www.klook.com/id/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"]]
+        extraLinks: []
       }
     ],
     stayLabel: "Rencana menginap",
     stayTitle: "Where you stay",
-    stayLead: "Each stay matches a different mood: resort ease, recovery after the volcano leg, then a city finish. Every hotel includes a Google Maps link.",
+    stayLead: "Each stay has a clear role: rest at the start, recovery in the middle, and a smoother city finish at the end. Every hotel includes a Google Maps link.",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Tour page",
     linksLabel: "Tautan resmi",
     linksTitle: "Useful official links",
-    linksLead: "This page keeps the hotel, volcano tour, airport rail, and entry websites together in one place.",
+    linksLead: "This page gathers the websites you are most likely to reopen before departure or during the trip.",
+    resourceLinkCta: "Visit site",
     linksHighlights: [
-      ["Stays", "Official sites for all 3 hotels"],
-      ["Transport", "Volcano tour and airport rail"],
-      ["Entry", "eVisa and Love Bali"]
+      ["Shared docs", "Cloud folder for all prep notes and files"],
+      ["Transport", "Volcano tour, train, and airport rail"],
+      ["Entry", "eVisa, Love Bali, and All Indonesia"]
+    ],
+    infoLabel: "Practical info",
+    infoTitle: "Indonesia practical notes",
+    infoLead: "This page keeps the practical details together: entry steps, money shortcuts, apps, time zones, and a few local habits worth remembering.",
+    infoPanelOneTitle: "Before departure and local basics",
+    infoPanelTwoTitle: "On-the-ground reminders",
+    infoCostsLabel: "Cost notes",
+    infoCostsTitle: "Known costs and shared advances",
+    infoCostsLead: "These amounts are kept here as a working expense note. Once food, taxis, and shopping are added, the picture will be much more complete.",
+    infoHighlights: [
+      ["Prep order", "Shared folder → eVisa → Bali levy → All Indonesia"],
+      ["Payment style", "Cards are useful in formal places, so cash can stay light"],
+      ["Useful app", "Gojek is worth setting up, with Grab as a quick price check"],
+      ["Time zone", "Bali matches Taiwan; Jakarta and Yogyakarta are one hour behind"]
+    ],
+    infoChecklist: [
+      ["Step 1", "Keep passport scans, flights, hotels, visas, and QR codes together in the shared cloud folder before departure."],
+      ["Step 2", "Apply for the Indonesia eVisa / e-VOA first. The official fee is Rp500,000, usually for a 30-day stay within a 90-day validity period, extendable once."],
+      ["Step 3", "Then pay the Bali tourist levy of Rp150,000. It applies per entry into Bali whether you arrive directly or via another Indonesian city."],
+      ["Step 4", "Within the 3 days before arrival, complete All Indonesia for immigration, customs, and health declaration."],
+      ["Step 5", "Check whether hair dryers and other high-power devices support 220V / 50Hz, and install the eSIM before leaving Taiwan."],
+      ["Step 6", "If any Korean airline sector is involved, power banks should show their Wh rating and be insulated or packed in a zip bag."]
+    ],
+    infoBasics: [
+      ["Shared folder", "Keeping the whole prep pack in one SharePoint folder makes the trip much easier to manage on both phone and desktop."],
+      ["eVisa note", "In a recent test, the approval email arrived about a minute after submission, but it is still better to apply early."],
+      ["eSIM plan", "The current plan is to buy the eSIM on Shopee and install it before departure so data works on arrival."],
+      ["Quick money math", "The planning note uses IDR 1,000 ≈ NT$1.87 as a rough guide. A fast shortcut is to drop the last three zeroes and multiply by 2, or divide by roughly 500 to 530."],
+      ["Money exchange", "If exchanging money locally, larger legitimate chains such as PT Valasindo Valuta (PVG) are generally a safer choice than small roadside counters."],
+      ["Cash plan", "The current assumption is still to keep cash moderate and rely on cards in more formal places."],
+      ["Useful app", "Gojek can be registered with a Taiwan phone number and is useful for rides, food delivery, and GoPay top-ups. Grab is still worth price-checking on site."],
+      ["Time zones", "WIB is 1 hour behind Taiwan, WITA is the same as Taiwan, and WIT is 1 hour ahead. Bali uses WITA; Jakarta and Yogyakarta use WIB."],
+      ["Tipping", "Indonesia generally does not have a strong mandatory tipping culture."]
+    ],
+    infoTips: [
+      ["Bali Belly", "Avoid tap water, and ideally even use bottled water for brushing teeth or washing fruit. Be conservative with ice, salads, and raw seafood."],
+      ["No Online Taxi zones", "Some Bali areas still discourage online ride-hailing. Bluebird taxis or a short walk to a permitted pickup point can help."],
+      ["Traffic", "Bali traffic can stretch a short drive badly, so a 25-minute ride may become 45 minutes, and 45 minutes may become 2 hours."],
+      ["Borobudur", "Borobudur is closed on Mondays, and tickets should be checked carefully because climbing access and non-climbing access are different."],
+      ["Volcano and waterfall gear", "For the volcano segment, bring warm layers, a mask, eye protection, and a dust-friendly bag. For the waterfall day, pack shorts, water shoes, a waterproof layer, and a change of clothes."],
+      ["Clothing sizes", "Local clothing can run 1 to 2 sizes smaller than Taiwan sizing."],
+      ["Payments", "The notes mention physical credit cards, Line Pay, PX Pay, Taiwan Pay, and Apple Pay, but keeping some cash is still safer."]
+    ],
+    infoCosts: [
+      ["Flights", "NT$20,494 on China Airlines."],
+      ["Hotels", "About NT$9,202 per person, with taxes still to be finalized."],
+      ["Visa and Bali levy", "NT$941 for the visa plus NT$280 for the Bali levy, totaling NT$1,221."],
+      ["eSIM", "NT$469."],
+      ["KAI compartment train", "Rp2,614,500 total, noted as roughly NT$4,738 for 2 people, or about NT$2,369 per person, currently marked as advanced by Yang."],
+      ["Temple day tour", "NT$2,610 for 2 people, or about NT$1,305 per person, currently marked as advanced by Yang."],
+      ["4-day volcano tour", "The deposit is noted at about NT$3,994. The remaining 80% was paid on 2026-05-30 as Rp8,433,700, or about NT$14,838, and is still marked as advanced by Yang for reconciliation."],
+      ["Still to add", "Taxis, meals, souvenirs, snacks, clothes, exchanged cash, and airport parking are still open."]
     ],
     transportTitle: "Transport and timing",
     packingTitle: "Packing and safety",
     itineraryLabel: "Rencana harian",
     itineraryTitle: "Daily itinerary",
-    itineraryLead: "Each day is arranged as a simple vertical timeline so it reads more like a practical handbook.",
+    itineraryLead: "Each day keeps only the practical essentials, so it is easy to skim before heading out.",
     itineraryHighlights: [
       ["Route rhythm", "Relax first, volcanoes next, temples to finish"],
       ["Hardest day", "Sewu waterfall is likely the most physical day"],
@@ -596,7 +718,7 @@ const content = {
     dayFocusLabel: "Today's focus",
     budgetLabel: "Ringkasan budget",
     budgetTitle: "Budget breakdown",
-    budgetLead: "IDR conversions below use a rough planning rate of NT$1 ≈ Rp531, meant for planning only.",
+    budgetLead: "The IDR conversions below use a rough planning rate of NT$1 ≈ Rp531 and are meant only for trip planning.",
     paidTitle: "Already paid",
     openTitle: "Still open",
     totalBudgetLabel: "Total budget",
@@ -611,8 +733,8 @@ const content = {
     budgetStatusOpen: "Open",
     mapLabel: "Peta perjalanan",
     mapTitle: "Map overview",
-    mapLead: "Hotels, volcano stops, and the airport flow are collected here so you can switch to a large Google map view quickly on mobile too.",
-    mapRouteLink: "Open full route",
+    mapLead: "Hotels, major stops, and the airport route are collected here so the map is easy to check on desktop or on your phone.",
+    mapRouteLink: "View full route",
     mapDayLabel: "Daily Routes",
     mapDayRoutes: [
       ["Day 1", "Arrival and check-in", DAY_ROUTE_URLS.day1],
@@ -627,33 +749,39 @@ const content = {
     ],
     visaLabel: "Visa & Entry",
     visaTitle: "Visa and entry notes",
-    visaLead: "Apply for the eVisa first, then pay the Bali tourist levy, and keep every QR code and receipt saved on your phone.",
+    visaLead: "There are only a few entry steps to take care of. Do them in order, keep the records on your phone, and arrival should feel much easier.",
     visaPanelTitle: "Indonesia tourist visa",
     arrivalPanelTitle: "Bali arrival extras",
     visaLinkOne: "Official Indonesia eVisa",
     visaLinkTwo: "Official Love Bali site",
+    visaLinkThree: "All Indonesia arrival system",
     visaHighlights: [
       ["Step one", "Handle eVisa / e-VOA first"],
       ["Step two", "Pay the Bali levy of Rp150,000"],
-      ["Final check", "Save QR codes, passport, and onward ticket together"]
+      ["Step three", "Fill All Indonesia within 3 days of arrival"],
+      ["Final check", "Keep QR codes, passport, and onward ticket together"]
     ],
     visaTutorial: [
       ["Step 1", "As of 2026-04-04, the official Indonesia eVisa / e-VOA eligibility list explicitly includes Taiwan, so a Taiwan passport can proceed through the e-VOA / VOA path before starting the application."],
       ["Step 2", "Prepare your passport, onward flight, hotel details, and a payment card. Passport validity should still be at least 6 months."],
-      ["Step 3", "After payment, save the eVisa or e-VOA proof on your phone and keep a screenshot backup."],
+      ["Step 3", "After payment, save the eVisa or e-VOA proof on your phone and keep a screenshot backup. Approval can arrive quickly, but it is still better not to wait until the last day."],
       ["Step 4", "Go to the official Love Bali site and pay the Bali tourist levy of Rp150,000, then save that QR code too."],
-      ["Step 5", "The night before departure, keep passport, visa proof, Love Bali QR code, and return flight details in one easy-to-open folder."]
+      ["Step 5", "Within the 3 days before arrival, complete the All Indonesia integrated declaration for immigration, customs, and health screening."],
+      ["Step 6", "The night before departure, keep passport, visa proof, Love Bali QR code, All Indonesia details, and return flight information in one easy-to-open folder."]
     ],
     resourceLinks: [
+      ["Shared folder", "SharePoint prep folder", "https://nkustedutw-my.sharepoint.com/my?id=%2Fpersonal%2F2103104122%5Fnkust%5Fedu%5Ftw%2FDocuments%2FShare%2F%E5%8D%B0%E5%B0%BC%E6%96%87%E4%BB%B6&viewid=2a3a1f21%2D456e%2D419a%2D955a%2Dd3c3e1c5e692"],
       ["Seminyak hotel", "Official site for Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Malang hotel", "Official site for The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
       ["Yogyakarta hotel", "Official site for Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
       ["Volcano tour", "Official Java Volcano Tour Operator page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-      ["Temple day tour", "Klook Dagi Hill + Borobudur + Prambanan private day tour", "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"],
+      ["Volcano tour booking", "Our JVTO booking page", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
+      ["Borobudur tour", "Klook Borobudur climb and Prambanan temple day tour", "https://s.klook.com/c/4yVrZ02036"],
       ["Argo Semeru guide", "Journey.tw review of the train and suite class", "https://journey.tw/ka-argo-semeru/"],
       ["Airport rail", "Official YIA Airport Rail Link booking page", "https://reservation.railink.co.id/"],
       ["Indonesia eVisa", "Official Indonesia visa application site", "https://evisa.imigrasi.go.id/"],
-      ["Love Bali", "Official Bali tourist levy site", "https://lovebali.baliprov.go.id/"]
+      ["Love Bali", "Official Bali tourist levy site", "https://lovebali.baliprov.go.id/"],
+      ["All Indonesia", "Official integrated arrival declaration system", "https://allindonesia.imigrasi.go.id/"]
     ],
     overviewStats: [
       ["Length", "9 days / 8 nights"],
@@ -808,21 +936,21 @@ const content = {
       ["YIA airport", "Yogyakarta International Airport", "Final transfer point on the way home."]
     ],
     itinerary: [
-      ["Day 1", "Arrive in Bali", "Fly CI771 from Taipei to DPS, then keep the first day easy with check-in, dinner, and rest.", ["Arrival", "Easy dinner", "Rest"], [["Pacing", "Keep the first day intentionally light so the trip opens in a calm way."], ["Suggested plan", "Check in, walk nearby, have dinner, and sleep early."], ["Useful task", "Settle hotel basics, nearby stores, and next-day essentials on the first night."]]],
-      ["Day 2", "Slow Bali day", "Use this day for beach clubs, massage, and free time in Seminyak.", ["Seminyak", "Massage", "Free time"], [["Style", "This day works best as a mood-setting leisure day rather than a packed sightseeing run."], ["Reminder", "Strong sun, beach time, and last-minute shopping make this a good prep day too."], ["Optional upgrade", "A nicer dinner spot can make the Bali segment feel more complete."]]],
-      ["Day 3", "Enter the volcano segment", "The East Java route begins here, with the key order Ijen → Sewu → Bromo.", ["Tour transfer", "Volcano region", "Malang drop"], [["Key check", "Reconfirm the tour order and whether the final drop-off is in Malang."], ["Prep", "Sleep may get fragmented from here, so keep warm layers and essentials ready."], ["Bag setup", "Keep water, snacks, power bank, and key documents easy to reach."]]],
-      ["Day 4", "Ijen Crater", "Blue fire and crater views make this one of the signature highlights.", ["Blue fire", "Night hike", "Volcano"], [["Highlight", "The blue fire and daylight crater lake are the defining visuals here."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all help."], ["Energy note", "The overnight rhythm can be tiring, so any spare daytime rest is worth taking."]]],
-      ["Day 5", "Tumpak Sewu", "A dramatic waterfall day with physical terrain and slippery paths.", ["Waterfall", "Grip shoes", "High-energy day"], [["Terrain", "Expect wet steps, descents, and one of the most physical days of the trip."], ["Pack note", "A change of clothes and waterproof protection for phones are worth bringing."], ["Photo note", "Mist and spray are strong here, so a cloth for lenses helps a lot."]]],
-      ["Day 6", "Mount Bromo Sunrise", "The classic sunrise finale with cold air and possible volcanic dust.", ["Sunrise", "Jacket", "Mask or buff"], [["Highlight", "Bromo is the iconic finale of the volcano sequence."], ["Reminder", "It can be windy, cold, and dusty before sunrise."], ["Mood", "This is usually the point where the adventure section feels fully accomplished."]]],
-      ["Day 7", "Malang → Yogyakarta", "Take the train to Yogyakarta and use this as a softer transition day.", ["Train", "Rest", "City switch"], [["Pacing", "This is a good recovery day after the high-intensity volcano stretch."], ["Transport", "Leave enough buffer for the train and keep luggage handling easy."], ["Evening idea", "If energy allows, walk around Malioboro to get familiar with the area."]]],
-      ["Day 8", "Borobudur + Prambanan", "Plan this as the Klook Dagi Hill + Borobudur + Prambanan private day tour so the culture day feels complete in one flow.", ["Borobudur", "Prambanan", "Klook private tour"], [["Culture note", "The two temple sites give the trip a much deeper finish beyond nature and adventure."], ["Tour setup", "This day is planned around the Klook private day tour, which is smoother than splitting the transport yourself."], ["Clothing note", "Breathable clothes, water, and sun protection help on this long temple day."]]],
-      ["Day 9", "Departure day", "Take the early airport rail to YIA and keep at least a 2-hour buffer.", ["Airport rail", "Early start", "Fly home"], [["Timing", "The 06:00-ish airport rail remains the safer low-stress option."], ["Final reminder", "Prepare passport, tickets, and payment proofs the night before."], ["Last check", "Before leaving, make sure chargers, adapters, and souvenirs are packed."]]]
+      ["Day 1", "Arrive in Bali", "Fly CI771 from Taipei to DPS, then keep the first day easy with check-in, dinner, and rest.", ["Arrival", "Easy dinner", "Rest"], [["Wake-up", "Aim to be up by 05:30 at the latest. Bali is on the same time as Taiwan."], ["Leave by", "Work backward from your home-to-airport transfer and aim to leave around 06:00 for a safer start."], ["Meet-up", "No fixed meet-up today. Just follow airport check-in timing."], ["Sleep by", "Try to be in bed by 22:30 so the trip starts on a steady rhythm."], ["Pacing", "Keep the first day intentionally light so the trip opens in a calm way."], ["Suggested plan", "Check in, walk nearby, have dinner, and sleep early."]]],
+      ["Day 2", "Slow Bali day", "Use this day for beach clubs, massage, and free time in Seminyak.", ["Seminyak", "Massage", "Free time"], [["Wake-up", "Around 08:30 is a comfortable start, though sleeping in a little is fine."], ["Leave by", "If brunch or a beach club is on the plan, leaving around 10:00 is a good rhythm."], ["Meet-up", "No fixed meet-up today. Keep it flexible."], ["Sleep by", "Try to rest by 23:00 so the transfer day starts more smoothly tomorrow."], ["Style", "This day works best as a mood-setting leisure day rather than a packed sightseeing run."], ["Reminder", "Strong sun, beach time, and last-minute shopping make this a good prep day too."]]],
+      ["Day 3", "Enter the volcano segment", "The East Java route begins here, with the key order Ijen → Sewu → Bromo.", ["Tour transfer", "Volcano region", "Malang drop"], [["Wake-up", "08:00 is the best target, and 08:30 should be the latest. Daytime timing here is still the same as Taiwan."], ["Leave by", "Have breakfast and luggage ready by 09:45 so you can wait outside in time."], ["Meet-up", "Meet the JVTO driver at 10:00, and aim to be in the hotel lobby by 09:50."], ["Sleep by", "Try to sleep by 19:30, because tonight is really just a pause before the midnight wake-up stretch begins."], ["Key check", "Reconfirm the tour order and whether the final drop-off is in Malang."], ["Bag setup", "Keep water, snacks, power bank, and key documents easy to reach."]]],
+      ["Day 4", "Ijen Crater", "Blue fire and crater views make this one of the signature highlights.", ["Blue fire", "Night hike", "Volcano"], [["Wake-up", "23:45 local time, which is 00:45 in Taiwan time."], ["Leave by", "Finish check-out and get ready by 00:20 so the 00:30 departure stays on time."], ["Meet-up", "Gather at the hotel entrance or lobby by 00:20."], ["Sleep by", "Try to sleep by 20:30 the night before. Any extra rest helps."], ["Highlight", "The blue fire and daylight crater lake are the defining visuals here."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all help."]]],
+      ["Day 5", "Tumpak Sewu", "A dramatic waterfall day with physical terrain and slippery paths.", ["Waterfall", "Grip shoes", "High-energy day"], [["Wake-up", "02:45 local time, which is 03:45 in Taiwan time."], ["Leave by", "Pack up by 03:20 so you can get straight into the 03:30 departure."], ["Meet-up", "Meet outside the stay by 03:20."], ["Sleep by", "Try to rest by 20:30 the night before because this is one of the most physical days."], ["Terrain", "Expect wet steps, descents, and one of the most physical days of the trip."], ["Pack note", "A change of clothes and waterproof protection for phones are worth bringing."]]],
+      ["Day 6", "Mount Bromo Sunrise", "The classic sunrise finale with cold air and possible volcanic dust.", ["Sunrise", "Jacket", "Mask or buff"], [["Wake-up", "01:15 local time, which is 02:15 in Taiwan time."], ["Leave by", "Have warm layers on and be ready by 01:50 so the 02:00 Jeep departure stays clean."], ["Meet-up", "Meet outside the hotel by 01:50 to avoid rushing for the Jeep."], ["Sleep by", "Try to sleep by 19:30 the night before so you still get a short recovery window."], ["Highlight", "Bromo is the iconic finale of the volcano sequence."], ["Reminder", "It can be windy, cold, and dusty before sunrise."]]],
+      ["Day 7", "Malang → Yogyakarta", "Take the train to Yogyakarta and use this as a softer transition day.", ["Train", "Rest", "City switch"], [["Wake-up", "07:00 local time, or 08:00 in Taiwan time."], ["Leave by", "Leaving the hotel at 08:00 works well and still gives time for the VIP lounge."], ["Meet-up", "No separate meet-up today. Head to the station from the hotel at 08:00."], ["Sleep by", "Try to rest by 22:30 because the temple day starts early tomorrow."], ["Pacing", "This is a good recovery day after the high-intensity volcano stretch."], ["Transport", "Leave enough buffer for the train and keep luggage handling easy."]]],
+      ["Day 8", "Borobudur + Prambanan", "This day now uses the Klook Borobudur climb and guided visit with Prambanan temple tour from your link, so the culture day is locked to that version.", ["Borobudur", "Prambanan", "Klook temple day tour"], [["Wake-up", "05:15 local time, or 06:15 in Taiwan time."], ["Leave by", "Be in the lobby by 06:20 so you are ready if the pickup comes early within the 06:30 to 07:30 window."], ["Meet-up", "A 06:20 hotel-lobby meet-up is the safest plan."], ["Sleep by", "Try to sleep by 22:00 the night before because this is still a full walking day."], ["Culture note", "This version centers on Borobudur climb access with guiding, followed by Prambanan, which makes the day more complete than a simple walk-through."], ["Clothing note", "Breathable clothes, water, and sun protection help on this long temple day."]]],
+      ["Day 9", "Departure day", "Take the early airport rail to YIA and keep at least a 2-hour buffer.", ["Airport rail", "Early start", "Fly home"], [["Wake-up", "04:40 local time to pack and get moving, or 05:40 in Taiwan time."], ["Leave by", "Leaving the hotel at 05:25 is the safer plan. Earlier is better than late today."], ["Meet-up", "No fixed meet-up today. Just be ready to leave the hotel at 05:25."], ["Sleep by", "Try to rest by 21:30 the night before because the return day starts very early."], ["Timing", "The 06:00-ish airport rail remains the safer low-stress option."], ["Last check", "Before leaving, make sure chargers, adapters, and souvenirs are packed."]]]
     ],
     budgetLabels: {
       flight: ["Flights", "China Airlines round trip"],
       hotel: ["Hotels", "Seminyak, Malang, Yogyakarta"],
-      volcanoDeposit: ["Volcano deposit", "Ijen / Sewu / Bromo tour"],
-      volcanoBalance: ["Volcano balance", "Remaining 80%; Rp8,160,000 total for 2 people, shown here per person"],
+      volcanoDeposit: ["Volcano deposit", "Ijen / Sewu / Bromo tour deposit"],
+      volcanoBalance: ["Volcano balance", "Remaining 80% paid on 2026-05-30; actual charged amount Rp8,433,700, about NT$14,838"],
       templeTour: ["Temple tour", "Borobudur + Prambanan"],
       train: ["Train", "Malang → Yogyakarta"],
       dailySpend: ["Daily spend", "Food, massage, incidentals"]
@@ -841,32 +969,36 @@ const content = {
     ]
   },
   id: {
-    heroKicker: "Indonesia travel handbook",
+    heroKicker: "Catatan perjalanan Indonesia",
     heroTitle: "Bali × Jawa",
-    heroSubtitle: "Santai di pulau, fajar gunung api, dan penutup candi",
+    heroSubtitle: "Mulai dari laut, lanjut ke gunung api, lalu ditutup dengan candi dan kota",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
+    heroPrimaryCta: "Buka rencana harian",
+    heroSecondaryCta: "Lihat info penting",
+    footerCopy: "Panduan perjalanan Bali dan Jawa untuk Juni 2026 yang enak dicek cepat dari HP maupun desktop.",
     navOverview: "Ringkasan",
     navFlights: "Penerbangan",
     navTrain: "Kereta",
     navTours: "Tur",
     navStay: "Hotel",
     navLinks: "Tautan",
+    navInfo: "Info",
     navItinerary: "Rencana",
     navMap: "Peta",
     navBudget: "Biaya",
     navVisa: "Visa",
     overviewLabel: "Ringkasan perjalanan",
-    overviewTitle: "Rute klasik Indonesia yang lengkap, nyaman, dan punya ritme emosi yang rapi",
-    overviewLead: "Perjalanan ini bukan sekadar mengumpulkan tempat, tetapi membiarkan laut, fajar gunung api, dan siluet candi masuk ke ingatan dengan ritme yang indah.",
+    overviewTitle: "Rute Indonesia dengan ritme yang enak: santai dulu, lalu petualangan, lalu penutup yang tenang",
+    overviewLead: "Rute ini bukan soal memasukkan sebanyak mungkin tempat. Setiap bagian punya perannya sendiri: Bali untuk istirahat, Jawa Timur untuk momen terbesar, dan Yogyakarta untuk penutup yang rapi.",
     coverLabel: "Narasi perjalanan",
-    coverTitle: "Ada perjalanan yang tidak dimulai saat berangkat, tetapi saat hati mulai melunak",
+    coverTitle: "Yang membuat perjalanan ini terasa pas adalah ritmenya",
     coverLead:
-      "Yang membuat rute ini terasa istimewa bukan karena padat, melainkan karena tahu kapan harus tenang dan kapan harus megah. Bali membuka dengan lembut, Jawa Timur memberi dramanya, lalu Yogyakarta menutup dengan budaya dan cahaya sore yang lebih pelan.",
+      "Dua hari awal di Bali memberi ruang untuk bernapas. Jawa Timur membawa bagian paling berat sekaligus paling mengesankan. Yogyakarta menutup semuanya dengan tempo yang lebih tenang, lewat candi, jalan kota, dan suasana sore.",
     coverPoints: [
-      ["Pembuka lembut", "Di Seminyak, pagi terasa pelan, angin laut terasa ringan, dan tubuh seperti diajari santai lagi."],
-      ["Inti petualangan", "Ijen, Sewu, dan Bromo datang seperti tiga bab yang makin dingin, makin megah, dan makin sulit dilupakan."],
-      ["Penutup rapi", "Yogyakarta menampung semuanya kembali dalam candi, jalan kota, dan sisa cahaya yang tenang."]
+      ["Pembuka lembut", "Seminyak paling enak dijalani tanpa terlalu padat: tidur cukup, makan enak, lalu pelan-pelan masuk ke ritme liburan."],
+      ["Inti petualangan", "Ijen, Sewu, dan Bromo masing-masing punya tantangan dan hadiahnya sendiri."],
+      ["Penutup rapi", "Yogyakarta membuat ritme perjalanan turun lagi dengan cara yang alami dan terasa pas."]
     ],
     volcanoCaption: "Fajar Bromo",
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
@@ -874,7 +1006,7 @@ const content = {
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
     routeLabel: "Penerbangan dan rute",
     routeTitle: "Penerbangan dan rute",
-    routeLead: "Halaman ini merangkum segmen penerbangan, bagasi, dan alur perjalanan agar lebih mudah dicek ulang sebelum berangkat.",
+    routeLead: "Penerbangan, bagasi, dan perpindahan utama dikumpulkan di sini supaya gampang dicek sebelum berangkat dan sebelum pulang.",
     departTag: "Pergi",
     departTitle: "Taipei ke Bali",
     returnTag: "Pulang",
@@ -887,14 +1019,14 @@ const content = {
       ["Bagasi", "23kg ×2 saat pergi, 23kg ×1 saat pulang"]
     ],
     flightNotes: [
-      ["Pengingat berangkat", "Untuk penerbangan internasional, datang minimal 2 jam lebih awal tetap lebih aman."],
-      ["Tanggung jawab transit", "Segmen internasional utama adalah CI762; bagian YIA → CGK adalah segmen feeder dengan kode tiket China Airlines, sedangkan maskapai operasional sebaiknya dicek lagi di tiket final dan layar bandara."],
-      ["Privasi", "Halaman ini hanya menampilkan struktur penerbangan dan maskapai, tanpa menaruh kode booking."]
+      ["Catatan berangkat", "Untuk penerbangan internasional, datang lebih awal tetap pilihan yang lebih tenang. Siapkan paspor, e-ticket, dan bukti pembayaran sejak malam sebelumnya."],
+      ["Catatan transit", "Segmen internasional utama adalah CI762. Bagian YIA → CGK adalah feeder segment, dan maskapai operasionalnya tetap perlu dicek lagi di tiket final dan layar bandara."],
+      ["Yang ditampilkan di sini", "Halaman ini hanya menyimpan detail yang benar-benar berguna, tanpa menaruh informasi sensitif seperti kode booking."]
     ],
     trainLabel: "Bab kereta",
     trainTitle: "Transfer kereta",
     trainLead:
-      "Hari ke-7 paling enak dipakai untuk memulihkan tenaga. Halaman ini merangkum Argo Semeru, kabin kelas tertingginya, dan alur beli tiket yang paling praktis.",
+      "Hari ke-7 lebih cocok dipakai untuk recovery daripada buru-buru. Halaman ini merangkum hal penting tentang Argo Semeru: kelas yang layak dilihat dan cara belinya.",
     trainHighlights: [
       ["Peran hari ini", "Hari reset yang lebih lembut setelah segmen gunung api"],
       ["Kelas tertinggi", "Compartment Suites dengan 16 kabin privat"],
@@ -905,7 +1037,7 @@ const content = {
     trainSuiteCaption: "Kabin privat Compartment Suites",
     trainSuiteCredit: "Foto via Journey.tw",
     trainSummary:
-      "Kalau Hari ke-7 ingin dibuat senyaman mungkin, kelas tertinggi Argo Semeru adalah opsi yang paling menarik. Journey.tw mencatat bahwa Compartment Suites memakai tata letak 1-1 dengan 16 kabin privat, dan kursinya bisa diputar serta direbahkan hampir datar, jadi rasanya jauh lebih dekat ke kamar pribadi daripada kursi kereta biasa.",
+      "Kalau transfer ini ingin terasa benar-benar nyaman, kelas tertinggi Argo Semeru layak dipertimbangkan. Menurut ringkasan Journey.tw, Compartment Suites punya 16 kabin privat dengan susunan 1-1, dan kursinya bisa diputar serta direbahkan hampir rata, jadi rasanya lebih dekat ke ruang pribadi kecil daripada kursi kereta biasa.",
     trainFacts: [
       ["Pemakaian ideal", "Hari transfer Jawa Timur menuju Yogyakarta"],
       ["Kelas tertinggi", "Compartment Suites"],
@@ -914,12 +1046,12 @@ const content = {
       ["Harga acuan", "Sekitar Rp2.050.000 - Rp2.250.000"]
     ],
     trainNotes: [
-      "Ini sangat cocok dijadikan segmen recovery setelah hari-hari gunung api yang berat.",
-      "Kalau tujuanmu transfer yang nyaman dan terasa premium, kelas tertinggi inilah upgrade yang paling terasa.",
-      "Harga dan ketersediaan bisa berubah, jadi tetap cek lagi mendekati hari berangkat."
+      "Ini memang paling cocok dipakai sebagai segmen recovery setelah hari-hari gunung api yang berat.",
+      "Kalau yang dicari kenyamanan, kelas tertinggi adalah upgrade yang paling terasa bedanya.",
+      "Harga dan ketersediaan masih bisa berubah, jadi tetap cek lagi mendekati hari berangkat."
     ],
     trainBuyTitle: "Cara beli tiket",
-    trainBuyLead: "Ringkasan ini terutama mengikuti artikel Journey.tw, lalu disusun ulang jadi checklist yang lebih praktis.",
+    trainBuyLead: "Ringkasan ini hanya menyisakan bagian yang paling berguna saat benar-benar akan membeli tiket.",
     trainBuySteps: [
       ["Langkah 1", "Pastikan dulu pasangan stasiun untuk Hari ke-7, lalu cari segmen transfer yang paling cocok dari sisi alur Jawa Timur ke Yogyakarta."],
       ["Langkah 2", "Pilih Argo Semeru dan langsung incar Compartment Suites kalau ingin pengalaman kabin privat kelas tertinggi."],
@@ -932,8 +1064,8 @@ const content = {
     ],
     toursLabel: "Bab tur",
     toursTitle: "Tur paket",
-    toursLead: "Tur yang sudah dipesan dan yang masih direncanakan dikumpulkan di sini supaya link dan struktur perjalanannya lebih mudah dicek lagi nanti.",
-    tourLinkLabel: "Buka halaman",
+    toursLead: "Tur yang sudah dipesan dan yang masih direncanakan dikumpulkan di sini supaya nanti mudah dicek lagi tanpa harus mencari-cari link.",
+    tourLinkLabel: "Lihat detail",
     toursList: [
       {
         dates: "4H3M",
@@ -942,51 +1074,105 @@ const content = {
         localName: "Java Volcano Tour Operator",
         stars: "Inti petualangan",
         image: "./assets/tours/jvto-volcano-tour.jpg",
-        note: "Inilah bagian paling keras sekaligus paling membekas dari perjalanan ini: blue fire, medan air terjun, dan penutup sunrise gunung api.",
+        note: "Inilah bagian paling berat sekaligus paling membekas dari perjalanan ini: blue fire, medan air terjun, dan penutup sunrise gunung api.",
         details: [
           "Rute 4 hari berangkat dari Bali",
           "Halaman publik menampilkan contoh hotel: Luminor / Doho / Joglo Kecombrang",
           "Urutan utama adalah Ijen → Papuma / Sewu → Bromo"
         ],
         url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-        linkLabel: "Halaman JVTO"
+        linkLabel: "Halaman JVTO",
+        extraLinks: [["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]]
       },
       {
         dates: "Tur privat sehari",
         area: "Rencana booking",
-        hotel: "Dagi Hill + Borobudur + Prambanan",
-        localName: "Tur privat candi Yogyakarta via Klook",
+        hotel: "Borobudur naik candi + tur berpemandu + Prambanan",
+        localName: "Tur Klook Borobudur dan Prambanan",
         stars: "Hari budaya",
         image: "./assets/tours/klook-borobudur-prambanan.webp",
-        note: "Paket ini sangat pas untuk Hari ke-8 karena membuat hari candi terasa utuh dalam satu alur private car, bukan pecah menjadi banyak perpindahan kecil.",
+        note: "Ini sekarang jadi versi yang dipakai untuk Hari ke-8: Borobudur dengan naik candi dan panduan, lalu lanjut ke Prambanan, jadi hari budaya terasa lebih utuh.",
         details: [
-          "Akses sunrise / pagi di Dagi Hill",
-          "Borobudur dan Prambanan dalam satu rute",
-          "Format tur privat, cocok untuk inti hari budaya"
+          "Borobudur naik candi dengan panduan",
+          "Kunjungan ke Candi Prambanan",
+          "Cocok dipakai sebagai inti Hari ke-8"
         ],
-        url: "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/",
+        url: "https://s.klook.com/c/4yVrZ02036",
         linkLabel: "Halaman Klook",
-        extraLinks: [["Klook ID", "https://www.klook.com/id/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"]]
+        extraLinks: []
       }
     ],
     stayLabel: "Rencana menginap",
     stayTitle: "Rencana menginap",
-    stayLead: "Setiap tempat menginap punya fungsi ritmenya sendiri: santai, recovery setelah gunung api, lalu penutup kota. Setiap hotel diberi link Google Maps.",
+    stayLead: "Setiap tempat menginap punya peran yang jelas: santai di awal, recovery di tengah, lalu penutup kota yang lebih praktis. Setiap hotel diberi link Google Maps.",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Halaman tour",
     linksLabel: "Tautan resmi",
     linksTitle: "Tautan resmi",
-    linksLead: "Halaman ini mengumpulkan hotel, tour gunung api, kereta bandara, dan situs masuk Indonesia dalam satu tempat.",
+    linksLead: "Semua situs yang kemungkinan akan sering dibuka sebelum berangkat atau saat perjalanan dikumpulkan di satu tempat.",
+    resourceLinkCta: "Buka situs",
     linksHighlights: [
-      ["Hotel", "Situs resmi untuk 3 hotel"],
-      ["Transportasi", "Tour gunung api dan kereta bandara"],
-      ["Masuk", "eVisa dan Love Bali"]
+      ["Dokumen bersama", "Folder cloud untuk semua catatan dan file persiapan"],
+      ["Transportasi", "Tour gunung api, kereta, dan kereta bandara"],
+      ["Masuk", "eVisa, Love Bali, dan All Indonesia"]
+    ],
+    infoLabel: "Info praktis",
+    infoTitle: "Info praktis Indonesia",
+    infoLead: "Halaman ini menyimpan hal-hal praktis yang paling sering dicek ulang: urutan masuk, hitung uang, aplikasi, zona waktu, dan beberapa kebiasaan lokal.",
+    infoPanelOneTitle: "Sebelum berangkat dan info dasar",
+    infoPanelTwoTitle: "Pengingat saat di perjalanan",
+    infoCostsLabel: "Catatan biaya",
+    infoCostsTitle: "Biaya yang sudah diketahui",
+    infoCostsLead: "Angka-angka ini dipindahkan dari dokumen planning sebagai memo biaya kerja. Setelah biaya makan, taksi, dan belanja ditambahkan, gambarnya akan jauh lebih lengkap.",
+    infoHighlights: [
+      ["Urutan persiapan", "Folder bersama → eVisa → levy Bali → All Indonesia"],
+      ["Gaya bayar", "Tempat formal bisa pakai kartu, jadi uang tunai tidak perlu terlalu banyak"],
+      ["Aplikasi penting", "Gojek sangat berguna, dan Grab bisa dipakai untuk banding harga"],
+      ["Zona waktu", "Bali sama dengan Taiwan; Jakarta dan Yogyakarta lebih lambat 1 jam"]
+    ],
+    infoChecklist: [
+      ["Langkah 1", "Kumpulkan scan paspor, tiket, hotel, visa, dan QR code di folder cloud bersama sebelum berangkat."],
+      ["Langkah 2", "Urus eVisa / e-VOA Indonesia dulu. Biaya resminya Rp500.000, umumnya untuk tinggal 30 hari dalam masa berlaku 90 hari, dan bisa diperpanjang sekali."],
+      ["Langkah 3", "Lalu bayar levy wisata Bali Rp150.000. Biaya ini berlaku setiap kali masuk ke Bali, baik datang langsung maupun transit lewat kota lain di Indonesia."],
+      ["Langkah 4", "Dalam 3 hari sebelum tiba, isi All Indonesia untuk imigrasi, bea cukai, dan deklarasi kesehatan."],
+      ["Langkah 5", "Cek apakah hair dryer dan alat berdaya besar mendukung 220V / 50Hz, dan pasang eSIM sebelum berangkat dari Taiwan."],
+      ["Langkah 6", "Kalau ada segmen maskapai Korea, power bank harus menampilkan Wh dan sebaiknya disimpan aman dalam zip bag atau dibuat terisolasi."]
+    ],
+    infoBasics: [
+      ["Folder bersama", "Semua file persiapan bisa disimpan di satu folder SharePoint supaya lebih mudah dibuka dari HP maupun laptop."],
+      ["Catatan eVisa", "Dalam uji coba terbaru, email persetujuan masuk sekitar satu menit setelah pengajuan, tetapi tetap lebih aman kalau diurus lebih awal."],
+      ["Rencana eSIM", "Rencana saat ini adalah membeli eSIM di Shopee dan memasangnya sebelum berangkat supaya internet langsung aktif saat mendarat."],
+      ["Hitung uang cepat", "Catatan planning memakai perkiraan kasar Rp1.000 ≈ NT$1,87. Shortcut mudahnya adalah buang tiga nol terakhir lalu kali 2, atau bagi sekitar 500 sampai 530."],
+      ["Tukar uang", "Kalau perlu tukar uang di Indonesia, jaringan resmi seperti PT Valasindo Valuta (PVG) biasanya lebih aman daripada counter kecil di pinggir jalan."],
+      ["Rencana uang tunai", "Asumsinya tetap sama: bawa uang tunai secukupnya saja, lalu pakai kartu untuk tempat yang lebih formal."],
+      ["Aplikasi berguna", "Gojek bisa didaftarkan dengan nomor Taiwan dan berguna untuk transportasi, pesan makanan, serta top-up GoPay. Grab tetap bagus untuk banding harga."],
+      ["Zona waktu", "WIB lebih lambat 1 jam dari Taiwan, WITA sama dengan Taiwan, dan WIT lebih cepat 1 jam. Bali memakai WITA; Jakarta dan Yogyakarta memakai WIB."],
+      ["Tip", "Indonesia umumnya tidak punya budaya tip yang wajib."]
+    ],
+    infoTips: [
+      ["Bali Belly", "Hindari air keran, dan kalau bisa pakai air botolan juga untuk sikat gigi atau mencuci buah. Es, salad, dan seafood mentah sebaiknya lebih hati-hati."],
+      ["Zona No Online Taxi", "Beberapa area di Bali masih membatasi transportasi online. Bluebird atau berjalan sebentar ke titik jemput yang diizinkan bisa membantu."],
+      ["Macet", "Macet Bali bisa membuat perjalanan pendek jadi panjang, jadi 25 menit bisa berubah jadi 45 menit, dan 45 menit bisa menjadi 2 jam."],
+      ["Borobudur", "Borobudur tutup setiap Senin, dan tiket perlu dicek baik-baik karena akses naik ke atas dan tanpa naik itu berbeda."],
+      ["Perlengkapan gunung dan air terjun", "Untuk segmen gunung api, siapkan jaket hangat, masker, pelindung mata, dan tas yang tahan debu. Untuk air terjun, bawa celana pendek, sepatu air, jaket tahan air, dan baju ganti."],
+      ["Ukuran pakaian", "Ukuran pakaian lokal bisa 1 sampai 2 tingkat lebih kecil daripada ukuran Taiwan."],
+      ["Pembayaran", "Catatan menyebut kartu kredit fisik, Line Pay, PX Pay, Taiwan Pay, dan Apple Pay, tetapi tetap lebih aman membawa sedikit uang tunai."]
+    ],
+    infoCosts: [
+      ["Tiket pesawat", "NT$20.494 dengan China Airlines."],
+      ["Hotel", "Sekitar NT$9.202 per orang, dengan pajak yang masih belum final."],
+      ["Visa dan levy Bali", "Visa NT$941 ditambah levy Bali NT$280, total NT$1.221."],
+      ["eSIM", "NT$469."],
+      ["Kereta kabin KAI", "Total Rp2.614.500, dicatat sekitar NT$4.738 untuk 2 orang, atau sekitar NT$2.369 per orang, saat ini ditandai sebagai talangan Yang."],
+      ["Tur candi", "NT$2.610 untuk 2 orang, atau sekitar NT$1.305 per orang, saat ini ditandai sebagai talangan Yang."],
+      ["Tur gunung api 4 hari", "Deposit dicatat sekitar NT$3.994. Sisa 80% dibayar pada 2026/05/30 sebesar Rp8.433.700, sekitar NT$14.838, dan masih ditandai sebagai talangan Yang untuk dicocokkan nanti."],
+      ["Yang masih harus ditambah", "Taksi, makan, oleh-oleh, camilan, pakaian, hasil tukar uang, dan parkir bandara masih belum dimasukkan."]
     ],
     transportTitle: "Transportasi dan waktu",
     packingTitle: "Pakaian dan keamanan",
     itineraryLabel: "Rencana harian",
     itineraryTitle: "Rencana harian",
-    itineraryLead: "Setiap hari kini disusun sebagai timeline vertikal agar terasa lebih rapi dan praktis dibaca.",
+    itineraryLead: "Setiap hari hanya menyimpan bagian yang paling penting, jadi mudah dibaca cepat sebelum keluar.",
     itineraryHighlights: [
       ["Ritme rute", "Santai dulu, lalu gunung api, lalu penutup budaya"],
       ["Hari terberat", "Hari Sewu biasanya paling menguras tenaga"],
@@ -995,7 +1181,7 @@ const content = {
     dayFocusLabel: "Fokus hari ini",
     budgetLabel: "Ringkasan budget",
     budgetTitle: "Ringkasan budget",
-    budgetLead: "Konversi IDR di bawah memakai kurs perkiraan NT$1 ≈ Rp531, untuk planning saja.",
+    budgetLead: "Konversi IDR di bawah memakai kurs perkiraan NT$1 ≈ Rp531 dan hanya dipakai untuk planning.",
     paidTitle: "Sudah dibayar",
     openTitle: "Belum dibayar",
     totalBudgetLabel: "Total biaya",
@@ -1010,8 +1196,8 @@ const content = {
     budgetStatusOpen: "Belum",
     mapLabel: "Peta perjalanan",
     mapTitle: "Ringkasan peta",
-    mapLead: "Hotel, titik gunung api, dan alur ke bandara dikumpulkan di sini supaya mudah dibuka sebagai peta besar, termasuk di HP.",
-    mapRouteLink: "Buka rute lengkap",
+    mapLead: "Hotel, titik utama, dan rute ke bandara dikumpulkan di sini supaya mudah dicek, termasuk saat dibuka dari HP.",
+    mapRouteLink: "Lihat rute lengkap",
     mapDayLabel: "Rute Harian",
     mapDayRoutes: [
       ["Hari 1", "Tiba dan check-in", DAY_ROUTE_URLS.day1],
@@ -1026,33 +1212,39 @@ const content = {
     ],
     visaLabel: "Visa dan masuk",
     visaTitle: "Catatan visa dan masuk",
-    visaLead: "Urus eVisa lebih dulu, lalu bayar levy wisata Bali, dan simpan semua QR code serta bukti pembayaran di HP.",
+    visaLead: "Langkah masuknya sebenarnya singkat. Urus satu per satu, simpan semua bukti di HP, lalu proses tiba biasanya akan terasa jauh lebih ringan.",
     visaPanelTitle: "Visa wisata Indonesia",
     arrivalPanelTitle: "Tambahan saat tiba di Bali",
     visaLinkOne: "eVisa resmi Indonesia",
     visaLinkTwo: "Situs resmi Love Bali",
+    visaLinkThree: "Sistem kedatangan All Indonesia",
     visaHighlights: [
       ["Langkah 1", "Urus eVisa / e-VOA dulu"],
       ["Langkah 2", "Bayar levy Bali Rp150.000"],
-      ["Cek akhir", "Simpan QR code, paspor, dan tiket pulang jadi satu"]
+      ["Langkah 3", "Isi All Indonesia dalam 3 hari sebelum tiba"],
+      ["Cek akhir", "Simpan QR code, paspor, dan tiket pulang di tempat yang sama"]
     ],
     visaTutorial: [
       ["Langkah 1", "Per 2026-04-04, daftar paspor yang memenuhi syarat pada halaman resmi eVisa / e-VOA Indonesia sudah mencantumkan Taiwan, jadi paspor Taiwan bisa memakai jalur e-VOA / VOA sebelum mulai mengajukan."],
       ["Langkah 2", "Siapkan paspor, tiket keluar, data hotel, dan kartu pembayaran. Masa berlaku paspor harus minimal 6 bulan."],
-      ["Langkah 3", "Setelah pembayaran selesai, simpan bukti eVisa atau e-VOA di HP dan backup dengan screenshot."],
+      ["Langkah 3", "Setelah pembayaran selesai, simpan bukti eVisa atau e-VOA di HP dan backup dengan screenshot. Persetujuan bisa datang cepat, tetapi tetap jangan menunggu sampai hari terakhir."],
       ["Langkah 4", "Masuk ke situs resmi Love Bali lalu bayar levy wisata Bali Rp150.000, lalu simpan QR code-nya juga."],
-      ["Langkah 5", "Malam sebelum berangkat, taruh paspor, bukti visa, QR code Love Bali, dan detail tiket pulang di satu folder yang mudah dibuka."]
+      ["Langkah 5", "Dalam 3 hari sebelum tiba, selesaikan deklarasi terintegrasi All Indonesia untuk imigrasi, bea cukai, dan skrining kesehatan."],
+      ["Langkah 6", "Malam sebelum berangkat, taruh paspor, bukti visa, QR code Love Bali, data All Indonesia, dan detail tiket pulang di satu folder yang mudah dibuka."]
     ],
     resourceLinks: [
+      ["Folder bersama", "Folder persiapan SharePoint", "https://nkustedutw-my.sharepoint.com/my?id=%2Fpersonal%2F2103104122%5Fnkust%5Fedu%5Ftw%2FDocuments%2FShare%2F%E5%8D%B0%E5%B0%BC%E6%96%87%E4%BB%B6&viewid=2a3a1f21%2D456e%2D419a%2D955a%2Dd3c3e1c5e692"],
       ["Hotel Seminyak", "Situs resmi Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Hotel Malang", "Situs resmi The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
       ["Hotel Yogyakarta", "Situs resmi Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
       ["Tour gunung api", "Halaman resmi Java Volcano Tour Operator", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-      ["Tur candi", "Tur privat Klook Dagi Hill + Borobudur + Prambanan", "https://www.klook.com/zh-TW/activity/91895-dagi-hill-borobudur-temple-prambanan-temple-private-day-tour-yogyakarta/"],
+      ["Pesanan tour gunung api", "Halaman pesanan JVTO kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
+      ["Tur Borobudur", "Tur Klook Borobudur naik candi dan Prambanan", "https://s.klook.com/c/4yVrZ02036"],
       ["Panduan Argo Semeru", "Ulasan Journey.tw tentang kereta dan suite tertinggi", "https://journey.tw/ka-argo-semeru/"],
       ["Kereta bandara", "Halaman resmi pemesanan YIA Airport Rail Link", "https://reservation.railink.co.id/"],
       ["eVisa Indonesia", "Situs resmi pengajuan visa Indonesia", "https://evisa.imigrasi.go.id/"],
-      ["Love Bali", "Situs resmi levy wisata Bali", "https://lovebali.baliprov.go.id/"]
+      ["Love Bali", "Situs resmi levy wisata Bali", "https://lovebali.baliprov.go.id/"],
+      ["All Indonesia", "Sistem deklarasi kedatangan resmi", "https://allindonesia.imigrasi.go.id/"]
     ],
     overviewStats: [
       ["Durasi", "9 hari / 8 malam"],
@@ -1207,21 +1399,21 @@ const content = {
       ["Bandara YIA", "Yogyakarta International Airport", "Titik transfer terakhir sebelum pulang."]
     ],
     itinerary: [
-      ["Hari 1", "Tiba di Bali", "Naik CI771 dari Taipei ke DPS, lalu jalani hari pertama dengan check-in, makan malam, dan istirahat.", ["Tiba", "Makan malam", "Istirahat"], [["Ritme", "Hari pertama paling enak dibuat ringan supaya tubuh menyesuaikan dulu."], ["Saran", "Check-in, jalan sebentar di sekitar hotel, makan malam, lalu istirahat lebih awal."], ["Yang berguna", "Rapikan kebutuhan hotel, minimarket sekitar, dan barang penting untuk besok."]]],
-      ["Hari 2", "Hari santai di Bali", "Gunakan hari ini untuk beach club, pijat, dan waktu bebas di Seminyak.", ["Seminyak", "Pijat", "Waktu bebas"], [["Gaya hari", "Hari ini paling bagus dipakai untuk suasana santai, bukan lari ke terlalu banyak spot."], ["Pengingat", "Cocok juga untuk beli kebutuhan kecil sebelum masuk segmen gunung api."], ["Tambahan seru", "Kalau tenaga masih bagus, makan malam yang lebih spesial bisa bikin segmen Bali terasa lebih lengkap."]]],
-      ["Hari 3", "Masuk segmen gunung api", "Rute Jawa Timur dimulai di sini dengan urutan Ijen → Sewu → Bromo.", ["Transfer tour", "Area gunung api", "Drop Malang"], [["Cek penting", "Pastikan lagi urutan tour dan drop-off terakhir di Malang."], ["Persiapan", "Dari sini ritme tidur bisa berantakan, jadi perlengkapan penting sebaiknya sudah rapi."], ["Tas kecil", "Air minum, snack, power bank, dan dokumen sebaiknya mudah diambil."]]],
-      ["Hari 4", "Kawah Ijen", "Blue fire dan pemandangan kawah jadi salah satu sorotan utama.", ["Blue fire", "Hiking malam", "Gunung api"], [["Sorotan", "Blue fire dan danau kawah saat terang adalah dua visual paling kuat di sini."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat membantu."], ["Energi", "Karena ritmenya malam sampai pagi, waktu istirahat siang sangat berharga."]]],
-      ["Hari 5", "Tumpak Sewu", "Hari air terjun yang dramatis dengan jalur fisik dan cukup licin.", ["Air terjun", "Sepatu grip", "Hari aktif"], [["Medan", "Hari ini biasanya paling berat secara fisik dengan jalur turun, basah, dan licin."], ["Catatan", "Baju ganti dan pelindung untuk HP sangat layak dibawa."], ["Foto", "Kabut air cukup tebal, jadi lap lensa atau handuk kecil akan sangat membantu."]]],
-      ["Hari 6", "Sunrise Bromo", "Penutup klasik dengan udara dingin dan kemungkinan debu vulkanik.", ["Sunrise", "Jaket", "Masker atau buff"], [["Sorotan", "Bromo adalah penutup paling ikonik untuk segmen gunung api."], ["Pengingat", "Sebelum matahari terbit bisa berangin, dingin, dan berdebu."], ["Suasana", "Biasanya di titik ini rasa puas perjalanan petualangan mulai terasa penuh."]]],
-      ["Hari 7", "Malang → Yogyakarta", "Naik kereta ke Yogyakarta dan jadikan ini hari transisi yang lebih lembut.", ["Kereta", "Istirahat", "Ganti kota"], [["Ritme", "Hari ini pas untuk recovery setelah rangkaian petualangan yang berat."], ["Transportasi", "Sisakan buffer waktu dan buat urusan bagasi tetap ringan."], ["Ide malam", "Kalau masih ada tenaga, jalan santai di Malioboro bisa membantu kenal area lebih dulu."]]],
-      ["Hari 8", "Borobudur + Prambanan", "Rencananya hari ini memakai tur privat Klook Dagi Hill + Borobudur + Prambanan supaya hari budaya terasa utuh dalam satu alur.", ["Borobudur", "Prambanan", "Tur privat Klook"], [["Catatan budaya", "Dua candi ini memberi penutup yang jauh lebih dalam daripada sekadar petualangan alam."], ["Setup tur", "Hari ini direncanakan memakai tur privat Klook, jadi lebih halus dibanding memecah transportasi sendiri."], ["Pakaian", "Karena panas dan panjang, pakaian ringan, air minum, dan sun protection penting."]]],
-      ["Hari 9", "Hari pulang", "Naik kereta bandara pagi ke YIA dan sisakan buffer minimal 2 jam.", ["Kereta bandara", "Berangkat pagi", "Pulang"], [["Waktu", "Kereta sekitar jam 06.00 tetap pilihan yang paling aman."], ["Pengingat akhir", "Siapkan paspor, tiket, dan bukti pembayaran sejak malam sebelumnya."], ["Cek terakhir", "Sebelum keluar hotel, cek charger, adaptor, dan oleh-oleh sekali lagi."]]]
+      ["Hari 1", "Tiba di Bali", "Naik CI771 dari Taipei ke DPS, lalu jalani hari pertama dengan check-in, makan malam, dan istirahat.", ["Tiba", "Makan malam", "Istirahat"], [["Waktu bangun", "Usahakan bangun paling lambat pukul 05.30. Bali satu zona waktu dengan Taiwan."], ["Waktu berangkat", "Hitung mundur dari jarak rumah ke bandara, lalu usahakan keluar sekitar pukul 06.00 supaya lebih aman."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul khusus. Cukup ikuti ritme check-in bandara."], ["Paling lambat tidur", "Usahakan sudah istirahat sekitar pukul 22.30 supaya ritme perjalanan langsung rapi."], ["Ritme", "Hari pertama paling enak dibuat ringan supaya tubuh menyesuaikan dulu."], ["Saran", "Check-in, jalan sebentar di sekitar hotel, makan malam, lalu istirahat lebih awal."]]],
+      ["Hari 2", "Hari santai di Bali", "Gunakan hari ini untuk beach club, pijat, dan waktu bebas di Seminyak.", ["Seminyak", "Pijat", "Waktu bebas"], [["Waktu bangun", "Sekitar pukul 08.30 sudah pas, tapi bangun lebih siang sedikit juga tidak masalah."], ["Waktu berangkat", "Kalau mau brunch atau beach club, berangkat sekitar pukul 10.00 biasanya paling pas."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Jalani dengan fleksibel saja."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 23.00 agar besok lebih enak saat mulai pindah kota."], ["Gaya hari", "Hari ini paling bagus dipakai untuk suasana santai, bukan lari ke terlalu banyak spot."], ["Pengingat", "Cocok juga untuk beli kebutuhan kecil sebelum masuk segmen gunung api."]]],
+      ["Hari 3", "Masuk segmen gunung api", "Rute Jawa Timur dimulai di sini dengan urutan Ijen → Sewu → Bromo.", ["Transfer tour", "Area gunung api", "Drop Malang"], [["Waktu bangun", "Pukul 08.00 paling pas, dan paling lambat 08.30. Siang hari ini masih sama dengan waktu Taiwan."], ["Waktu berangkat", "Selesaikan sarapan dan koper sebelum 09.45 supaya tinggal menunggu mobil."], ["Waktu kumpul", "Bertemu sopir JVTO pukul 10.00, dan paling aman sudah standby di lobi pukul 09.50."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30, karena malam ini sebenarnya cuma jeda sebelum bangun tengah malam."], ["Cek penting", "Pastikan lagi urutan tour dan drop-off terakhir di Malang."], ["Tas kecil", "Air minum, snack, power bank, dan dokumen sebaiknya mudah diambil."]]],
+      ["Hari 4", "Kawah Ijen", "Blue fire dan pemandangan kawah jadi salah satu sorotan utama.", ["Blue fire", "Hiking malam", "Gunung api"], [["Waktu bangun", "Bangun pukul 23.45 waktu lokal, atau 00.45 waktu Taiwan."], ["Waktu berangkat", "Selesaikan check-out dan siap naik mobil sebelum 00.20 supaya keberangkatan 00.30 tetap lancar."], ["Waktu kumpul", "Kumpul di pintu masuk hotel atau lobi sekitar pukul 00.20."], ["Paling lambat tidur", "Usahakan malam sebelumnya sudah tidur sekitar pukul 20.30. Tambahan istirahat sekecil apa pun tetap berguna."], ["Sorotan", "Blue fire dan danau kawah saat terang adalah dua visual paling kuat di sini."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat membantu."]]],
+      ["Hari 5", "Tumpak Sewu", "Hari air terjun yang dramatis dengan jalur fisik dan cukup licin.", ["Air terjun", "Sepatu grip", "Hari aktif"], [["Waktu bangun", "Bangun pukul 02.45 waktu lokal, atau 03.45 waktu Taiwan."], ["Waktu berangkat", "Rapikan barang sebelum 03.20 supaya bisa langsung masuk keberangkatan 03.30."], ["Waktu kumpul", "Kumpul di depan penginapan sekitar pukul 03.20."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 20.30 malam sebelumnya karena hari ini termasuk paling menguras tenaga."], ["Medan", "Hari ini biasanya paling berat secara fisik dengan jalur turun, basah, dan licin."], ["Catatan", "Baju ganti dan pelindung untuk HP sangat layak dibawa."]]],
+      ["Hari 6", "Sunrise Bromo", "Penutup klasik dengan udara dingin dan kemungkinan debu vulkanik.", ["Sunrise", "Jaket", "Masker atau buff"], [["Waktu bangun", "Bangun pukul 01.15 waktu lokal, atau 02.15 waktu Taiwan."], ["Waktu berangkat", "Pakai layer hangat dan siap sebelum 01.50 supaya Jeep 02.00 bisa langsung jalan."], ["Waktu kumpul", "Kumpul di luar hotel pukul 01.50 supaya tidak terburu-buru saat Jeep datang."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30 malam sebelumnya agar masih sempat dapat sedikit waktu pulih."], ["Sorotan", "Bromo adalah penutup paling ikonik untuk segmen gunung api."], ["Pengingat", "Sebelum matahari terbit bisa berangin, dingin, dan berdebu."]]],
+      ["Hari 7", "Malang → Yogyakarta", "Naik kereta ke Yogyakarta dan jadikan ini hari transisi yang lebih lembut.", ["Kereta", "Istirahat", "Ganti kota"], [["Waktu bangun", "Pukul 07.00 waktu lokal, atau 08.00 waktu Taiwan."], ["Waktu berangkat", "Keluar dari hotel pukul 08.00 sudah pas dan masih sempat menikmati VIP lounge."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul terpisah. Langsung berangkat dari hotel ke stasiun pukul 08.00."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 22.30 karena besok hari candi dimulai cukup pagi."], ["Ritme", "Hari ini pas untuk recovery setelah rangkaian petualangan yang berat."], ["Transportasi", "Sisakan buffer waktu dan buat urusan bagasi tetap ringan."]]],
+      ["Hari 8", "Borobudur + Prambanan", "Hari ini sekarang memakai tur Klook Borobudur naik candi dan berpemandu lalu lanjut ke Prambanan dari link yang kamu kirim, jadi versi harinya sudah disesuaikan ke sana.", ["Borobudur", "Prambanan", "Tur candi Klook"], [["Waktu bangun", "Pukul 05.15 waktu lokal, atau 06.15 waktu Taiwan."], ["Waktu berangkat", "Sudah di lobi sebelum 06.20 paling aman, karena jendela jemput biasanya antara 06.30 sampai 07.30."], ["Waktu kumpul", "Rencana paling aman adalah kumpul di lobi hotel pukul 06.20."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 22.00 malam sebelumnya karena hari ini tetap penuh jalan kaki."], ["Catatan budaya", "Versi ini menaruh fokus pada akses naik ke Borobudur dengan panduan, lalu disambung Prambanan, jadi isi harinya terasa lebih lengkap."], ["Pakaian", "Karena panas dan panjang, pakaian ringan, air minum, dan sun protection penting."]]],
+      ["Hari 9", "Hari pulang", "Naik kereta bandara pagi ke YIA dan sisakan buffer minimal 2 jam.", ["Kereta bandara", "Berangkat pagi", "Pulang"], [["Waktu bangun", "Bangun pukul 04.40 waktu lokal untuk beres-beres dan berangkat, atau 05.40 waktu Taiwan."], ["Waktu berangkat", "Keluar dari hotel pukul 05.25 adalah rencana yang lebih aman. Hari ini lebih baik terlalu awal daripada terlalu mepet."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Cukup siap meninggalkan hotel pukul 05.25."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 21.30 malam sebelumnya karena hari pulang dimulai sangat pagi."], ["Waktu", "Kereta sekitar jam 06.00 tetap pilihan yang paling aman."], ["Cek terakhir", "Sebelum keluar hotel, cek charger, adaptor, dan oleh-oleh sekali lagi."]]]
     ],
     budgetLabels: {
       flight: ["Tiket pesawat", "China Airlines pulang pergi"],
       hotel: ["Hotel", "Seminyak, Malang, Yogyakarta"],
-      volcanoDeposit: ["Deposit gunung api", "Tour Ijen / Sewu / Bromo"],
-      volcanoBalance: ["Sisa gunung api", "Sisa 80%; total Rp8.160.000 untuk 2 orang, ditampilkan di sini per orang"],
+      volcanoDeposit: ["Deposit gunung api", "Deposit tour Ijen / Sewu / Bromo"],
+      volcanoBalance: ["Sisa gunung api", "Sisa 80% dibayar pada 2026/05/30; nominal kartu Rp8.433.700, sekitar NT$14.838"],
       templeTour: ["Tur candi", "Borobudur + Prambanan"],
       train: ["Kereta", "Malang → Yogyakarta"],
       dailySpend: ["Biaya harian", "Makan, pijat, pengeluaran kecil"]
@@ -1247,6 +1439,7 @@ const state = {
 };
 
 const dom = {
+  heroFacts: document.getElementById("hero-facts"),
   overviewStats: document.getElementById("overview-stats"),
   coverPoints: document.getElementById("cover-points"),
   departFlight: document.getElementById("depart-flight"),
@@ -1261,6 +1454,11 @@ const dom = {
   stayList: document.getElementById("stay-list"),
   resourceLinks: document.getElementById("resource-links"),
   linksHighlights: document.getElementById("links-highlights"),
+  infoHighlights: document.getElementById("info-highlights"),
+  infoChecklist: document.getElementById("info-checklist"),
+  infoBasics: document.getElementById("info-basics"),
+  infoTips: document.getElementById("info-tips"),
+  infoCosts: document.getElementById("info-costs"),
   packingNotes: document.getElementById("packing-notes"),
   mapList: document.getElementById("map-list"),
   mapFrame: document.getElementById("map-frame"),
@@ -1274,6 +1472,7 @@ const dom = {
   visaTutorial: document.getElementById("visa-tutorial"),
   visaPoints: document.getElementById("visa-points"),
   arrivalPoints: document.getElementById("arrival-points"),
+  footerCopy: document.getElementById("footer-copy"),
   pageProgress: document.getElementById("pageProgress")
 };
 
@@ -1372,6 +1571,20 @@ function renderMiniHighlights(items) {
         <article class="mini-highlight">
           <div class="mini-highlight-label">${label}</div>
           <div class="mini-highlight-value">${value}</div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderHeroFacts(items) {
+  return items
+    .slice(0, 3)
+    .map(
+      ([label, value]) => `
+        <article class="hero-fact-card">
+          <div class="hero-fact-label">${label}</div>
+          <div class="hero-fact-value">${value}</div>
         </article>
       `
     )
@@ -1479,22 +1692,38 @@ function renderMapDayRoutes(items) {
 function renderTimeline(days, focusLabel) {
   return days
     .map(
-      ([day, title, desc, tags, details]) => `
+      ([day, title, desc, tags, details]) => {
+        const primaryDetail = details[0];
+        const secondaryDetails = details.slice(1);
+        const isWakeupDetail = (label) =>
+          ["起床時間", "Wake-up", "Waktu bangun"].includes(label);
+
+        return `
         <article class="day-card">
           <div class="day-header">
             <div class="day-index">${day}</div>
             <div class="day-title">${title}</div>
             <div class="day-summary">${desc}</div>
           </div>
+          ${
+            primaryDetail
+              ? `
+                <div class="day-primary-strip ${isWakeupDetail(primaryDetail[0]) ? "is-wakeup" : ""}">
+                  <div class="day-primary-label">${primaryDetail[0]}</div>
+                  <div class="day-primary-value">${primaryDetail[1]}</div>
+                </div>
+              `
+              : ""
+          }
           <div class="day-content-top">
             <div class="day-focus-label">${focusLabel}</div>
             <div class="day-focus-text">${desc}</div>
           </div>
           <div class="day-detail-list">
-            ${details
+            ${secondaryDetails
               .map(
                 ([detailTitle, detailDesc]) => `
-                  <div class="day-detail-item">
+                  <div class="day-detail-item ${isWakeupDetail(detailTitle) ? "is-wakeup" : ""}">
                     <div class="day-detail-title">${detailTitle}</div>
                     <div class="day-detail-desc">${detailDesc}</div>
                   </div>
@@ -1506,7 +1735,8 @@ function renderTimeline(days, focusLabel) {
             ${tags.map((tag) => `<span>${tag}</span>`).join("")}
           </div>
         </article>
-      `
+      `;
+      }
     )
     .join("");
 }
@@ -1523,6 +1753,9 @@ function renderLanguage() {
   document.querySelectorAll(".lang-btn").forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === state.lang);
   });
+
+  dom.heroFacts.innerHTML = renderHeroFacts(copy.overviewStats);
+  dom.footerCopy.textContent = copy.footerCopy;
 
   dom.overviewStats.innerHTML = copy.overviewStats
     .map(
@@ -1579,12 +1812,17 @@ function renderLanguage() {
             <div class="resource-card-title">${title}</div>
             <div class="resource-card-desc">${desc}</div>
           </div>
-          <a href="${url}" target="_blank" rel="noreferrer">Open</a>
+          <a href="${url}" target="_blank" rel="noreferrer">${copy.resourceLinkCta}</a>
         </article>
       `
     )
     .join("");
   dom.linksHighlights.innerHTML = renderMiniHighlights(copy.linksHighlights);
+  dom.infoHighlights.innerHTML = renderMiniHighlights(copy.infoHighlights);
+  dom.infoChecklist.innerHTML = renderFlightNotes(copy.infoChecklist);
+  dom.infoBasics.innerHTML = renderBulletRows(copy.infoBasics);
+  dom.infoTips.innerHTML = renderBulletRows(copy.infoTips);
+  dom.infoCosts.innerHTML = renderBulletRows(copy.infoCosts);
 
   dom.packingNotes.innerHTML = renderBulletRows(copy.packingNotes, "note-desc");
 
@@ -1664,14 +1902,28 @@ function bindLanguageButtons() {
 function bindNav() {
   document.querySelectorAll(".nav-item").forEach((button) => {
     button.addEventListener("click", () => {
-      document.querySelectorAll(".nav-item").forEach((item) => item.classList.remove("active"));
+      document.querySelectorAll(".nav-item").forEach((item) => {
+        item.classList.remove("active");
+        item.removeAttribute("aria-current");
+      });
       document.querySelectorAll(".page-section").forEach((section) => section.classList.remove("active"));
       button.classList.add("active");
+      button.setAttribute("aria-current", "page");
       document.getElementById(button.dataset.target).classList.add("active");
-      if (window.innerWidth > 768) {
-        button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
+      button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+}
+
+function bindHeroActions() {
+  document.querySelectorAll("[data-hero-target]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.getAttribute("data-hero-target");
+      const navButton = document.querySelector(`.nav-item[data-target="${target}"]`);
+      if (navButton) {
+        navButton.click();
+      }
     });
   });
 }
@@ -1688,5 +1940,6 @@ window.addEventListener("resize", updateScrollState);
 
 bindLanguageButtons();
 bindNav();
+bindHeroActions();
 renderLanguage();
 updateScrollState();
