@@ -44,12 +44,20 @@ const content = {
   "zh-Hant": {
     heroKicker: "印尼旅程筆記",
     heroTitle: "Bali × Java",
-    heroSubtitle: "前段留給海，中段留給火山，最後留給神廟與城市",
+    heroSubtitle: "先把步調交給海風，再一路走進火山、瀑布與神廟",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "水明漾 • 伊真火山 • Tumpak Sewu • 婆羅摩火山 • 瑪琅 • 日惹",
+    heroIntro:
+      "從峇里島的海風與寺廟開始，穿過爪哇的高原與火山夜路，在天亮前一路往山脊前進，等雲海、火山口與晨光慢慢展開。",
+    heroSignals: ["海島放鬆", "火山健行", "凌晨出發", "長途轉場", "保暖外套必帶"],
+    heroFacts: [
+      ["旅程天數", "9天8夜"],
+      ["主題節奏", "海島 × 火山 × 文化"],
+      ["關鍵提醒", "早起、保暖、補水"]
+    ],
     heroPrimaryCta: "先看每日行程",
     heroSecondaryCta: "看行前資訊",
-    footerCopy: "把 2026 年 6 月這趟印尼旅行整理成一份手機和電腦都好查的旅遊手冊。",
+    footerCopy: "把 2026 年 6 月這趟印尼旅行整理成一份邊走邊查、也值得慢慢讀的旅遊手冊。",
     navOverview: "總覽",
     navFlights: "航班",
     navTrain: "火車",
@@ -62,17 +70,203 @@ const content = {
     navBudget: "預算",
     navVisa: "簽證",
     overviewLabel: "旅程總覽",
-    overviewTitle: "一條節奏很好的印尼路線：先放鬆，再冒險，最後慢慢收尾",
+    overviewTitle: "從海邊開始，穿過火山，最後在日惹安靜收尾",
     overviewLead:
-      "這趟安排不是把景點塞滿，而是把每一段放在對的位置。峇里島負責放鬆，東爪哇負責記憶點，日惹負責把旅程收得完整。",
-    coverLabel: "手冊篇章",
-    coverTitle: "這趟旅行好看的地方，在於安排得剛剛好",
+      "這趟安排不是把景點一股腦塞滿，而是讓每一段都各司其職。峇里島負責把步調放慢，東爪哇負責留下最強的畫面，日惹則替整趟旅程收出餘韻。",
+    snapshotLabel: "旅程摘要",
+    snapshotTitle: "一眼看懂這趟旅程的體力、裝備與移動節奏",
+    snapshotLead:
+      "這不是只靠美景撐起來的路線，還包含凌晨出發、長途轉場與火山健行。先把這些關鍵節奏看清楚，旅途中會從容很多。",
+    snapshotChips: ["Bali + Java", "3 個清晨火山 / 瀑布日", "2 段長距離轉場", "抓地鞋與保暖外套必帶", "腸胃敏感者保留彈性"],
+    snapshotCards: [
+      {
+        label: "主要地點",
+        value: "Bali / East Java / Yogyakarta",
+        note: "Seminyak、Ijen、Tumpak Sewu、Bromo、Malang、Yogyakarta 串成一條很完整的路線。"
+      },
+      {
+        label: "旅行主題",
+        value: "海島、火山、日出、文化",
+        note: "前段讓身體慢下來，中段把畫面拉滿，最後用神廟與城市把情緒收好。"
+      },
+      {
+        label: "體力節奏",
+        value: "普通到偏累",
+        note: "Day 4 到 Day 6 是強度最高的連續段，尤其凌晨出發的火山與瀑布日最吃體力。"
+      },
+      {
+        label: "早起程度",
+        value: "3 個凌晨／清晨日",
+        note: "Ijen、Tumpak Sewu、Bromo 都要提早起床，前一晚早睡比硬撐重要。"
+      },
+      {
+        label: "主要交通",
+        value: "飛機、包車、渡輪、Jeep、火車",
+        note: "這趟不只是住在不同城市，移動本身就是旅程的一部分。"
+      },
+      {
+        label: "住宿節奏",
+        value: "海邊放鬆 → 火山補眠 → 城市收尾",
+        note: "每一段住宿都在替下一段做準備，不只是找個地方過夜而已。"
+      },
+      {
+        label: "必備裝備",
+        value: "抓地鞋、保暖層、雨水防護",
+        note: "火山和瀑布日比造型更看重機能，尤其是鞋子、外套與防水裝備。"
+      },
+      {
+        label: "特別留意",
+        value: "補水、腸胃、曬傷、山區低溫",
+        note: "火山日前一晚吃清爽一點，長途移動日多補水，峇里島白天日照也很強。"
+      }
+    ],
+    highlightsLabel: "旅程亮點",
+    highlightsTitle: "整趟旅程最值得期待的幾個段落",
+    highlightsLead:
+      "這趟好看的地方，不在於一天塞了多少點，而是每個高光都被放在很剛好的位置上。",
+    journeyHighlights: [
+      {
+        kicker: "06/13 - 06/14｜Bali",
+        title: "海風、飯店與慢下來的前段",
+        desc: "先把峇里島留給睡眠、海邊、按摩與度假節奏，不急著證明自己去了多少地方，後面的冒險才會走得舒服。",
+        tags: ["海島日", "度假節奏", "Seminyak"]
+      },
+      {
+        kicker: "06/15｜跨島轉場",
+        title: "從海邊一路切進火山線",
+        desc: "上午還在 Bali 的度假感裡，下午就開始往東爪哇前進。這一天像是旅程正式翻頁，從柔軟進到冒險。",
+        tags: ["長途移動", "跟團接送", "火山序章"]
+      },
+      {
+        kicker: "06/16｜Ijen",
+        title: "摸黑上山，等藍火和天色一起亮",
+        desc: "Ijen 的迷人，不只在藍火，而是在黑夜、硫磺氣味、冷風和晨光交錯時，整座山慢慢顯形的那段過程。",
+        tags: ["凌晨出發", "藍火", "火山健行"]
+      },
+      {
+        kicker: "06/17 - 06/18｜Sewu + Bromo",
+        title: "瀑布谷底與火山高原的雙重高潮",
+        desc: "先把腳踩進水氣和泥地裡，再把視線拉到高原日出。這兩天會累，但也幾乎撐起整趟旅行最強的畫面。",
+        tags: ["偏累", "瀑布日", "日出高原"]
+      },
+      {
+        kicker: "06/19｜火車轉場",
+        title: "從凌晨與塵土回到城市的呼吸感",
+        desc: "火山段結束後，用一段舒服的火車時間讓身體回魂，旅程也從冒險模式慢慢切回城市節奏。",
+        tags: ["恢復日", "火車包廂", "城市切換"]
+      },
+      {
+        kicker: "06/20 - 06/21｜Yogyakarta",
+        title: "神廟、石塔與回程前的安靜收尾",
+        desc: "最後把一天留給婆羅浮屠和普蘭巴南，再把隔天清晨留給回家的節奏。這樣的收尾會讓整趟旅行更完整。",
+        tags: ["文化日", "神廟", "安靜收尾"]
+      }
+    ],
+    previewLabel: "每日預覽",
+    previewTitle: "每日故事卡",
+    previewLead:
+      "先看每一天的主題、體力節奏和最值得期待的畫面，再進詳細行程，旅途中會更知道自己今天該怎麼走。",
+    practicalLabel: "實用資訊",
+    practicalTitle: "旅途中會一直翻的實用資訊",
+    practicalLead:
+      "這一區把航班、住宿、火山健行、穿搭、補給和腸胃提醒收成好翻的手冊頁，而不是堆成一整面資料庫。",
+    practicalSections: [
+      {
+        title: "航班與接送",
+        intro: "把出發和回程的關鍵節點抓穩，整趟旅程會輕鬆很多。",
+        chips: ["華航直飛去程", "回程兩段式", "提早到機場"],
+        items: [
+          ["去程節奏", "台北直飛峇里島，抵達時間適合直接進飯店與晚餐節奏。"],
+          ["回程重點", "YIA 到雅加達是接續段，真正的國際長程段是雅加達回台北。"],
+          ["接送習慣", "抵達日、跨島日和回程日都建議把飯店地址、接送點和付款憑證放在同一個手機資料夾。"]
+        ]
+      },
+      {
+        title: "城市間移動",
+        intro: "這趟不是定點旅行，長途轉場本身就是一段風景與節奏切換。",
+        chips: ["包車", "渡輪", "Jeep", "火車"],
+        items: [
+          ["火山順序", "目前主線是 Ijen → Tumpak Sewu → Bromo，走法清楚，節奏也最好。"],
+          ["轉場心法", "長途車程日別把每一小時都排滿，留一點空白，旅程會更舒服。"],
+          ["回程緩衝", "YIA 機場鐵路建議抓 06:00 左右的穩定班次，並至少提早 2 小時到機場。"]
+        ]
+      },
+      {
+        title: "今晚落腳",
+        intro: "每一段住宿都各有角色：前段放鬆，中段補眠，後段收尾。",
+        chips: ["Seminyak", "火山段", "Malang", "Yogyakarta"],
+        items: [
+          ["Bali 前段", "Seminyak 的飯店重點是把身體和心情都放鬆，好好睡、好好吃。"],
+          ["火山段住宿", "這幾晚不是走奢華路線，而是讓凌晨出發前後都能順順接上。"],
+          ["城市段收尾", "Malang 和 Yogyakarta 的住宿更偏向補體力與方便移動。"]
+        ]
+      },
+      {
+        title: "火山健行提醒",
+        intro: "火山日最重要的不是意志力，而是前一晚準備得夠不夠好。",
+        chips: ["凌晨出發", "保暖", "抓地鞋", "補水"],
+        items: [
+          ["出發前確認", "外套、水、行動電源、現金、口罩與手機電量，前一晚先整包放好。"],
+          ["體感溫度", "Ijen 與 Bromo 的清晨會冷，建議採洋蔥式穿搭，比只帶一件厚外套更靈活。"],
+          ["腳下條件", "路面可能有碎石、灰塵、坡度或濕滑路段，鞋底抓地力比造型重要。"]
+        ]
+      },
+      {
+        title: "穿搭與隨身裝備",
+        intro: "不同天氣和地形要換不同思路，不需要帶很多，但要帶對。",
+        chips: ["海島日", "城市日", "火山日", "長途移動日"],
+        items: [
+          ["海島日", "透氣衣物、防曬、墨鏡與涼鞋或好走的拖鞋最實用。"],
+          ["城市日", "好走鞋、輕便衣物和一件薄外套，白天走路和晚上回飯店都舒服。"],
+          ["火山日", "保暖外套、長褲、抓地力好的鞋、防風層、口罩和雨水防護都很值得帶。"],
+          ["長途移動日", "舒服的衣物、薄外套、腸胃備品與簡單零食，會比漂亮穿搭更有感。"]
+        ]
+      },
+      {
+        title: "餐食與補給",
+        intro: "吃得舒服，比吃得滿更重要，尤其火山日前後會很有感。",
+        chips: ["補水", "簡單零食", "清爽飲食"],
+        items: [
+          ["火山日前一晚", "避免太油、太辣或太重口味，身體會比較願意早起。"],
+          ["長途移動日", "水、電解質飲料或小零食放在最容易拿的位置，車上會很需要。"],
+          ["腸胃敏感者", "不用勉強跟著大家每餐都吃一樣，保留一點彈性，旅途反而更順。"]
+        ]
+      },
+      {
+        title: "付款與網路",
+        intro: "正式店家以刷卡或電子支付為主，現金留給小吃、臨時交通和零用。",
+        chips: ["Gojek", "eSIM", "少量現金"],
+        items: [
+          ["網路", "eSIM 建議在台灣先裝好，落地後直接能上網最省時間。"],
+          ["叫車", "Gojek 很實用，也可以現場比價 Grab；峇里島部分區域仍可能限制線上叫車。"],
+          ["現金策略", "不用一開始就換太多現金，先準備夠用的小額會比較彈性。"]
+        ]
+      },
+      {
+        title: "安全與健康提醒",
+        intro: "這一區不是要嚇人，只是把真正有用的提醒放在你會找到的地方。",
+        chips: ["Bali Belly", "防曬", "塞車", "保留彈性"],
+        items: [
+          ["補水與腸胃", "瓶裝水比僥倖更便宜；冰塊、生食與半熟海鮮保守一點會比較安心。"],
+          ["交通真實感", "峇里島塞車真的很常見，車程比地圖久很多是正常的，所以留緩衝很重要。"],
+          ["身體節奏", "如果哪天真的累了，優先調整節奏，不必硬撐著把每一個點都完成。"]
+        ]
+      }
+    ],
+    previewCta: "查看當日指南",
+    dayGuideAtGlanceLabel: "今日概覽",
+    dayGuideFlowLabel: "今日路線",
+    dayGuideDetailLabel: "時間與節奏",
+    dayGuideReminderLabel: "特別提醒",
+    dayGuideLinksLabel: "相關連結",
+    coverLabel: "旅程敘事",
+    coverTitle: "真正迷人的，不是去了多少地方，而是這段路怎麼被安排",
     coverLead:
-      "前兩天先把身體和心情都放鬆，接著進入火山與瀑布的凌晨節奏，最後回到日惹，用神廟、街區和比較安靜的步調收尾。整體讀起來順，也真的很適合照這個節奏走。",
+      "前兩天先讓海邊和飯店把身心調順，接著進入火山與瀑布的凌晨節奏，再回到日惹，用神廟、街區和比較安靜的步調把旅程收尾。整條線讀起來很順，也很適合真的照著走。",
     coverPoints: [
-      ["前段放鬆", "Seminyak 這兩天不需要排太滿，好好住、好好吃、好好休息，後面會更有餘裕。"],
-      ["中段冒險", "Ijen、Sewu、Bromo 各有自己的畫面，順著走下去，強度會慢慢堆上來。"],
-      ["結尾收束", "到日惹後節奏自然慢下來，神廟和市區剛好讓整趟旅程收得穩。"]
+      ["前段放鬆", "Seminyak 這兩天不用把行程塞滿，好好住、好好吃、好好休息，後面才有餘裕。"],
+      ["中段冒險", "Ijen、Sewu、Bromo 各有自己的高點，順著走下去，氣氛和強度會慢慢堆起來。"],
+      ["結尾收束", "到日惹後步調自然慢下來，神廟和市區剛好替整趟旅程收得安穩。"]
     ],
     volcanoCaption: "Bromo 晨光",
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
@@ -80,12 +274,12 @@ const content = {
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
     routeLabel: "航班與路線",
     routeTitle: "航班與移動路線",
-    routeLead: "把班機、行李和主要移動方式放在一起，出發前或回程前都能很快對一遍。",
+    routeLead: "把班機、行李和主要轉場整理在一起，出發前或回程前快速對一遍，心裡會穩很多。",
     departTag: "去程",
     departTitle: "台北飛峇里島",
     returnTag: "回程",
     returnTitle: "日惹經雅加達回台北",
-    tripFlowLabel: "整體動線",
+    tripFlowLabel: "旅程動線",
     tripFlowValue: "台北 → 峇里島 → 伊真 → Sewu → 婆羅摩 → 瑪琅 → 日惹",
     flightHighlights: [
       ["去程結構", "CI771 直飛 DPS，華航主飛"],
@@ -97,10 +291,10 @@ const content = {
       ["轉機說明", "真正的國際回程段是 CI762；YIA → CGK 是前段接駁，實際承運仍以票面和現場資訊為準。"],
       ["資訊取捨", "頁面只保留查行程真的會用到的資訊，不放訂位代碼等敏感內容。"]
     ],
-    trainLabel: "鐵道篇章",
+    trainLabel: "鐵道路線",
     trainTitle: "火車移動",
     trainLead:
-      "Day 7 比較像修復日，不是硬趕路。這裡把 Argo Semeru 的艙等重點和購票方向整理清楚，之後查起來比較快。",
+      "Day 7 比較像一段修復時光，不是硬趕路。這裡把 Argo Semeru 最值得知道的艙等重點和購票方向整理好，之後查起來會更快。",
     trainHighlights: [
       ["列車定位", "Day 7 最適合拿來做恢復與轉場"],
       ["最高等級", "Compartment Suites 為 16 個獨立個人間"],
@@ -125,7 +319,7 @@ const content = {
       "票價和艙等仍可能調整，接近出發日再查一次最準。"
     ],
     trainBuyTitle: "如何買票",
-    trainBuyLead: "下面只保留實際購票最需要知道的幾件事，查起來會更直接。",
+    trainBuyLead: "這裡只留下真正訂票時會用到的重點，查起來比較不累。",
     trainBuySteps: [
       ["步驟一", "先確認 Day 7 想搭的路段與出發站，通常會以東爪哇端銜接到日惹方向為主。"],
       ["步驟二", "找 Argo Semeru，艙等直接看最高等級 Compartment Suites。它不是一般大座位，而是個人包廂型艙位。"],
@@ -136,10 +330,10 @@ const content = {
       ["Journey.tw 鐵道文章", "https://journey.tw/ka-argo-semeru/"],
       ["tiket.com 火車訂票", "https://www.tiket.com/kereta-api"]
     ],
-    toursLabel: "包套章節",
-    toursTitle: "包套旅遊團",
-    toursLead: "已訂和準備要訂的包套行程都放在這裡，之後要回來核對內容、價格或連結會更省時間。",
-    tourLinkLabel: "查看行程",
+    toursLabel: "包套行程",
+    toursTitle: "已訂與待訂行程",
+    toursLead: "把這趟真正會影響旅程節奏的包套行程收在一起，之後要核對內容、費用或連結，不必再回頭翻聊天紀錄。",
+    tourLinkLabel: "看行程內容",
     toursList: [
       {
         dates: "4D3N",
@@ -176,28 +370,28 @@ const content = {
         extraLinks: []
       }
     ],
-    stayLabel: "住宿篇章",
+    stayLabel: "住宿安排",
     stayTitle: "住宿安排",
-    stayLead: "每一段住宿都有自己的角色：前面度假，中段補體力，最後讓城市行程和回程都更順。每個飯店都附上 Google Maps 連結。",
+    stayLead: "每一段住宿都有自己的角色：前面讓人放鬆，中段撐住體力，最後讓城市行程和回程都更從容。每個飯店都附上 Google Maps 連結。",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Tour 頁面",
-    linksLabel: "實用連結",
-    linksTitle: "官方連結整理",
-    linksLead: "把會反覆打開的網站集中在同一頁，出發前和旅途中都比較不會手忙腳亂。",
+    linksLabel: "常用連結",
+    linksTitle: "常用連結整理",
+    linksLead: "把旅途中最常反覆打開的網站集中收好，出發前和路上都不用手忙腳亂。",
     resourceLinkCta: "前往查看",
     linksHighlights: [
       ["共用文件", "雲端資料夾與行前資料集中放在一起"],
       ["交通", "火山 tour、火車與機場鐵路"],
       ["入境", "eVisa、Love Bali 與 All Indonesia"]
     ],
-    infoLabel: "印尼資訊",
+    infoLabel: "實用資訊",
     infoTitle: "印尼實用資訊",
-    infoLead: "把真正會反覆查的資訊整理在這裡，臨時要確認時，不用再翻聊天紀錄或雲端文件。",
-    infoPanelOneTitle: "出發前與當地基礎資訊",
-    infoPanelTwoTitle: "旅途中提醒",
-    infoCostsLabel: "花費備忘",
-    infoCostsTitle: "目前已知花費與代墊紀錄",
-    infoCostsLead: "先把目前已記下來的金額集中放好，之後只要再補餐飲、計程車和購物，就差不多完整了。",
+    infoLead: "把真正會反覆查的資訊都收進這一頁，臨時要確認時，不用再翻聊天紀錄或雲端文件。",
+    infoPanelOneTitle: "出發前先知道的事",
+    infoPanelTwoTitle: "旅途中會用到的提醒",
+    infoCostsLabel: "花費筆記",
+    infoCostsTitle: "目前已知花費與代墊筆記",
+    infoCostsLead: "先把目前已記下來的金額集中放好，之後只要再補餐飲、計程車和購物，整趟旅程的花費輪廓就會很完整。",
     infoHighlights: [
       ["行前順序", "共用文件 → eVisa → Bali 稅 → All Indonesia"],
       ["付款習慣", "正式店家可優先刷卡，現金不用先換太多"],
@@ -242,20 +436,20 @@ const content = {
       ["火山 4 日團", "訂金約 NT$3,994；2026/05/30 已付剩餘 80% 尾款 Rp8,433,700，約 NT$14,838，文件標記為陽代墊待對帳。"],
       ["仍待補項目", "計程車、吃飯、伴手禮、零食、服飾、換匯與機捷停車場，之後再補就會完整。"]
     ],
-    transportTitle: "交通與時間安排",
-    packingTitle: "穿著與安全",
+    transportTitle: "移動節奏",
+    packingTitle: "穿著與隨身準備",
     itineraryLabel: "每日行程",
     itineraryTitle: "每日行程",
-    itineraryLead: "每天只保留真正有用的重點，出門前快速看一遍就能抓到節奏。",
+    itineraryLead: "這一頁不是把行程拆成待辦清單，而是把每天真正的節奏寫清楚：什麼時候出發、今天的主題是什麼、最值得期待的畫面在哪裡。",
     itineraryHighlights: [
-      ["路線節奏", "先放鬆、再火山、最後文化收尾"],
-      ["最硬的一天", "Sewu 瀑布日通常最吃體力"],
-      ["最穩的回程", "YIA 機場鐵路抓 06:00 左右"]
+      ["旅程走法", "先讓身體慢下來，再把高潮留給火山與瀑布，最後回到日惹安靜收尾"],
+      ["最有記憶點", "Ijen 藍火、Tumpak Sewu 谷底和 Bromo 日出會把整趟旅程的畫面撐起來"],
+      ["閱讀方式", "先看起床與集合，再看今日旅程和貼心提醒"]
     ],
-    dayFocusLabel: "今日重點",
-    budgetLabel: "預算整理",
-    budgetTitle: "預算整理",
-    budgetLead: "以下以 NT$1 ≈ Rp531 粗估，只作行前抓預算用，不代表即時匯率。",
+    dayFocusLabel: "今日旅程",
+    budgetLabel: "花費整理",
+    budgetTitle: "花費整理",
+    budgetLead: "以下以 NT$1 ≈ Rp531 粗估，主要拿來抓這趟旅程的大方向，不代表即時匯率。",
     paidTitle: "已支付",
     openTitle: "尚未支付",
     totalBudgetLabel: "總預算",
@@ -269,26 +463,26 @@ const content = {
     budgetStatusPaid: "已支付",
     budgetStatusOpen: "未支付",
     mapLabel: "旅行地圖",
-    mapTitle: "地圖總覽",
-    mapLead: "主要住宿、景點和機場動線都放在這裡，手機上切換查看也很方便。",
-    mapRouteLink: "看完整路線",
-    mapDayLabel: "每日路線",
+    mapTitle: "旅程地圖",
+    mapLead: "把住宿、景點和機場動線攤開來看，移動時比較不容易慌，也更能掌握每天的距離感。",
+    mapRouteLink: "看整段路線",
+    mapDayLabel: "每日動線",
     mapDayRoutes: [
-      ["第 1 天", "抵達與入住", DAY_ROUTE_URLS.day1],
-      ["第 2 天", "水明漾放鬆日", DAY_ROUTE_URLS.day2],
-      ["第 3 天", "進入火山段", DAY_ROUTE_URLS.day3],
-      ["第 4 天", "伊真火山路線", DAY_ROUTE_URLS.day4],
-      ["第 5 天", "Sewu 瀑布路線", DAY_ROUTE_URLS.day5],
-      ["第 6 天", "婆羅摩日出路線", DAY_ROUTE_URLS.day6],
-      ["第 7 天", "瑪琅到日惹", DAY_ROUTE_URLS.day7],
-      ["第 8 天", "雙神廟文化日", DAY_ROUTE_URLS.day8],
-      ["第 9 天", "飯店到機場", DAY_ROUTE_URLS.day9]
+      ["第 1 天", "海風開場的抵達日", DAY_ROUTE_URLS.day1],
+      ["第 2 天", "Seminyak 慢慢放鬆", DAY_ROUTE_URLS.day2],
+      ["第 3 天", "離開海邊，進入火山線", DAY_ROUTE_URLS.day3],
+      ["第 4 天", "Ijen 的藍火與天光", DAY_ROUTE_URLS.day4],
+      ["第 5 天", "走進 Tumpak Sewu 谷底", DAY_ROUTE_URLS.day5],
+      ["第 6 天", "Bromo 日出與高原冷風", DAY_ROUTE_URLS.day6],
+      ["第 7 天", "從火山回到城市", DAY_ROUTE_URLS.day7],
+      ["第 8 天", "神廟與石塔的一天", DAY_ROUTE_URLS.day8],
+      ["第 9 天", "把旅程好好帶回家", DAY_ROUTE_URLS.day9]
     ],
-    visaLabel: "簽證入境",
-    visaTitle: "簽證與入境提醒",
-    visaLead: "入境前要做的事情其實不多，照順序處理好，再把憑證都留在手機裡，到現場會輕鬆很多。",
-    visaPanelTitle: "印尼旅遊簽證",
-    arrivalPanelTitle: "峇里島入境附加事項",
+    visaLabel: "入境準備",
+    visaTitle: "簽證與入境",
+    visaLead: "入境前要做的事情其實不多，只要照順序處理、把憑證收好，抵達那天就會輕鬆很多。",
+    visaPanelTitle: "簽證這一段",
+    arrivalPanelTitle: "抵達峇里島前後",
     visaLinkOne: "印尼官方 eVisa",
     visaLinkTwo: "Love Bali 官方網站",
     visaLinkThree: "All Indonesia 入境整合系統",
@@ -321,10 +515,10 @@ const content = {
       ["All Indonesia", "印尼官方入境整合系統", "https://allindonesia.imigrasi.go.id/"]
     ],
     overviewStats: [
-      ["天數", "9天8夜"],
-      ["旅程定位", "高品質自由行"],
-      ["一句話", "有體驗、有放鬆、有文化"],
-      ["旅行區域", "峇里島 + 東爪哇 + 日惹"]
+      ["旅程天數", "9天8夜", "前段 Bali、中央火山線、尾段日惹，節奏很完整。"],
+      ["主要區域", "Seminyak / East Java / Yogyakarta", "海邊、火山、瀑布、神廟和城市都在這條線上。"],
+      ["體力節奏", "2 天輕鬆、3 天偏累、1 天恢復", "最硬的是 Ijen、Tumpak Sewu、Bromo 連續段。"],
+      ["早起程度", "3 個凌晨 / 清晨日", "抓地鞋、保暖外套、補水與睡眠都要提早準備。"]
     ],
     flightData: {
       depart: {
@@ -473,15 +667,277 @@ const content = {
       ["YIA 機場", "Yogyakarta International Airport", "回程當天的最終移動點。"]
     ],
     itinerary: [
-      ["Day 1", "抵達峇里島", "搭乘 CI771 由台北直飛 DPS，抵達後以 check-in、晚餐與休息為主。", ["抵達 + 入住", "輕鬆晚餐", "調時差"], [["起床時間", "建議最晚 05:30 起床；峇里島與台灣同時區。"], ["出門時間", "依住處到機場距離回推，建議 06:00 前後出門最穩。"], ["集合時間", "今天沒有固定集合；機場報到以班機時間往前抓就好。"], ["最晚睡覺時間", "建議 22:30 前躺平，先把旅程節奏拉順。"], ["節奏", "第一天不建議排太滿，讓身體先適應濕熱氣候與移動疲勞。"], ["建議安排", "入住後可在 Seminyak 周邊簡單散步、吃飯，早點休息。"]]],
-      ["Day 2", "Bali 放鬆日", "安排 beach club、按摩與自由活動，讓旅程先從舒服開始。", ["Seminyak", "按摩", "自由活動"], [["起床時間", "08:30 前後起床即可；想睡晚一點也可以。"], ["出門時間", "如果要去吃早午餐或 beach club，10:00 前後出門最剛好。"], ["集合時間", "今天沒有固定集合，自由安排即可。"], ["最晚睡覺時間", "建議 23:00 前休息，隔天開始進入移動段。"], ["玩法", "這天最適合把行程壓鬆，重點不是跑點，而是把度假感做滿。"], ["小提醒", "海邊日照強，記得防曬，也可以順便補買後面火山段需要的小物。"]]],
-      ["Day 3", "進入火山段", "開始東爪哇移動，重點順序是 Ijen → Sewu → Bromo。", ["跟團移動", "進入火山區", "確認 Malang drop"], [["起床時間", "08:00 起床最剛好；最晚不要超過 08:30。"], ["出門時間", "09:45 前把行李和早餐處理好，準備在飯店外等車。"], ["集合時間", "10:00 和 JVTO 司機會合，建議 09:50 就在飯店大廳待命。"], ["最晚睡覺時間", "建議 19:30 前睡，因為今晚其實只是在等隔天半夜起床。"], ["關鍵確認", "和 tour 再次確認行程順序與最後 drop-off 是否在 Malang。"], ["隨身物品", "把護照影本、行動電源、水與簡單零食放在最容易拿的位置。"]]],
-      ["Day 4", "Ijen Crater", "藍火與火山口是這段的代表亮點，通常需要凌晨出發。", ["藍火", "夜間健行", "火山體驗"], [["起床時間", "當地時間 23:45 起床；台灣時間 00:45。"], ["出門時間", "00:20 前完成退房與上車準備，00:30 準時出發。"], ["集合時間", "00:20 在住宿點門口或大廳集合最保險。"], ["最晚睡覺時間", "建議前一晚 20:30 前就寢，能睡多少算多少。"], ["看點", "藍火與天亮後的火山湖是 Ijen 最有記憶點的兩個畫面。"], ["裝備", "頭燈、抓地鞋、薄外套與口罩都很重要。"]]],
-      ["Day 5", "Tumpak Sewu", "瀑布地形壯觀但偏體力型，鞋子與換洗衣物很重要。", ["瀑布", "防滑鞋", "體力日"], [["起床時間", "當地時間 02:45 起床；台灣時間 03:45。"], ["出門時間", "03:20 前把行李收好，03:30 直接上車。"], ["集合時間", "03:20 在住宿點門口集合最穩。"], ["最晚睡覺時間", "建議前一晚 20:30 前休息，這天體力消耗會很大。"], ["地形", "這天通常有濕滑路段、上下坡與水氣，整體最吃體力。"], ["準備", "建議多帶一套可替換衣物與防水袋，手機也最好先做防護。"]]],
-      ["Day 6", "Mount Bromo Sunrise", "經典火山日出收尾，清晨會冷，也可能有火山灰。", ["日出", "外套", "口罩或 Buff"], [["起床時間", "當地時間 01:15 起床；台灣時間 02:15。"], ["出門時間", "01:50 前穿好保暖層，02:00 準時搭 Jeep 出發。"], ["集合時間", "01:50 在飯店外等 Jeep，避免臨時找人。"], ["最晚睡覺時間", "建議前一晚 19:30 前就寢，這樣至少能補一小段睡眠。"], ["看點", "Bromo 是整段火山行程最經典的收尾，視野與光線都很有戲。"], ["小提醒", "凌晨風大且冷，保暖與遮塵用品都很值得帶。"]]],
-      ["Day 7", "Malang → Yogyakarta", "搭火車前往日惹，這天可以當作比較放鬆的轉場日。", ["火車移動", "休息", "城市切換"], [["起床時間", "當地時間 07:00 起床；台灣時間 08:00。"], ["出門時間", "08:00 從飯店出發去車站最剛好，還有時間進 VIP 貴賓室。"], ["集合時間", "今天沒有另外集合，08:00 直接從飯店搭車去車站。"], ["最晚睡覺時間", "建議 22:30 前休息，隔天神廟日還要早起。"], ["節奏", "火山段結束後，這天很適合補眠、整理照片與重新回到比較舒服的旅行狀態。"], ["交通", "火車時間建議預留緩衝，並注意行李上下車的節奏。"]]],
-      ["Day 8", "Borobudur + Prambanan", "目前改用你提供的 Klook 婆羅浮屠（登塔＋導覽）和普蘭巴南寺廟之旅，直接把 Day 8 的文化行程定成這個版本。", ["婆羅浮屠", "普蘭巴南", "Klook 神廟一日遊"], [["起床時間", "當地時間 05:15 起床；台灣時間 06:15。"], ["出門時間", "06:20 前到大廳等車最穩，接駁通常落在 06:30 到 07:30 之間。"], ["集合時間", "建議 06:20 在飯店大廳集合，避免司機提早到。"], ["最晚睡覺時間", "建議前一晚 22:00 前休息，文化日也會走滿一整天。"], ["文化重點", "這天會以婆羅浮屠登塔導覽加上普蘭巴南寺廟作為主軸，內容比一般單點參觀更完整。"], ["穿著建議", "神廟區白天偏熱，建議穿透氣衣物並隨身帶水。"]]],
-      ["Day 9", "回程日", "搭早班機場鐵路前往 YIA，預留至少 2 小時緩衝再銜接班機。", ["機場鐵路", "提早出發", "回台灣"], [["起床時間", "當地時間 04:40 起床收行李；台灣時間 05:40。"], ["出門時間", "05:25 從飯店出發去機場最穩，抓早不抓晚。"], ["集合時間", "今天沒有固定集合，05:25 準時離開飯店即可。"], ["最晚睡覺時間", "建議前一晚 21:30 前休息，回程日會很早開始。"], ["時間安排", "06:00 左右的機場鐵路是偏穩的選擇，能把風險壓低。"], ["最後檢查", "出門前確認房卡、充電器、轉接頭和伴手禮都已收好。"]]]
+      ["Day 1", "海風開場的抵達日", "抵達日不用急著把行程排滿。讓機場、入住、晚餐與第一晚好眠，慢慢把身體帶進峇里島的濕熱與海風裡。", ["海風抵達日", "晚餐散步", "旅程暖機"], [["起床時間", "建議最晚 05:30 起床；峇里島與台灣同時區。"], ["出門時間", "依住處到機場距離回推，建議 06:00 前後出門最穩。"], ["集合時間", "今天沒有固定集合；機場報到以班機時間往前抓就好。"], ["最晚睡覺時間", "建議 22:30 前躺平，先把旅程節奏拉順。"], ["今日亮點", "這天的重點不是追景點，而是讓海風、晚餐和一場好睡眠替整趟旅程暖機。"], ["傍晚安排", "入住後先熟悉飯店和周邊，把晚餐留給不趕時間的散步和慢慢吃。"]], {
+        date: "06 / 13 Sat",
+        region: "峇里島｜Seminyak",
+        theme: "抵達、入住與海風暖機",
+        effort: "輕鬆",
+        tone: "beach",
+        badges: ["海島日", "同時區", "晚餐散步"],
+        preview: "先把第一天留給入境、入住與晚餐，不追景點，讓身體順順地從飛行模式切到旅行模式。",
+        guide: "今天的重點很簡單：順順入境、順順入住、順順吃飯，讓身體先跟上峇里島的溫度與節奏。",
+        atGlance: [
+          ["出發時間", "依住處回推，06:00 前後出門最安心"],
+          ["主要移動", "台北直飛 DPS → 機場到 Seminyak 飯店"],
+          ["體力節奏", "輕鬆，以調整飛行疲勞與濕熱氣候為主"],
+          ["今日穿著", "透氣衣物、薄外套、好穿脫的鞋"],
+          ["餐食與補給", "飛機上先補水，晚餐選清爽一點會更舒服"],
+          ["今晚落腳", "Courtyard by Marriott Bali Seminyak Resort"]
+        ],
+        routeFlow: [
+          ["下午｜抵達與入境", "護照、簽證與 QR code 放在最好拿的位置，入境後直接進飯店最省力。"],
+          ["傍晚｜晚餐與散步", "先把 Seminyak 的第一晚留給走走看看和慢慢吃，不需要急著跑點。"],
+          ["夜晚｜早點休息", "隔天還有完整的 Bali 日，今晚先把睡眠和補水補回來。"]
+        ],
+        reminders: [
+          "第一次進房後先整理隔天要用的隨身小包，後面每天早上都會輕鬆很多。",
+          "如果下午覺得熱和累都很正常，先把補水與休息放前面，不用硬排景點。"
+        ],
+        links: [["今晚落腳", HOTEL_MAPS.seminyak]]
+      }],
+      ["Day 2", "Seminyak 慢慢過的一天", "這天適合把鬧鐘放鬆一點，把 beach club、按摩、散步和好好吃飯留給 Seminyak，讓度假的感覺真正開始。", ["海邊放空", "brunch", "慢慢過"], [["起床時間", "08:30 前後起床即可；想睡晚一點也可以。"], ["出門時間", "如果要去吃早午餐或 beach club，10:00 前後出門最剛好。"], ["集合時間", "今天沒有固定集合，自由安排即可。"], ["最晚睡覺時間", "建議 23:00 前休息，隔天開始進入移動段。"], ["今日亮點", "把一天交給海邊、按摩和自在發呆，讓 Seminyak 的度假感慢慢長出來。"], ["貼心提醒", "海邊日照很強，也可以趁今天把火山段要用的小物補齊。"]], {
+        date: "06 / 14 Sun",
+        region: "峇里島｜Seminyak",
+        theme: "海岸放鬆、按摩與補給的一天",
+        effort: "輕鬆",
+        tone: "beach",
+        badges: ["防曬", "自由安排", "補給日"],
+        preview: "睡晚一點、慢慢吃、再把喜歡的海邊或按摩排進去，這一天就是要把度假感做滿。",
+        guide: "今天不是證明體力的日子，而是把步調放鬆，替後面幾天的火山與瀑布做準備。",
+        atGlance: [
+          ["出發時間", "10:00 前後出門最剛好"],
+          ["主要移動", "Seminyak 周邊短距離移動為主"],
+          ["體力節奏", "輕鬆，可以自由調整節奏"],
+          ["今日穿著", "防曬、透氣衣物、涼鞋或好走拖鞋"],
+          ["餐食與補給", "適合吃早午餐，也可以順手補零食和水"],
+          ["今晚落腳", "Courtyard by Marriott Bali Seminyak Resort"]
+        ],
+        routeFlow: [
+          ["上午｜慢慢醒來", "把睡眠睡飽一點，讓身體真的進入度假模式。"],
+          ["午後｜海邊與按摩", "挑一個想待久一點的地方，比多跑幾個點更適合今天。"],
+          ["夜晚｜收好火山段節奏", "把明後天的衣物、藥品、行動電源和防水小物先整理好。"]
+        ],
+        reminders: [
+          "海邊日照和濕熱都很明顯，防曬與補水比想像中更重要。",
+          "如果要買 eSIM、零食或腸胃藥，今天是最舒服的補貨時間。"
+        ],
+        links: [["今晚落腳", HOTEL_MAPS.seminyak]]
+      }],
+      ["Day 3", "離開海邊，進入火山線", "上午還在 Bali 的海邊節奏裡，下午就會一路往東爪哇前進。這是旅程從放鬆轉向冒險的分水嶺。", ["跨島轉場", "火山序章", "跟團移動"], [["起床時間", "08:00 起床最剛好；最晚不要超過 08:30。"], ["出門時間", "09:45 前把行李和早餐處理好，準備在飯店外等車。"], ["集合時間", "10:00 和 JVTO 司機會合，建議 09:50 就在飯店大廳待命。"], ["最晚睡覺時間", "建議 19:30 前睡，因為今晚其實只是在等隔天半夜起床。"], ["出發前確認", "離開 Bali 前，把接送流程、行程順序和最後 drop-off 再確認一次，後面會順很多。"], ["隨身小物", "把護照影本、水、零食和行動電源放在最好拿的位置，路上會一直用到。"]], {
+        date: "06 / 15 Mon",
+        region: "Bali → 東爪哇火山線",
+        theme: "跨島轉場與冒險開場",
+        effort: "普通｜長途移動",
+        tone: "transfer",
+        badges: ["包車接送", "渡輪", "早睡準備"],
+        preview: "今天真正的目的地不是某一個景點，而是把自己穩穩送進東爪哇的火山節奏裡。",
+        guide: "上午離開 Bali，下午切進東爪哇。這一天像旅程翻頁，從度假模式切換到冒險模式。",
+        atGlance: [
+          ["出發時間", "10:00 與 JVTO 司機會合"],
+          ["主要移動", "包車 → 港口 → 渡輪 → 東爪哇飯店"],
+          ["體力節奏", "普通，但會坐很久，重點是保存精神"],
+          ["今日穿著", "舒服衣物、薄外套、好坐車的鞋"],
+          ["餐食與補給", "早餐吃飽一點，零食和水放隨身包"],
+          ["今晚落腳", "Banyuwangi 一帶火山段住宿"]
+        ],
+        routeFlow: [
+          ["上午｜離開 Bali", "把海邊節奏收起來，準時在飯店大廳等車，讓第一段轉場順順開始。"],
+          ["午後｜跨島移動", "渡輪、包車與長時間車程會輪流上場，今天的重點是保存體力，不是把行程塞滿。"],
+          ["夜晚｜補眠優先", "明天半夜就要起床，晚餐吃完就該把裝備和睡眠擺第一位。"]
+        ],
+        reminders: [
+          "今晚先把外套、口罩、頭燈或手機照明、水和行動電源放到最容易拿的位置。",
+          "車程長時別一直等到口渴才喝水，小口補水會比一次猛灌舒服很多。"
+        ],
+        links: [
+          ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ]
+      }],
+      ["Day 4", "Ijen 的藍火與天光", "半夜離開住宿點，摸黑往 Ijen 前進。先看藍火，再等火山湖和天色一起亮起來，整天都像在夢裡。", ["藍火", "夜行", "火山湖天光"], [["起床時間", "當地時間 23:45 起床；台灣時間 00:45。"], ["出門時間", "00:20 前完成退房與上車準備，00:30 準時出發。"], ["集合時間", "00:20 在住宿點門口或大廳集合最保險。"], ["最晚睡覺時間", "建議前一晚 20:30 前就寢，能睡多少算多少。"], ["今日亮點", "先是藍火，接著是天亮後的火山湖，畫面會從黑夜一路漂亮到清晨。"], ["隨身裝備", "頭燈、抓地鞋、薄外套和口罩都很重要，這天不要把自己當成輕鬆散步。"]], {
+        date: "06 / 16 Tue",
+        region: "東爪哇｜Ijen",
+        theme: "凌晨出發、藍火與火山湖",
+        effort: "偏累｜火山健行",
+        tone: "volcano",
+        badges: ["凌晨出發", "保暖", "抓地鞋"],
+        preview: "深夜出發、清晨看藍火與火山湖，是整趟最有『冒險真的開始了』感覺的一天。",
+        guide: "今天的關鍵不是走多快，而是保暖、補水、穩穩走，讓自己有餘裕迎接整段黑夜到清晨的變化。",
+        atGlance: [
+          ["出發時間", "00:30 準時離開住宿"],
+          ["主要移動", "半夜包車 → Ijen 登山口 → 健行來回"],
+          ["體力節奏", "偏累，凌晨起床加上山路健行"],
+          ["今日穿著", "保暖外套、長褲、抓地鞋、防風層"],
+          ["餐食與補給", "水與小零食放外層，午餐後再補體力"],
+          ["今晚落腳", "Papuma / 火山段住宿銜接"]
+        ],
+        routeFlow: [
+          ["凌晨｜退房與山路移動", "半夜上車時先別急，把外套、口罩和照明確認好，比衝上車重要。"],
+          ["清晨｜藍火與火山湖", "先摸黑追藍火，再等天色慢慢亮起來，這段會是整趟最有記憶點的清晨之一。"],
+          ["中午｜補給與回神", "下山後先補水、吃東西，讓身體從冷風和硫磺味裡慢慢退回來。"],
+          ["午後｜沿海轉場", "今天後段更適合保留一點安靜，讓體力和情緒都慢慢回穩。"]
+        ],
+        reminders: [
+          "火山區清晨氣溫低，洋蔥式穿搭會比只帶一件厚外套更有彈性。",
+          "如果覺得喘或不舒服，先把步伐放慢，不需要跟別人比速度。"
+        ],
+        links: [
+          ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ]
+      }],
+      ["Day 5", "走進 Tumpak Sewu 谷底", "今天是腳力和意志都會被叫醒的一天。沿著濕滑山徑一路下到谷底，瀑布真正出現在眼前時，辛苦就有了答案。", ["瀑布谷底", "水霧", "最費腿的一天"], [["起床時間", "當地時間 02:45 起床；台灣時間 03:45。"], ["出門時間", "03:20 前把行李收好，03:30 直接上車。"], ["集合時間", "03:20 在住宿點門口集合最穩。"], ["最晚睡覺時間", "建議前一晚 20:30 前休息，這天體力消耗會很大。"], ["路線感受", "這天最像真的走進溪谷和瀑布腹地，濕滑、費腿，但風景也最有震撼力。"], ["貼心提醒", "換洗衣物、防水袋和手機保護先準備好，回來時會很感謝自己。"]], {
+        date: "06 / 17 Wed",
+        region: "東爪哇｜Tumpak Sewu",
+        theme: "瀑布谷底、水霧與長下坡",
+        effort: "偏累｜瀑布健行",
+        tone: "waterfall",
+        badges: ["濕滑地形", "換洗衣物", "補水"],
+        preview: "今天會累，也會濕，但當你真的站進瀑布谷底，看見整片水霧和千瀑之谷時，就會知道這段值得。",
+        guide: "這一天比速度更重要的是穩定下坡、保護膝蓋和把防水裝備帶齊，讓自己舒服地走完。",
+        atGlance: [
+          ["出發時間", "03:30 直接出發前往瀑布"],
+          ["主要移動", "包車 → 瀑布步道 → 轉場前往 Bromo 住宿"],
+          ["體力節奏", "偏累，今天最吃腿力與耐心"],
+          ["今日穿著", "短褲或快乾褲、抓地鞋、防潑水外套"],
+          ["餐食與補給", "早餐與午餐都很重要，沿路也建議備小零食"],
+          ["今晚落腳", "Bromo 一帶住宿，早點休息"]
+        ],
+        routeFlow: [
+          ["清晨｜前往瀑布區", "車程結束後才是今天真正的開始，先把鞋帶、防水袋和衣物再確認一次。"],
+          ["上午｜走進谷底", "沿著濕滑步道往下走，景色會一層層打開，直到瀑布真正出現在面前。"],
+          ["中午｜補給與換裝", "回到平地後先處理濕衣物和補水，身體會恢復得更快。"],
+          ["午後｜轉往 Bromo", "今天真正的難，不只在瀑布，還包括後段長車程，所以能休息就先休息。"]
+        ],
+        reminders: [
+          "鞋底抓地力比造型重要，瀑布步道真的會滑。",
+          "準備一套乾衣服和防水袋，下午長車程時會舒服很多。"
+        ],
+        links: [
+          ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ]
+      }],
+      ["Day 6", "Bromo 日出與高原冷風", "Jeep、寒風、火山灰與日出會在同一個清晨一起出現。Bromo 不是單一觀景點，而是一整片高原地景慢慢甦醒的過程。", ["Jeep", "冷風", "日出視野"], [["起床時間", "當地時間 01:15 起床；台灣時間 02:15。"], ["出門時間", "01:50 前穿好保暖層，02:00 準時搭 Jeep 出發。"], ["集合時間", "01:50 在飯店外等 Jeep，避免臨時找人。"], ["最晚睡覺時間", "建議前一晚 19:30 前就寢，這樣至少能補一小段睡眠。"], ["今日亮點", "Bromo 的強不只在日出，而是整片火山地景在冷風裡慢慢亮起來。"], ["貼心提醒", "凌晨真的冷，口罩或 Buff 也很需要，因為灰和風都不會客氣。"]], {
+        date: "06 / 18 Thu",
+        region: "東爪哇｜Bromo → 城市段",
+        theme: "高原日出、Jeep 與下山後的回神",
+        effort: "偏累｜凌晨出發",
+        tone: "volcano",
+        badges: ["Jeep", "高原冷風", "下山補眠"],
+        preview: "今天會很早、很冷，也很值得。等光線慢慢掃過火山高原時，前幾天的辛苦會突然變得很合理。",
+        guide: "Bromo 日出真正考驗的不是拍照，而是凌晨的保暖、補水與精神管理；下山後記得把恢復體力當成行程的一部分。",
+        atGlance: [
+          ["出發時間", "02:00 Jeep 出發"],
+          ["主要移動", "Jeep 上山 → 觀景點 → 火山地景 → 下午轉往城市"],
+          ["體力節奏", "偏累，但比昨天更冷、更需要保暖"],
+          ["今日穿著", "保暖外套、長褲、口罩或 Buff、抓地鞋"],
+          ["餐食與補給", "清晨先補溫水，下山早餐要吃，下午再補簡單食物"],
+          ["今晚落腳", "火山段結束後的城市休息夜"]
+        ],
+        routeFlow: [
+          ["凌晨｜搭 Jeep 上山", "天還沒亮就出發，先把冷風、灰塵和顛簸都想進去，心情會更穩。"],
+          ["清晨｜觀景點等日出", "Bromo 最迷人的，是火山輪廓和雲海在低溫裡慢慢浮出來的那段時間。"],
+          ["上午｜回飯店與早餐", "下山後先補一頓熱的早餐，比任何打卡行程都重要。"],
+          ["午後｜轉往城市", "火山段走到這裡差不多告一段落，後段移動就把恢復體力放第一位。"]
+        ],
+        reminders: [
+          "凌晨風很直，保暖層、口罩和帽子都會有感。",
+          "如果前兩天累積疲勞明顯，今天下午的第一件事就是補眠和補水。"
+        ],
+        links: [
+          ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ]
+      }],
+      ["Day 7", "從火山回到城市步調", "把凌晨與塵土留在身後，接著用一段舒服的火車時間滑進日惹。這天的任務不是趕路，而是把身體和心情重新安頓好。", ["火車包廂", "城市轉場", "把步調放回來"], [["起床時間", "當地時間 07:00 起床；台灣時間 08:00。"], ["出門時間", "08:00 從飯店出發去車站最剛好，還有時間進 VIP 貴賓室。"], ["集合時間", "今天沒有另外集合，08:00 直接從飯店搭車去車站。"], ["最晚睡覺時間", "建議 22:30 前休息，隔天神廟日還要早起。"], ["今日亮點", "火山段結束後，這一天像一口長呼吸，讓旅程從極限早起模式切回比較從容的城市旅行。"], ["移動方式", "火車這段的重點是舒服、準時和不狼狽，行李與到站接駁先想好就會很順。"]], {
+        date: "06 / 19 Fri",
+        region: "瑪琅 / 泗水 → 日惹",
+        theme: "火車轉場與城市回穩",
+        effort: "普通｜長途移動",
+        tone: "city",
+        badges: ["火車包廂", "恢復日", "VIP lounge"],
+        preview: "這一天比較像修復日，用一段舒服的火車時間把身體和心情從火山模式慢慢帶回城市節奏。",
+        guide: "今天不必再硬撐熱血，把舒服、準時和不狼狽當成主題，旅程會突然變得很高級。",
+        atGlance: [
+          ["出發時間", "08:00 從飯店前往車站"],
+          ["主要移動", "飯店 → 車站 → Argo Semeru → Yogyakarta"],
+          ["體力節奏", "普通，重點是恢復與整理"],
+          ["今日穿著", "舒服衣物、薄外套、好坐車的鞋"],
+          ["餐食與補給", "早餐吃好、車上補水、抵達後再安排晚餐"],
+          ["今晚落腳", "Aveta Hotel Malioboro"]
+        ],
+        routeFlow: [
+          ["上午｜前往車站", "提早到會比壓線舒服很多，也比較有餘裕進 VIP lounge 慢慢等車。"],
+          ["白天｜火車上的長呼吸", "把這段路程當成修復時間，整理照片、補眠或單純看風景都很適合。"],
+          ["午後｜回到城市", "抵達日惹後節奏自然慢下來，今晚不需要太貪心，把體力留給明天的神廟日。"]
+        ],
+        reminders: [
+          "火山段後的疲勞通常這天才會真正浮上來，所以補水和坐下休息都很重要。",
+          "行李上車前先確認最常拿的東西放外層，列車上會輕鬆很多。"
+        ],
+        links: [
+          ["Argo Semeru 介紹", "https://journey.tw/ka-argo-semeru/"],
+          ["今晚落腳", HOTEL_MAPS.yogyakarta]
+        ]
+      }],
+      ["Day 8", "神廟與石塔的一天", "火山之後，把一天留給婆羅浮屠和普蘭巴南剛剛好。石塔、尖塔與導覽裡的故事，會替整趟旅程補上文化的厚度。", ["婆羅浮屠", "普蘭巴南", "文化收尾"], [["起床時間", "當地時間 05:15 起床；台灣時間 06:15。"], ["出門時間", "06:20 前到大廳等車最穩，接駁通常落在 06:30 到 07:30 之間。"], ["集合時間", "建議 06:20 在飯店大廳集合，避免司機提早到。"], ["最晚睡覺時間", "建議前一晚 22:00 前休息，文化日也會走滿一整天。"], ["文化亮點", "婆羅浮屠的層層石塔和普蘭巴南的尖塔線條，會讓這趟旅程多出完全不同的記憶點。"], ["穿著與補給", "白天會熱、走路也多，衣服穿輕一點，水和防曬不要省。"]], {
+        date: "06 / 20 Sat",
+        region: "日惹｜Borobudur + Prambanan",
+        theme: "文化日、石塔與寺廟故事",
+        effort: "普通",
+        tone: "temple",
+        badges: ["早起", "導覽行程", "白天偏熱"],
+        preview: "今天的高潮不是刺激，而是讓步調慢下來，走進婆羅浮屠和普蘭巴南的石塔、故事與尺度感裡。",
+        guide: "經過前幾天的山路和清晨後，今天的節奏會比較安靜，但走路時間一樣不少，水和防曬還是很重要。",
+        atGlance: [
+          ["出發時間", "06:20 在大廳等車最穩"],
+          ["主要移動", "Klook 接駁 → Borobudur → Prambanan → 回飯店"],
+          ["體力節奏", "普通，走路多但不會像火山日那樣硬"],
+          ["今日穿著", "透氣衣物、好走鞋、帽子或防曬用品"],
+          ["餐食與補給", "早餐先吃，白天隨身帶水，午餐留彈性"],
+          ["今晚落腳", "Aveta Hotel Malioboro"]
+        ],
+        routeFlow: [
+          ["清晨｜接駁出發", "今天一樣要早起，但節奏比火山日溫和很多，把早餐和水先處理好就很夠。"],
+          ["上午｜婆羅浮屠", "跟著導覽慢慢看石塔、層次和視角，會比匆忙拍照更有記憶點。"],
+          ["午後｜普蘭巴南", "寺廟線條和氣氛和婆羅浮屠很不一樣，剛好讓一天的文化感受更完整。"],
+          ["夜晚｜城市收尾", "回到日惹後，留一點時間給晚餐和安靜整理，隔天就要準備回程了。"]
+        ],
+        reminders: [
+          "白天會熱、走路會多，水、防曬和舒服的鞋比造型更重要。",
+          "如果腸胃容易敏感，中午別吃太刺激，保持輕盈一點會比較舒服。"
+        ],
+        links: [["Klook 行程", "https://s.klook.com/c/4yVrZ02036"]]
+      }],
+      ["Day 9", "把旅程好好帶回家", "回程雖然很早，但只要前一晚收得整齊，今天其實只剩穩穩銜接每一段移動，把這趟印尼的記憶平安帶回家。", ["清晨移動", "機場銜接", "回家"], [["起床時間", "當地時間 04:40 起床收行李；台灣時間 05:40。"], ["出門時間", "05:25 從飯店出發去機場最穩，抓早不抓晚。"], ["集合時間", "今天沒有固定集合，05:25 準時離開飯店即可。"], ["最晚睡覺時間", "建議前一晚 21:30 前休息，回程日會很早開始。"], ["回程節奏", "今天的關鍵不是再塞一個景點，而是穩穩把每個銜接抓好，讓回程不要慌。"], ["出發前檢查", "護照、手機、充電器、轉接頭和伴手禮出門前再看一次，少一樣都麻煩。"]], {
+        date: "06 / 21 Sun",
+        region: "日惹 → 雅加達 → 台北",
+        theme: "清晨移動與平安回家",
+        effort: "普通｜回程日",
+        tone: "return",
+        badges: ["早起", "機場銜接", "回家"],
+        preview: "今天不需要再追最後一個景點，把每一段銜接抓穩，回程反而會走得很漂亮。",
+        guide: "回程日最重要的不是速度，而是穩定。東西前一晚先收好，清晨就只要照節奏移動。",
+        atGlance: [
+          ["出發時間", "05:25 從飯店出發去機場"],
+          ["主要移動", "飯店 → YIA → 雅加達 → 台北"],
+          ["體力節奏", "普通，但精神上容易疲累"],
+          ["今日穿著", "舒服衣物、薄外套、好活動的鞋"],
+          ["餐食與補給", "機場與轉機段記得補水，隨身留點零食"],
+          ["今晚落點", "飛機上，回到台灣"]
+        ],
+        routeFlow: [
+          ["清晨｜離開飯店", "今天的節奏很早，但只要前一晚收得整齊，就不會手忙腳亂。"],
+          ["上午｜機場與接續段", "國內段接國際段時，把護照、登機證和充電設備一直放在手邊。"],
+          ["夜晚｜把旅程收好", "回到台灣後真正要做的只有一件事：好好休息，讓這趟旅程留在身體裡。"]
+        ],
+        reminders: [
+          "轉機日比平常更需要補水，也別等到餓過頭才找東西吃。",
+          "出門前確認護照、手機、充電器、轉接頭和伴手禮都在，今天少一樣都會很麻煩。"
+        ],
+        links: [["機場鐵路", "https://reservation.railink.co.id/"]]
+      }]
     ],
     budgetLabels: {
       flight: ["機票", "華航往返"],
@@ -511,6 +967,14 @@ const content = {
     heroSubtitle: "Beach first, volcano mornings next, temples at the end",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
+    heroIntro:
+      "Start with Bali's sea air and temple silhouettes, then move into East Java's night roads, crater rims, waterfall valleys, and sunrise viewpoints before easing into Yogyakarta.",
+    heroSignals: ["Island reset", "Volcano hikes", "Pre-dawn starts", "Long transfer days", "Warm layer required"],
+    heroFacts: [
+      ["Trip length", "9 days / 8 nights"],
+      ["Travel mood", "Coast × volcanoes × temples"],
+      ["Pack first", "Grip shoes, warm layer, water"]
+    ],
     heroPrimaryCta: "Open the itinerary",
     heroSecondaryCta: "Check practical info",
     footerCopy: "A June 2026 Bali and Java trip guide organized for quick checks on both phone and desktop.",
@@ -521,13 +985,199 @@ const content = {
     navStay: "Stays",
     navLinks: "Links",
     navInfo: "Info",
-    navItinerary: "Rencana",
+    navItinerary: "Itinerary",
     navMap: "Map",
-    navBudget: "Biaya",
+    navBudget: "Budget",
     navVisa: "Visa",
-    overviewLabel: "Ringkasan perjalanan",
+    overviewLabel: "Journey overview",
     overviewTitle: "A well-paced Indonesia route: easy at first, adventurous in the middle, quiet at the end",
     overviewLead: "The point of this route is not to cram in more places. It gives each stretch a job: Bali for rest, East Java for the big moments, and Yogyakarta for a calmer finish.",
+    snapshotLabel: "Trip snapshot",
+    snapshotTitle: "A quick read on the pace, gear, and effort this route really asks for",
+    snapshotLead:
+      "This is not only a scenic route. It also comes with pre-dawn starts, long transfers, and a few physically demanding days, so it helps to read the rhythm before you go.",
+    snapshotChips: ["Bali + Java", "3 early waterfall / volcano mornings", "2 major transfer days", "Grip shoes and a warm layer matter", "Leave room for weather and stomach changes"],
+    snapshotCards: [
+      {
+        label: "Main areas",
+        value: "Bali / East Java / Yogyakarta",
+        note: "Seminyak, Ijen, Tumpak Sewu, Bromo, Malang, and Yogyakarta form one clean line."
+      },
+      {
+        label: "Trip theme",
+        value: "Island, volcano, sunrise, culture",
+        note: "The early days soften the pace, the middle stretch delivers the strongest views, and the end settles into a calmer city mood."
+      },
+      {
+        label: "Effort level",
+        value: "Moderate to tiring",
+        note: "Day 4 to Day 6 is the hardest run, especially the midnight and pre-dawn departures."
+      },
+      {
+        label: "Early starts",
+        value: "3 serious wake-up days",
+        note: "Ijen, Sewu, and Bromo all work better if you respect sleep the night before."
+      },
+      {
+        label: "Transport mix",
+        value: "Flights, private car, ferry, Jeep, train",
+        note: "The movement itself is part of the trip, not just a way to get between hotels."
+      },
+      {
+        label: "Stay rhythm",
+        value: "Resort ease → short recovery stays → city finish",
+        note: "Each hotel is there to support the next part of the route, not simply to fill a night."
+      },
+      {
+        label: "Useful gear",
+        value: "Grip shoes, warm layer, rain protection",
+        note: "The volcano and waterfall days reward function much more than style."
+      },
+      {
+        label: "Watch for",
+        value: "Hydration, traffic, stomach, cold mornings",
+        note: "Eat lighter before the volcano days, keep water close, and expect mountain mornings to feel cold."
+      }
+    ],
+    highlightsLabel: "Journey highlights",
+    highlightsTitle: "The stretches that give this route its shape",
+    highlightsLead:
+      "What makes this trip memorable is not how many places fit on the map, but how each high point arrives at the right moment.",
+    journeyHighlights: [
+      {
+        kicker: "06/13 - 06/14｜Bali",
+        title: "A soft opening by the sea",
+        desc: "Seminyak gives the trip room to settle in: good sleep, slower mornings, and enough coast-and-cafe time to arrive properly before the tougher stretch begins.",
+        tags: ["Island days", "Resort pace", "Seminyak"]
+      },
+      {
+        kicker: "06/15｜Transfer day",
+        title: "Leaving the coast for the volcano line",
+        desc: "The route turns here. Bali's resort ease gives way to ferry crossings, long roads, and the feeling that the real adventure chapter has started.",
+        tags: ["Long transfer", "Tour pickup", "Adventure chapter"]
+      },
+      {
+        kicker: "06/16｜Ijen",
+        title: "A night walk into blue fire and dawn light",
+        desc: "Ijen is not only about the blue fire. It is about cold wind, sulfur air, darkness, and the strange moment the crater slowly appears with daylight.",
+        tags: ["Pre-dawn start", "Blue fire", "Volcano hike"]
+      },
+      {
+        kicker: "06/17 - 06/18｜Sewu + Bromo",
+        title: "Waterfall canyon first, volcanic plateau next",
+        desc: "The trip peaks physically here: wet footing, valley descents, Jeep tracks, and then the open highland view at sunrise.",
+        tags: ["Tiring stretch", "Waterfall day", "Sunrise plateau"]
+      },
+      {
+        kicker: "06/19｜Train day",
+        title: "A gentler day to come back to yourself",
+        desc: "After the dust and midnight wake-ups, the train segment lets the body reset and the trip step back into a city rhythm again.",
+        tags: ["Recovery day", "Train suite", "City reset"]
+      },
+      {
+        kicker: "06/20 - 06/21｜Yogyakarta",
+        title: "Temples, stone terraces, and a quiet finish",
+        desc: "Borobudur and Prambanan bring a different kind of depth, then the final morning carries the whole trip home in a steadier tone.",
+        tags: ["Culture day", "Temple line", "Quiet finish"]
+      }
+    ],
+    previewLabel: "Day-by-day preview",
+    previewTitle: "Daily story cards",
+    previewLead:
+      "Read the theme, effort, and most memorable image of each day first. It makes the detailed itinerary much easier to use on the road.",
+    practicalLabel: "Practical info",
+    practicalTitle: "The pages you will keep reopening during the trip",
+    practicalLead:
+      "Flights, transfers, volcano prep, clothing, food, and stomach notes are grouped here in a way that feels like a handbook instead of a database.",
+    practicalSections: [
+      {
+        title: "Flights and airport flow",
+        intro: "If the departure and return rhythm feels clear, the whole trip feels calmer.",
+        chips: ["Direct outbound", "Two-part return", "Arrive early"],
+        items: [
+          ["Outbound shape", "Taipei to Bali is a clean direct leg, which makes arrival day much easier to handle."],
+          ["Return structure", "Yogyakarta to Jakarta is the feeder leg; Jakarta to Taipei is the long-haul return that really matters."],
+          ["What to save together", "Keep airport transfers, hotel addresses, visa records, and booking screenshots in one phone folder."]
+        ]
+      },
+      {
+        title: "Intercity movement",
+        intro: "This is a moving route, not a stay-put holiday. The transfers are part of the experience.",
+        chips: ["Private car", "Ferry", "Jeep", "Train"],
+        items: [
+          ["Volcano order", "The core route is Ijen → Tumpak Sewu → Bromo, which keeps the geography and energy flow clean."],
+          ["Transfer mindset", "Do not overfill long-drive days. Leaving a little white space makes the whole trip easier to enjoy."],
+          ["Airport buffer", "For the YIA airport train, a stable early-morning slot works better than trying to cut the timing too close."]
+        ]
+      },
+      {
+        title: "Where you sleep",
+        intro: "Each stay has a purpose: slow down, recover, or make the next move easier.",
+        chips: ["Seminyak", "Volcano segment", "Malang", "Yogyakarta"],
+        items: [
+          ["Bali start", "The Seminyak hotel is there to help the trip settle in with good sleep, easy meals, and softer pacing."],
+          ["Volcano nights", "These are functional stays more than luxury stays. Their job is to support the early departures."],
+          ["City finish", "Malang and Yogyakarta lean more toward recovery and practical movement than resort time."]
+        ]
+      },
+      {
+        title: "Volcano hiking reminders",
+        intro: "The key is not toughness. The key is getting ready the night before.",
+        chips: ["Pre-dawn", "Warm layer", "Grip shoes", "Hydration"],
+        items: [
+          ["Night-before check", "Lay out your jacket, water, power bank, mask, cash, and charged phone before sleeping."],
+          ["Cold factor", "Ijen and Bromo can feel genuinely cold before sunrise, so light layers work better than one heavy piece."],
+          ["Footing", "Expect dust, gravel, slopes, and occasional wet ground. Traction matters more than how the shoes look."]
+        ]
+      },
+      {
+        title: "Clothing and day gear",
+        intro: "You do not need to overpack, but each part of the route asks for something different.",
+        chips: ["Island days", "City days", "Volcano days", "Transfer days"],
+        items: [
+          ["Island days", "Breathable clothes, sun protection, sunglasses, and sandals or easy walking shoes are enough."],
+          ["City days", "Comfortable shoes, lighter clothing, and a thin outer layer are usually the right balance."],
+          ["Volcano days", "Bring long pants, a warm layer, grip shoes, a windproof layer, and simple rain or dust protection."],
+          ["Transfer days", "Soft clothing, a light jacket, stomach supplies, and easy snacks feel more useful than a dressed-up look."]
+        ]
+      },
+      {
+        title: "Meals and small supplies",
+        intro: "Feeling good matters more than eating ambitiously, especially around the volcano days.",
+        chips: ["Hydration", "Light snacks", "Lighter dinner"],
+        items: [
+          ["Before volcano mornings", "Avoid overly greasy or spicy food the night before if you want the wake-up to feel easier."],
+          ["On long movement days", "Keep water, electrolyte drinks, or small snacks where you can reach them quickly."],
+          ["If your stomach is sensitive", "Do not force every meal to be shared. A little flexibility keeps the trip smoother."]
+        ]
+      },
+      {
+        title: "Payment and data",
+        intro: "Cards cover a lot, while cash is still useful for small food stops, quick transport, and small local payments.",
+        chips: ["Gojek", "eSIM", "Light cash"],
+        items: [
+          ["Data plan", "Installing the eSIM before leaving Taiwan saves time and stress after landing."],
+          ["Ride apps", "Gojek is genuinely useful, and Grab still works well as a price check."],
+          ["Cash strategy", "Do not rush to exchange too much at once. Smaller, useful amounts are usually enough to start."]
+        ]
+      },
+      {
+        title: "Health and safety",
+        intro: "This section is meant to help, not to make the trip feel tense.",
+        chips: ["Bali Belly", "Sun", "Traffic", "Flexibility"],
+        items: [
+          ["Water and stomach", "Bottled water is the easy choice. Be more cautious with ice, raw food, and half-cooked seafood."],
+          ["Traffic reality", "Bali traffic regularly takes longer than the map suggests, so buffer time matters a lot."],
+          ["Body rhythm", "If a day feels too heavy, it is fine to adjust the pace. This trip does not need to be won."]
+        ]
+      }
+    ],
+    previewCta: "Open day guide",
+    dayGuideAtGlanceLabel: "Today at a glance",
+    dayGuideFlowLabel: "Route flow",
+    dayGuideDetailLabel: "Timing and rhythm",
+    dayGuideReminderLabel: "Special reminders",
+    dayGuideLinksLabel: "Useful links",
     coverLabel: "Narasi perjalanan",
     coverTitle: "What makes this trip work is the pacing",
     coverLead:
@@ -541,7 +1191,7 @@ const content = {
     volcanoCredit: "Photo by Arya Krisdyantara / Unsplash",
     beachCaption: "Bali shoreline",
     beachCredit: "Photo by Santhosh Mocharla / Unsplash",
-    routeLabel: "Penerbangan dan rute",
+    routeLabel: "Flights and route",
     routeTitle: "Flights and route",
     routeLead: "Flights, baggage, and major transfers are grouped here so they are easy to check before departure and again on the way home.",
     departTag: "Outbound",
@@ -639,12 +1289,12 @@ const content = {
         extraLinks: []
       }
     ],
-    stayLabel: "Rencana menginap",
+    stayLabel: "Stay plan",
     stayTitle: "Where you stay",
     stayLead: "Each stay has a clear role: rest at the start, recovery in the middle, and a smoother city finish at the end. Every hotel includes a Google Maps link.",
     stayMapLabel: "Google Maps",
     stayTourLabel: "Tour page",
-    linksLabel: "Tautan resmi",
+    linksLabel: "Useful links",
     linksTitle: "Useful official links",
     linksLead: "This page gathers the websites you are most likely to reopen before departure or during the trip.",
     resourceLinkCta: "Visit site",
@@ -707,16 +1357,16 @@ const content = {
     ],
     transportTitle: "Transport and timing",
     packingTitle: "Packing and safety",
-    itineraryLabel: "Rencana harian",
+    itineraryLabel: "Day by day",
     itineraryTitle: "Daily itinerary",
-    itineraryLead: "Each day keeps only the practical essentials, so it is easy to skim before heading out.",
+    itineraryLead: "Each day now reads more like a real travel handbook: first the rhythm, then the timing, then the part worth looking forward to.",
     itineraryHighlights: [
-      ["Route rhythm", "Relax first, volcanoes next, temples to finish"],
-      ["Hardest day", "Sewu waterfall is likely the most physical day"],
-      ["Safest return", "The 06:00-ish YIA airport rail remains the safest plan"]
+      ["Trip arc", "Sea first, volcanoes next, temples and city at the end"],
+      ["Most cinematic", "Ijen blue fire, Sewu, and Bromo dawn each peak in a different way"],
+      ["How to use this page", "Check wake-up and meet-up times first, then read what the day is really about"]
     ],
-    dayFocusLabel: "Today's focus",
-    budgetLabel: "Ringkasan budget",
+    dayFocusLabel: "Today's rhythm",
+    budgetLabel: "Budget overview",
     budgetTitle: "Budget breakdown",
     budgetLead: "The IDR conversions below use a rough planning rate of NT$1 ≈ Rp531 and are meant only for trip planning.",
     paidTitle: "Already paid",
@@ -731,7 +1381,7 @@ const content = {
     budgetTableAmount: "Amount",
     budgetStatusPaid: "Paid",
     budgetStatusOpen: "Open",
-    mapLabel: "Peta perjalanan",
+    mapLabel: "Map overview",
     mapTitle: "Map overview",
     mapLead: "Hotels, major stops, and the airport route are collected here so the map is easy to check on desktop or on your phone.",
     mapRouteLink: "View full route",
@@ -936,15 +1586,15 @@ const content = {
       ["YIA airport", "Yogyakarta International Airport", "Final transfer point on the way home."]
     ],
     itinerary: [
-      ["Day 1", "Arrive in Bali", "Fly CI771 from Taipei to DPS, then keep the first day easy with check-in, dinner, and rest.", ["Arrival", "Easy dinner", "Rest"], [["Wake-up", "Aim to be up by 05:30 at the latest. Bali is on the same time as Taiwan."], ["Leave by", "Work backward from your home-to-airport transfer and aim to leave around 06:00 for a safer start."], ["Meet-up", "No fixed meet-up today. Just follow airport check-in timing."], ["Sleep by", "Try to be in bed by 22:30 so the trip starts on a steady rhythm."], ["Pacing", "Keep the first day intentionally light so the trip opens in a calm way."], ["Suggested plan", "Check in, walk nearby, have dinner, and sleep early."]]],
-      ["Day 2", "Slow Bali day", "Use this day for beach clubs, massage, and free time in Seminyak.", ["Seminyak", "Massage", "Free time"], [["Wake-up", "Around 08:30 is a comfortable start, though sleeping in a little is fine."], ["Leave by", "If brunch or a beach club is on the plan, leaving around 10:00 is a good rhythm."], ["Meet-up", "No fixed meet-up today. Keep it flexible."], ["Sleep by", "Try to rest by 23:00 so the transfer day starts more smoothly tomorrow."], ["Style", "This day works best as a mood-setting leisure day rather than a packed sightseeing run."], ["Reminder", "Strong sun, beach time, and last-minute shopping make this a good prep day too."]]],
-      ["Day 3", "Enter the volcano segment", "The East Java route begins here, with the key order Ijen → Sewu → Bromo.", ["Tour transfer", "Volcano region", "Malang drop"], [["Wake-up", "08:00 is the best target, and 08:30 should be the latest. Daytime timing here is still the same as Taiwan."], ["Leave by", "Have breakfast and luggage ready by 09:45 so you can wait outside in time."], ["Meet-up", "Meet the JVTO driver at 10:00, and aim to be in the hotel lobby by 09:50."], ["Sleep by", "Try to sleep by 19:30, because tonight is really just a pause before the midnight wake-up stretch begins."], ["Key check", "Reconfirm the tour order and whether the final drop-off is in Malang."], ["Bag setup", "Keep water, snacks, power bank, and key documents easy to reach."]]],
-      ["Day 4", "Ijen Crater", "Blue fire and crater views make this one of the signature highlights.", ["Blue fire", "Night hike", "Volcano"], [["Wake-up", "23:45 local time, which is 00:45 in Taiwan time."], ["Leave by", "Finish check-out and get ready by 00:20 so the 00:30 departure stays on time."], ["Meet-up", "Gather at the hotel entrance or lobby by 00:20."], ["Sleep by", "Try to sleep by 20:30 the night before. Any extra rest helps."], ["Highlight", "The blue fire and daylight crater lake are the defining visuals here."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all help."]]],
-      ["Day 5", "Tumpak Sewu", "A dramatic waterfall day with physical terrain and slippery paths.", ["Waterfall", "Grip shoes", "High-energy day"], [["Wake-up", "02:45 local time, which is 03:45 in Taiwan time."], ["Leave by", "Pack up by 03:20 so you can get straight into the 03:30 departure."], ["Meet-up", "Meet outside the stay by 03:20."], ["Sleep by", "Try to rest by 20:30 the night before because this is one of the most physical days."], ["Terrain", "Expect wet steps, descents, and one of the most physical days of the trip."], ["Pack note", "A change of clothes and waterproof protection for phones are worth bringing."]]],
-      ["Day 6", "Mount Bromo Sunrise", "The classic sunrise finale with cold air and possible volcanic dust.", ["Sunrise", "Jacket", "Mask or buff"], [["Wake-up", "01:15 local time, which is 02:15 in Taiwan time."], ["Leave by", "Have warm layers on and be ready by 01:50 so the 02:00 Jeep departure stays clean."], ["Meet-up", "Meet outside the hotel by 01:50 to avoid rushing for the Jeep."], ["Sleep by", "Try to sleep by 19:30 the night before so you still get a short recovery window."], ["Highlight", "Bromo is the iconic finale of the volcano sequence."], ["Reminder", "It can be windy, cold, and dusty before sunrise."]]],
-      ["Day 7", "Malang → Yogyakarta", "Take the train to Yogyakarta and use this as a softer transition day.", ["Train", "Rest", "City switch"], [["Wake-up", "07:00 local time, or 08:00 in Taiwan time."], ["Leave by", "Leaving the hotel at 08:00 works well and still gives time for the VIP lounge."], ["Meet-up", "No separate meet-up today. Head to the station from the hotel at 08:00."], ["Sleep by", "Try to rest by 22:30 because the temple day starts early tomorrow."], ["Pacing", "This is a good recovery day after the high-intensity volcano stretch."], ["Transport", "Leave enough buffer for the train and keep luggage handling easy."]]],
-      ["Day 8", "Borobudur + Prambanan", "This day now uses the Klook Borobudur climb and guided visit with Prambanan temple tour from your link, so the culture day is locked to that version.", ["Borobudur", "Prambanan", "Klook temple day tour"], [["Wake-up", "05:15 local time, or 06:15 in Taiwan time."], ["Leave by", "Be in the lobby by 06:20 so you are ready if the pickup comes early within the 06:30 to 07:30 window."], ["Meet-up", "A 06:20 hotel-lobby meet-up is the safest plan."], ["Sleep by", "Try to sleep by 22:00 the night before because this is still a full walking day."], ["Culture note", "This version centers on Borobudur climb access with guiding, followed by Prambanan, which makes the day more complete than a simple walk-through."], ["Clothing note", "Breathable clothes, water, and sun protection help on this long temple day."]]],
-      ["Day 9", "Departure day", "Take the early airport rail to YIA and keep at least a 2-hour buffer.", ["Airport rail", "Early start", "Fly home"], [["Wake-up", "04:40 local time to pack and get moving, or 05:40 in Taiwan time."], ["Leave by", "Leaving the hotel at 05:25 is the safer plan. Earlier is better than late today."], ["Meet-up", "No fixed meet-up today. Just be ready to leave the hotel at 05:25."], ["Sleep by", "Try to rest by 21:30 the night before because the return day starts very early."], ["Timing", "The 06:00-ish airport rail remains the safer low-stress option."], ["Last check", "Before leaving, make sure chargers, adapters, and souvenirs are packed."]]]
+      ["Day 1", "Arrive in Bali", "Land in Bali and resist the urge to overpack the first day. Let check-in, dinner, and a good sleep open the trip gently.", ["Sea-breeze start", "Check-in dinner", "Ease in"], [["Wake-up", "Aim to be up by 05:30 at the latest. Bali is on the same time as Taiwan."], ["Leave by", "Work backward from your home-to-airport transfer and aim to leave around 06:00 for a safer start."], ["Meet-up", "No fixed meet-up today. Just follow airport check-in timing."], ["Sleep by", "Try to be in bed by 22:30 so the trip starts on a steady rhythm."], ["Pacing", "There is no need to chase sights today. Let the sea air and one good night's sleep do the opening work."], ["Suggested plan", "Settle into the hotel, learn the area around you, have dinner without rushing, and head back early."]]],
+      ["Day 2", "Seminyak, unhurried", "Keep this day for beach time, massage, and the pleasure of moving slowly. Bali works best when it is allowed to feel easy.", ["Seminyak", "Beach club", "Slow day"], [["Wake-up", "Around 08:30 is a comfortable start, though sleeping in a little is fine."], ["Leave by", "If brunch or a beach club is on the plan, leaving around 10:00 is a good rhythm."], ["Meet-up", "No fixed meet-up today. Keep it flexible."], ["Sleep by", "Try to rest by 23:00 so the transfer day starts more smoothly tomorrow."], ["Style", "Treat this as a real resort day: sleep a little later, eat slowly, and stay where the mood feels right."], ["Reminder", "The sun is strong, and this is also a good day to pick up any last small items for the volcano stretch."]]],
+      ["Day 3", "Into the volcano stretch", "Leave Bali in the morning and spend the afternoon moving east. This is where the trip turns from soft resort energy into the adventure chapter.", ["Tour transfer", "Adventure opens", "Cross-island move"], [["Wake-up", "08:00 is the best target, and 08:30 should be the latest. Daytime timing here is still the same as Taiwan."], ["Leave by", "Have breakfast and luggage ready by 09:45 so you can wait outside in time."], ["Meet-up", "Meet the JVTO driver at 10:00, and aim to be in the hotel lobby by 09:50."], ["Sleep by", "Try to sleep by 19:30, because tonight is really just a pause before the midnight wake-up stretch begins."], ["Key check", "Before leaving Bali, reconfirm the pickup flow, the route order, and the final drop-off so the next few days stay smooth."], ["Bag setup", "Keep water, snacks, power bank, and key documents within easy reach. You will keep using them on the road."]]],
+      ["Day 4", "Ijen blue-fire night", "Set out after midnight for Ijen, chase the blue fire first, then watch the crater lake appear with daylight. It is one of the strangest and most memorable days of the trip.", ["Blue fire", "Night hike", "Crater lake"], [["Wake-up", "23:45 local time, which is 00:45 in Taiwan time."], ["Leave by", "Finish check-out and get ready by 00:20 so the 00:30 departure stays on time."], ["Meet-up", "Gather at the hotel entrance or lobby by 00:20."], ["Sleep by", "Try to sleep by 20:30 the night before. Any extra rest helps."], ["Highlight", "First comes the blue fire, then the crater lake as the sky brightens. The visuals keep changing all the way into morning."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all matter here. This is not the day to pretend it is a casual stroll."]]],
+      ["Day 5", "Down into Tumpak Sewu", "This is the hard-working waterfall day, but the moment you reach the valley and see the falls for real, the effort pays for itself.", ["Waterfall canyon", "Slippery terrain", "Change of clothes"], [["Wake-up", "02:45 local time, which is 03:45 in Taiwan time."], ["Leave by", "Pack up by 03:20 so you can get straight into the 03:30 departure."], ["Meet-up", "Meet outside the stay by 03:20."], ["Sleep by", "Try to rest by 20:30 the night before because this is one of the most physical days."], ["Terrain", "This is the day that feels most like stepping into a gorge and waterfall basin: wet, steep, tiring, and completely worth it."], ["Pack note", "A change of clothes, dry bags, and phone protection will feel like excellent decisions by the end of the day."]]],
+      ["Day 6", "Bromo at first light", "Jeep tracks, cold air, volcanic dust, and sunrise all arrive together here. This is the classic East Java finale.", ["Jeep ride", "Dawn views", "Volcano finale"], [["Wake-up", "01:15 local time, which is 02:15 in Taiwan time."], ["Leave by", "Have warm layers on and be ready by 01:50 so the 02:00 Jeep departure stays clean."], ["Meet-up", "Meet outside the hotel by 01:50 to avoid rushing for the Jeep."], ["Sleep by", "Try to sleep by 19:30 the night before so you still get a short recovery window."], ["Highlight", "Bromo is not only about sunrise. It is about watching the whole volcanic landscape slowly appear out of the cold."], ["Reminder", "It can be genuinely cold before dawn, and masks or buffs help because the wind and dust do not stay gentle."]]],
+      ["Day 7", "From volcanoes back to the city", "Leave the dust and midnight starts behind, then let a comfortable train ride ease you back into the city tempo of Yogyakarta.", ["Train day", "VIP lounge", "City switch"], [["Wake-up", "07:00 local time, or 08:00 in Taiwan time."], ["Leave by", "Leaving the hotel at 08:00 works well and still gives time for the VIP lounge."], ["Meet-up", "No separate meet-up today. Head to the station from the hotel at 08:00."], ["Sleep by", "Try to rest by 22:30 because the temple day starts early tomorrow."], ["Pacing", "This is the day the body gets to come back to itself, and the trip shifts from survival mode into a calmer city rhythm again."], ["Transport", "The goal here is comfort, punctuality, and not dragging luggage around in a panic. A little planning makes this leg feel very smooth."]]],
+      ["Day 8", "Temple day", "Save one full day for Borobudur and Prambanan. After the volcano stretch, this is where the trip gains depth and calm.", ["Borobudur", "Prambanan", "Climb + guide"], [["Wake-up", "05:15 local time, or 06:15 in Taiwan time."], ["Leave by", "Be in the lobby by 06:20 so you are ready if the pickup comes early within the 06:30 to 07:30 window."], ["Meet-up", "A 06:20 hotel-lobby meet-up is the safest plan."], ["Sleep by", "Try to sleep by 22:00 the night before because this is still a full walking day."], ["Culture note", "Borobudur's layered stone terraces and Prambanan's sharp temple lines give the trip a completely different kind of memory."], ["Clothing note", "It will be hot and there is plenty of walking, so keep clothes light and do not skip water or sun protection."]]],
+      ["Day 9", "Homeward, early and steady", "The day starts before dawn, but if the night before is packed well, all that remains is to move steadily and bring the trip home cleanly.", ["Early transfer", "Airport link", "Fly home"], [["Wake-up", "04:40 local time to pack and get moving, or 05:40 in Taiwan time."], ["Leave by", "Leaving the hotel at 05:25 is the safer plan. Earlier is better than late today."], ["Meet-up", "No fixed meet-up today. Just be ready to leave the hotel at 05:25."], ["Sleep by", "Try to rest by 21:30 the night before because the return day starts very early."], ["Timing", "Today is not about squeezing in one last stop. It is about keeping every connection calm and unhurried."], ["Last check", "Before you leave, check passport, phone, chargers, adapters, and souvenirs one more time. Missing even one item is annoying today."]]]
     ],
     budgetLabels: {
       flight: ["Flights", "China Airlines round trip"],
@@ -974,6 +1624,14 @@ const content = {
     heroSubtitle: "Mulai dari laut, lanjut ke gunung api, lalu ditutup dengan candi dan kota",
     heroDates: "2026 / 06 / 13 - 2026 / 06 / 21",
     heroDestinations: "Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta",
+    heroIntro:
+      "Perjalanan ini dimulai dari angin laut dan ritme santai Bali, lalu masuk ke jalan malam, lereng gunung api, air terjun, dan pemandangan fajar di Jawa sebelum berakhir lebih tenang di Yogyakarta.",
+    heroSignals: ["Santai di pulau", "Hiking gunung api", "Berangkat dini hari", "Transfer panjang", "Jaket hangat wajib"],
+    heroFacts: [
+      ["Durasi", "9 hari / 8 malam"],
+      ["Nuansa trip", "Pantai × gunung api × candi"],
+      ["Barang penting", "Sepatu grip, layer hangat, air minum"]
+    ],
     heroPrimaryCta: "Buka rencana harian",
     heroSecondaryCta: "Lihat info penting",
     footerCopy: "Panduan perjalanan Bali dan Jawa untuk Juni 2026 yang enak dicek cepat dari HP maupun desktop.",
@@ -991,6 +1649,192 @@ const content = {
     overviewLabel: "Ringkasan perjalanan",
     overviewTitle: "Rute Indonesia dengan ritme yang enak: santai dulu, lalu petualangan, lalu penutup yang tenang",
     overviewLead: "Rute ini bukan soal memasukkan sebanyak mungkin tempat. Setiap bagian punya perannya sendiri: Bali untuk istirahat, Jawa Timur untuk momen terbesar, dan Yogyakarta untuk penutup yang rapi.",
+    snapshotLabel: "Ringkasan cepat",
+    snapshotTitle: "Biar cepat paham ritme tenaga, perlengkapan, dan pola pindah kotanya",
+    snapshotLead:
+      "Rute ini bukan hanya indah, tetapi juga punya hari bangun dini hari, transfer panjang, dan beberapa hari yang cukup menguras tenaga. Lebih enak dibaca dulu sebelum jalan.",
+    snapshotChips: ["Bali + Jawa", "3 pagi gunung api / air terjun", "2 transfer utama", "Sepatu grip dan jaket hangat penting", "Sisakan ruang untuk cuaca dan kondisi perut"],
+    snapshotCards: [
+      {
+        label: "Area utama",
+        value: "Bali / Jawa Timur / Yogyakarta",
+        note: "Seminyak, Ijen, Tumpak Sewu, Bromo, Malang, dan Yogyakarta tersusun jadi satu jalur yang rapi."
+      },
+      {
+        label: "Tema perjalanan",
+        value: "Pulau, gunung api, sunrise, budaya",
+        note: "Awalnya dipakai untuk menurunkan ritme, tengahnya untuk pemandangan terkuat, dan akhirnya untuk suasana kota yang lebih tenang."
+      },
+      {
+        label: "Ritme tenaga",
+        value: "Sedang sampai cukup berat",
+        note: "Hari 4 sampai Hari 6 adalah segmen paling berat, terutama karena berangkat tengah malam atau sebelum subuh."
+      },
+      {
+        label: "Seberapa pagi",
+        value: "3 hari bangun serius",
+        note: "Ijen, Sewu, dan Bromo akan jauh lebih nyaman kalau malam sebelumnya benar-benar dipakai untuk istirahat."
+      },
+      {
+        label: "Transportasi utama",
+        value: "Pesawat, mobil, ferry, Jeep, kereta",
+        note: "Perpindahan antar kota di sini memang bagian dari pengalaman, bukan cuma selingan."
+      },
+      {
+        label: "Ritme menginap",
+        value: "Santai resort → recovery singkat → penutup kota",
+        note: "Setiap hotel dipilih untuk mendukung bagian berikutnya, bukan sekadar tempat tidur."
+      },
+      {
+        label: "Perlengkapan penting",
+        value: "Sepatu grip, layer hangat, pelindung hujan",
+        note: "Hari gunung api dan air terjun jauh lebih menghargai fungsi daripada gaya."
+      },
+      {
+        label: "Yang perlu dijaga",
+        value: "Air minum, macet, perut, dingin pagi",
+        note: "Makan lebih ringan sebelum hari gunung api, simpan air dekat tangan, dan anggap pagi di gunung memang dingin."
+      }
+    ],
+    highlightsLabel: "Sorotan perjalanan",
+    highlightsTitle: "Bagian-bagian yang paling membentuk rasa trip ini",
+    highlightsLead:
+      "Yang membuat perjalanan ini terasa kuat bukan jumlah tempatnya, tetapi cara tiap momen utama datang di saat yang pas.",
+    journeyHighlights: [
+      {
+        kicker: "13/06 - 14/06｜Bali",
+        title: "Pembuka yang lembut di tepi laut",
+        desc: "Seminyak memberi ruang untuk benar-benar tiba: tidur yang cukup, pagi yang tidak terburu-buru, dan ritme resort sebelum bagian yang lebih berat dimulai.",
+        tags: ["Hari pulau", "Ritme resort", "Seminyak"]
+      },
+      {
+        kicker: "15/06｜Hari transfer",
+        title: "Meninggalkan pantai, masuk ke jalur gunung api",
+        desc: "Di sinilah arah perjalanan berubah. Nuansa santai Bali pelan-pelan diganti jalan jauh, penyeberangan, dan rasa bahwa bab petualangan akhirnya benar-benar dimulai.",
+        tags: ["Transfer jauh", "Penjemputan tour", "Bab petualangan"]
+      },
+      {
+        kicker: "16/06｜Ijen",
+        title: "Berjalan dalam gelap menuju blue fire dan cahaya pagi",
+        desc: "Daya tarik Ijen bukan hanya blue fire, tetapi campuran udara dingin, bau belerang, gelap, dan momen saat kawah mulai muncul bersama terang pagi.",
+        tags: ["Berangkat dini hari", "Blue fire", "Hiking gunung api"]
+      },
+      {
+        kicker: "17/06 - 18/06｜Sewu + Bromo",
+        title: "Lembah air terjun dulu, dataran tinggi gunung api sesudahnya",
+        desc: "Bagian ini adalah puncak tenaga: jalan basah, turunan ke lembah, Jeep, lalu bentang tinggi gunung api saat matahari mulai muncul.",
+        tags: ["Segmen berat", "Hari air terjun", "Dataran fajar"]
+      },
+      {
+        kicker: "19/06｜Hari kereta",
+        title: "Hari yang lebih lembut untuk mengembalikan napas",
+        desc: "Sesudah debu dan alarm tengah malam, perjalanan kereta membuat tubuh punya waktu untuk pulih dan ritme kota datang kembali secara alami.",
+        tags: ["Hari recovery", "Suite kereta", "Reset kota"]
+      },
+      {
+        kicker: "20/06 - 21/06｜Yogyakarta",
+        title: "Candi, teras batu, dan penutup yang tenang",
+        desc: "Borobudur dan Prambanan memberi kedalaman yang berbeda, lalu pagi terakhir membawa seluruh perjalanan pulang dengan nada yang lebih tenang.",
+        tags: ["Hari budaya", "Jalur candi", "Penutup tenang"]
+      }
+    ],
+    previewLabel: "Preview harian",
+    previewTitle: "Kartu cerita per hari",
+    previewLead:
+      "Lihat dulu tema, ritme tenaga, dan gambaran paling menarik dari tiap hari. Setelah itu, detail itinerary akan terasa lebih mudah dipakai saat di jalan.",
+    practicalLabel: "Info praktis",
+    practicalTitle: "Halaman yang paling sering akan dibuka ulang saat perjalanan",
+    practicalLead:
+      "Penerbangan, transfer, persiapan gunung api, pakaian, makanan, dan catatan perut dirangkum seperti buku pegangan, bukan seperti tumpukan data.",
+    practicalSections: [
+      {
+        title: "Penerbangan dan alur bandara",
+        intro: "Kalau ritme berangkat dan pulangnya jelas, seluruh perjalanan terasa jauh lebih tenang.",
+        chips: ["Pergi langsung", "Pulang dua segmen", "Datang lebih awal"],
+        items: [
+          ["Struktur pergi", "Taipei ke Bali adalah penerbangan langsung yang sederhana, jadi hari tiba lebih mudah diatur."],
+          ["Struktur pulang", "Yogyakarta ke Jakarta adalah segmen penghubung; bagian Jakarta ke Taipei adalah penerbangan utama yang paling penting."],
+          ["Yang disimpan bersama", "Alamat hotel, bukti visa, transport bandara, dan screenshot pemesanan sebaiknya ada di satu folder HP."]
+        ]
+      },
+      {
+        title: "Pindah kota",
+        intro: "Ini bukan liburan diam di satu tempat. Perpindahan kotanya memang bagian dari pengalaman.",
+        chips: ["Mobil", "Ferry", "Jeep", "Kereta"],
+        items: [
+          ["Urutan gunung api", "Rute utama Ijen → Tumpak Sewu → Bromo paling enak karena alur geografis dan energinya rapi."],
+          ["Cara melihat transfer", "Hari berkendara jauh jangan dipadati terlalu banyak hal. Sedikit ruang kosong justru membuat trip lebih enak."],
+          ["Buffer bandara", "Untuk kereta bandara YIA, slot pagi yang stabil lebih aman daripada memotong waktu terlalu tipis."]
+        ]
+      },
+      {
+        title: "Tempat tidur tiap malam",
+        intro: "Setiap hotel punya fungsi: melambat, memulihkan tenaga, atau memudahkan gerak berikutnya.",
+        chips: ["Seminyak", "Segmen gunung api", "Malang", "Yogyakarta"],
+        items: [
+          ["Awal di Bali", "Hotel Seminyak dipakai untuk benar-benar tiba, tidur nyenyak, dan makan dengan ritme santai."],
+          ["Malam gunung api", "Fungsinya lebih ke praktis daripada mewah. Yang penting sambung dengan baik ke jadwal berangkat dini hari."],
+          ["Penutup kota", "Malang dan Yogyakarta lebih fokus ke recovery dan kemudahan pindah daripada suasana resort."]
+        ]
+      },
+      {
+        title: "Pengingat hiking gunung api",
+        intro: "Kuncinya bukan sok kuat. Kuncinya justru beres malam sebelumnya.",
+        chips: ["Dini hari", "Layer hangat", "Sepatu grip", "Air minum"],
+        items: [
+          ["Cek malam sebelumnya", "Susun jaket, air, power bank, masker, uang tunai, dan HP yang sudah diisi daya sebelum tidur."],
+          ["Faktor dingin", "Ijen dan Bromo bisa terasa benar-benar dingin sebelum matahari naik, jadi layer tipis bertumpuk lebih berguna."],
+          ["Kondisi pijakan", "Debu, batu kecil, tanjakan, dan kadang tanah basah adalah hal normal. Daya cengkeram sepatu lebih penting daripada model."]
+        ]
+      },
+      {
+        title: "Pakaian dan perlengkapan harian",
+        intro: "Tidak perlu bawa terlalu banyak, tetapi tiap segmen memang meminta hal yang berbeda.",
+        chips: ["Hari pulau", "Hari kota", "Hari gunung api", "Hari transfer"],
+        items: [
+          ["Hari pulau", "Pakaian adem, sun protection, kacamata hitam, dan sandal atau sepatu santai sudah cukup."],
+          ["Hari kota", "Sepatu enak jalan, pakaian ringan, dan jaket tipis biasanya paling pas."],
+          ["Hari gunung api", "Bawa celana panjang, layer hangat, sepatu grip, pelindung angin, dan perlindungan sederhana dari hujan atau debu."],
+          ["Hari transfer", "Pakaian nyaman, jaket tipis, obat perut, dan snack kecil terasa lebih berguna daripada berpakaian terlalu rapi."]
+        ]
+      },
+      {
+        title: "Makan dan bekal kecil",
+        intro: "Badan yang terasa enak lebih penting daripada makan terlalu ambisius, terutama di sekitar hari gunung api.",
+        chips: ["Air minum", "Snack ringan", "Makan malam ringan"],
+        items: [
+          ["Sebelum hari gunung api", "Hindari makanan terlalu berminyak atau pedas malam sebelumnya kalau ingin bangun terasa lebih ringan."],
+          ["Saat pindah jauh", "Simpan air, minuman elektrolit, atau snack kecil di tempat yang paling mudah dijangkau."],
+          ["Kalau perut sensitif", "Tidak perlu memaksa semua makan bareng dengan menu yang sama. Sedikit fleksibel biasanya lebih baik."]
+        ]
+      },
+      {
+        title: "Pembayaran dan internet",
+        intro: "Kartu cukup berguna di banyak tempat, tetapi uang tunai tetap berguna untuk makan kecil, transport cepat, dan pembayaran lokal sederhana.",
+        chips: ["Gojek", "eSIM", "Uang tunai seperlunya"],
+        items: [
+          ["Internet", "Pasang eSIM sebelum berangkat dari Taiwan supaya setelah mendarat tidak perlu repot lagi."],
+          ["Aplikasi transport", "Gojek sangat berguna, dan Grab tetap enak dipakai untuk banding harga."],
+          ["Strategi uang tunai", "Tidak perlu langsung menukar terlalu banyak. Mulai dari jumlah kecil yang praktis biasanya cukup."]
+        ]
+      },
+      {
+        title: "Kesehatan dan keamanan",
+        intro: "Bagian ini dibuat untuk membantu, bukan membuat perjalanan terasa tegang.",
+        chips: ["Bali Belly", "Matahari", "Macet", "Fleksibel"],
+        items: [
+          ["Air dan perut", "Air botolan adalah pilihan paling mudah. Untuk es, makanan mentah, dan seafood setengah matang, lebih hati-hati biasanya lebih nyaman."],
+          ["Realita macet", "Macet Bali sering lebih parah dari perkiraan peta, jadi waktu buffer benar-benar penting."],
+          ["Ritme badan", "Kalau ada hari yang terasa terlalu berat, wajar untuk menurunkan tempo. Perjalanan ini tidak perlu dimenangkan."]
+        ]
+      }
+    ],
+    previewCta: "Buka panduan hari ini",
+    dayGuideAtGlanceLabel: "Gambaran cepat",
+    dayGuideFlowLabel: "Alur hari ini",
+    dayGuideDetailLabel: "Waktu dan ritme",
+    dayGuideReminderLabel: "Pengingat khusus",
+    dayGuideLinksLabel: "Tautan berguna",
     coverLabel: "Narasi perjalanan",
     coverTitle: "Yang membuat perjalanan ini terasa pas adalah ritmenya",
     coverLead:
@@ -1172,13 +2016,13 @@ const content = {
     packingTitle: "Pakaian dan keamanan",
     itineraryLabel: "Rencana harian",
     itineraryTitle: "Rencana harian",
-    itineraryLead: "Setiap hari hanya menyimpan bagian yang paling penting, jadi mudah dibaca cepat sebelum keluar.",
+    itineraryLead: "Setiap hari sekarang dibaca seperti buku pegangan perjalanan sungguhan: lihat dulu ritmenya, lalu waktunya, lalu hal yang paling layak ditunggu.",
     itineraryHighlights: [
-      ["Ritme rute", "Santai dulu, lalu gunung api, lalu penutup budaya"],
-      ["Hari terberat", "Hari Sewu biasanya paling menguras tenaga"],
-      ["Pulang paling aman", "Kereta YIA sekitar 06.00 tetap opsi paling aman"]
+      ["Alur perjalanan", "Dimulai dari laut, lanjut gunung api, lalu ditutup candi dan kota"],
+      ["Paling berkesan", "Blue fire Ijen, Sewu, dan fajar Bromo punya puncak rasa yang berbeda"],
+      ["Cara pakai halaman ini", "Lihat dulu jam bangun dan jam kumpul, lalu baca inti hari itu"]
     ],
-    dayFocusLabel: "Fokus hari ini",
+    dayFocusLabel: "Ritme hari ini",
     budgetLabel: "Ringkasan budget",
     budgetTitle: "Ringkasan budget",
     budgetLead: "Konversi IDR di bawah memakai kurs perkiraan NT$1 ≈ Rp531 dan hanya dipakai untuk planning.",
@@ -1399,15 +2243,15 @@ const content = {
       ["Bandara YIA", "Yogyakarta International Airport", "Titik transfer terakhir sebelum pulang."]
     ],
     itinerary: [
-      ["Hari 1", "Tiba di Bali", "Naik CI771 dari Taipei ke DPS, lalu jalani hari pertama dengan check-in, makan malam, dan istirahat.", ["Tiba", "Makan malam", "Istirahat"], [["Waktu bangun", "Usahakan bangun paling lambat pukul 05.30. Bali satu zona waktu dengan Taiwan."], ["Waktu berangkat", "Hitung mundur dari jarak rumah ke bandara, lalu usahakan keluar sekitar pukul 06.00 supaya lebih aman."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul khusus. Cukup ikuti ritme check-in bandara."], ["Paling lambat tidur", "Usahakan sudah istirahat sekitar pukul 22.30 supaya ritme perjalanan langsung rapi."], ["Ritme", "Hari pertama paling enak dibuat ringan supaya tubuh menyesuaikan dulu."], ["Saran", "Check-in, jalan sebentar di sekitar hotel, makan malam, lalu istirahat lebih awal."]]],
-      ["Hari 2", "Hari santai di Bali", "Gunakan hari ini untuk beach club, pijat, dan waktu bebas di Seminyak.", ["Seminyak", "Pijat", "Waktu bebas"], [["Waktu bangun", "Sekitar pukul 08.30 sudah pas, tapi bangun lebih siang sedikit juga tidak masalah."], ["Waktu berangkat", "Kalau mau brunch atau beach club, berangkat sekitar pukul 10.00 biasanya paling pas."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Jalani dengan fleksibel saja."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 23.00 agar besok lebih enak saat mulai pindah kota."], ["Gaya hari", "Hari ini paling bagus dipakai untuk suasana santai, bukan lari ke terlalu banyak spot."], ["Pengingat", "Cocok juga untuk beli kebutuhan kecil sebelum masuk segmen gunung api."]]],
-      ["Hari 3", "Masuk segmen gunung api", "Rute Jawa Timur dimulai di sini dengan urutan Ijen → Sewu → Bromo.", ["Transfer tour", "Area gunung api", "Drop Malang"], [["Waktu bangun", "Pukul 08.00 paling pas, dan paling lambat 08.30. Siang hari ini masih sama dengan waktu Taiwan."], ["Waktu berangkat", "Selesaikan sarapan dan koper sebelum 09.45 supaya tinggal menunggu mobil."], ["Waktu kumpul", "Bertemu sopir JVTO pukul 10.00, dan paling aman sudah standby di lobi pukul 09.50."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30, karena malam ini sebenarnya cuma jeda sebelum bangun tengah malam."], ["Cek penting", "Pastikan lagi urutan tour dan drop-off terakhir di Malang."], ["Tas kecil", "Air minum, snack, power bank, dan dokumen sebaiknya mudah diambil."]]],
-      ["Hari 4", "Kawah Ijen", "Blue fire dan pemandangan kawah jadi salah satu sorotan utama.", ["Blue fire", "Hiking malam", "Gunung api"], [["Waktu bangun", "Bangun pukul 23.45 waktu lokal, atau 00.45 waktu Taiwan."], ["Waktu berangkat", "Selesaikan check-out dan siap naik mobil sebelum 00.20 supaya keberangkatan 00.30 tetap lancar."], ["Waktu kumpul", "Kumpul di pintu masuk hotel atau lobi sekitar pukul 00.20."], ["Paling lambat tidur", "Usahakan malam sebelumnya sudah tidur sekitar pukul 20.30. Tambahan istirahat sekecil apa pun tetap berguna."], ["Sorotan", "Blue fire dan danau kawah saat terang adalah dua visual paling kuat di sini."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat membantu."]]],
-      ["Hari 5", "Tumpak Sewu", "Hari air terjun yang dramatis dengan jalur fisik dan cukup licin.", ["Air terjun", "Sepatu grip", "Hari aktif"], [["Waktu bangun", "Bangun pukul 02.45 waktu lokal, atau 03.45 waktu Taiwan."], ["Waktu berangkat", "Rapikan barang sebelum 03.20 supaya bisa langsung masuk keberangkatan 03.30."], ["Waktu kumpul", "Kumpul di depan penginapan sekitar pukul 03.20."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 20.30 malam sebelumnya karena hari ini termasuk paling menguras tenaga."], ["Medan", "Hari ini biasanya paling berat secara fisik dengan jalur turun, basah, dan licin."], ["Catatan", "Baju ganti dan pelindung untuk HP sangat layak dibawa."]]],
-      ["Hari 6", "Sunrise Bromo", "Penutup klasik dengan udara dingin dan kemungkinan debu vulkanik.", ["Sunrise", "Jaket", "Masker atau buff"], [["Waktu bangun", "Bangun pukul 01.15 waktu lokal, atau 02.15 waktu Taiwan."], ["Waktu berangkat", "Pakai layer hangat dan siap sebelum 01.50 supaya Jeep 02.00 bisa langsung jalan."], ["Waktu kumpul", "Kumpul di luar hotel pukul 01.50 supaya tidak terburu-buru saat Jeep datang."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30 malam sebelumnya agar masih sempat dapat sedikit waktu pulih."], ["Sorotan", "Bromo adalah penutup paling ikonik untuk segmen gunung api."], ["Pengingat", "Sebelum matahari terbit bisa berangin, dingin, dan berdebu."]]],
-      ["Hari 7", "Malang → Yogyakarta", "Naik kereta ke Yogyakarta dan jadikan ini hari transisi yang lebih lembut.", ["Kereta", "Istirahat", "Ganti kota"], [["Waktu bangun", "Pukul 07.00 waktu lokal, atau 08.00 waktu Taiwan."], ["Waktu berangkat", "Keluar dari hotel pukul 08.00 sudah pas dan masih sempat menikmati VIP lounge."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul terpisah. Langsung berangkat dari hotel ke stasiun pukul 08.00."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 22.30 karena besok hari candi dimulai cukup pagi."], ["Ritme", "Hari ini pas untuk recovery setelah rangkaian petualangan yang berat."], ["Transportasi", "Sisakan buffer waktu dan buat urusan bagasi tetap ringan."]]],
-      ["Hari 8", "Borobudur + Prambanan", "Hari ini sekarang memakai tur Klook Borobudur naik candi dan berpemandu lalu lanjut ke Prambanan dari link yang kamu kirim, jadi versi harinya sudah disesuaikan ke sana.", ["Borobudur", "Prambanan", "Tur candi Klook"], [["Waktu bangun", "Pukul 05.15 waktu lokal, atau 06.15 waktu Taiwan."], ["Waktu berangkat", "Sudah di lobi sebelum 06.20 paling aman, karena jendela jemput biasanya antara 06.30 sampai 07.30."], ["Waktu kumpul", "Rencana paling aman adalah kumpul di lobi hotel pukul 06.20."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 22.00 malam sebelumnya karena hari ini tetap penuh jalan kaki."], ["Catatan budaya", "Versi ini menaruh fokus pada akses naik ke Borobudur dengan panduan, lalu disambung Prambanan, jadi isi harinya terasa lebih lengkap."], ["Pakaian", "Karena panas dan panjang, pakaian ringan, air minum, dan sun protection penting."]]],
-      ["Hari 9", "Hari pulang", "Naik kereta bandara pagi ke YIA dan sisakan buffer minimal 2 jam.", ["Kereta bandara", "Berangkat pagi", "Pulang"], [["Waktu bangun", "Bangun pukul 04.40 waktu lokal untuk beres-beres dan berangkat, atau 05.40 waktu Taiwan."], ["Waktu berangkat", "Keluar dari hotel pukul 05.25 adalah rencana yang lebih aman. Hari ini lebih baik terlalu awal daripada terlalu mepet."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Cukup siap meninggalkan hotel pukul 05.25."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 21.30 malam sebelumnya karena hari pulang dimulai sangat pagi."], ["Waktu", "Kereta sekitar jam 06.00 tetap pilihan yang paling aman."], ["Cek terakhir", "Sebelum keluar hotel, cek charger, adaptor, dan oleh-oleh sekali lagi."]]]
+      ["Hari 1", "Tiba di Bali", "Begitu mendarat di Bali, jangan buru-buru memenuhi hari pertama. Biarkan check-in, makan malam, dan tidur nyenyak membuka perjalanan dengan lembut.", ["Pembuka laut", "Check-in + makan malam", "Masuk pelan-pelan"], [["Waktu bangun", "Usahakan bangun paling lambat pukul 05.30. Bali satu zona waktu dengan Taiwan."], ["Waktu berangkat", "Hitung mundur dari jarak rumah ke bandara, lalu usahakan keluar sekitar pukul 06.00 supaya lebih aman."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul khusus. Cukup ikuti ritme check-in bandara."], ["Paling lambat tidur", "Usahakan sudah istirahat sekitar pukul 22.30 supaya ritme perjalanan langsung rapi."], ["Rasanya hari ini", "Tidak perlu mengejar spot apa pun. Biarkan udara laut, makan malam, dan satu tidur nyenyak jadi pembuka perjalanan."], ["Saran", "Setelah check-in, kenali hotel dan sekitarnya dulu, makan malam santai, lalu kembali lebih awal."]]],
+      ["Hari 2", "Seminyak tanpa buru-buru", "Simpan hari ini untuk pantai, pijat, dan menikmati waktu tanpa terburu-buru. Bali biasanya paling terasa indah saat ritmenya dibiarkan ringan.", ["Seminyak", "Beach club", "Hari santai"], [["Waktu bangun", "Sekitar pukul 08.30 sudah pas, tapi bangun lebih siang sedikit juga tidak masalah."], ["Waktu berangkat", "Kalau mau brunch atau beach club, berangkat sekitar pukul 10.00 biasanya paling pas."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Jalani dengan fleksibel saja."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 23.00 agar besok lebih enak saat mulai pindah kota."], ["Gaya hari", "Anggap ini hari resort sungguhan: tidur agak lebih lama, makan pelan-pelan, lalu tinggal di tempat yang suasananya paling enak."], ["Pengingat", "Matahari cukup kuat, dan hari ini juga pas untuk membeli kebutuhan kecil sebelum masuk segmen gunung api."]]],
+      ["Hari 3", "Masuk jalur gunung api", "Pagi meninggalkan Bali, sore bergerak ke arah Jawa Timur. Di sinilah perjalanan berubah dari nuansa resor menjadi bab petualangan.", ["Transfer tour", "Bab petualangan", "Pindah pulau"], [["Waktu bangun", "Pukul 08.00 paling pas, dan paling lambat 08.30. Siang hari ini masih sama dengan waktu Taiwan."], ["Waktu berangkat", "Selesaikan sarapan dan koper sebelum 09.45 supaya tinggal menunggu mobil."], ["Waktu kumpul", "Bertemu sopir JVTO pukul 10.00, dan paling aman sudah standby di lobi pukul 09.50."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30, karena malam ini sebenarnya cuma jeda sebelum bangun tengah malam."], ["Cek penting", "Sebelum meninggalkan Bali, pastikan alur jemput, urutan rute, dan titik drop terakhir sudah benar agar hari-hari berikutnya terasa lancar."], ["Tas kecil", "Simpan air minum, snack, power bank, dan dokumen di tempat yang paling mudah diambil."]]],
+      ["Hari 4", "Malam Ijen dan blue fire", "Berangkat setelah tengah malam menuju Ijen, mengejar blue fire lebih dulu, lalu melihat danau kawah muncul bersama cahaya pagi. Ini salah satu hari paling sureal dalam perjalanan.", ["Blue fire", "Hiking malam", "Danau kawah"], [["Waktu bangun", "Bangun pukul 23.45 waktu lokal, atau 00.45 waktu Taiwan."], ["Waktu berangkat", "Selesaikan check-out dan siap naik mobil sebelum 00.20 supaya keberangkatan 00.30 tetap lancar."], ["Waktu kumpul", "Kumpul di pintu masuk hotel atau lobi sekitar pukul 00.20."], ["Paling lambat tidur", "Usahakan malam sebelumnya sudah tidur sekitar pukul 20.30. Tambahan istirahat sekecil apa pun tetap berguna."], ["Sorotan", "Awalnya blue fire, lalu danau kawah saat langit mulai terang. Visualnya berubah terus sampai pagi."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat penting. Ini bukan hari untuk menganggap semuanya santai."]]],
+      ["Hari 5", "Turun ke Tumpak Sewu", "Hari ini memang melelahkan, tetapi begitu sampai ke dasar lembah dan melihat air terjun dari dekat, rasanya langsung terasa sepadan.", ["Lembah air terjun", "Medan licin", "Baju ganti"], [["Waktu bangun", "Bangun pukul 02.45 waktu lokal, atau 03.45 waktu Taiwan."], ["Waktu berangkat", "Rapikan barang sebelum 03.20 supaya bisa langsung masuk keberangkatan 03.30."], ["Waktu kumpul", "Kumpul di depan penginapan sekitar pukul 03.20."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 20.30 malam sebelumnya karena hari ini termasuk paling menguras tenaga."], ["Medan", "Inilah hari yang paling terasa seperti benar-benar masuk ke jurang dan badan air terjun: basah, curam, melelahkan, dan sangat layak dijalani."], ["Catatan", "Baju ganti, dry bag, dan pelindung HP akan terasa seperti keputusan terbaik saat hari ini selesai."]]],
+      ["Hari 6", "Bromo saat fajar", "Jeep, udara dingin, debu vulkanik, dan matahari terbit datang bersamaan di sini. Ini penutup klasik yang paling ikonik untuk segmen Jawa Timur.", ["Jeep", "Pemandangan fajar", "Final gunung api"], [["Waktu bangun", "Bangun pukul 01.15 waktu lokal, atau 02.15 waktu Taiwan."], ["Waktu berangkat", "Pakai layer hangat dan siap sebelum 01.50 supaya Jeep 02.00 bisa langsung jalan."], ["Waktu kumpul", "Kumpul di luar hotel pukul 01.50 supaya tidak terburu-buru saat Jeep datang."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30 malam sebelumnya agar masih sempat dapat sedikit waktu pulih."], ["Sorotan", "Kekuatan Bromo bukan cuma sunrise, tetapi momen saat seluruh lanskap gunung apinya perlahan muncul dari dingin."], ["Pengingat", "Sebelum matahari terbit bisa sangat dingin, dan masker atau buff akan sangat membantu menghadapi angin serta debu."]]],
+      ["Hari 7", "Dari gunung api kembali ke kota", "Tinggalkan debu dan jam bangun tengah malam di belakang, lalu biarkan perjalanan kereta yang nyaman membawa ritme perjalanan kembali pelan ke Yogyakarta.", ["Hari kereta", "VIP lounge", "Ganti kota"], [["Waktu bangun", "Pukul 07.00 waktu lokal, atau 08.00 waktu Taiwan."], ["Waktu berangkat", "Keluar dari hotel pukul 08.00 sudah pas dan masih sempat menikmati VIP lounge."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul terpisah. Langsung berangkat dari hotel ke stasiun pukul 08.00."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 22.30 karena besok hari candi dimulai cukup pagi."], ["Ritme", "Hari ini memberi tubuh kesempatan untuk kembali tenang, dan perjalanan juga berpindah dari mode bertahan hidup ke ritme kota yang lebih santai."], ["Transportasi", "Kuncinya adalah nyaman, tepat waktu, dan tidak repot dengan koper. Sedikit persiapan akan membuat segmen ini terasa sangat rapi."]]],
+      ["Hari 8", "Hari candi", "Simpan satu hari penuh untuk Borobudur dan Prambanan. Setelah segmen gunung api, di sinilah perjalanan terasa lebih dalam dan lebih tenang.", ["Borobudur", "Prambanan", "Naik candi + pemandu"], [["Waktu bangun", "Pukul 05.15 waktu lokal, atau 06.15 waktu Taiwan."], ["Waktu berangkat", "Sudah di lobi sebelum 06.20 paling aman, karena jendela jemput biasanya antara 06.30 sampai 07.30."], ["Waktu kumpul", "Rencana paling aman adalah kumpul di lobi hotel pukul 06.20."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 22.00 malam sebelumnya karena hari ini tetap penuh jalan kaki."], ["Catatan budaya", "Teras batu Borobudur dan garis menara Prambanan memberi jenis kenangan yang benar-benar berbeda dari alam dan petualangan."], ["Pakaian", "Cuacanya akan panas dan jalannya banyak, jadi pakai pakaian ringan dan jangan lupa air minum serta sun protection."]]],
+      ["Hari 9", "Pulang, pagi-pagi tapi tenang", "Hari ini memang dimulai sebelum fajar, tetapi kalau malam sebelumnya sudah rapi, sisanya tinggal bergerak tenang dan membawa seluruh perjalanan pulang dengan bersih.", ["Transfer pagi", "Sambung bandara", "Pulang"], [["Waktu bangun", "Bangun pukul 04.40 waktu lokal untuk beres-beres dan berangkat, atau 05.40 waktu Taiwan."], ["Waktu berangkat", "Keluar dari hotel pukul 05.25 adalah rencana yang lebih aman. Hari ini lebih baik terlalu awal daripada terlalu mepet."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Cukup siap meninggalkan hotel pukul 05.25."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 21.30 malam sebelumnya karena hari pulang dimulai sangat pagi."], ["Waktu", "Hari ini bukan soal menambah satu tempat lagi, tetapi soal menjaga semua sambungan tetap tenang dan tidak tergesa-gesa."], ["Cek terakhir", "Sebelum keluar hotel, cek paspor, HP, charger, adaptor, dan oleh-oleh sekali lagi. Kehilangan satu saja hari ini akan merepotkan."]]]
     ],
     budgetLabels: {
       flight: ["Tiket pesawat", "China Airlines pulang pergi"],
@@ -1433,15 +2277,223 @@ const content = {
   }
 };
 
+const LOCALIZED_DAY_META = {
+  en: [
+    {
+      date: "06 / 13 Sat",
+      region: "Bali / Seminyak",
+      theme: "Arrival and easing in",
+      effort: "Light",
+      tone: "beach",
+      badges: ["Arrival", "Check-in", "Slow evening"],
+      guide: "Arrival day works best when it stays soft: clear immigration, reach the hotel, eat well, and let Bali be the opening note."
+    },
+    {
+      date: "06 / 14 Sun",
+      region: "Bali / Seminyak",
+      theme: "A full Bali reset day",
+      effort: "Light",
+      tone: "beach",
+      badges: ["Slow day", "Beach pace", "Flexible hours"],
+      guide: "This day is meant to stay open. Good coffee, a beach walk, a slow meal, or a massage all fit the rhythm better than overscheduling."
+    },
+    {
+      date: "06 / 15 Mon",
+      region: "Bali → East Java",
+      theme: "The route turns toward the volcano line",
+      effort: "Moderate | long transfer",
+      tone: "transfer",
+      badges: ["Pickup day", "Ferry crossing", "Adventure begins"],
+      guide: "The trip changes shape here. Once Bali drops away, the route starts to feel more rugged and more clearly pointed toward the volcano stretch.",
+      links: [
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "06 / 16 Tue",
+      region: "Ijen / Banyuwangi",
+      theme: "Blue fire, crater rim, and a cold dawn start",
+      effort: "Tiring | pre-dawn volcano day",
+      tone: "volcano",
+      badges: ["Midnight wake-up", "Volcano hike", "Blue fire"],
+      guide: "Ijen is one of the most atmospheric days of the trip. It begins in darkness and cold, then slowly opens into sulfur air, crater views, and first light.",
+      links: [
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "06 / 17 Wed",
+      region: "Tumpak Sewu / Lumajang",
+      theme: "Waterfall canyon day",
+      effort: "Tiring | wet terrain",
+      tone: "waterfall",
+      badges: ["Very early start", "Slippery ground", "Change of clothes"],
+      guide: "Today is all about moving down into the landscape itself. Expect wet footing, steep paths, and one of the strongest visual payoffs of the trip.",
+      links: [
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "06 / 18 Thu",
+      region: "Bromo / Malang",
+      theme: "Jeep tracks and sunrise over the volcanic plain",
+      effort: "Tiring | volcano sunrise day",
+      tone: "volcano",
+      badges: ["01:15 wake-up", "Jeep ride", "Cold morning"],
+      guide: "Bromo is the big sunrise classic. The experience is as much about the cold, the dust, and the open highland view as it is about the sun itself.",
+      links: [
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "06 / 19 Fri",
+      region: "Malang / Surabaya → Yogyakarta",
+      theme: "A softer city transfer day",
+      effort: "Moderate | recovery day",
+      tone: "transfer",
+      badges: ["Train day", "VIP lounge", "Reset rhythm"],
+      guide: "After the hardest stretch, the train ride gives the body room to recover and lets the trip return to a steadier urban pace."
+    },
+    {
+      date: "06 / 20 Sat",
+      region: "Yogyakarta / Borobudur / Prambanan",
+      theme: "Stone terraces, temple towers, and a cultural deep breath",
+      effort: "Moderate | walking day",
+      tone: "temple",
+      badges: ["Early start", "Temple day", "Hot weather"],
+      guide: "The mood changes completely here. After volcanoes and road days, the trip turns toward carved stone, layered terraces, and a calmer kind of wonder.",
+      links: [["Klook day tour", "https://s.klook.com/c/4yVrZ02036"]]
+    },
+    {
+      date: "06 / 21 Sun",
+      region: "Yogyakarta → Jakarta → Taipei",
+      theme: "A steady way home",
+      effort: "Moderate | return day",
+      tone: "transfer",
+      badges: ["Early airport run", "Connections", "Fly home"],
+      guide: "The final day is about calm transitions. If the night before was packed well, the morning becomes much easier to carry."
+    }
+  ],
+  id: [
+    {
+      date: "13 / 06 Sab",
+      region: "Bali / Seminyak",
+      theme: "Tiba dan pelan-pelan masuk ritme liburan",
+      effort: "Ringan",
+      tone: "beach",
+      badges: ["Tiba", "Check-in", "Malam santai"],
+      guide: "Hari pertama paling enak dijalani dengan lembut: urus imigrasi, sampai hotel, makan yang nyaman, lalu biarkan Bali jadi pembuka perjalanan."
+    },
+    {
+      date: "14 / 06 Min",
+      region: "Bali / Seminyak",
+      theme: "Satu hari penuh untuk menurunkan ritme",
+      effort: "Ringan",
+      tone: "beach",
+      badges: ["Hari santai", "Ritme pantai", "Jam fleksibel"],
+      guide: "Hari ini memang sebaiknya dibiarkan longgar. Kopi, jalan ke pantai, makan pelan, atau pijat justru lebih cocok daripada jadwal yang terlalu rapat."
+    },
+    {
+      date: "15 / 06 Sen",
+      region: "Bali → Jawa Timur",
+      theme: "Perjalanan mulai masuk jalur gunung api",
+      effort: "Sedang | transfer jauh",
+      tone: "transfer",
+      badges: ["Hari jemput", "Naik ferry", "Bab petualangan"],
+      guide: "Di sinilah bentuk perjalanan berubah. Begitu Bali selesai, jalur ini mulai terasa lebih liar dan lebih jelas mengarah ke segmen gunung api.",
+      links: [
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "16 / 06 Sel",
+      region: "Ijen / Banyuwangi",
+      theme: "Blue fire, bibir kawah, dan fajar yang dingin",
+      effort: "Berat | hari gunung api dini hari",
+      tone: "volcano",
+      badges: ["Bangun tengah malam", "Hiking gunung api", "Blue fire"],
+      guide: "Ijen adalah salah satu hari paling atmosferik. Semuanya dimulai dari gelap dan dingin, lalu pelan-pelan terbuka jadi belerang, kawah, dan cahaya pagi.",
+      links: [
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "17 / 06 Rab",
+      region: "Tumpak Sewu / Lumajang",
+      theme: "Hari lembah air terjun",
+      effort: "Berat | medan basah",
+      tone: "waterfall",
+      badges: ["Bangun sangat pagi", "Jalur licin", "Baju ganti"],
+      guide: "Hari ini rasanya seperti masuk ke dalam lanskap itu sendiri. Siapkan kaki untuk jalur basah dan turunan curam, dengan hadiah visual yang sangat besar di bawah.",
+      links: [
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "18 / 06 Kam",
+      region: "Bromo / Malang",
+      theme: "Jeep dan sunrise di dataran vulkanik",
+      effort: "Berat | hari sunrise gunung api",
+      tone: "volcano",
+      badges: ["Bangun 01.15", "Naik Jeep", "Pagi dingin"],
+      guide: "Bromo adalah adegan sunrise klasik. Kekuatan harinya bukan hanya matahari terbit, tetapi juga dingin, debu, dan bentang tinggi gunung apinya.",
+      links: [
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
+        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+      ]
+    },
+    {
+      date: "19 / 06 Jum",
+      region: "Malang / Surabaya → Yogyakarta",
+      theme: "Hari transfer kota yang lebih lembut",
+      effort: "Sedang | hari recovery",
+      tone: "transfer",
+      badges: ["Hari kereta", "VIP lounge", "Reset ritme"],
+      guide: "Sesudah segmen paling berat, kereta memberi ruang bagi badan untuk pulih dan membuat perjalanan kembali masuk ke ritme kota yang lebih stabil."
+    },
+    {
+      date: "20 / 06 Sab",
+      region: "Yogyakarta / Borobudur / Prambanan",
+      theme: "Teras batu, menara candi, dan jeda budaya",
+      effort: "Sedang | hari jalan kaki",
+      tone: "temple",
+      badges: ["Mulai pagi", "Hari candi", "Cuaca panas"],
+      guide: "Nuansanya benar-benar berubah di sini. Setelah gunung api dan perjalanan jalan jauh, ritme bergeser ke batu pahatan, teras berlapis, dan rasa kagum yang lebih tenang.",
+      links: [["Tur Klook", "https://s.klook.com/c/4yVrZ02036"]]
+    },
+    {
+      date: "21 / 06 Min",
+      region: "Yogyakarta → Jakarta → Taipei",
+      theme: "Pulang dengan ritme yang stabil",
+      effort: "Sedang | hari pulang",
+      tone: "transfer",
+      badges: ["Bandara pagi", "Sambungan penerbangan", "Pulang"],
+      guide: "Hari terakhir ini tentang transisi yang tenang. Kalau malam sebelumnya sudah rapi, pagi harinya akan terasa jauh lebih ringan."
+    }
+  ]
+};
+
 const state = {
   lang: localStorage.getItem("bali-java-lang") || "zh-Hant",
   mapQuery: "Seminyak Beach Bali"
 };
 
 const dom = {
+  heroSignals: document.getElementById("hero-signals"),
   heroFacts: document.getElementById("hero-facts"),
   overviewStats: document.getElementById("overview-stats"),
-  coverPoints: document.getElementById("cover-points"),
+  snapshotChips: document.getElementById("snapshot-chips"),
+  snapshotGrid: document.getElementById("snapshot-grid"),
+  journeyHighlights: document.getElementById("journey-highlights"),
+  dayPreview: document.getElementById("day-preview"),
+  practicalAccordion: document.getElementById("practical-accordion"),
   departFlight: document.getElementById("depart-flight"),
   returnFlight: document.getElementById("return-flight"),
   flightHighlights: document.getElementById("flight-highlights"),
@@ -1459,7 +2511,6 @@ const dom = {
   infoBasics: document.getElementById("info-basics"),
   infoTips: document.getElementById("info-tips"),
   infoCosts: document.getElementById("info-costs"),
-  packingNotes: document.getElementById("packing-notes"),
   mapList: document.getElementById("map-list"),
   mapFrame: document.getElementById("map-frame"),
   fullRouteLink: document.getElementById("full-route-link"),
@@ -1475,6 +2526,8 @@ const dom = {
   footerCopy: document.getElementById("footer-copy"),
   pageProgress: document.getElementById("pageProgress")
 };
+
+const FALLBACK_LANG = "zh-Hant";
 
 function formatNumber(value) {
   return new Intl.NumberFormat().format(value);
@@ -1494,6 +2547,37 @@ function formatBudget(item) {
     return `${twd(min)} - ${formatNumber(max)} / ${idr((item.idrRange && item.idrRange[0]) || min * EXCHANGE_RATE)} - ${formatNumber((item.idrRange && item.idrRange[1]) || max * EXCHANGE_RATE)}`;
   }
   return `${twd(item.twd)} / ${idr(item.idr || item.twd * EXCHANGE_RATE)}`;
+}
+
+function pick(copy, key) {
+  return copy[key] ?? content[FALLBACK_LANG][key];
+}
+
+function buildDayAnchorId(day) {
+  const number = day.match(/\d+/)?.[0];
+  return `itinerary-day-${number || day.toLowerCase().replace(/\s+/g, "-")}`;
+}
+
+function normalizeDetailLabel(label, lang) {
+  const labelMap = {
+    "zh-Hant": {
+      出門時間: "出發時間",
+      集合時間: "會合時間",
+      最晚睡覺時間: "今晚睡眠"
+    },
+    en: {
+      "Leave by": "Departure",
+      "Meet-up": "Meet point",
+      "Sleep by": "Tonight's rest"
+    },
+    id: {
+      "Waktu berangkat": "Waktu jalan",
+      "Waktu kumpul": "Titik kumpul",
+      "Paling lambat tidur": "Tidur malam ini"
+    }
+  };
+
+  return labelMap[lang]?.[label] || labelMap[FALLBACK_LANG]?.[label] || label;
 }
 
 function renderKeyValueRows(items) {
@@ -1564,6 +2648,20 @@ function mapEmbedUrl(query) {
   return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 }
 
+function renderOverviewStats(items) {
+  return items
+    .map(
+      ([label, value, note]) => `
+        <article class="overview-stat">
+          <div class="overview-stat-label">${label}</div>
+          <div class="overview-stat-value">${value}</div>
+          ${note ? `<div class="overview-stat-note">${note}</div>` : ""}
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderMiniHighlights(items) {
   return items
     .map(
@@ -1591,6 +2689,41 @@ function renderHeroFacts(items) {
     .join("");
 }
 
+function renderSignalChips(items = []) {
+  return items.map((item) => `<span class="signal-chip">${item}</span>`).join("");
+}
+
+function renderSnapshotCards(items = []) {
+  return items
+    .map(
+      ({ label, value, note }) => `
+        <article class="snapshot-card">
+          <div class="snapshot-card-label">${label}</div>
+          <div class="snapshot-card-value">${value}</div>
+          <div class="snapshot-card-note">${note}</div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderJourneyHighlights(items = []) {
+  return items
+    .map(
+      ({ kicker, title, desc, tags = [] }) => `
+        <article class="journey-highlight-card">
+          <div class="journey-highlight-kicker">${kicker}</div>
+          <div class="journey-highlight-title">${title}</div>
+          <div class="journey-highlight-desc">${desc}</div>
+          <div class="journey-highlight-tags">
+            ${tags.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderBulletRows(items, detailClass = "bullet-desc") {
   return items
     .map(
@@ -1601,6 +2734,41 @@ function renderBulletRows(items, detailClass = "bullet-desc") {
             <div class="${detailClass}">${desc}</div>
           </div>
         </div>
+      `
+    )
+    .join("");
+}
+
+function renderPracticalAccordion(items = []) {
+  return items
+    .map(
+      ({ title, intro, chips = [], items: rows = [] }, index) => `
+        <details class="practical-item" ${index === 0 ? "open" : ""}>
+          <summary class="practical-summary">
+            <div class="practical-summary-copy">
+              <div class="practical-summary-title">${title}</div>
+              <div class="practical-summary-intro">${intro}</div>
+            </div>
+            <span class="practical-summary-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="practical-body">
+            <div class="practical-chip-row">
+              ${chips.map((chip) => `<span>${chip}</span>`).join("")}
+            </div>
+            <div class="practical-list">
+              ${rows
+                .map(
+                  ([rowTitle, rowDesc]) => `
+                    <article class="practical-row">
+                      <div class="practical-row-title">${rowTitle}</div>
+                      <div class="practical-row-desc">${rowDesc}</div>
+                    </article>
+                  `
+                )
+                .join("")}
+            </div>
+          </div>
+        </details>
       `
     )
     .join("");
@@ -1618,6 +2786,47 @@ function renderFlightNotes(items) {
         </article>
       `
     )
+    .join("");
+}
+
+function resolveDayMeta(days, index, lang = FALLBACK_LANG) {
+  const fallbackDay = content[FALLBACK_LANG].itinerary[index] || [];
+  const localizedMeta = LOCALIZED_DAY_META[lang]?.[index] || {};
+  const inlineMeta = days[index]?.[5] || {};
+  return lang === FALLBACK_LANG
+    ? { ...(fallbackDay[5] || {}), ...inlineMeta }
+    : { ...localizedMeta, ...inlineMeta };
+}
+
+function renderDayPreview(days, copy, lang) {
+  return days
+    .map(([day, title, desc, tags], index) => {
+      const meta = resolveDayMeta(days, index, lang);
+      const anchorId = buildDayAnchorId(day);
+      const chips = [meta.effort, ...(meta.badges || []).slice(0, 2)].filter(Boolean);
+
+      return `
+        <article class="day-preview-card tone-${meta.tone || "default"}">
+          <div class="day-preview-head">
+            <div class="day-preview-index">${day}</div>
+            <div class="day-preview-date">${meta.date || ""}</div>
+          </div>
+          <div class="day-preview-region">${meta.region || ""}</div>
+          <div class="day-preview-title">${title}</div>
+          <div class="day-preview-theme">${meta.theme || ""}</div>
+          <div class="day-preview-copy">${meta.preview || desc}</div>
+          <div class="day-preview-chip-row">
+            ${chips.map((chip) => `<span>${chip}</span>`).join("")}
+          </div>
+          <div class="day-preview-tags">
+            ${tags.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <button class="day-preview-link" type="button" data-open-section="itinerary" data-open-day="${anchorId}">
+            ${pick(copy, "previewCta")}
+          </button>
+        </article>
+      `;
+    })
     .join("");
 }
 
@@ -1689,122 +2898,214 @@ function renderMapDayRoutes(items) {
     .join("");
 }
 
-function renderTimeline(days, focusLabel) {
+function renderTimeline(days, copy, lang) {
   return days
-    .map(
-      ([day, title, desc, tags, details]) => {
+    .map(([day, title, desc, tags, details], index) => {
+        const meta = resolveDayMeta(days, index, lang);
         const primaryDetail = details[0];
         const secondaryDetails = details.slice(1);
         const isWakeupDetail = (label) =>
           ["起床時間", "Wake-up", "Waktu bangun"].includes(label);
+        const anchorId = buildDayAnchorId(day);
+        const badges = [meta.effort, ...(meta.badges || [])].filter(Boolean);
 
         return `
-        <article class="day-card">
+        <article class="day-card tone-${meta.tone || "default"}" id="${anchorId}">
+          <div class="day-card-top">
+            <div class="day-meta-block">
+              <div class="day-index">${day}</div>
+              <div class="day-date-line">${meta.date || ""}</div>
+              <div class="day-region-line">${meta.region || ""}</div>
+            </div>
+            <div class="day-status-row">
+              ${badges.map((badge) => `<span class="day-status-chip">${badge}</span>`).join("")}
+            </div>
+          </div>
           <div class="day-header">
-            <div class="day-index">${day}</div>
+            ${meta.theme ? `<div class="day-theme">${meta.theme}</div>` : ""}
             <div class="day-title">${title}</div>
             <div class="day-summary">${desc}</div>
+            ${meta.guide ? `<div class="day-guide-intro">${meta.guide}</div>` : ""}
           </div>
           ${
             primaryDetail
               ? `
                 <div class="day-primary-strip ${isWakeupDetail(primaryDetail[0]) ? "is-wakeup" : ""}">
-                  <div class="day-primary-label">${primaryDetail[0]}</div>
+                  <div class="day-primary-label">${normalizeDetailLabel(primaryDetail[0], lang)}</div>
                   <div class="day-primary-value">${primaryDetail[1]}</div>
                 </div>
               `
               : ""
           }
-          <div class="day-content-top">
-            <div class="day-focus-label">${focusLabel}</div>
-            <div class="day-focus-text">${desc}</div>
-          </div>
-          <div class="day-detail-list">
-            ${secondaryDetails
-              .map(
-                ([detailTitle, detailDesc]) => `
-                  <div class="day-detail-item ${isWakeupDetail(detailTitle) ? "is-wakeup" : ""}">
-                    <div class="day-detail-title">${detailTitle}</div>
-                    <div class="day-detail-desc">${detailDesc}</div>
+          ${
+            meta.atGlance?.length
+              ? `
+                <section class="day-block">
+                  <div class="day-block-title">${pick(copy, "dayGuideAtGlanceLabel")}</div>
+                  <div class="day-glance-grid">
+                    ${meta.atGlance
+                      .map(
+                        ([glanceLabel, glanceValue]) => `
+                          <article class="day-glance-card">
+                            <div class="day-glance-label">${glanceLabel}</div>
+                            <div class="day-glance-value">${glanceValue}</div>
+                          </article>
+                        `
+                      )
+                      .join("")}
                   </div>
-                `
-              )
-              .join("")}
-          </div>
+                </section>
+              `
+              : ""
+          }
+          ${
+            meta.routeFlow?.length
+              ? `
+                <section class="day-block">
+                  <div class="day-block-title">${pick(copy, "dayGuideFlowLabel")}</div>
+                  <div class="day-route-flow">
+                    ${meta.routeFlow
+                      .map(
+                        ([flowTitle, flowDesc]) => `
+                          <article class="day-route-stop">
+                            <div class="day-route-title">${flowTitle}</div>
+                            <div class="day-route-desc">${flowDesc}</div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </section>
+              `
+              : ""
+          }
+          <section class="day-block">
+            <div class="day-block-title">${pick(copy, "dayFocusLabel")}</div>
+            <div class="day-content-top">
+              <div class="day-focus-text">${desc}</div>
+            </div>
+          </section>
+          <section class="day-block">
+            <div class="day-block-title">${pick(copy, "dayGuideDetailLabel")}</div>
+            <div class="day-detail-list">
+              ${secondaryDetails
+                .map(
+                  ([detailTitle, detailDesc]) => `
+                    <div class="day-detail-item ${isWakeupDetail(detailTitle) ? "is-wakeup" : ""}">
+                      <div class="day-detail-title">${normalizeDetailLabel(detailTitle, lang)}</div>
+                      <div class="day-detail-desc">${detailDesc}</div>
+                    </div>
+                  `
+                )
+                .join("")}
+            </div>
+          </section>
+          ${
+            meta.reminders?.length
+              ? `
+                <section class="day-reminder-card">
+                  <div class="day-block-title">${pick(copy, "dayGuideReminderLabel")}</div>
+                  <div class="day-reminder-list">
+                    ${meta.reminders.map((reminder) => `<div class="day-reminder-item">${reminder}</div>`).join("")}
+                  </div>
+                </section>
+              `
+              : ""
+          }
+          ${
+            meta.links?.length
+              ? `
+                <section class="day-links-block">
+                  <div class="day-block-title">${pick(copy, "dayGuideLinksLabel")}</div>
+                  <div class="day-links-row">
+                    ${meta.links
+                      .map(
+                        ([label, href]) =>
+                          `<a class="day-link-pill" href="${href}" target="_blank" rel="noreferrer">${label}</a>`
+                      )
+                      .join("")}
+                  </div>
+                </section>
+              `
+              : ""
+          }
           <div class="highlight-tags">
             ${tags.map((tag) => `<span>${tag}</span>`).join("")}
           </div>
         </article>
       `;
-      }
-    )
+      })
     .join("");
 }
 
 function renderLanguage() {
   const copy = content[state.lang];
-  const flights = copy.flightData;
+  const flights = pick(copy, "flightData");
+  const overviewStats = pick(copy, "overviewStats");
+  const itinerary = pick(copy, "itinerary");
+  const mapLocations = pick(copy, "mapLocations");
 
   document.documentElement.lang = state.lang;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
-    node.textContent = copy[node.dataset.i18n];
+    const value = pick(copy, node.dataset.i18n);
+    if (typeof value === "string") {
+      node.textContent = value;
+    }
   });
 
   document.querySelectorAll(".lang-btn").forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === state.lang);
   });
 
-  dom.heroFacts.innerHTML = renderHeroFacts(copy.overviewStats);
-  dom.footerCopy.textContent = copy.footerCopy;
+  if (dom.heroSignals) {
+    dom.heroSignals.innerHTML = renderSignalChips(pick(copy, "heroSignals"));
+  }
+  dom.heroFacts.innerHTML = renderHeroFacts(pick(copy, "heroFacts") || overviewStats);
+  dom.footerCopy.textContent = pick(copy, "footerCopy");
 
-  dom.overviewStats.innerHTML = copy.overviewStats
-    .map(
-      ([label, value]) => `
-        <article class="overview-stat">
-          <div class="overview-stat-label">${label}</div>
-          <div class="overview-stat-value">${value}</div>
-        </article>
-      `
-    )
-    .join("");
+  dom.overviewStats.innerHTML = renderOverviewStats(overviewStats);
+  if (dom.snapshotChips) {
+    dom.snapshotChips.innerHTML = renderSignalChips(pick(copy, "snapshotChips"));
+  }
+  if (dom.snapshotGrid) {
+    dom.snapshotGrid.innerHTML = renderSnapshotCards(pick(copy, "snapshotCards"));
+  }
+  if (dom.journeyHighlights) {
+    dom.journeyHighlights.innerHTML = renderJourneyHighlights(pick(copy, "journeyHighlights"));
+  }
+  if (dom.dayPreview) {
+    dom.dayPreview.innerHTML = renderDayPreview(itinerary, copy, state.lang);
+  }
+  if (dom.practicalAccordion) {
+    dom.practicalAccordion.innerHTML = renderPracticalAccordion(pick(copy, "practicalSections"));
+  }
 
-  dom.coverPoints.innerHTML = copy.coverPoints
-    .map(
-      ([title, desc]) => `
-        <article class="cover-point">
-          <div class="cover-point-title">${title}</div>
-          <div class="cover-point-desc">${desc}</div>
-        </article>
-      `
-    )
-    .join("");
+  dom.departFlight.innerHTML = renderFlightCard(pick(copy, "flightSegmentLabels"), flights.depart);
+  dom.returnFlight.innerHTML = renderFlightCard(pick(copy, "flightSegmentLabels"), flights.return);
+  dom.flightHighlights.innerHTML = renderMiniHighlights(pick(copy, "flightHighlights"));
+  dom.flightNotes.innerHTML = renderFlightNotes(pick(copy, "flightNotes"));
 
-  dom.departFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, flights.depart);
-  dom.returnFlight.innerHTML = renderFlightCard(copy.flightSegmentLabels, flights.return);
-  dom.flightHighlights.innerHTML = renderMiniHighlights(copy.flightHighlights);
-  dom.flightNotes.innerHTML = renderFlightNotes(copy.flightNotes);
-
-  dom.trainHighlights.innerHTML = renderMiniHighlights(copy.trainHighlights);
+  dom.trainHighlights.innerHTML = renderMiniHighlights(pick(copy, "trainHighlights"));
   dom.trainOverview.innerHTML = `
-    <div class="flight-summary-copy">${copy.trainSummary}</div>
-    ${renderKeyValueRows(copy.trainFacts)}
+    <div class="flight-summary-copy">${pick(copy, "trainSummary")}</div>
+    ${renderKeyValueRows(pick(copy, "trainFacts"))}
     <div class="flight-subnotes">
-      ${copy.trainNotes.map((note) => `<div class="flight-subnote">${note}</div>`).join("")}
+      ${pick(copy, "trainNotes").map((note) => `<div class="flight-subnote">${note}</div>`).join("")}
     </div>
   `;
-  dom.trainPurchase.innerHTML = renderFlightNotes(copy.trainBuySteps);
-  dom.trainLinks.innerHTML = copy.trainLinks
+  dom.trainPurchase.innerHTML = renderFlightNotes(pick(copy, "trainBuySteps"));
+  dom.trainLinks.innerHTML = pick(copy, "trainLinks")
     .map(([
       label,
       url
     ]) => `<a href="${url}" target="_blank" rel="noreferrer">${label}</a>`)
     .join("");
 
-  dom.tourList.innerHTML = renderStayRows(copy.toursList, copy.tourLinkLabel);
+  dom.tourList.innerHTML = renderStayRows(pick(copy, "toursList"), pick(copy, "tourLinkLabel"));
 
-  dom.stayList.innerHTML = renderStayRows(copy.stays, copy.stayMapLabel);
+  dom.stayList.innerHTML = renderStayRows(pick(copy, "stays"), pick(copy, "stayMapLabel"));
 
-  dom.resourceLinks.innerHTML = copy.resourceLinks
+  dom.resourceLinks.innerHTML = pick(copy, "resourceLinks")
     .map(
       ([title, desc, url]) => `
         <article class="resource-card">
@@ -1812,28 +3113,26 @@ function renderLanguage() {
             <div class="resource-card-title">${title}</div>
             <div class="resource-card-desc">${desc}</div>
           </div>
-          <a href="${url}" target="_blank" rel="noreferrer">${copy.resourceLinkCta}</a>
+          <a href="${url}" target="_blank" rel="noreferrer">${pick(copy, "resourceLinkCta")}</a>
         </article>
       `
     )
     .join("");
-  dom.linksHighlights.innerHTML = renderMiniHighlights(copy.linksHighlights);
-  dom.infoHighlights.innerHTML = renderMiniHighlights(copy.infoHighlights);
-  dom.infoChecklist.innerHTML = renderFlightNotes(copy.infoChecklist);
-  dom.infoBasics.innerHTML = renderBulletRows(copy.infoBasics);
-  dom.infoTips.innerHTML = renderBulletRows(copy.infoTips);
-  dom.infoCosts.innerHTML = renderBulletRows(copy.infoCosts);
+  dom.linksHighlights.innerHTML = renderMiniHighlights(pick(copy, "linksHighlights"));
+  dom.infoHighlights.innerHTML = renderMiniHighlights(pick(copy, "infoHighlights"));
+  dom.infoChecklist.innerHTML = renderFlightNotes(pick(copy, "infoChecklist"));
+  dom.infoBasics.innerHTML = renderBulletRows(pick(copy, "infoBasics"));
+  dom.infoTips.innerHTML = renderBulletRows(pick(copy, "infoTips"));
+  dom.infoCosts.innerHTML = renderBulletRows(pick(copy, "infoCosts"));
 
-  dom.packingNotes.innerHTML = renderBulletRows(copy.packingNotes, "note-desc");
-
-  if (!copy.mapLocations.some(([, query]) => query === state.mapQuery)) {
-    state.mapQuery = copy.mapLocations[0][1];
+  if (!mapLocations.some(([, query]) => query === state.mapQuery)) {
+    state.mapQuery = mapLocations[0][1];
   }
 
-  dom.mapList.innerHTML = renderMapLocations(copy.mapLocations, state.mapQuery);
+  dom.mapList.innerHTML = renderMapLocations(mapLocations, state.mapQuery);
   dom.mapFrame.src = mapEmbedUrl(state.mapQuery);
   dom.fullRouteLink.href = MAP_ROUTE_URL;
-  dom.mapDayRoutes.innerHTML = renderMapDayRoutes(copy.mapDayRoutes);
+  dom.mapDayRoutes.innerHTML = renderMapDayRoutes(pick(copy, "mapDayRoutes"));
   document.querySelectorAll(".map-location-button").forEach((button) => {
     button.addEventListener("click", () => {
       state.mapQuery = button.dataset.query;
@@ -1841,8 +3140,9 @@ function renderLanguage() {
     });
   });
 
-  dom.itineraryHighlights.innerHTML = renderMiniHighlights(copy.itineraryHighlights);
-  dom.itineraryList.innerHTML = renderTimeline(copy.itinerary, copy.dayFocusLabel);
+  dom.itineraryHighlights.innerHTML = renderMiniHighlights(pick(copy, "itineraryHighlights"));
+  dom.itineraryList.innerHTML = renderTimeline(itinerary, copy, state.lang);
+  bindDayPreviewLinks();
 
   const paid = sumRange(BUDGET.paid);
   const open = sumRange(BUDGET.open);
@@ -1852,15 +3152,15 @@ function renderLanguage() {
   const avgMax = Math.round(totalMax / TRIP_DAYS);
   dom.budgetSummaryStrip.innerHTML = `
     <article class="budget-summary-card">
-      <div class="budget-summary-label">${copy.paidTitle}</div>
+      <div class="budget-summary-label">${pick(copy, "paidTitle")}</div>
       <div class="budget-summary-value">${twd(paid.min)} / ${idr(paid.min * EXCHANGE_RATE)}</div>
     </article>
     <article class="budget-summary-card">
-      <div class="budget-summary-label">${copy.totalBudgetLabel}</div>
+      <div class="budget-summary-label">${pick(copy, "totalBudgetLabel")}</div>
       <div class="budget-summary-value">${twd(totalMin)} - ${formatNumber(totalMax)}</div>
     </article>
     <article class="budget-summary-card">
-      <div class="budget-summary-label">${copy.dailyAverageLabel}</div>
+      <div class="budget-summary-label">${pick(copy, "dailyAverageLabel")}</div>
       <div class="budget-summary-value">${twd(avgMin)} - ${formatNumber(avgMax)}</div>
     </article>
   `;
@@ -1870,23 +3170,42 @@ function renderLanguage() {
   ];
   dom.budgetTableBody.innerHTML = budgetRows
     .map((item) => {
-      const [title, desc] = copy.budgetLabels[item.key];
-      const statusText = item.status === "paid" ? copy.budgetStatusPaid : copy.budgetStatusOpen;
+      const [title, desc] = pick(copy, "budgetLabels")[item.key];
+      const statusText = item.status === "paid" ? pick(copy, "budgetStatusPaid") : pick(copy, "budgetStatusOpen");
       return `
         <tr>
-          <td data-label="${copy.budgetTableStatus}"><span class="budget-status ${item.status}">${statusText}</span></td>
-          <td data-label="${copy.budgetTableItem}"><div class="budget-item-title">${title}</div></td>
-          <td data-label="${copy.budgetTableDetail}"><div class="budget-item-desc">${desc}</div></td>
-          <td data-label="${copy.budgetTableAmount}"><div class="budget-amount">${formatBudget(item)}</div></td>
+          <td data-label="${pick(copy, "budgetTableStatus")}"><span class="budget-status ${item.status}">${statusText}</span></td>
+          <td data-label="${pick(copy, "budgetTableItem")}"><div class="budget-item-title">${title}</div></td>
+          <td data-label="${pick(copy, "budgetTableDetail")}"><div class="budget-item-desc">${desc}</div></td>
+          <td data-label="${pick(copy, "budgetTableAmount")}"><div class="budget-amount">${formatBudget(item)}</div></td>
         </tr>
       `;
     })
     .join("");
 
-  dom.visaHighlights.innerHTML = renderMiniHighlights(copy.visaHighlights);
-  dom.visaTutorial.innerHTML = renderFlightNotes(copy.visaTutorial);
-  dom.visaPoints.innerHTML = renderBulletRows(copy.visaPoints);
-  dom.arrivalPoints.innerHTML = renderBulletRows(copy.arrivalPoints);
+  dom.visaHighlights.innerHTML = renderMiniHighlights(pick(copy, "visaHighlights"));
+  dom.visaTutorial.innerHTML = renderFlightNotes(pick(copy, "visaTutorial"));
+  dom.visaPoints.innerHTML = renderBulletRows(pick(copy, "visaPoints"));
+  dom.arrivalPoints.innerHTML = renderBulletRows(pick(copy, "arrivalPoints"));
+}
+
+function bindDayPreviewLinks() {
+  document.querySelectorAll("[data-open-day]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const sectionTarget = button.getAttribute("data-open-section") || "itinerary";
+      const anchorId = button.getAttribute("data-open-day");
+      const navButton = document.querySelector(`.nav-item[data-target="${sectionTarget}"]`);
+
+      if (navButton) {
+        navButton.click();
+      }
+
+      window.setTimeout(() => {
+        const anchor = document.getElementById(anchorId);
+        anchor?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 120);
+    });
+  });
 }
 
 function bindLanguageButtons() {

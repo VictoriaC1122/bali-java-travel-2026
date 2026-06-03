@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>2026 Bali × Java Trip Notes</title>
+    <title>2026 Bali & Java Travel Guide | 峇里島・爪哇火山旅行手冊</title>
     <meta
       name="description"
-      content="A clear three-language Bali and Java trip guide with flights, stays, routes, budget notes, and entry reminders."
+      content="2026 印尼峇里島與爪哇旅行手冊，整理火山日出、長途移動、住宿、交通、簽證與每日節奏，手機與桌機都好查。"
     />
     <meta name="theme-color" content="#c46f42" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,6 +38,10 @@
         <div class="destinations" data-i18n="heroDestinations">
           Seminyak • Ijen • Tumpak Sewu • Bromo • Malang • Yogyakarta
         </div>
+        <p class="hero-intro" data-i18n="heroIntro">
+          從峇里島的海風與寺廟開始，穿過爪哇的高原與火山夜路，在天亮前一路往山脊前進，等雲海、火山口與晨光慢慢展開。
+        </p>
+        <div class="hero-signal-strip" id="hero-signals"></div>
         <div class="hero-actions">
           <button class="hero-action hero-action-primary" type="button" data-hero-target="itinerary" data-i18n="heroPrimaryCta">先看每日行程</button>
           <button class="hero-action hero-action-secondary" type="button" data-hero-target="info" data-i18n="heroSecondaryCta">看行前資訊</button>
@@ -70,36 +74,43 @@
           </p>
 
           <div class="overview-grid" id="overview-stats"></div>
+          <div class="snapshot-chip-row" id="snapshot-chips"></div>
+        </section>
+
+        <section class="section-card trip-snapshot-card">
+          <div class="section-label" data-i18n="snapshotLabel">Trip Snapshot</div>
+          <h3 data-i18n="snapshotTitle">旅程摘要</h3>
+          <p class="lead" data-i18n="snapshotLead">
+            先看這一頁，就會知道哪些天要早起、哪些天是火山健行日、哪些天適合把步調放慢。
+          </p>
+          <div class="snapshot-grid" id="snapshot-grid"></div>
         </section>
 
         <section class="section-card cover-story">
-          <div class="section-label" data-i18n="coverLabel">Handbook Design</div>
-          <h3 data-i18n="coverTitle">一眼看懂這趟旅行為什麼值得</h3>
-          <div class="cover-story-grid">
-            <article class="cover-copy">
-              <p class="cover-lead" data-i18n="coverLead">
-                不是只有景點很多，而是節奏很漂亮。峇里島先讓旅程變柔軟，東爪哇火山段把記憶點拉滿，最後用日惹的神廟與城市感收得很完整。
-              </p>
-              <div class="cover-points" id="cover-points"></div>
-            </article>
-            <article class="photo-feature volcano-photo">
-              <div class="photo-caption">
-                <span data-i18n="volcanoCaption">火山晨光</span>
-                <a href="https://unsplash.com/photos/mount-bromo-with-clouds-around-it-verlQNDfi0Y" target="_blank" rel="noreferrer" data-i18n="volcanoCredit">Photo by Arya Krisdyantara / Unsplash</a>
-              </div>
-            </article>
-            <article class="photo-feature beach-photo">
-              <div class="photo-caption">
-                <span data-i18n="beachCaption">Bali 海色</span>
-                <a href="https://unsplash.com/photos/dramatic-cliffs-overlook-a-tropical-beach-with-turquoise-water-41OBW7fJMkQ" target="_blank" rel="noreferrer" data-i18n="beachCredit">Photo by Santhosh Mocharla / Unsplash</a>
-              </div>
-            </article>
-          </div>
+          <div class="section-label" data-i18n="highlightsLabel">Journey Highlights</div>
+          <h3 data-i18n="highlightsTitle">整趟旅程最值得期待的段落</h3>
+          <p class="lead" data-i18n="highlightsLead">
+            不是每天都要塞滿，而是把真正有畫面的地方留在對的位置，讓旅程一步一步往上堆。
+          </p>
+          <div class="journey-highlight-grid" id="journey-highlights"></div>
         </section>
 
-        <section class="section-card notes-card">
-          <div class="section-label" data-i18n="packingTitle">穿著與安全</div>
-          <div id="packing-notes"></div>
+        <section class="section-card">
+          <div class="section-label" data-i18n="previewLabel">Day-by-Day Preview</div>
+          <h3 data-i18n="previewTitle">每日故事卡</h3>
+          <p class="lead" data-i18n="previewLead">
+            先看每一天的主題、體力節奏和最值得期待的畫面，再進入詳細行程，會更容易抓到整趟旅行的節奏。
+          </p>
+          <div class="day-preview-grid" id="day-preview"></div>
+        </section>
+
+        <section class="section-card practical-card">
+          <div class="section-label" data-i18n="practicalLabel">Practical Info</div>
+          <h3 data-i18n="practicalTitle">旅途中會一直翻的實用資訊</h3>
+          <p class="lead" data-i18n="practicalLead">
+            這裡把航班、住宿、火山健行、穿搭、補給和腸胃提醒收成好翻的手冊頁，而不是堆成資料庫。
+          </p>
+          <div class="practical-accordion" id="practical-accordion"></div>
         </section>
       </section>
 
