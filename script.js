@@ -25,11 +25,19 @@ const HOTEL_MAPS = {
   kecombrang: "https://www.google.com/maps/search/?api=1&query=Joglo+Kecombrang+Bromo"
 };
 
+const PLACE_MAPS = {
+  seminyakBeach: "https://www.google.com/maps/search/?api=1&query=Seminyak+Beach+Bali",
+  potatoHead: "https://www.google.com/maps/search/?api=1&query=Potato+Head+Beach+Club+Bali",
+  fleaMarket: "https://www.google.com/maps/search/?api=1&query=The+Flea+Market+Seminyak",
+  kayuAya: "https://www.google.com/maps/search/?api=1&query=Jalan+Kayu+Aya+Seminyak",
+  ssamayaSpa: "https://www.google.com/maps/search/?api=1&query=Ssamaya+Balinese+Spa+Seminyak"
+};
+
 const MAP_ROUTE_URL =
   "https://www.google.com/maps/dir/Seminyak+Beach+Bali/Courtyard+by+Marriott+Bali+Seminyak+Resort/Ijen+Crater/Tumpak+Sewu+Waterfall/Mount+Bromo/The+Shalimar+Boutique+Hotel+Malang/Aveta+Hotel+Malioboro+Yogyakarta/Yogyakarta+International+Airport";
 
 const DAY_ROUTE_URLS = {
-  day1: "https://www.google.com/maps/dir/Ngurah+Rai+International+Airport/Courtyard+by+Marriott+Bali+Seminyak+Resort/Seminyak+Beach+Bali",
+  day1: "https://www.google.com/maps/dir/Ngurah+Rai+International+Airport/Courtyard+by+Marriott+Bali+Seminyak+Resort/Seminyak+Beach+Bali/Potato+Head+Beach+Club+Bali/The+Flea+Market+Seminyak/Ssamaya+Balinese+Spa+Seminyak/Courtyard+by+Marriott+Bali+Seminyak+Resort",
   day2: "https://www.google.com/maps/dir/Courtyard+by+Marriott+Bali+Seminyak+Resort/Seminyak+Beach+Bali/Seminyak+Village/Courtyard+by+Marriott+Bali+Seminyak+Resort",
   day3: "https://www.google.com/maps/dir/Courtyard+by+Marriott+Bali+Seminyak+Resort/Gilimanuk+Port/Ijen+Crater",
   day4: "https://www.google.com/maps/dir/Ijen+Crater/Paltuding+Ijen/Banyuwangi",
@@ -468,7 +476,7 @@ const content = {
     mapRouteLink: "看整段路線",
     mapDayLabel: "每日動線",
     mapDayRoutes: [
-      ["第 1 天", "海風開場的抵達日", DAY_ROUTE_URLS.day1],
+      ["第 1 天", "水明漾悠閒度假日", DAY_ROUTE_URLS.day1],
       ["第 2 天", "Seminyak 慢慢放鬆", DAY_ROUTE_URLS.day2],
       ["第 3 天", "離開海邊，進入火山線", DAY_ROUTE_URLS.day3],
       ["第 4 天", "Ijen 的藍火與天光", DAY_ROUTE_URLS.day4],
@@ -667,33 +675,44 @@ const content = {
       ["YIA 機場", "Yogyakarta International Airport", "回程當天的最終移動點。"]
     ],
     itinerary: [
-      ["Day 1", "海風開場的抵達日", "抵達日不用急著把行程排滿。讓機場、入住、晚餐與第一晚好眠，慢慢把身體帶進峇里島的濕熱與海風裡。", ["海風抵達日", "晚餐散步", "旅程暖機"], [["起床時間", "建議最晚 05:30 起床；峇里島與台灣同時區。"], ["出門時間", "依住處到機場距離回推，建議 06:00 前後出門最穩。"], ["集合時間", "今天沒有固定集合；機場報到以班機時間往前抓就好。"], ["最晚睡覺時間", "建議 22:30 前躺平，先把旅程節奏拉順。"], ["今日亮點", "這天的重點不是追景點，而是讓海風、晚餐和一場好睡眠替整趟旅程暖機。"], ["傍晚安排", "入住後先熟悉飯店和周邊，把晚餐留給不趕時間的散步和慢慢吃。"]], {
+      ["Day 1", "水明漾悠閒度假日", "第一天下午不需要逞強，把抵達、入住、夕陽、晚餐、逛街和按摩排成一條順順的路線，反而更像真正的巴里島開場。", ["機場抵達", "海灘夕陽", "Beach Club", "SPA"], [["抵達時間", "14:35 抵達 DPS（Ngurah Rai International Airport）。"], ["入境完成", "15:05 完成入境與領行李。"], ["搭車時間", "15:15 搭 Grab 前往飯店，約 15:45 抵達 Courtyard by Marriott Bali Seminyak Resort。"], ["入住時間", "16:00 完成 Check-in，先回房換上度假服裝。"], ["飯店放鬆", "16:00–17:30 先享受泳池、池畔酒吧、房間休息，把第一天下午留給放鬆。"], ["夕陽時間", "17:30 步行約 5 分鐘到 Seminyak Beach，6 月日落約 18:05。"], ["晚餐安排", "18:30–20:00 推薦 Potato Head Beach Club，海景夕陽、晚餐、調酒和 DJ 音樂一次收齊。"], ["逛街安排", "20:00–21:30 可逛 The Flea Market 與 Kayu Aya Street，找洋裝、草編包、香氛和度假服飾。"], ["SPA 時段", "21:30–23:00 推薦 Ssamaya Balinese Spa，可做 60 分鐘 Balinese Massage 或 90 分鐘 Aromatherapy Massage。"], ["最晚睡覺時間", "23:00 回飯店睡覺，第一天不要排太滿，把體力留給後面的火山段。"]], {
         date: "06 / 13 Sat",
         region: "峇里島｜Seminyak",
-        theme: "抵達、入住與海風暖機",
-        effort: "輕鬆",
+        theme: "機場抵達、夕陽、Beach Club 與 SPA",
+        effort: "輕鬆｜度假日",
         tone: "beach",
-        badges: ["海島日", "同時區", "晚餐散步"],
-        preview: "先把第一天留給入境、入住與晚餐，不追景點，讓身體順順地從飛行模式切到旅行模式。",
-        guide: "今天的重點很簡單：順順入境、順順入住、順順吃飯，讓身體先跟上峇里島的溫度與節奏。",
+        badges: ["海灘夕陽", "Beach Club", "SPA"],
+        preview: "這天的重點不是趕景點，而是讓抵達、夕陽、晚餐和按摩自然接起來，輕鬆把身體切進巴里島節奏。",
+        guide: "Day 1 最適合做成一條毫不費力的度假動線：機場進飯店、飯店走到海邊、海邊接晚餐、晚餐接逛街、最後用按摩把飛行疲勞收掉。",
         atGlance: [
-          ["出發時間", "依住處回推，06:00 前後出門最安心"],
-          ["主要移動", "台北直飛 DPS → 機場到 Seminyak 飯店"],
-          ["體力節奏", "輕鬆，以調整飛行疲勞與濕熱氣候為主"],
-          ["今日穿著", "透氣衣物、薄外套、好穿脫的鞋"],
-          ["餐食與補給", "飛機上先補水，晚餐選清爽一點會更舒服"],
+          ["抵達時間", "14:35 抵達 DPS，約 16:00 完成飯店 Check-in"],
+          ["主要移動", "DPS → Grab → Courtyard Seminyak → 步行海邊 / 晚餐 / 逛街 / SPA"],
+          ["體力節奏", "輕鬆，以消化飛行疲勞和進入度假模式為主"],
+          ["今日穿著", "入住後可直接換上度假服裝，晚上海邊與逛街都以輕便涼爽為主"],
+          ["餐食與補給", "Beach Club 晚餐為主，下午和晚間都記得補水"],
           ["今晚落腳", "Courtyard by Marriott Bali Seminyak Resort"]
         ],
         routeFlow: [
-          ["下午｜抵達與入境", "護照、簽證與 QR code 放在最好拿的位置，入境後直接進飯店最省力。"],
-          ["傍晚｜晚餐與散步", "先把 Seminyak 的第一晚留給走走看看和慢慢吃，不需要急著跑點。"],
-          ["夜晚｜早點休息", "隔天還有完整的 Bali 日，今晚先把睡眠和補水補回來。"]
+          ["14:35–16:00｜抵達、入境與入住", "14:35 抵達 DPS，15:05 完成入境和領行李，15:15 搭 Grab，約 16:00 完成飯店 Check-in。"],
+          ["16:00–17:30｜飯店放鬆", "先把下午留給泳池、池畔酒吧、房間休息和換上度假服裝，不建議第一天排太滿。"],
+          ["17:30–18:30｜Seminyak Beach 夕陽", "從飯店步行約 5 分鐘就能到海邊，6 月日落約 18:05，剛好適合散步和拍照。"],
+          ["18:30–20:00｜Potato Head Beach Club 晚餐", "把第一晚留給海景夕陽、晚餐、調酒與 DJ 音樂，這樣的 Bali 開場會很完整。"],
+          ["20:00–21:30｜The Flea Market / Kayu Aya Street", "晚餐後剛好順路逛水明漾街區，洋裝、草編包、香氛、泳裝和手工藝品都很適合這段時間慢慢看。"],
+          ["21:30–23:00｜SPA 收尾", "最後用 Ssamaya Balinese Spa 把飛行和舟車勞頓洗掉，按完直接回飯店睡覺。"]
         ],
         reminders: [
-          "第一次進房後先整理隔天要用的隨身小包，後面每天早上都會輕鬆很多。",
-          "如果下午覺得熱和累都很正常，先把補水與休息放前面，不用硬排景點。"
+          "第一天下午以放鬆為主，不建議再塞遠距離景點，替後面的火山段留體力更值得。",
+          "6 月日落約 18:05，17:30 從飯店步行去海邊最剛好。",
+          "如果確定要去 Potato Head 或晚間 SPA，先訂位 / 預約會更安心。"
         ],
-        links: [["今晚落腳", HOTEL_MAPS.seminyak]]
+        links: [
+          ["今晚落腳", HOTEL_MAPS.seminyak],
+          ["Seminyak Beach", PLACE_MAPS.seminyakBeach],
+          ["Potato Head Beach Club", PLACE_MAPS.potatoHead],
+          ["The Flea Market", PLACE_MAPS.fleaMarket],
+          ["Kayu Aya Street", PLACE_MAPS.kayuAya],
+          ["Ssamaya Balinese Spa", PLACE_MAPS.ssamayaSpa]
+        ]
       }],
       ["Day 2", "Seminyak 慢慢過的一天", "這天適合把鬧鐘放鬆一點，把 beach club、按摩、散步和好好吃飯留給 Seminyak，讓度假的感覺真正開始。", ["海邊放空", "brunch", "慢慢過"], [["起床時間", "08:30 前後起床即可；想睡晚一點也可以。"], ["出門時間", "如果要去吃早午餐或 beach club，10:00 前後出門最剛好。"], ["集合時間", "今天沒有固定集合，自由安排即可。"], ["最晚睡覺時間", "建議 23:00 前休息，隔天開始進入移動段。"], ["今日亮點", "把一天交給海邊、按摩和自在發呆，讓 Seminyak 的度假感慢慢長出來。"], ["貼心提醒", "海邊日照很強，也可以趁今天把火山段要用的小物補齊。"]], {
         date: "06 / 14 Sun",
@@ -1394,7 +1413,7 @@ const content = {
     mapRouteLink: "View full route",
     mapDayLabel: "Daily Routes",
     mapDayRoutes: [
-      ["Day 1", "Arrival and check-in", DAY_ROUTE_URLS.day1],
+      ["Day 1", "Seminyak arrival, sunset, and spa", DAY_ROUTE_URLS.day1],
       ["Day 2", "Seminyak slow day", DAY_ROUTE_URLS.day2],
       ["Day 3", "Bali to volcano leg", DAY_ROUTE_URLS.day3],
       ["Day 4", "Ijen route", DAY_ROUTE_URLS.day4],
@@ -1593,7 +1612,7 @@ const content = {
       ["YIA airport", "Yogyakarta International Airport", "Final transfer point on the way home."]
     ],
     itinerary: [
-      ["Day 1", "Arrive in Bali", "Land in Bali and resist the urge to overpack the first day. Let check-in, dinner, and a good sleep open the trip gently.", ["Sea-breeze start", "Check-in dinner", "Ease in"], [["Wake-up", "Aim to be up by 05:30 at the latest. Bali is on the same time as Taiwan."], ["Leave by", "Work backward from your home-to-airport transfer and aim to leave around 06:00 for a safer start."], ["Meet-up", "No fixed meet-up today. Just follow airport check-in timing."], ["Sleep by", "Try to be in bed by 22:30 so the trip starts on a steady rhythm."], ["Pacing", "There is no need to chase sights today. Let the sea air and one good night's sleep do the opening work."], ["Suggested plan", "Settle into the hotel, learn the area around you, have dinner without rushing, and head back early."]]],
+      ["Day 1", "Seminyak arrival and easy first night", "Let the first Bali afternoon stay easy: land, check in, watch sunset, have dinner by the sea, browse Seminyak a little, then finish with a massage and real sleep.", ["Airport arrival", "Sunset", "Beach club", "Spa"], [["Arrival", "14:35 at DPS (Ngurah Rai International Airport)."], ["Immigration", "15:05 to clear arrival formalities and collect luggage."], ["Transfer", "15:15 Grab to the hotel, with arrival around 15:45 at Courtyard by Marriott Bali Seminyak Resort."], ["Check-in", "16:00 check-in, then change into lighter resort clothes."], ["Hotel break", "16:00–17:30 for the pool, pool bar, room rest, and a soft reset after the flight."], ["Sunset", "17:30–18:30 at Seminyak Beach, with sunset around 18:05 in mid-June."], ["Dinner", "18:30–20:00 at Potato Head Beach Club for dinner, drinks, and the evening sea view."], ["Seminyak walk", "20:00–21:30 around The Flea Market and Kayu Aya Street for dresses, woven bags, scent, swimwear, and resort pieces."], ["Spa", "21:30–23:00 at Ssamaya Balinese Spa, with either a 60-minute Balinese Massage or a 90-minute Aromatherapy Massage."], ["Sleep by", "Back at the hotel by 23:00. Keep the first day light and save energy for the volcano stretch."]]],
       ["Day 2", "Seminyak, unhurried", "Keep this day for beach time, massage, and the pleasure of moving slowly. Bali works best when it is allowed to feel easy.", ["Seminyak", "Beach club", "Slow day"], [["Wake-up", "Around 08:30 is a comfortable start, though sleeping in a little is fine."], ["Leave by", "If brunch or a beach club is on the plan, leaving around 10:00 is a good rhythm."], ["Meet-up", "No fixed meet-up today. Keep it flexible."], ["Sleep by", "Try to rest by 23:00 so the transfer day starts more smoothly tomorrow."], ["Style", "Treat this as a real resort day: sleep a little later, eat slowly, and stay where the mood feels right."], ["Reminder", "The sun is strong, and this is also a good day to pick up any last small items for the volcano stretch."]]],
       ["Day 3", "Into the volcano stretch", "Leave Bali in the morning and spend the afternoon moving east. This is where the trip turns from soft resort energy into the adventure chapter.", ["Tour transfer", "Adventure opens", "Cross-island move"], [["Wake-up", "08:00 is the best target, and 08:30 should be the latest. Daytime timing here is still the same as Taiwan."], ["Leave by", "Have breakfast and luggage ready by 09:45 so you can wait outside in time."], ["Meet-up", "Meet the JVTO driver at 10:00, and aim to be in the hotel lobby by 09:50."], ["Sleep by", "Try to sleep by 19:30, because tonight is really just a pause before the midnight wake-up stretch begins."], ["Key check", "Before leaving Bali, reconfirm the pickup flow, the route order, and the final drop-off so the next few days stay smooth."], ["Bag setup", "Keep water, snacks, power bank, and key documents within easy reach. You will keep using them on the road."]]],
       ["Day 4", "Ijen blue-fire night", "Set out after midnight for Ijen, chase the blue fire first, then watch the crater lake appear with daylight. It is one of the strangest and most memorable days of the trip.", ["Blue fire", "Night hike", "Crater lake"], [["Wake-up", "23:45 local time, which is 00:45 in Taiwan time."], ["Leave by", "Finish check-out and get ready by 00:20 so the 00:30 departure stays on time."], ["Meet-up", "Gather at the hotel entrance or lobby by 00:20."], ["Sleep by", "Try to sleep by 20:30 the night before. Any extra rest helps."], ["Highlight", "First comes the blue fire, then the crater lake as the sky brightens. The visuals keep changing all the way into morning."], ["Gear", "A headlamp, grip shoes, light jacket, and mask all matter here. This is not the day to pretend it is a casual stroll."]]],
@@ -2051,7 +2070,7 @@ const content = {
     mapRouteLink: "Lihat rute lengkap",
     mapDayLabel: "Rute Harian",
     mapDayRoutes: [
-      ["Hari 1", "Tiba dan check-in", DAY_ROUTE_URLS.day1],
+      ["Hari 1", "Seminyak santai: sunset, makan malam, dan spa", DAY_ROUTE_URLS.day1],
       ["Hari 2", "Hari santai Seminyak", DAY_ROUTE_URLS.day2],
       ["Hari 3", "Bali ke segmen gunung api", DAY_ROUTE_URLS.day3],
       ["Hari 4", "Rute Ijen", DAY_ROUTE_URLS.day4],
@@ -2250,7 +2269,7 @@ const content = {
       ["Bandara YIA", "Yogyakarta International Airport", "Titik transfer terakhir sebelum pulang."]
     ],
     itinerary: [
-      ["Hari 1", "Tiba di Bali", "Begitu mendarat di Bali, jangan buru-buru memenuhi hari pertama. Biarkan check-in, makan malam, dan tidur nyenyak membuka perjalanan dengan lembut.", ["Pembuka laut", "Check-in + makan malam", "Masuk pelan-pelan"], [["Waktu bangun", "Usahakan bangun paling lambat pukul 05.30. Bali satu zona waktu dengan Taiwan."], ["Waktu berangkat", "Hitung mundur dari jarak rumah ke bandara, lalu usahakan keluar sekitar pukul 06.00 supaya lebih aman."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul khusus. Cukup ikuti ritme check-in bandara."], ["Paling lambat tidur", "Usahakan sudah istirahat sekitar pukul 22.30 supaya ritme perjalanan langsung rapi."], ["Rasanya hari ini", "Tidak perlu mengejar spot apa pun. Biarkan udara laut, makan malam, dan satu tidur nyenyak jadi pembuka perjalanan."], ["Saran", "Setelah check-in, kenali hotel dan sekitarnya dulu, makan malam santai, lalu kembali lebih awal."]]],
+      ["Hari 1", "Hari santai di Seminyak", "Biarkan sore pertama di Bali berjalan ringan: mendarat, check-in, melihat sunset, makan malam di tepi laut, jalan sedikit di Seminyak, lalu menutup hari dengan pijat dan tidur nyenyak.", ["Tiba di bandara", "Sunset", "Beach club", "Spa"], [["Tiba", "14.35 tiba di DPS (Ngurah Rai International Airport)."], ["Imigrasi", "Sekitar 15.05 selesai imigrasi dan ambil bagasi."], ["Naik kendaraan", "15.15 naik Grab ke hotel, lalu sekitar 15.45 tiba di Courtyard by Marriott Bali Seminyak Resort."], ["Check-in", "16.00 selesai check-in dan bisa langsung ganti ke pakaian liburan yang lebih ringan."], ["Istirahat hotel", "16.00–17.30 dipakai untuk kolam renang, pool bar, istirahat di kamar, dan menurunkan ritme setelah penerbangan."], ["Sunset", "17.30–18.30 jalan sekitar 5 menit ke Seminyak Beach; sunset bulan Juni sekitar 18.05."], ["Makan malam", "18.30–20.00 di Potato Head Beach Club untuk makan malam, minum, dan suasana tepi laut."], ["Jalan malam", "20.00–21.30 bisa ke The Flea Market dan Kayu Aya Street untuk baju, tas anyaman, aroma, swimwear, dan barang resort."], ["Spa", "21.30–23.00 di Ssamaya Balinese Spa, bisa pilih 60 menit Balinese Massage atau 90 menit Aromatherapy Massage."], ["Tidur", "Sekitar 23.00 kembali ke hotel dan tidur. Hari pertama sebaiknya tetap ringan supaya tenaga tersimpan untuk segmen gunung api."]]],
       ["Hari 2", "Seminyak tanpa buru-buru", "Simpan hari ini untuk pantai, pijat, dan menikmati waktu tanpa terburu-buru. Bali biasanya paling terasa indah saat ritmenya dibiarkan ringan.", ["Seminyak", "Beach club", "Hari santai"], [["Waktu bangun", "Sekitar pukul 08.30 sudah pas, tapi bangun lebih siang sedikit juga tidak masalah."], ["Waktu berangkat", "Kalau mau brunch atau beach club, berangkat sekitar pukul 10.00 biasanya paling pas."], ["Waktu kumpul", "Hari ini tidak ada titik kumpul tetap. Jalani dengan fleksibel saja."], ["Paling lambat tidur", "Usahakan istirahat sekitar pukul 23.00 agar besok lebih enak saat mulai pindah kota."], ["Gaya hari", "Anggap ini hari resort sungguhan: tidur agak lebih lama, makan pelan-pelan, lalu tinggal di tempat yang suasananya paling enak."], ["Pengingat", "Matahari cukup kuat, dan hari ini juga pas untuk membeli kebutuhan kecil sebelum masuk segmen gunung api."]]],
       ["Hari 3", "Masuk jalur gunung api", "Pagi meninggalkan Bali, sore bergerak ke arah Jawa Timur. Di sinilah perjalanan berubah dari nuansa resor menjadi bab petualangan.", ["Transfer tour", "Bab petualangan", "Pindah pulau"], [["Waktu bangun", "Pukul 08.00 paling pas, dan paling lambat 08.30. Siang hari ini masih sama dengan waktu Taiwan."], ["Waktu berangkat", "Selesaikan sarapan dan koper sebelum 09.45 supaya tinggal menunggu mobil."], ["Waktu kumpul", "Bertemu sopir JVTO pukul 10.00, dan paling aman sudah standby di lobi pukul 09.50."], ["Paling lambat tidur", "Usahakan tidur sekitar pukul 19.30, karena malam ini sebenarnya cuma jeda sebelum bangun tengah malam."], ["Cek penting", "Sebelum meninggalkan Bali, pastikan alur jemput, urutan rute, dan titik drop terakhir sudah benar agar hari-hari berikutnya terasa lancar."], ["Tas kecil", "Simpan air minum, snack, power bank, dan dokumen di tempat yang paling mudah diambil."]]],
       ["Hari 4", "Malam Ijen dan blue fire", "Berangkat setelah tengah malam menuju Ijen, mengejar blue fire lebih dulu, lalu melihat danau kawah muncul bersama cahaya pagi. Ini salah satu hari paling sureal dalam perjalanan.", ["Blue fire", "Hiking malam", "Danau kawah"], [["Waktu bangun", "Bangun pukul 23.45 waktu lokal, atau 00.45 waktu Taiwan."], ["Waktu berangkat", "Selesaikan check-out dan siap naik mobil sebelum 00.20 supaya keberangkatan 00.30 tetap lancar."], ["Waktu kumpul", "Kumpul di pintu masuk hotel atau lobi sekitar pukul 00.20."], ["Paling lambat tidur", "Usahakan malam sebelumnya sudah tidur sekitar pukul 20.30. Tambahan istirahat sekecil apa pun tetap berguna."], ["Sorotan", "Awalnya blue fire, lalu danau kawah saat langit mulai terang. Visualnya berubah terus sampai pagi."], ["Perlengkapan", "Headlamp, sepatu grip, jaket ringan, dan masker sangat penting. Ini bukan hari untuk menganggap semuanya santai."]]],
@@ -2289,11 +2308,41 @@ const LOCALIZED_DAY_META = {
     {
       date: "06 / 13 Sat",
       region: "Bali / Seminyak",
-      theme: "Arrival and easing in",
-      effort: "Light",
+      theme: "Arrival, sunset, beach club, and spa",
+      effort: "Light | resort day",
       tone: "beach",
-      badges: ["Arrival", "Check-in", "Slow evening"],
-      guide: "Arrival day works best when it stays soft: clear immigration, reach the hotel, eat well, and let Bali be the opening note."
+      badges: ["Sunset", "Beach Club", "Spa"],
+      preview: "A soft first Bali afternoon: airport, hotel, sunset, dinner, a little Seminyak browsing, then a massage before bed.",
+      guide: "Day 1 works best as one smooth Seminyak route: airport to hotel, hotel to beach, beach to dinner, dinner to a short walk, and spa before sleep.",
+      atGlance: [
+        ["Arrival", "14:35 at DPS, with hotel check-in around 16:00"],
+        ["Main movement", "DPS → Grab → Courtyard Seminyak → beach / dinner / walk / spa"],
+        ["Pace", "Light, with the focus on easing out of flight mode"],
+        ["What to wear", "Lighter resort clothes after check-in work best for the evening"],
+        ["Food and water", "Dinner at the beach club, with steady hydration through the afternoon"],
+        ["Tonight", "Courtyard by Marriott Bali Seminyak Resort"]
+      ],
+      routeFlow: [
+        ["14:35–16:00 | Arrival and hotel check-in", "Land at DPS, clear immigration, take a Grab, and settle into the hotel before the evening begins."],
+        ["16:00–17:30 | Resort reset", "Use the first window for the pool, pool bar, room rest, and changing into something lighter."],
+        ["17:30–18:30 | Seminyak Beach sunset", "Walk about five minutes to the beach and let the first Bali sunset do the real opening work."],
+        ["18:30–20:00 | Potato Head dinner", "Dinner, drinks, and the sea-facing evening atmosphere all fit naturally here."],
+        ["20:00–21:30 | Seminyak browse", "The Flea Market and Kayu Aya Street are an easy place to walk, browse, and stay in holiday mode."],
+        ["21:30–23:00 | Spa and sleep", "A late massage turns the first evening into a proper reset before the volcano days begin."]
+      ],
+      reminders: [
+        "Do not overfill the first day. The point is to land softly and save energy for the harder stretch later.",
+        "Sunset in mid-June is around 18:05, so leaving for the beach at 17:30 works well.",
+        "If you want Potato Head or a late spa slot, booking ahead is the calmer option."
+      ],
+      links: [
+        ["Hotel", HOTEL_MAPS.seminyak],
+        ["Seminyak Beach", PLACE_MAPS.seminyakBeach],
+        ["Potato Head Beach Club", PLACE_MAPS.potatoHead],
+        ["The Flea Market", PLACE_MAPS.fleaMarket],
+        ["Kayu Aya Street", PLACE_MAPS.kayuAya],
+        ["Ssamaya Balinese Spa", PLACE_MAPS.ssamayaSpa]
+      ]
     },
     {
       date: "06 / 14 Sun",
@@ -2389,11 +2438,41 @@ const LOCALIZED_DAY_META = {
     {
       date: "13 / 06 Sab",
       region: "Bali / Seminyak",
-      theme: "Tiba dan pelan-pelan masuk ritme liburan",
-      effort: "Ringan",
+      theme: "Tiba, sunset, beach club, dan spa",
+      effort: "Ringan | hari resort",
       tone: "beach",
-      badges: ["Tiba", "Check-in", "Malam santai"],
-      guide: "Hari pertama paling enak dijalani dengan lembut: urus imigrasi, sampai hotel, makan yang nyaman, lalu biarkan Bali jadi pembuka perjalanan."
+      badges: ["Sunset", "Beach club", "Spa"],
+      preview: "Sore pertama di Bali dibuat pelan: bandara, hotel, sunset, makan malam, jalan sedikit di Seminyak, lalu spa sebelum tidur.",
+      guide: "Hari pertama paling enak dijalani sebagai satu jalur santai di Seminyak: bandara ke hotel, hotel ke pantai, pantai ke makan malam, lalu jalan sebentar dan spa.",
+      atGlance: [
+        ["Tiba", "14.35 di DPS, lalu sekitar 16.00 selesai check-in hotel"],
+        ["Gerak utama", "DPS → Grab → Courtyard Seminyak → pantai / makan malam / jalan / spa"],
+        ["Ritme tenaga", "Ringan, fokusnya keluar dulu dari mode penerbangan"],
+        ["Pakaian", "Setelah check-in, paling enak langsung ganti ke pakaian resort yang ringan"],
+        ["Makan dan minum", "Makan malam di beach club, sambil tetap jaga air minum sepanjang sore"],
+        ["Malam ini", "Courtyard by Marriott Bali Seminyak Resort"]
+      ],
+      routeFlow: [
+        ["14.35–16.00 | Tiba dan check-in hotel", "Mendarat di DPS, lewat imigrasi, naik Grab, lalu masuk hotel sebelum bagian santai malam dimulai."],
+        ["16.00–17.30 | Reset di resort", "Pakai jendela waktu pertama ini untuk kolam, pool bar, istirahat di kamar, dan ganti ke pakaian yang lebih ringan."],
+        ["17.30–18.30 | Sunset di Seminyak Beach", "Jalan sekitar lima menit ke pantai dan biarkan sunset pertama di Bali jadi pembuka yang benar-benar terasa."],
+        ["18.30–20.00 | Makan malam di Potato Head", "Makan malam, minum, dan suasana tepi laut semuanya pas diletakkan di sini."],
+        ["20.00–21.30 | Jalan di Seminyak", "The Flea Market dan Kayu Aya Street enak dipakai untuk jalan santai sambil lihat-lihat."],
+        ["21.30–23.00 | Spa lalu tidur", "Pijat malam membuat hari pertama benar-benar selesai dengan badan yang lebih rileks sebelum segmen gunung api."]
+      ],
+      reminders: [
+        "Hari pertama jangan dibuat terlalu padat. Tujuannya adalah mendarat dengan lembut dan menyimpan tenaga.",
+        "Sunset bulan Juni sekitar 18.05, jadi keluar ke pantai sekitar 17.30 sudah pas.",
+        "Kalau ingin slot ramai di Potato Head atau spa malam, reservasi lebih awal akan terasa lebih aman."
+      ],
+      links: [
+        ["Hotel", HOTEL_MAPS.seminyak],
+        ["Seminyak Beach", PLACE_MAPS.seminyakBeach],
+        ["Potato Head Beach Club", PLACE_MAPS.potatoHead],
+        ["The Flea Market", PLACE_MAPS.fleaMarket],
+        ["Kayu Aya Street", PLACE_MAPS.kayuAya],
+        ["Ssamaya Balinese Spa", PLACE_MAPS.ssamayaSpa]
+      ]
     },
     {
       date: "14 / 06 Min",
