@@ -262,6 +262,7 @@ const content = {
       }
     ],
     previewCta: "查看當日指南",
+    dayGuideTimingLabel: "關鍵時間",
     dayGuideAtGlanceLabel: "今日概覽",
     dayGuideFlowLabel: "今日路線",
     dayGuideDetailLabel: "時間與節奏",
@@ -682,6 +683,12 @@ const content = {
         effort: "輕鬆｜度假日",
         tone: "beach",
         badges: ["海灘夕陽", "Beach Club", "SPA"],
+        timingCards: [
+          ["落地時間", "14:35 抵達 DPS"],
+          ["入住完成", "16:00 完成 Check-in"],
+          ["夕陽時段", "17:30 前往 Seminyak Beach"],
+          ["今晚睡眠", "23:00 回飯店休息"]
+        ],
         preview: "這天的重點不是趕景點，而是讓抵達、夕陽、晚餐和按摩自然接起來，輕鬆把身體切進巴里島節奏。",
         guide: "Day 1 最適合做成一條毫不費力的度假動線：機場進飯店、飯店走到海邊、海邊接晚餐、晚餐接逛街、最後用按摩把飛行疲勞收掉。",
         atGlance: [
@@ -742,7 +749,7 @@ const content = {
         ],
         links: [["今晚落腳", HOTEL_MAPS.seminyak]]
       }],
-      ["Day 3", "離開海邊，進入火山線", "上午還在 Bali 的海邊節奏裡，下午就會一路往東爪哇前進。這是旅程從放鬆轉向冒險的分水嶺。", ["跨島轉場", "火山序章", "跟團移動"], [["起床時間", "08:00 起床最剛好；最晚不要超過 08:30。"], ["出門時間", "09:45 前把行李和早餐處理好，準備在飯店外等車。"], ["集合時間", "10:00 和 JVTO 司機會合，建議 09:50 就在飯店大廳待命。"], ["最晚睡覺時間", "建議 19:30 前睡，因為今晚其實只是在等隔天半夜起床。"], ["接送路線", "10:00 從 Bali 飯店出發後，會先前往 Gilimanuk Port，再搭 ferry crossing 到 Ketapang Port。"], ["午餐安排", "JVTO 公開行程沒有寫午餐 included，早餐吃飽一點，車上零食和水先準備好。"], ["今晚落腳", "約 14:30 左右入住 @ Luminor Hotel Banyuwangi，傍晚以休息為主，晚餐需自行安排。"]], {
+      ["Day 3", "離開海邊，進入火山線", "上午還在 Bali 的海邊節奏裡，下午就會一路往東爪哇前進。這是旅程從放鬆轉向冒險的分水嶺。", ["跨島轉場", "火山序章", "跟團移動"], [["起床時間", "08:00 起床最剛好；最晚不要超過 08:30。"], ["出門時間", "09:45 前把行李和早餐處理好，準備在飯店外等車。"], ["集合時間", "10:00 和 JVTO 司機會合，建議 09:50 就在飯店大廳待命。"], ["最晚睡覺時間", "建議 19:30 前睡，因為今晚其實只是在等隔天半夜起床。"], ["接送路線", "10:00 從 Bali 飯店出發後，會先前往 Gilimanuk Port，再搭 ferry crossing 到 Ketapang Port。"], ["時差切換", "抵達 Ketapang Port 之後就進入 WIB，時間會比台灣與峇里島慢 1 小時。"], ["健康檢查", "14:30 會安排 Ijen Health Screening，這是進火山區前的必要流程，記得把護照放在隨身包。"], ["晚餐安排", "19:00 晚餐為自理，JVTO 公開頁也標示今天三餐都不含。"], ["今晚落腳", "約 14:15 完成 check-in @ Luminor Hotel Banyuwangi，傍晚以休息與整理裝備為主。"]], {
         date: "06 / 15 Mon",
         region: "Bali → 東爪哇火山線",
         theme: "跨島轉場與冒險開場",
@@ -756,16 +763,19 @@ const content = {
           ["主要移動", "包車 → Gilimanuk Port → ferry crossing → Ketapang Port → Banyuwangi"],
           ["體力節奏", "普通，但會坐很久，重點是保存精神"],
           ["今日穿著", "舒服衣物、薄外套、好坐車的鞋"],
-          ["餐食與補給", "早餐先吃飽；午餐未含，零食與水放隨身包最實際"],
+          ["餐食與補給", "早餐先吃飽；午餐與晚餐都未含，零食與水放隨身包最實際"],
           ["今晚落腳", "Luminor Hotel Banyuwangi"]
         ],
         routeFlow: [
           ["上午｜10:00 Bali 接車", "JVTO 司機會從飯店接人，接著一路往 Gilimanuk Port 前進，正式離開海島度假段。"],
-          ["中午｜港口與渡輪 crossing", "從 Gilimanuk Port 搭 ferry crossing 到 Ketapang Port，這一段就是旅程切進東爪哇的分界點。"],
-          ["午後｜Ketapang → Banyuwangi", "抵港後再轉車約 30 分鐘進 Banyuwangi 市區，14:30 左右可入住 Luminor Hotel Banyuwangi。"],
-          ["夜晚｜補眠優先", "今晚沒有硬塞景點，晚餐自理，真正重要的是整理裝備、洗好澡、提早睡。"]
+          ["中午｜港口與渡輪 crossing", "14:00 左右進入 Gilimanuk Port 搭 ferry crossing，這一段就是旅程切進東爪哇的分界點。"],
+          ["午後｜Ketapang → Banyuwangi", "14:15 抵達 Ketapang Port 後，時間會慢 1 小時；接著轉往 Banyuwangi 並完成飯店 check-in。"],
+          ["傍晚｜Ijen Health Screening", "14:30 會接上 Ijen 健康檢查，這是隔天凌晨能順利上山的重要前置流程。"],
+          ["夜晚｜補眠優先", "19:00 晚餐自理，真正重要的是整理裝備、洗好澡、提早睡。"]
         ],
         reminders: [
+          "一過 Ketapang Port 就進入 WIB，手機如果沒自動切換，今晚起床時間很容易算錯。",
+          "Ijen 健康檢查要用到護照，別把重要文件塞進大行李最底層。",
           "今晚先把外套、口罩、頭燈或手機照明、水和行動電源放到最容易拿的位置。",
           "明天是半夜起床日，別把晚餐拖太晚，能提早休息就提早休息。"
         ],
@@ -843,7 +853,7 @@ const content = {
           ["Joglo Kecombrang Bromo", HOTEL_MAPS.kecombrang]
         ]
       }],
-      ["Day 6", "Bromo 日出與高原冷風", "Jeep、寒風、火山灰與日出會在同一個清晨一起出現。Bromo 不是單一觀景點，而是一整片高原地景慢慢甦醒的過程。", ["Jeep", "冷風", "日出視野"], [["起床時間", "當地時間 01:15 起床；台灣時間 02:15。"], ["出門時間", "01:50 前穿好保暖層，02:00 準時搭 Jeep 出發。"], ["集合時間", "01:50 在飯店外等 Jeep，避免臨時找人。"], ["最晚睡覺時間", "建議前一晚 19:30 前就寢，這樣至少能補一小段睡眠。"], ["觀景段", "03:30 開始 Bromo Sunrise Tour，先看星空 / 銀河，再等日出把火山高原慢慢照亮。"], ["早餐安排", "10:00 回到飯店早餐 @ Joglo Kecombrang Bromo。"], ["下午送達", "16:00 左右結束 Bromo 段，包車會繼續送往 Surabaya 市區飯店或機場，車程約 2 到 3 小時。"], ["住宿提醒", "JVTO 四日遊今天結束，今晚住宿需要自行安排。"]], {
+      ["Day 6", "Bromo 日出與高原冷風", "Jeep、寒風、火山灰與日出會在同一個清晨一起出現。Bromo 不是單一觀景點，而是一整片高原地景慢慢甦醒的過程。", ["Jeep", "冷風", "日出視野"], [["起床時間", "當地時間 01:15 起床；台灣時間 02:15。"], ["出門時間", "01:50 前穿好保暖層，02:00 準時搭 Jeep 出發。"], ["集合時間", "01:50 在飯店外等 Jeep，避免臨時找人。"], ["最晚睡覺時間", "建議前一晚 19:30 前就寢，這樣至少能補一小段睡眠。"], ["觀景段", "03:30 開始 Bromo Sunrise Tour，先看星空 / 銀河，再等日出把火山高原慢慢照亮。"], ["早餐安排", "10:00 回到飯店早餐 @ Joglo Kecombrang Bromo。"], ["下午送達", "16:00 左右結束 Bromo 段，包車會繼續送往 Surabaya 市區飯店或機場，車程約 2 到 3 小時。"], ["住宿提醒", "JVTO 公開頁寫的是 Surabaya city / airport drop-off；如果今晚實際住 Malang，記得再確認最後下車點與後續接駁。"]], {
         date: "06 / 18 Thu",
         region: "東爪哇｜Bromo → 城市段",
         theme: "高原日出、Jeep 與下山後的回神",
@@ -868,6 +878,7 @@ const content = {
         ],
         reminders: [
           "凌晨風很直，保暖層、口罩和帽子都會有感。",
+          "JVTO 公開頁預設是 Surabaya handoff；如果今晚住宿改放在 Malang，請把下車點、接駁與火車站位置一起確認好。",
           "今天不只要看日出，還要把後續 drop-off 和今晚住宿銜接想好，行程才不會在最後一段亂掉。"
         ],
         links: [
@@ -907,7 +918,7 @@ const content = {
           ["今晚落腳", HOTEL_MAPS.yogyakarta]
         ]
       }],
-      ["Day 8", "神廟與石塔的一天", "火山之後，把一天留給婆羅浮屠和普蘭巴南剛剛好。石塔、尖塔與導覽裡的故事，會替整趟旅程補上文化的厚度。", ["婆羅浮屠", "普蘭巴南", "文化收尾"], [["起床時間", "當地時間 05:15 起床；台灣時間 06:15。"], ["出門時間", "06:20 前到大廳等車最穩，接駁通常落在 06:30 到 07:30 之間。"], ["集合時間", "建議 06:20 在飯店大廳集合，避免司機提早到。"], ["最晚睡覺時間", "建議前一晚 22:00 前休息，文化日也會走滿一整天。"], ["文化亮點", "婆羅浮屠的層層石塔和普蘭巴南的尖塔線條，會讓這趟旅程多出完全不同的記憶點。"], ["穿著與補給", "白天會熱、走路也多，衣服穿輕一點，水和防曬不要省。"]], {
+      ["Day 8", "神廟與石塔的一天", "火山之後，把一天留給婆羅浮屠和普蘭巴南剛剛好。石塔、尖塔與導覽裡的故事，會替整趟旅程補上文化的厚度。", ["婆羅浮屠", "普蘭巴南", "文化收尾"], [["起床時間", "當地時間 05:15 起床；台灣時間 06:15。"], ["出門時間", "06:20 前到大廳等車最穩，接駁通常落在 06:30 到 07:30 之間。"], ["集合時間", "建議 06:20 在飯店大廳集合，避免司機提早到。"], ["最晚睡覺時間", "建議前一晚 22:00 前休息，文化日也會走滿一整天。"], ["接駁時段", "Klook 行程一般會在 06:30–07:30 間接客，實際時間以前一晚通知為準。"], ["神廟節奏", "約 09:30 進婆羅浮屠，13:00 接普蘭巴南，16:00 左右回程；若想中途脫隊，最好先和司機確認。"], ["穿著與補給", "白天會熱、走路也多，衣服穿輕一點，水和防曬不要省。"]], {
         date: "06 / 20 Sat",
         region: "日惹｜Borobudur + Prambanan",
         theme: "文化日、石塔與寺廟故事",
@@ -921,17 +932,19 @@ const content = {
           ["主要移動", "Klook 接駁 → Borobudur → Prambanan → 回飯店"],
           ["體力節奏", "普通，走路多但不會像火山日那樣硬"],
           ["今日穿著", "透氣衣物、好走鞋、帽子或防曬用品"],
-          ["餐食與補給", "早餐先吃，白天隨身帶水，午餐留彈性"],
+          ["餐食與補給", "早餐先吃，12:00 午餐自理，白天隨身帶水"],
           ["今晚落腳", "Aveta Hotel Malioboro"]
         ],
         routeFlow: [
-          ["清晨｜接駁出發", "今天一樣要早起，但節奏比火山日溫和很多，把早餐和水先處理好就很夠。"],
-          ["上午｜婆羅浮屠", "跟著導覽慢慢看石塔、層次和視角，會比匆忙拍照更有記憶點。"],
-          ["午後｜普蘭巴南", "寺廟線條和氣氛和婆羅浮屠很不一樣，剛好讓一天的文化感受更完整。"],
-          ["夜晚｜城市收尾", "回到日惹後，留一點時間給晚餐和安靜整理，隔天就要準備回程了。"]
+          ["清晨｜06:30–07:30 接駁出發", "今天一樣要早起，但節奏比火山日溫和很多，把早餐和水先處理好就很夠。"],
+          ["上午｜09:30 婆羅浮屠", "跟著導覽慢慢看石塔、層次和視角，官方頁面常見節奏是 2.5 小時左右，會比匆忙拍照更有記憶點。"],
+          ["中午｜12:00 午間留白", "午餐目前抓自理，先吃得清爽一點，下午的普蘭巴南會舒服很多。"],
+          ["午後｜13:00 普蘭巴南", "寺廟線條和氣氛和婆羅浮屠很不一樣，預計停留約 2 小時，剛好讓一天的文化感受更完整。"],
+          ["傍晚｜16:00 回程", "回到日惹後，留一點時間給晚餐和安靜整理，隔天就要準備回程了。"]
         ],
         reminders: [
           "白天會熱、走路會多，水、防曬和舒服的鞋比造型更重要。",
+          "如果想在普蘭巴南多留一點時間或中途自行離隊，最好先和 Klook 司機或當天導遊確認回程方式。",
           "如果腸胃容易敏感，中午別吃太刺激，保持輕盈一點會比較舒服。"
         ],
         links: [["Klook 行程", "https://s.klook.com/c/4yVrZ02036"]]
@@ -1199,6 +1212,7 @@ const content = {
       }
     ],
     previewCta: "Open day guide",
+    dayGuideTimingLabel: "Key timings",
     dayGuideAtGlanceLabel: "Today at a glance",
     dayGuideFlowLabel: "Route flow",
     dayGuideDetailLabel: "Timing and rhythm",
@@ -1856,6 +1870,7 @@ const content = {
       }
     ],
     previewCta: "Buka panduan hari ini",
+    dayGuideTimingLabel: "Waktu penting",
     dayGuideAtGlanceLabel: "Gambaran cepat",
     dayGuideFlowLabel: "Alur hari ini",
     dayGuideDetailLabel: "Waktu dan ritme",
@@ -2614,6 +2629,12 @@ const dom = {
 };
 
 const FALLBACK_LANG = "zh-Hant";
+const TIMING_LABELS = {
+  "zh-Hant": ["起床時間", "出門時間", "集合時間", "最晚睡覺時間"],
+  en: ["Wake-up", "Leave by", "Meet-up", "Sleep by"],
+  id: ["Waktu bangun", "Waktu berangkat", "Waktu kumpul", "Paling lambat tidur"]
+};
+const TIMING_LABEL_SET = new Set(Object.values(TIMING_LABELS).flat());
 
 function formatNumber(value) {
   return new Intl.NumberFormat().format(value);
@@ -2649,7 +2670,8 @@ function normalizeDetailLabel(label, lang) {
     "zh-Hant": {
       出門時間: "出發時間",
       集合時間: "會合時間",
-      最晚睡覺時間: "今晚睡眠"
+      最晚睡覺時間: "今晚睡眠",
+      入住完成: "完成入住"
     },
     en: {
       "Leave by": "Departure",
@@ -2664,6 +2686,76 @@ function normalizeDetailLabel(label, lang) {
   };
 
   return labelMap[lang]?.[label] || labelMap[FALLBACK_LANG]?.[label] || label;
+}
+
+function isTimingLabel(label) {
+  return TIMING_LABEL_SET.has(label);
+}
+
+function extractTimingItems(details = [], lang = FALLBACK_LANG) {
+  const preferredLabels = TIMING_LABELS[lang] || TIMING_LABELS[FALLBACK_LANG];
+
+  return preferredLabels
+    .map((expectedLabel) => details.find(([label]) => label === expectedLabel))
+    .filter(Boolean)
+    .map(([label, value]) => [normalizeDetailLabel(label, lang), value]);
+}
+
+function getStickyOffset() {
+  const navHeight = document.querySelector(".main-nav")?.offsetHeight || 0;
+  const languageHeight = document.querySelector(".language-selector")?.offsetHeight || 0;
+
+  if (window.innerWidth <= 768) {
+    return navHeight + languageHeight + 28;
+  }
+
+  return navHeight + 56;
+}
+
+function scrollToElementWithOffset(element, { behavior = "smooth" } = {}) {
+  if (!element) {
+    return;
+  }
+
+  const top = element.getBoundingClientRect().top + window.scrollY - getStickyOffset();
+  window.scrollTo({ top: Math.max(top, 0), behavior });
+}
+
+function setLocationHash(hashValue) {
+  const cleanHash = hashValue ? `#${hashValue}` : window.location.pathname + window.location.search;
+  window.history.replaceState(null, "", cleanHash);
+}
+
+function activateSection(target, { behavior = "smooth", scroll = true, hashValue = target } = {}) {
+  const nextSection = document.getElementById(target);
+  if (!nextSection) {
+    return;
+  }
+
+  document.querySelectorAll(".nav-item").forEach((item) => {
+    const isActive = item.dataset.target === target;
+    item.classList.toggle("active", isActive);
+    if (isActive) {
+      item.setAttribute("aria-current", "page");
+    } else {
+      item.removeAttribute("aria-current");
+    }
+  });
+
+  document.querySelectorAll(".page-section").forEach((section) => {
+    section.classList.toggle("active", section.id === target);
+  });
+
+  document.body.dataset.activeSection = target;
+
+  const navButton = document.querySelector(`.nav-item[data-target="${target}"]`);
+  navButton?.scrollIntoView({ behavior, inline: "center", block: "nearest" });
+
+  if (scroll) {
+    scrollToElementWithOffset(nextSection, { behavior });
+  }
+
+  setLocationHash(hashValue);
 }
 
 function renderKeyValueRows(items) {
@@ -2987,15 +3079,86 @@ function renderMapDayRoutes(items) {
 function renderTimeline(days, copy, lang) {
   return days
     .map(([day, title, desc, tags, details], index) => {
-        const meta = resolveDayMeta(days, index, lang);
-        const primaryDetail = details[0];
-        const secondaryDetails = details.slice(1);
-        const isWakeupDetail = (label) =>
-          ["起床時間", "Wake-up", "Waktu bangun"].includes(label);
-        const anchorId = buildDayAnchorId(day);
-        const badges = [meta.effort, ...(meta.badges || [])].filter(Boolean);
+      const meta = resolveDayMeta(days, index, lang);
+      const anchorId = buildDayAnchorId(day);
+      const badges = [meta.effort, ...(meta.badges || [])].filter(Boolean);
+      const timingItems = meta.timingCards?.length ? meta.timingCards : extractTimingItems(details, lang);
+      const detailItems = timingItems.length ? details.filter(([label]) => !isTimingLabel(label)) : details;
+      const primaryDetail = !timingItems.length ? detailItems[0] : null;
+      const secondaryDetails = !timingItems.length ? detailItems.slice(1) : detailItems;
+      const focusSection = `
+        <section class="day-block">
+          <div class="day-block-title">${pick(copy, "dayFocusLabel")}</div>
+          <div class="day-content-top">
+            <div class="day-focus-text">${desc}</div>
+          </div>
+        </section>
+      `;
+      const routeSection = meta.routeFlow?.length
+        ? `
+          <section class="day-block">
+            <div class="day-block-title">${pick(copy, "dayGuideFlowLabel")}</div>
+            <div class="day-route-flow">
+              ${meta.routeFlow
+                .map(
+                  ([flowTitle, flowDesc]) => `
+                    <article class="day-route-stop">
+                      <div class="day-route-title">${flowTitle}</div>
+                      <div class="day-route-desc">${flowDesc}</div>
+                    </article>
+                  `
+                )
+                .join("")}
+            </div>
+          </section>
+        `
+        : "";
+      const detailSection = secondaryDetails.length
+        ? `
+          <section class="day-block">
+            <div class="day-block-title">${pick(copy, "dayGuideDetailLabel")}</div>
+            <div class="day-detail-list">
+              ${secondaryDetails
+                .map(
+                  ([detailTitle, detailDesc]) => `
+                    <div class="day-detail-item">
+                      <div class="day-detail-title">${normalizeDetailLabel(detailTitle, lang)}</div>
+                      <div class="day-detail-desc">${detailDesc}</div>
+                    </div>
+                  `
+                )
+                .join("")}
+            </div>
+          </section>
+        `
+        : "";
+      const reminderSection = meta.reminders?.length
+        ? `
+          <section class="day-reminder-card">
+            <div class="day-block-title">${pick(copy, "dayGuideReminderLabel")}</div>
+            <div class="day-reminder-list">
+              ${meta.reminders.map((reminder) => `<div class="day-reminder-item">${reminder}</div>`).join("")}
+            </div>
+          </section>
+        `
+        : "";
+      const linksSection = meta.links?.length
+        ? `
+          <section class="day-links-block">
+            <div class="day-block-title">${pick(copy, "dayGuideLinksLabel")}</div>
+            <div class="day-links-row">
+              ${meta.links
+                .map(
+                  ([label, href]) =>
+                    `<a class="day-link-pill" href="${href}" target="_blank" rel="noreferrer">${label}</a>`
+                )
+                .join("")}
+            </div>
+          </section>
+        `
+        : "";
 
-        return `
+      return `
         <article class="day-card tone-${meta.tone || "default"}" id="${anchorId}">
           <div class="day-card-top">
             <div class="day-meta-block">
@@ -3014,14 +3177,32 @@ function renderTimeline(days, copy, lang) {
             ${meta.guide ? `<div class="day-guide-intro">${meta.guide}</div>` : ""}
           </div>
           ${
-            primaryDetail
+            timingItems.length
               ? `
-                <div class="day-primary-strip ${isWakeupDetail(primaryDetail[0]) ? "is-wakeup" : ""}">
-                  <div class="day-primary-label">${normalizeDetailLabel(primaryDetail[0], lang)}</div>
-                  <div class="day-primary-value">${primaryDetail[1]}</div>
-                </div>
+                <section class="day-block">
+                  <div class="day-block-title">${pick(copy, "dayGuideTimingLabel")}</div>
+                  <div class="day-timing-grid">
+                    ${timingItems
+                      .map(
+                        ([timingLabel, timingValue]) => `
+                          <article class="day-timing-card">
+                            <div class="day-timing-label">${normalizeDetailLabel(timingLabel, lang)}</div>
+                            <div class="day-timing-value">${timingValue}</div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </section>
               `
-              : ""
+              : primaryDetail
+                ? `
+                  <div class="day-primary-strip">
+                    <div class="day-primary-label">${normalizeDetailLabel(primaryDetail[0], lang)}</div>
+                    <div class="day-primary-value">${primaryDetail[1]}</div>
+                  </div>
+                `
+                : ""
           }
           ${
             meta.atGlance?.length
@@ -3044,83 +3225,23 @@ function renderTimeline(days, copy, lang) {
               `
               : ""
           }
-          ${
-            meta.routeFlow?.length
-              ? `
-                <section class="day-block">
-                  <div class="day-block-title">${pick(copy, "dayGuideFlowLabel")}</div>
-                  <div class="day-route-flow">
-                    ${meta.routeFlow
-                      .map(
-                        ([flowTitle, flowDesc]) => `
-                          <article class="day-route-stop">
-                            <div class="day-route-title">${flowTitle}</div>
-                            <div class="day-route-desc">${flowDesc}</div>
-                          </article>
-                        `
-                      )
-                      .join("")}
-                  </div>
-                </section>
-              `
-              : ""
-          }
-          <section class="day-block">
-            <div class="day-block-title">${pick(copy, "dayFocusLabel")}</div>
-            <div class="day-content-top">
-              <div class="day-focus-text">${desc}</div>
+          <div class="day-manual-grid">
+            <div class="day-main-column">
+              ${routeSection}
+              ${focusSection}
             </div>
-          </section>
-          <section class="day-block">
-            <div class="day-block-title">${pick(copy, "dayGuideDetailLabel")}</div>
-            <div class="day-detail-list">
-              ${secondaryDetails
-                .map(
-                  ([detailTitle, detailDesc]) => `
-                    <div class="day-detail-item ${isWakeupDetail(detailTitle) ? "is-wakeup" : ""}">
-                      <div class="day-detail-title">${normalizeDetailLabel(detailTitle, lang)}</div>
-                      <div class="day-detail-desc">${detailDesc}</div>
-                    </div>
-                  `
-                )
-                .join("")}
+            <div class="day-side-column">
+              ${detailSection}
+              ${reminderSection}
+              ${linksSection}
             </div>
-          </section>
-          ${
-            meta.reminders?.length
-              ? `
-                <section class="day-reminder-card">
-                  <div class="day-block-title">${pick(copy, "dayGuideReminderLabel")}</div>
-                  <div class="day-reminder-list">
-                    ${meta.reminders.map((reminder) => `<div class="day-reminder-item">${reminder}</div>`).join("")}
-                  </div>
-                </section>
-              `
-              : ""
-          }
-          ${
-            meta.links?.length
-              ? `
-                <section class="day-links-block">
-                  <div class="day-block-title">${pick(copy, "dayGuideLinksLabel")}</div>
-                  <div class="day-links-row">
-                    ${meta.links
-                      .map(
-                        ([label, href]) =>
-                          `<a class="day-link-pill" href="${href}" target="_blank" rel="noreferrer">${label}</a>`
-                      )
-                      .join("")}
-                  </div>
-                </section>
-              `
-              : ""
-          }
+          </div>
           <div class="highlight-tags">
             ${tags.map((tag) => `<span>${tag}</span>`).join("")}
           </div>
         </article>
       `;
-      })
+    })
     .join("");
 }
 
@@ -3273,6 +3394,7 @@ function renderLanguage() {
   dom.visaTutorial.innerHTML = renderFlightNotes(pick(copy, "visaTutorial"));
   dom.visaPoints.innerHTML = renderBulletRows(pick(copy, "visaPoints"));
   dom.arrivalPoints.innerHTML = renderBulletRows(pick(copy, "arrivalPoints"));
+  document.body.dataset.activeSection = document.querySelector(".page-section.active")?.id || "overview";
 }
 
 function bindDayPreviewLinks() {
@@ -3280,15 +3402,9 @@ function bindDayPreviewLinks() {
     button.addEventListener("click", () => {
       const sectionTarget = button.getAttribute("data-open-section") || "itinerary";
       const anchorId = button.getAttribute("data-open-day");
-      const navButton = document.querySelector(`.nav-item[data-target="${sectionTarget}"]`);
-
-      if (navButton) {
-        navButton.click();
-      }
-
+      activateSection(sectionTarget, { behavior: "smooth", scroll: true, hashValue: anchorId });
       window.setTimeout(() => {
-        const anchor = document.getElementById(anchorId);
-        anchor?.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToElementWithOffset(document.getElementById(anchorId), { behavior: "smooth" });
       }, 120);
     });
   });
@@ -3307,16 +3423,7 @@ function bindLanguageButtons() {
 function bindNav() {
   document.querySelectorAll(".nav-item").forEach((button) => {
     button.addEventListener("click", () => {
-      document.querySelectorAll(".nav-item").forEach((item) => {
-        item.classList.remove("active");
-        item.removeAttribute("aria-current");
-      });
-      document.querySelectorAll(".page-section").forEach((section) => section.classList.remove("active"));
-      button.classList.add("active");
-      button.setAttribute("aria-current", "page");
-      document.getElementById(button.dataset.target).classList.add("active");
-      button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      activateSection(button.dataset.target, { behavior: "smooth", scroll: true });
     });
   });
 }
@@ -3325,12 +3432,29 @@ function bindHeroActions() {
   document.querySelectorAll("[data-hero-target]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.getAttribute("data-hero-target");
-      const navButton = document.querySelector(`.nav-item[data-target="${target}"]`);
-      if (navButton) {
-        navButton.click();
-      }
+      activateSection(target, { behavior: "smooth", scroll: true });
     });
   });
+}
+
+function syncSectionFromHash() {
+  const hash = window.location.hash.replace(/^#/, "");
+  if (!hash) {
+    return;
+  }
+
+  const sectionTarget = document.getElementById(hash) ? hash : null;
+  if (sectionTarget && document.querySelector(`.nav-item[data-target="${sectionTarget}"]`)) {
+    activateSection(sectionTarget, { behavior: "auto", scroll: true, hashValue: hash });
+    return;
+  }
+
+  if (hash.startsWith("itinerary-day-")) {
+    activateSection("itinerary", { behavior: "auto", scroll: true, hashValue: hash });
+    window.setTimeout(() => {
+      scrollToElementWithOffset(document.getElementById(hash), { behavior: "auto" });
+    }, 180);
+  }
 }
 
 function updateScrollState() {
@@ -3342,9 +3466,11 @@ function updateScrollState() {
 
 window.addEventListener("scroll", updateScrollState);
 window.addEventListener("resize", updateScrollState);
+window.addEventListener("hashchange", syncSectionFromHash);
 
 bindLanguageButtons();
 bindNav();
 bindHeroActions();
 renderLanguage();
+syncSectionFromHash();
 updateScrollState();

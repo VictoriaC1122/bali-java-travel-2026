@@ -9,6 +9,15 @@
       content="2026 印尼峇里島與爪哇旅行手冊，整理火山日出、長途移動、住宿、交通、簽證與每日節奏，手機與桌機都好查。"
     />
     <meta name="theme-color" content="#c46f42" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2026 Bali & Java Travel Guide | 峇里島・爪哇火山旅行手冊" />
+    <meta
+      property="og:description"
+      content="把峇里島、東爪哇火山線與日惹文化日整理成一份旅行途中真的查得到重點的手冊。"
+    />
+    <meta property="og:url" content="https://victoriac1122.github.io/bali-java-travel-2026/" />
+    <meta property="og:locale" content="zh_TW" />
+    <link rel="canonical" href="https://victoriac1122.github.io/bali-java-travel-2026/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,6 +27,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#content-start">跳到主要內容</a>
     <div class="page-progress" id="pageProgress"></div>
 
     <div class="language-selector">
@@ -50,7 +60,7 @@
       </div>
     </header>
 
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="旅程章節導覽">
       <button class="nav-item active" type="button" data-target="overview" data-i18n="navOverview">總覽</button>
       <button class="nav-item" type="button" data-target="flights" data-i18n="navFlights">航班</button>
       <button class="nav-item" type="button" data-target="train" data-i18n="navTrain">火車</button>
@@ -64,7 +74,7 @@
       <button class="nav-item" type="button" data-target="visa" data-i18n="navVisa">簽證</button>
     </nav>
 
-    <main class="container">
+    <main class="container" id="content-start">
       <section class="page-section active" id="overview">
         <section class="section-card intro-card">
           <div class="section-label" data-i18n="overviewLabel">Journey Overview</div>
