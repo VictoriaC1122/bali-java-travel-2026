@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bali and Java volcano sunrise">
+  <rect width="512" height="512" rx="112" fill="#302923"/>
+  <circle cx="362" cy="150" r="58" fill="#e2a557"/>
+  <path d="M0 388 120 268l62 55 94-149 78 104 46-39 112 118v155H0Z" fill="#6f8360"/>
+  <path d="M0 422 120 306l58 51 98-156 78 107 47-37 111 112v129H0Z" fill="#c46f42"/>
+  <path d="m211 304 65-103 48 66-31-14-19 24-23-18Z" fill="#fff2df"/>
+  <path d="M0 441c84-33 151-29 218 3 83 40 170 31 294-13v81H0Z" fill="#4f8b8d"/>
+</svg>

@@ -1,6 +1,19 @@
 const EXCHANGE_RATE = 531;
 const TRIP_DAYS = 9;
 
+const IMAGE_DIMENSIONS = {
+  "./assets/stays/seminyak-resort.jpg": [1600, 1000],
+  "./assets/stays/luminor-bwi.jpeg": [1280, 960],
+  "./assets/stays/doho-homestay.jpg": [700, 467],
+  "./assets/stays/joglo-kecombrang.jpg": [1024, 683],
+  "./assets/stays/shalimar-front.jpg": [1600, 1066],
+  "./assets/stays/aveta-suite1.jpg": [1600, 1067],
+  "./assets/tours/jvto-volcano-tour.jpg": [1200, 675],
+  "./assets/tours/klook-borobudur-prambanan.webp": [1200, 1600]
+};
+
+const PRIMARY_NAV_TARGETS = new Set(["overview", "itinerary", "map", "stay"]);
+
 const BUDGET = {
   paid: [
     { key: "flight", twd: 20494 },
@@ -77,6 +90,23 @@ const content = {
     navMap: "地圖",
     navBudget: "預算",
     navVisa: "簽證",
+    navMore: "更多",
+    navMoreTitle: "更多旅程資訊",
+    languageLabel: "顯示語言",
+    travelModeLabel: "旅途速查",
+    travelModeTitle: "今天先看這裡",
+    travelModeLead: "選擇旅行日，起床、出發、集合與睡覺時間會一起出現；需要確認的細節也不會被藏在長篇行程裡。",
+    travelDayLabel: "選擇日期",
+    travelOpenDay: "打開完整當日指南",
+    travelOpenMap: "查看今日地圖",
+    travelOpenStay: "查看住宿",
+    travelOpenInfo: "查看行前資訊",
+    travelOfflineNote: "第一次連網開啟後，主要手冊內容可離線閱讀；Google Maps 與外部網站仍需網路。",
+    travelAlertLabel: "出發前要確認",
+    travelAlertText: "6/18 JVTO 公開行程寫 Surabaya，但 Day 6 住宿與 Day 7 火車目前以 Malang 規劃。請先確認最終下車點，再核對車站與火車票。",
+    dayJumpLabel: "快速切換",
+    dayExpandLabel: "展開完整指南",
+    dayCollapseLabel: "收起完整指南",
     overviewLabel: "旅程總覽",
     overviewTitle: "從海邊開始，穿過火山，最後在日惹安靜收尾",
     overviewLead:
@@ -268,6 +298,17 @@ const content = {
     dayGuideDetailLabel: "時間與節奏",
     dayGuideReminderLabel: "特別提醒",
     dayGuideLinksLabel: "相關連結",
+    dayStatuses: [
+      "建議安排｜依體力微調",
+      "彈性安排",
+      "接送已訂｜細節待通知",
+      "JVTO 包套｜依導遊通知",
+      "JVTO 包套｜依導遊通知",
+      "JVTO 包套｜下車點待確認",
+      "火車日｜依票券核對",
+      "Klook 行程｜接送待通知",
+      "航班日｜依電子機票核對"
+    ],
     coverLabel: "旅程敘事",
     coverTitle: "真正迷人的，不是去了多少地方，而是這段路怎麼被安排",
     coverLead:
@@ -358,8 +399,7 @@ const content = {
           "行程順序是 Ijen → Papuma / Sewu → Bromo"
         ],
         url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-        linkLabel: "JVTO 行程頁",
-        extraLinks: [["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]]
+        linkLabel: "JVTO 行程頁"
       },
       {
         dates: "私人一日遊",
@@ -389,7 +429,7 @@ const content = {
     linksLead: "把旅途中最常反覆打開的網站集中收好，出發前和路上都不用手忙腳亂。",
     resourceLinkCta: "前往查看",
     linksHighlights: [
-      ["共用文件", "雲端資料夾與行前資料集中放在一起"],
+      ["住宿", "三段住宿的官方網站與地圖"],
       ["交通", "火山 tour、火車與機場鐵路"],
       ["入境", "eVisa、Love Bali 與 All Indonesia"]
     ],
@@ -399,7 +439,7 @@ const content = {
     infoPanelOneTitle: "出發前先知道的事",
     infoPanelTwoTitle: "旅途中會用到的提醒",
     infoCostsLabel: "花費筆記",
-    infoCostsTitle: "目前已知花費與代墊筆記",
+    infoCostsTitle: "目前已知花費與費用紀錄",
     infoCostsLead: "先把目前已記下來的金額集中放好，之後只要再補餐飲、計程車和購物，整趟旅程的花費輪廓就會很完整。",
     infoHighlights: [
       ["行前順序", "共用文件 → eVisa → Bali 稅 → All Indonesia"],
@@ -440,9 +480,9 @@ const content = {
       ["住宿", "每人約 NT$9,202，尚未把稅金完全補進去。"],
       ["簽證與旅遊稅", "簽證 NT$941 + 峇里島旅遊稅 NT$280，共 NT$1,221。"],
       ["eSIM", "NT$469。"],
-      ["KAI 個人隔間火車", "Rp2,614,500，文件換算約 NT$4,738 / 2 人，也就是每人約 NT$2,369；目前標記為陽代墊。"],
-      ["日惹神廟一日遊", "NT$2,610 / 2 人，約每人 NT$1,305；目前標記為陽代墊。"],
-      ["火山 4 日團", "訂金約 NT$3,994；2026/05/30 已付剩餘 80% 尾款 Rp8,433,700，約 NT$14,838，文件標記為陽代墊待對帳。"],
+      ["KAI 個人隔間火車", "Rp2,614,500，文件換算約 NT$4,738 / 2 人，也就是每人約 NT$2,369；已支付，結算請依私人對帳紀錄。"],
+      ["日惹神廟一日遊", "NT$2,610 / 2 人，約每人 NT$1,305；已支付，結算請依私人對帳紀錄。"],
+      ["火山 4 日團", "訂金約 NT$3,994；2026/05/30 已付剩餘 80% 尾款 Rp8,433,700，約 NT$14,838；結算請依私人對帳紀錄。"],
       ["仍待補項目", "計程車、吃飯、伴手禮、零食、服飾、換匯與機捷停車場，之後再補就會完整。"]
     ],
     transportTitle: "移動節奏",
@@ -510,12 +550,10 @@ const content = {
       ["步驟六", "出發前一天把護照、簽證憑證、Love Bali QR code、All Indonesia 資料與回程機票放在同一個手機資料夾。"]
     ],
     resourceLinks: [
-      ["雲端共用文件", "SharePoint 行前資料夾", "https://nkustedutw-my.sharepoint.com/my?id=%2Fpersonal%2F2103104122%5Fnkust%5Fedu%5Ftw%2FDocuments%2FShare%2F%E5%8D%B0%E5%B0%BC%E6%96%87%E4%BB%B6&viewid=2a3a1f21%2D456e%2D419a%2D955a%2Dd3c3e1c5e692"],
       ["Seminyak 飯店", "Courtyard by Marriott Bali Seminyak Resort 官方網站", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Malang 飯店", "The Shalimar Boutique Hotel 官方網站", "https://theshalimarhotel.co.id/"],
       ["日惹飯店", "Aveta Hotel Malioboro 官方網站", "https://avetahotelmalioboro.com/"],
       ["火山 tour", "Java Volcano Tour Operator 官方頁面", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-      ["火山 tour 訂單", "JVTO 我的訂單頁面", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
       ["婆羅浮屠行程", "Klook 婆羅浮屠（登塔＋導覽）和普蘭巴南寺廟之旅", "https://s.klook.com/c/4yVrZ02036"],
       ["Argo Semeru 介紹", "Journey.tw 的火車艙位文章", "https://journey.tw/ka-argo-semeru/"],
       ["機場鐵路", "YIA Airport Rail Link 官方訂票頁", "https://reservation.railink.co.id/"],
@@ -781,7 +819,6 @@ const content = {
         ],
         links: [
           ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
           ["Luminor Hotel Banyuwangi", HOTEL_MAPS.luminor]
         ]
       }],
@@ -815,7 +852,6 @@ const content = {
         ],
         links: [
           ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
           ["Doho Homestay", HOTEL_MAPS.doho]
         ]
       }],
@@ -849,7 +885,6 @@ const content = {
         ],
         links: [
           ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
           ["Joglo Kecombrang Bromo", HOTEL_MAPS.kecombrang]
         ]
       }],
@@ -883,7 +918,6 @@ const content = {
         ],
         links: [
           ["JVTO 四日遊", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-          ["我們的訂單", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
           ["Joglo Kecombrang Bromo", HOTEL_MAPS.kecombrang]
         ]
       }],
@@ -1028,6 +1062,23 @@ const content = {
     navMap: "Map",
     navBudget: "Budget",
     navVisa: "Visa",
+    navMore: "More",
+    navMoreTitle: "More trip information",
+    languageLabel: "Display language",
+    travelModeLabel: "Travel Mode",
+    travelModeTitle: "Start with today's essentials",
+    travelModeLead: "Choose a trip day to see wake-up, departure, meet-up, and sleep times together, with unresolved details kept in clear view.",
+    travelDayLabel: "Choose a day",
+    travelOpenDay: "Open the full day guide",
+    travelOpenMap: "Open today's map",
+    travelOpenStay: "View stays",
+    travelOpenInfo: "View practical info",
+    travelOfflineNote: "After the first online visit, the main guide remains available offline. Google Maps and external sites still need a connection.",
+    travelAlertLabel: "Confirm before departure",
+    travelAlertText: "JVTO lists a Surabaya drop-off on 18 June, while the Day 6 stay and Day 7 rail plan currently use Malang. Confirm the final stop before checking the station and ticket.",
+    dayJumpLabel: "Quick day switch",
+    dayExpandLabel: "Open full guide",
+    dayCollapseLabel: "Close full guide",
     overviewLabel: "Journey overview",
     overviewTitle: "A well-paced Indonesia route: easy at first, adventurous in the middle, quiet at the end",
     overviewLead: "The point of this route is not to cram in more places. It gives each stretch a job: Bali for rest, East Java for the big moments, and Yogyakarta for a calmer finish.",
@@ -1218,6 +1269,17 @@ const content = {
     dayGuideDetailLabel: "Timing and rhythm",
     dayGuideReminderLabel: "Special reminders",
     dayGuideLinksLabel: "Useful links",
+    dayStatuses: [
+      "Suggested plan | adjust to energy",
+      "Flexible plan",
+      "Pickup booked | details pending",
+      "JVTO package | follow guide update",
+      "JVTO package | follow guide update",
+      "JVTO package | drop-off pending",
+      "Rail day | check ticket",
+      "Klook tour | pickup pending",
+      "Flight day | check e-ticket"
+    ],
     coverLabel: "Narasi perjalanan",
     coverTitle: "What makes this trip work is the pacing",
     coverLead:
@@ -1308,8 +1370,7 @@ const content = {
           "Core order is Ijen → Papuma / Sewu → Bromo"
         ],
         url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-        linkLabel: "JVTO tour page",
-        extraLinks: [["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]]
+        linkLabel: "JVTO tour page"
       },
       {
         dates: "Private day tour",
@@ -1339,7 +1400,7 @@ const content = {
     linksLead: "This page gathers the websites you are most likely to reopen before departure or during the trip.",
     resourceLinkCta: "Visit site",
     linksHighlights: [
-      ["Shared docs", "Cloud folder for all prep notes and files"],
+      ["Stays", "Official sites and maps for the three stay segments"],
       ["Transport", "Volcano tour, train, and airport rail"],
       ["Entry", "eVisa, Love Bali, and All Indonesia"]
     ],
@@ -1349,7 +1410,7 @@ const content = {
     infoPanelOneTitle: "Before departure and local basics",
     infoPanelTwoTitle: "On-the-ground reminders",
     infoCostsLabel: "Cost notes",
-    infoCostsTitle: "Known costs and shared advances",
+    infoCostsTitle: "Known costs and payment record",
     infoCostsLead: "These amounts are kept here as a working expense note. Once food, taxis, and shopping are added, the picture will be much more complete.",
     infoHighlights: [
       ["Prep order", "Shared folder → eVisa → Bali levy → All Indonesia"],
@@ -1390,9 +1451,9 @@ const content = {
       ["Hotels", "About NT$9,202 per person, with taxes still to be finalized."],
       ["Visa and Bali levy", "NT$941 for the visa plus NT$280 for the Bali levy, totaling NT$1,221."],
       ["eSIM", "NT$469."],
-      ["KAI compartment train", "Rp2,614,500 total, noted as roughly NT$4,738 for 2 people, or about NT$2,369 per person, currently marked as advanced by Yang."],
-      ["Temple day tour", "NT$2,610 for 2 people, or about NT$1,305 per person, currently marked as advanced by Yang."],
-      ["4-day volcano tour", "The deposit is noted at about NT$3,994. The remaining 80% was paid on 2026-05-30 as Rp8,433,700, or about NT$14,838, and is still marked as advanced by Yang for reconciliation."],
+      ["KAI compartment train", "Rp2,614,500 total, noted as roughly NT$4,738 for 2 people, or about NT$2,369 per person. It has been paid; use the private record for reconciliation."],
+      ["Temple day tour", "NT$2,610 for 2 people, or about NT$1,305 per person. It has been paid; use the private record for reconciliation."],
+      ["4-day volcano tour", "The deposit is noted at about NT$3,994. The remaining 80% was paid on 2026-05-30 as Rp8,433,700, or about NT$14,838; use the private record for reconciliation."],
       ["Still to add", "Taxis, meals, souvenirs, snacks, clothes, exchanged cash, and airport parking are still open."]
     ],
     transportTitle: "Transport and timing",
@@ -1460,12 +1521,10 @@ const content = {
       ["Step 6", "The night before departure, keep passport, visa proof, Love Bali QR code, All Indonesia details, and return flight information in one easy-to-open folder."]
     ],
     resourceLinks: [
-      ["Shared folder", "SharePoint prep folder", "https://nkustedutw-my.sharepoint.com/my?id=%2Fpersonal%2F2103104122%5Fnkust%5Fedu%5Ftw%2FDocuments%2FShare%2F%E5%8D%B0%E5%B0%BC%E6%96%87%E4%BB%B6&viewid=2a3a1f21%2D456e%2D419a%2D955a%2Dd3c3e1c5e692"],
       ["Seminyak hotel", "Official site for Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Malang hotel", "Official site for The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
       ["Yogyakarta hotel", "Official site for Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
       ["Volcano tour", "Official Java Volcano Tour Operator page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-      ["Volcano tour booking", "Our JVTO booking page", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
       ["Borobudur tour", "Klook Borobudur climb and Prambanan temple day tour", "https://s.klook.com/c/4yVrZ02036"],
       ["Argo Semeru guide", "Journey.tw review of the train and suite class", "https://journey.tw/ka-argo-semeru/"],
       ["Airport rail", "Official YIA Airport Rail Link booking page", "https://reservation.railink.co.id/"],
@@ -1686,6 +1745,23 @@ const content = {
     navMap: "Peta",
     navBudget: "Biaya",
     navVisa: "Visa",
+    navMore: "Lainnya",
+    navMoreTitle: "Informasi perjalanan lainnya",
+    languageLabel: "Bahasa tampilan",
+    travelModeLabel: "Mode Perjalanan",
+    travelModeTitle: "Mulai dari hal penting hari ini",
+    travelModeLead: "Pilih hari perjalanan untuk melihat waktu bangun, berangkat, berkumpul, dan tidur sekaligus, termasuk hal yang masih perlu dikonfirmasi.",
+    travelDayLabel: "Pilih hari",
+    travelOpenDay: "Buka panduan lengkap",
+    travelOpenMap: "Buka peta hari ini",
+    travelOpenStay: "Lihat penginapan",
+    travelOpenInfo: "Lihat informasi praktis",
+    travelOfflineNote: "Setelah kunjungan online pertama, isi utama panduan dapat dibaca offline. Google Maps dan situs luar tetap memerlukan internet.",
+    travelAlertLabel: "Konfirmasi sebelum berangkat",
+    travelAlertText: "JVTO menuliskan drop-off Surabaya pada 18 Juni, sedangkan rencana menginap Day 6 dan kereta Day 7 memakai Malang. Konfirmasi titik akhir sebelum mengecek stasiun dan tiket.",
+    dayJumpLabel: "Pindah hari cepat",
+    dayExpandLabel: "Buka panduan lengkap",
+    dayCollapseLabel: "Tutup panduan lengkap",
     overviewLabel: "Ringkasan perjalanan",
     overviewTitle: "Rute Indonesia dengan ritme yang enak: santai dulu, lalu petualangan, lalu penutup yang tenang",
     overviewLead: "Rute ini bukan soal memasukkan sebanyak mungkin tempat. Setiap bagian punya perannya sendiri: Bali untuk istirahat, Jawa Timur untuk momen terbesar, dan Yogyakarta untuk penutup yang rapi.",
@@ -1876,6 +1952,17 @@ const content = {
     dayGuideDetailLabel: "Waktu dan ritme",
     dayGuideReminderLabel: "Pengingat khusus",
     dayGuideLinksLabel: "Tautan berguna",
+    dayStatuses: [
+      "Rencana saran | sesuaikan tenaga",
+      "Rencana fleksibel",
+      "Jemputan dipesan | detail menyusul",
+      "Paket JVTO | ikuti info pemandu",
+      "Paket JVTO | ikuti info pemandu",
+      "Paket JVTO | drop-off belum pasti",
+      "Hari kereta | cek tiket",
+      "Tur Klook | jemputan menyusul",
+      "Hari terbang | cek e-ticket"
+    ],
     coverLabel: "Narasi perjalanan",
     coverTitle: "Yang membuat perjalanan ini terasa pas adalah ritmenya",
     coverLead:
@@ -1966,8 +2053,7 @@ const content = {
           "Urutan utama adalah Ijen → Papuma / Sewu → Bromo"
         ],
         url: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-        linkLabel: "Halaman JVTO",
-        extraLinks: [["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]]
+        linkLabel: "Halaman JVTO"
       },
       {
         dates: "Tur privat sehari",
@@ -1997,7 +2083,7 @@ const content = {
     linksLead: "Semua situs yang kemungkinan akan sering dibuka sebelum berangkat atau saat perjalanan dikumpulkan di satu tempat.",
     resourceLinkCta: "Buka situs",
     linksHighlights: [
-      ["Dokumen bersama", "Folder cloud untuk semua catatan dan file persiapan"],
+      ["Penginapan", "Situs resmi dan peta untuk tiga segmen menginap"],
       ["Transportasi", "Tour gunung api, kereta, dan kereta bandara"],
       ["Masuk", "eVisa, Love Bali, dan All Indonesia"]
     ],
@@ -2048,9 +2134,9 @@ const content = {
       ["Hotel", "Sekitar NT$9.202 per orang, dengan pajak yang masih belum final."],
       ["Visa dan levy Bali", "Visa NT$941 ditambah levy Bali NT$280, total NT$1.221."],
       ["eSIM", "NT$469."],
-      ["Kereta kabin KAI", "Total Rp2.614.500, dicatat sekitar NT$4.738 untuk 2 orang, atau sekitar NT$2.369 per orang, saat ini ditandai sebagai talangan Yang."],
-      ["Tur candi", "NT$2.610 untuk 2 orang, atau sekitar NT$1.305 per orang, saat ini ditandai sebagai talangan Yang."],
-      ["Tur gunung api 4 hari", "Deposit dicatat sekitar NT$3.994. Sisa 80% dibayar pada 2026/05/30 sebesar Rp8.433.700, sekitar NT$14.838, dan masih ditandai sebagai talangan Yang untuk dicocokkan nanti."],
+      ["Kereta kabin KAI", "Total Rp2.614.500, dicatat sekitar NT$4.738 untuk 2 orang, atau sekitar NT$2.369 per orang. Sudah dibayar; gunakan catatan pribadi untuk rekonsiliasi."],
+      ["Tur candi", "NT$2.610 untuk 2 orang, atau sekitar NT$1.305 per orang. Sudah dibayar; gunakan catatan pribadi untuk rekonsiliasi."],
+      ["Tur gunung api 4 hari", "Deposit dicatat sekitar NT$3.994. Sisa 80% dibayar pada 2026/05/30 sebesar Rp8.433.700, sekitar NT$14.838; gunakan catatan pribadi untuk rekonsiliasi."],
       ["Yang masih harus ditambah", "Taksi, makan, oleh-oleh, camilan, pakaian, hasil tukar uang, dan parkir bandara masih belum dimasukkan."]
     ],
     transportTitle: "Transportasi dan waktu",
@@ -2118,12 +2204,10 @@ const content = {
       ["Langkah 6", "Malam sebelum berangkat, taruh paspor, bukti visa, QR code Love Bali, data All Indonesia, dan detail tiket pulang di satu folder yang mudah dibuka."]
     ],
     resourceLinks: [
-      ["Folder bersama", "Folder persiapan SharePoint", "https://nkustedutw-my.sharepoint.com/my?id=%2Fpersonal%2F2103104122%5Fnkust%5Fedu%5Ftw%2FDocuments%2FShare%2F%E5%8D%B0%E5%B0%BC%E6%96%87%E4%BB%B6&viewid=2a3a1f21%2D456e%2D419a%2D955a%2Dd3c3e1c5e692"],
       ["Hotel Seminyak", "Situs resmi Courtyard by Marriott Bali Seminyak Resort", "https://www.marriott.com/en-us/hotels/dpssm-courtyard-bali-seminyak-resort/"],
       ["Hotel Malang", "Situs resmi The Shalimar Boutique Hotel", "https://theshalimarhotel.co.id/"],
       ["Hotel Yogyakarta", "Situs resmi Aveta Hotel Malioboro", "https://avetahotelmalioboro.com/"],
       ["Tour gunung api", "Halaman resmi Java Volcano Tour Operator", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-      ["Pesanan tour gunung api", "Halaman pesanan JVTO kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"],
       ["Tur Borobudur", "Tur Klook Borobudur naik candi dan Prambanan", "https://s.klook.com/c/4yVrZ02036"],
       ["Panduan Argo Semeru", "Ulasan Journey.tw tentang kereta dan suite tertinggi", "https://journey.tw/ka-argo-semeru/"],
       ["Kereta bandara", "Halaman resmi pemesanan YIA Airport Rail Link", "https://reservation.railink.co.id/"],
@@ -2377,8 +2461,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Pickup day", "Ferry crossing", "Adventure begins"],
       guide: "The trip changes shape here. Once Bali drops away, the route starts to feel more rugged and more clearly pointed toward the volcano stretch.",
       links: [
-        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2390,8 +2473,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Midnight wake-up", "Volcano hike", "Blue fire"],
       guide: "Ijen is one of the most atmospheric days of the trip. It begins in darkness and cold, then slowly opens into sulfur air, crater views, and first light.",
       links: [
-        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2403,8 +2485,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Very early start", "Slippery ground", "Change of clothes"],
       guide: "Today is all about moving down into the landscape itself. Expect wet footing, steep paths, and one of the strongest visual payoffs of the trip.",
       links: [
-        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2416,8 +2497,7 @@ const LOCALIZED_DAY_META = {
       badges: ["01:15 wake-up", "Jeep ride", "Cold morning"],
       guide: "Bromo is the big sunrise classic. The experience is as much about the cold, the dust, and the open highland view as it is about the sun itself.",
       links: [
-        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Our booking", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["JVTO tour page", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2507,8 +2587,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Hari jemput", "Naik ferry", "Bab petualangan"],
       guide: "Di sinilah bentuk perjalanan berubah. Begitu Bali selesai, jalur ini mulai terasa lebih liar dan lebih jelas mengarah ke segmen gunung api.",
       links: [
-        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2520,8 +2599,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Bangun tengah malam", "Hiking gunung api", "Blue fire"],
       guide: "Ijen adalah salah satu hari paling atmosferik. Semuanya dimulai dari gelap dan dingin, lalu pelan-pelan terbuka jadi belerang, kawah, dan cahaya pagi.",
       links: [
-        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2533,8 +2611,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Bangun sangat pagi", "Jalur licin", "Baju ganti"],
       guide: "Hari ini rasanya seperti masuk ke dalam lanskap itu sendiri. Siapkan kaki untuk jalur basah dan turunan curam, dengan hadiah visual yang sangat besar di bawah.",
       links: [
-        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2546,8 +2623,7 @@ const LOCALIZED_DAY_META = {
       badges: ["Bangun 01.15", "Naik Jeep", "Pagi dingin"],
       guide: "Bromo adalah adegan sunrise klasik. Kekuatan harinya bukan hanya matahari terbit, tetapi juga dingin, debu, dan bentang tinggi gunung apinya.",
       links: [
-        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"],
-        ["Pesanan kami", "https://javavolcano-touroperator.com/my-booking/622ade825711ac21113a8d292da3dbdf"]
+        ["Halaman JVTO", "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n"]
       ]
     },
     {
@@ -2583,7 +2659,9 @@ const LOCALIZED_DAY_META = {
 
 const state = {
   lang: localStorage.getItem("bali-java-lang") || "zh-Hant",
-  mapQuery: "Seminyak Beach Bali"
+  mapQuery: "Seminyak Beach Bali",
+  selectedDay: Math.min(TRIP_DAYS, Math.max(1, Number(localStorage.getItem("bali-java-selected-day")) || 1)),
+  openDay: null
 };
 
 const dom = {
@@ -2595,6 +2673,9 @@ const dom = {
   journeyHighlights: document.getElementById("journey-highlights"),
   dayPreview: document.getElementById("day-preview"),
   practicalAccordion: document.getElementById("practical-accordion"),
+  travelDaySelect: document.getElementById("travel-day-select"),
+  travelModeContent: document.getElementById("travel-mode-content"),
+  travelAlert: document.getElementById("travel-alert"),
   departFlight: document.getElementById("depart-flight"),
   returnFlight: document.getElementById("return-flight"),
   flightHighlights: document.getElementById("flight-highlights"),
@@ -2617,6 +2698,7 @@ const dom = {
   fullRouteLink: document.getElementById("full-route-link"),
   mapDayRoutes: document.getElementById("map-day-routes"),
   itineraryHighlights: document.getElementById("itinerary-highlights"),
+  dayJumpBar: document.getElementById("day-jump-bar"),
   itineraryList: document.getElementById("itinerary-list"),
   budgetSummaryStrip: document.getElementById("budget-summary-strip"),
   budgetTableBody: document.getElementById("budget-table-body"),
@@ -2625,7 +2707,9 @@ const dom = {
   visaPoints: document.getElementById("visa-points"),
   arrivalPoints: document.getElementById("arrival-points"),
   footerCopy: document.getElementById("footer-copy"),
-  pageProgress: document.getElementById("pageProgress")
+  pageProgress: document.getElementById("pageProgress"),
+  navMoreToggle: document.getElementById("nav-more-toggle"),
+  navMoreMenu: document.getElementById("nav-more-menu")
 };
 
 const FALLBACK_LANG = "zh-Hant";
@@ -2701,15 +2785,38 @@ function extractTimingItems(details = [], lang = FALLBACK_LANG) {
     .map(([label, value]) => [normalizeDetailLabel(label, lang), value]);
 }
 
-function getStickyOffset() {
-  const navHeight = document.querySelector(".main-nav")?.offsetHeight || 0;
-  const languageHeight = document.querySelector(".language-selector")?.offsetHeight || 0;
+function compactTimingValue(value, lang = FALLBACK_LANG) {
+  const text = String(value || "");
+  const times = [...text.matchAll(/\b(?:[01]?\d|2[0-3])[:.]\d{2}\b/g)].map((match) => match[0].replace(".", ":"));
+  const uniqueTimes = [...new Set(times)].slice(0, 2);
 
-  if (window.innerWidth <= 768) {
-    return navHeight + languageHeight + 28;
+  if (uniqueTimes.length >= 2 && /台灣|Taiwan/i.test(text)) {
+    if (lang === "en") {
+      return `${uniqueTimes[0]} local · ${uniqueTimes[1]} Taiwan`;
+    }
+    if (lang === "id") {
+      return `${uniqueTimes[0]} lokal · ${uniqueTimes[1]} Taiwan`;
+    }
+    return `${uniqueTimes[0]} 當地 · ${uniqueTimes[1]} 台灣`;
   }
 
-  return navHeight + 56;
+  if (uniqueTimes.length) {
+    return uniqueTimes.join(" / ");
+  }
+
+  const firstSentence = text.split(/[。.!?]/)[0].trim();
+  return firstSentence.length > 48 ? `${firstSentence.slice(0, 47)}…` : firstSentence;
+}
+
+function getStickyOffset(element) {
+  const navHeight = document.querySelector(".main-nav")?.offsetHeight || 0;
+
+  if (window.innerWidth <= 768) {
+    const dayJumpHeight = element?.classList.contains("day-card") ? dom.dayJumpBar?.offsetHeight || 0 : 0;
+    return dayJumpHeight + 44;
+  }
+
+  return navHeight + 40;
 }
 
 function scrollToElementWithOffset(element, { behavior = "smooth" } = {}) {
@@ -2717,8 +2824,30 @@ function scrollToElementWithOffset(element, { behavior = "smooth" } = {}) {
     return;
   }
 
-  const top = element.getBoundingClientRect().top + window.scrollY - getStickyOffset();
+  const top = element.getBoundingClientRect().top + window.scrollY - getStickyOffset(element);
   window.scrollTo({ top: Math.max(top, 0), behavior });
+}
+
+function setNavMoreOpen(isOpen) {
+  if (!dom.navMoreToggle || !dom.navMoreMenu) {
+    return;
+  }
+
+  dom.navMoreToggle.setAttribute("aria-expanded", String(isOpen));
+  dom.navMoreMenu.hidden = !isOpen;
+  document.body.classList.toggle("nav-menu-open", isOpen);
+}
+
+function loadMapFrame() {
+  if (!dom.mapFrame) {
+    return;
+  }
+
+  const nextSource = mapEmbedUrl(state.mapQuery);
+  dom.mapFrame.dataset.src = nextSource;
+  if (dom.mapFrame.src !== new URL(nextSource, window.location.href).href) {
+    dom.mapFrame.src = nextSource;
+  }
 }
 
 function setLocationHash(hashValue) {
@@ -2742,11 +2871,24 @@ function activateSection(target, { behavior = "smooth", scroll = true, hashValue
     }
   });
 
+  const isSecondarySection = !PRIMARY_NAV_TARGETS.has(target);
+  dom.navMoreToggle?.classList.toggle("active", isSecondarySection);
+  if (isSecondarySection) {
+    dom.navMoreToggle?.setAttribute("aria-current", "page");
+  } else {
+    dom.navMoreToggle?.removeAttribute("aria-current");
+  }
+
   document.querySelectorAll(".page-section").forEach((section) => {
     section.classList.toggle("active", section.id === target);
   });
 
   document.body.dataset.activeSection = target;
+  setNavMoreOpen(false);
+
+  if (target === "map") {
+    loadMapFrame();
+  }
 
   const navButton = document.querySelector(`.nav-item[data-target="${target}"]`);
   navButton?.scrollIntoView({ behavior, inline: "center", block: "nearest" });
@@ -3008,15 +3150,117 @@ function renderDayPreview(days, copy, lang) {
     .join("");
 }
 
+function getDayStatus(copy, index) {
+  return pick(copy, "dayStatuses")?.[index] || "";
+}
+
+function getDayNumber(anchorId) {
+  return Number(anchorId?.match(/itinerary-day-(\d+)/)?.[1]) || 1;
+}
+
+function renderTravelMode(days, copy, lang) {
+  if (!dom.travelDaySelect || !dom.travelModeContent || !days.length) {
+    return;
+  }
+
+  const index = Math.min(days.length - 1, Math.max(0, state.selectedDay - 1));
+  const [day, title, desc, tags, details] = days[index];
+  const meta = resolveDayMeta(days, index, lang);
+  const anchorId = buildDayAnchorId(day);
+  const timingItems = meta.timingCards?.length ? meta.timingCards : extractTimingItems(details, lang);
+  const status = getDayStatus(copy, index);
+
+  dom.travelDaySelect.innerHTML = days
+    .map(([optionDay, optionTitle], optionIndex) => {
+      const optionMeta = resolveDayMeta(days, optionIndex, lang);
+      return `<option value="${optionIndex + 1}">${optionDay} · ${optionMeta.date || ""} · ${optionTitle}</option>`;
+    })
+    .join("");
+  dom.travelDaySelect.value = String(state.selectedDay);
+
+  if (dom.travelAlert) {
+    dom.travelAlert.hidden = ![5, 6].includes(index);
+    dom.travelAlert.innerHTML = `
+      <div class="travel-alert-label">${pick(copy, "travelAlertLabel")}</div>
+      <div class="travel-alert-text">${pick(copy, "travelAlertText")}</div>
+    `;
+  }
+
+  dom.travelModeContent.innerHTML = `
+    <article class="travel-day-summary tone-${meta.tone || "default"}">
+      <div class="travel-day-topline">
+        <div class="travel-day-date">${day} · ${meta.date || ""}</div>
+        ${status ? `<div class="travel-day-status">${status}</div>` : ""}
+      </div>
+      <div class="travel-day-region">${meta.region || ""}</div>
+      <h3>${meta.theme || title}</h3>
+      <p>${meta.preview || desc}</p>
+      <div class="travel-day-chip-row">
+        ${[meta.effort, ...(tags || []).slice(0, 2)].filter(Boolean).map((tag) => `<span>${tag}</span>`).join("")}
+      </div>
+      <div class="travel-timing-grid">
+        ${timingItems
+          .slice(0, 4)
+          .map(
+            ([label, value]) => `
+              <div class="travel-timing-item">
+                <div class="travel-timing-label">${normalizeDetailLabel(label, lang)}</div>
+                <div class="travel-timing-value" title="${value}">${compactTimingValue(value, lang)}</div>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+      <div class="travel-mode-actions">
+        <button class="travel-action travel-action-primary" type="button" data-open-section="itinerary" data-open-day="${anchorId}">${pick(copy, "travelOpenDay")}</button>
+        <a class="travel-action" href="${DAY_ROUTE_URLS[`day${index + 1}`]}" target="_blank" rel="noreferrer">${pick(copy, "travelOpenMap")}</a>
+        <button class="travel-action" type="button" data-open-section="stay">${pick(copy, "travelOpenStay")}</button>
+        <button class="travel-action" type="button" data-open-section="info">${pick(copy, "travelOpenInfo")}</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderDayJumpBar(days, copy) {
+  if (!dom.dayJumpBar) {
+    return;
+  }
+
+  dom.dayJumpBar.innerHTML = `
+    <span class="day-jump-label">${pick(copy, "dayJumpLabel")}</span>
+    <div class="day-jump-buttons">
+      ${days
+        .map(([day, title], index) => {
+          const anchorId = buildDayAnchorId(day);
+          return `<button type="button" data-open-section="itinerary" data-open-day="${anchorId}" aria-label="${day}: ${title}">${index + 1}</button>`;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function syncSelectedDayUI() {
+  if (dom.travelDaySelect) {
+    dom.travelDaySelect.value = String(state.selectedDay);
+  }
+
+  document.querySelectorAll(".day-jump-buttons button").forEach((button) => {
+    const isCurrent = getDayNumber(button.dataset.openDay) === state.selectedDay;
+    button.classList.toggle("active", isCurrent);
+    button.setAttribute("aria-current", isCurrent ? "true" : "false");
+  });
+}
+
 function renderStayRows(items, linkLabel) {
   return items
-    .map(
-      ({ dates, area, hotel, localName, stars, image, note, details, url, linkLabel: customLabel, extraLinks = [] }) => `
+    .map(({ dates, area, hotel, localName, stars, image, note, details, url, linkLabel: customLabel, extraLinks = [] }) => {
+      const [imageWidth, imageHeight] = IMAGE_DIMENSIONS[image] || [1200, 800];
+      return `
         <article class="stay-card-rich">
           ${
             image
               ? `<div class="stay-card-image-wrap">
-                  <img class="stay-card-image" src="${image}" alt="${hotel}" loading="lazy" />
+                  <img class="stay-card-image" src="${image}" alt="${hotel}" width="${imageWidth}" height="${imageHeight}" loading="lazy" decoding="async" />
                 </div>`
               : ""
           }
@@ -3045,8 +3289,8 @@ function renderStayRows(items, linkLabel) {
               .join("")}
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
@@ -3082,18 +3326,11 @@ function renderTimeline(days, copy, lang) {
       const meta = resolveDayMeta(days, index, lang);
       const anchorId = buildDayAnchorId(day);
       const badges = [meta.effort, ...(meta.badges || [])].filter(Boolean);
+      const status = getDayStatus(copy, index);
       const timingItems = meta.timingCards?.length ? meta.timingCards : extractTimingItems(details, lang);
       const detailItems = timingItems.length ? details.filter(([label]) => !isTimingLabel(label)) : details;
       const primaryDetail = !timingItems.length ? detailItems[0] : null;
       const secondaryDetails = !timingItems.length ? detailItems.slice(1) : detailItems;
-      const focusSection = `
-        <section class="day-block">
-          <div class="day-block-title">${pick(copy, "dayFocusLabel")}</div>
-          <div class="day-content-top">
-            <div class="day-focus-text">${desc}</div>
-          </div>
-        </section>
-      `;
       const routeSection = meta.routeFlow?.length
         ? `
           <section class="day-block">
@@ -3159,87 +3396,97 @@ function renderTimeline(days, copy, lang) {
         : "";
 
       return `
-        <article class="day-card tone-${meta.tone || "default"}" id="${anchorId}">
-          <div class="day-card-top">
-            <div class="day-meta-block">
-              <div class="day-index">${day}</div>
-              <div class="day-date-line">${meta.date || ""}</div>
-              <div class="day-region-line">${meta.region || ""}</div>
+        <details class="day-card tone-${meta.tone || "default"}" id="${anchorId}" ${state.openDay === anchorId ? "open" : ""}>
+          <summary class="day-card-summary">
+            <div class="day-card-top">
+              <div class="day-meta-block">
+                <div class="day-index">${day}</div>
+                <div class="day-date-line">${meta.date || ""}</div>
+                <div class="day-region-line">${meta.region || ""}</div>
+              </div>
+              <div class="day-status-row">
+                ${status ? `<span class="day-plan-status">${status}</span>` : ""}
+                ${badges.slice(0, 1).map((badge) => `<span class="day-status-chip">${badge}</span>`).join("")}
+              </div>
             </div>
-            <div class="day-status-row">
-              ${badges.map((badge) => `<span class="day-status-chip">${badge}</span>`).join("")}
+            <div class="day-header">
+              ${meta.theme ? `<div class="day-theme">${meta.theme}</div>` : ""}
+              <div class="day-title">${title}</div>
+              <div class="day-summary">${meta.preview || desc}</div>
             </div>
-          </div>
-          <div class="day-header">
-            ${meta.theme ? `<div class="day-theme">${meta.theme}</div>` : ""}
-            <div class="day-title">${title}</div>
-            <div class="day-summary">${desc}</div>
-            ${meta.guide ? `<div class="day-guide-intro">${meta.guide}</div>` : ""}
-          </div>
-          ${
-            timingItems.length
-              ? `
-                <section class="day-block">
-                  <div class="day-block-title">${pick(copy, "dayGuideTimingLabel")}</div>
-                  <div class="day-timing-grid">
-                    ${timingItems
-                      .map(
-                        ([timingLabel, timingValue]) => `
-                          <article class="day-timing-card">
-                            <div class="day-timing-label">${normalizeDetailLabel(timingLabel, lang)}</div>
-                            <div class="day-timing-value">${timingValue}</div>
-                          </article>
-                        `
-                      )
-                      .join("")}
-                  </div>
-                </section>
-              `
-              : primaryDetail
+            ${
+              timingItems.length
                 ? `
-                  <div class="day-primary-strip">
-                    <div class="day-primary-label">${normalizeDetailLabel(primaryDetail[0], lang)}</div>
-                    <div class="day-primary-value">${primaryDetail[1]}</div>
-                  </div>
+                  <section class="day-block day-timing-block">
+                    <div class="day-block-title">${pick(copy, "dayGuideTimingLabel")}</div>
+                    <div class="day-timing-grid">
+                      ${timingItems
+                        .slice(0, 4)
+                        .map(
+                          ([timingLabel, timingValue]) => `
+                            <div class="day-timing-card">
+                              <div class="day-timing-label">${normalizeDetailLabel(timingLabel, lang)}</div>
+                              <div class="day-timing-value" title="${timingValue}">${compactTimingValue(timingValue, lang)}</div>
+                            </div>
+                          `
+                        )
+                        .join("")}
+                    </div>
+                  </section>
+                `
+                : primaryDetail
+                  ? `
+                    <div class="day-primary-strip">
+                      <div class="day-primary-label">${normalizeDetailLabel(primaryDetail[0], lang)}</div>
+                      <div class="day-primary-value">${primaryDetail[1]}</div>
+                    </div>
+                  `
+                  : ""
+            }
+            <div class="day-toggle-hint">
+              <span class="day-toggle-open">${pick(copy, "dayExpandLabel")}</span>
+              <span class="day-toggle-close">${pick(copy, "dayCollapseLabel")}</span>
+              <span class="day-toggle-icon" aria-hidden="true"></span>
+            </div>
+          </summary>
+          <div class="day-card-body">
+            ${meta.guide ? `<div class="day-guide-intro">${meta.guide}</div>` : ""}
+            ${
+              meta.atGlance?.length
+                ? `
+                  <section class="day-block">
+                    <div class="day-block-title">${pick(copy, "dayGuideAtGlanceLabel")}</div>
+                    <div class="day-glance-grid">
+                      ${meta.atGlance
+                        .map(
+                          ([glanceLabel, glanceValue]) => `
+                            <article class="day-glance-card">
+                              <div class="day-glance-label">${glanceLabel}</div>
+                              <div class="day-glance-value">${glanceValue}</div>
+                            </article>
+                          `
+                        )
+                        .join("")}
+                    </div>
+                  </section>
                 `
                 : ""
-          }
-          ${
-            meta.atGlance?.length
-              ? `
-                <section class="day-block">
-                  <div class="day-block-title">${pick(copy, "dayGuideAtGlanceLabel")}</div>
-                  <div class="day-glance-grid">
-                    ${meta.atGlance
-                      .map(
-                        ([glanceLabel, glanceValue]) => `
-                          <article class="day-glance-card">
-                            <div class="day-glance-label">${glanceLabel}</div>
-                            <div class="day-glance-value">${glanceValue}</div>
-                          </article>
-                        `
-                      )
-                      .join("")}
-                  </div>
-                </section>
-              `
-              : ""
-          }
-          <div class="day-manual-grid">
-            <div class="day-main-column">
-              ${routeSection}
-              ${focusSection}
+            }
+            <div class="day-manual-grid">
+              <div class="day-main-column">
+                ${routeSection}
+              </div>
+              <div class="day-side-column">
+                ${detailSection}
+                ${reminderSection}
+                ${linksSection}
+              </div>
             </div>
-            <div class="day-side-column">
-              ${detailSection}
-              ${reminderSection}
-              ${linksSection}
+            <div class="highlight-tags">
+              ${tags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
           </div>
-          <div class="highlight-tags">
-            ${tags.map((tag) => `<span>${tag}</span>`).join("")}
-          </div>
-        </article>
+        </details>
       `;
     })
     .join("");
@@ -3261,7 +3508,9 @@ function renderLanguage() {
   });
 
   document.querySelectorAll(".lang-btn").forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === state.lang);
+    const isActive = button.dataset.lang === state.lang;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
   });
 
   if (dom.heroSignals) {
@@ -3286,6 +3535,7 @@ function renderLanguage() {
   if (dom.practicalAccordion) {
     dom.practicalAccordion.innerHTML = renderPracticalAccordion(pick(copy, "practicalSections"));
   }
+  renderTravelMode(itinerary, copy, state.lang);
 
   dom.departFlight.innerHTML = renderFlightCard(pick(copy, "flightSegmentLabels"), flights.depart);
   dom.returnFlight.innerHTML = renderFlightCard(pick(copy, "flightSegmentLabels"), flights.return);
@@ -3337,19 +3587,26 @@ function renderLanguage() {
   }
 
   dom.mapList.innerHTML = renderMapLocations(mapLocations, state.mapQuery);
-  dom.mapFrame.src = mapEmbedUrl(state.mapQuery);
+  dom.mapFrame.dataset.src = mapEmbedUrl(state.mapQuery);
   dom.fullRouteLink.href = MAP_ROUTE_URL;
   dom.mapDayRoutes.innerHTML = renderMapDayRoutes(pick(copy, "mapDayRoutes"));
   document.querySelectorAll(".map-location-button").forEach((button) => {
     button.addEventListener("click", () => {
       state.mapQuery = button.dataset.query;
-      renderLanguage();
+      document.querySelectorAll(".map-location-button").forEach((item) => {
+        item.classList.toggle("active", item === button);
+      });
+      loadMapFrame();
     });
   });
 
   dom.itineraryHighlights.innerHTML = renderMiniHighlights(pick(copy, "itineraryHighlights"));
+  renderDayJumpBar(itinerary, copy);
   dom.itineraryList.innerHTML = renderTimeline(itinerary, copy, state.lang);
+  bindDayAccordions();
   bindDayPreviewLinks();
+  bindSectionShortcutButtons();
+  syncSelectedDayUI();
 
   const paid = sumRange(BUDGET.paid);
   const open = sumRange(BUDGET.open);
@@ -3399,14 +3656,97 @@ function renderLanguage() {
 
 function bindDayPreviewLinks() {
   document.querySelectorAll("[data-open-day]").forEach((button) => {
+    if (button.dataset.dayLinkBound === "true") {
+      return;
+    }
+    button.dataset.dayLinkBound = "true";
     button.addEventListener("click", () => {
       const sectionTarget = button.getAttribute("data-open-section") || "itinerary";
       const anchorId = button.getAttribute("data-open-day");
-      activateSection(sectionTarget, { behavior: "smooth", scroll: true, hashValue: anchorId });
+      openDayCard(anchorId, { updateHash: false });
+      activateSection(sectionTarget, { behavior: "smooth", scroll: false, hashValue: anchorId });
       window.setTimeout(() => {
         scrollToElementWithOffset(document.getElementById(anchorId), { behavior: "smooth" });
-      }, 120);
+      }, 80);
     });
+  });
+}
+
+function refreshTravelMode() {
+  const copy = content[state.lang];
+  renderTravelMode(pick(copy, "itinerary"), copy, state.lang);
+  bindDayPreviewLinks();
+  bindSectionShortcutButtons();
+  syncSelectedDayUI();
+}
+
+function openDayCard(anchorId, { updateHash = true } = {}) {
+  const target = document.getElementById(anchorId);
+  if (!(target instanceof HTMLDetailsElement)) {
+    return;
+  }
+
+  state.openDay = anchorId;
+  state.selectedDay = getDayNumber(anchorId);
+  localStorage.setItem("bali-java-selected-day", String(state.selectedDay));
+
+  document.querySelectorAll("details.day-card").forEach((card) => {
+    card.open = card === target;
+  });
+
+  refreshTravelMode();
+  if (updateHash) {
+    setLocationHash(anchorId);
+  }
+}
+
+function bindDayAccordions() {
+  document.querySelectorAll("details.day-card").forEach((card) => {
+    if (card.dataset.accordionBound === "true") {
+      return;
+    }
+    card.dataset.accordionBound = "true";
+
+    card.addEventListener("toggle", () => {
+      if (card.open) {
+        state.openDay = card.id;
+        state.selectedDay = getDayNumber(card.id);
+        localStorage.setItem("bali-java-selected-day", String(state.selectedDay));
+        document.querySelectorAll("details.day-card").forEach((otherCard) => {
+          if (otherCard !== card) {
+            otherCard.open = false;
+          }
+        });
+        setLocationHash(card.id);
+        refreshTravelMode();
+        return;
+      }
+
+      if (state.openDay === card.id) {
+        state.openDay = null;
+        setLocationHash("itinerary");
+      }
+    });
+  });
+}
+
+function bindSectionShortcutButtons() {
+  document.querySelectorAll("[data-open-section]:not([data-open-day])").forEach((button) => {
+    if (button.dataset.sectionLinkBound === "true") {
+      return;
+    }
+    button.dataset.sectionLinkBound = "true";
+    button.addEventListener("click", () => {
+      activateSection(button.dataset.openSection, { behavior: "smooth", scroll: true });
+    });
+  });
+}
+
+function bindTravelDaySelect() {
+  dom.travelDaySelect?.addEventListener("change", () => {
+    state.selectedDay = Math.min(TRIP_DAYS, Math.max(1, Number(dom.travelDaySelect.value) || 1));
+    localStorage.setItem("bali-java-selected-day", String(state.selectedDay));
+    refreshTravelMode();
   });
 }
 
@@ -3416,6 +3756,7 @@ function bindLanguageButtons() {
       state.lang = button.dataset.lang;
       localStorage.setItem("bali-java-lang", state.lang);
       renderLanguage();
+      setNavMoreOpen(false);
     });
   });
 }
@@ -3425,6 +3766,23 @@ function bindNav() {
     button.addEventListener("click", () => {
       activateSection(button.dataset.target, { behavior: "smooth", scroll: true });
     });
+  });
+}
+
+function bindNavMore() {
+  dom.navMoreToggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = dom.navMoreToggle.getAttribute("aria-expanded") !== "true";
+    setNavMoreOpen(isOpen);
+  });
+
+  dom.navMoreMenu?.addEventListener("click", (event) => event.stopPropagation());
+  document.addEventListener("click", () => setNavMoreOpen(false));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && dom.navMoreToggle?.getAttribute("aria-expanded") === "true") {
+      setNavMoreOpen(false);
+      dom.navMoreToggle.focus();
+    }
   });
 }
 
@@ -3450,10 +3808,11 @@ function syncSectionFromHash() {
   }
 
   if (hash.startsWith("itinerary-day-")) {
-    activateSection("itinerary", { behavior: "auto", scroll: true, hashValue: hash });
+    openDayCard(hash, { updateHash: false });
+    activateSection("itinerary", { behavior: "auto", scroll: false, hashValue: hash });
     window.setTimeout(() => {
       scrollToElementWithOffset(document.getElementById(hash), { behavior: "auto" });
-    }, 180);
+    }, 80);
   }
 }
 
@@ -3461,7 +3820,6 @@ function updateScrollState() {
   const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
   dom.pageProgress.style.width = `${scrolled}%`;
-  document.body.classList.toggle("mobile-controls-compact", window.innerWidth <= 768 && window.scrollY > 72);
 }
 
 window.addEventListener("scroll", updateScrollState);
@@ -3470,7 +3828,17 @@ window.addEventListener("hashchange", syncSectionFromHash);
 
 bindLanguageButtons();
 bindNav();
+bindNavMore();
 bindHeroActions();
+bindTravelDaySelect();
 renderLanguage();
 syncSectionFromHash();
 updateScrollState();
+
+if ("serviceWorker" in navigator && window.location.protocol === "https:") {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {
+      // The guide still works normally if offline caching is unavailable.
+    });
+  });
+}

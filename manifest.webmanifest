@@ -1,0 +1,22 @@
+{
+  "name": "2026 Bali & Java Travel Guide",
+  "short_name": "Bali × Java",
+  "description": "峇里島、東爪哇火山線與日惹的九日旅行手冊。",
+  "lang": "zh-Hant",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f6efe5",
+  "theme_color": "#8b482f",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
