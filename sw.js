@@ -1,4 +1,4 @@
-const CACHE_NAME = "bali-java-handbook-v1";
+const CACHE_NAME = "bali-java-handbook-v3";
 const CORE_ASSETS = [
   "./",
   "./index.html",
